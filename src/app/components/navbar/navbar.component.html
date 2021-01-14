@@ -1,0 +1,38 @@
+<nav class="nav">
+    <div class="nav-container">
+        <div class="nav-container-left">
+            <div class="nav-container-left-hamburger">
+                ☰
+            </div>
+            <a href="/" class="nav-container-left-logo">
+                <img src="../../../assets/images/logo.svg" height="45" alt="logo">
+            </a>
+            <ul class="nav-container-left-links">
+                <li>
+                    <a href="#">STORE</a>
+                </li>
+                <li>
+                    <a href="#">COMMUNITY</a>
+                </li>
+                <li>
+                    <a href="#">ABOUT</a>
+                </li>
+                <li>
+                    <a href="#">SUPPORT</a>
+                </li>
+            </ul>
+            <div></div>
+        </div>
+        <div class="nav-container-right">
+            <div>
+                <a href="">login</a> |
+                <span>
+                    <span (click)="showLanguageList()">language ▼</span>
+                    <ul id="language-list">
+                        <li *ngFor="let lang of languageList">{{ lang }}</li>
+                    </ul>
+                </span>
+            </div>
+        </div>
+    </div>
+</nav>

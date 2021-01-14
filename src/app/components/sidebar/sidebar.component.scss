@@ -1,0 +1,42 @@
+@import "../../../styles/variables";
+
+.sidebar {
+    &-top-img {
+        img {
+            width: 90%;
+        }
+    }
+
+    &-content {
+        margin-top: 0.5rem;
+
+        &-item {
+            list-style: none;
+            margin-bottom: 1rem;
+
+            &-title {
+                color: $primary-color-light;
+                margin-bottom: 0.4rem;
+                font-size: 0.9rem;
+            }
+
+            &-ulink {
+                li {
+                    list-style: none;
+                    color: $secondary-color;
+                    margin-bottom: 0.2rem;
+
+                    a {
+                        color: $secondary-color;
+                        text-decoration: none;
+
+                        &:hover {
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+}

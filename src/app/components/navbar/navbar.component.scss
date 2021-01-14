@@ -1,0 +1,118 @@
+@import "../../../styles/variables";
+@import "../../../styles//mixins";
+
+$language-box-bg : #171a21;
+
+nav {
+    background-color: $primary-background;
+    padding: 0.5rem 0;
+
+    .nav-container {
+        width: 80%;
+        margin: 0 auto;
+        color: $primary-color;
+
+        &-left {
+            display: flex;
+            justify-content: space-between;
+
+            &-links {
+                display: none;
+
+                @include for-desktop {
+                    display: flex;
+                    list-style-type: none;
+                    align-items: center;
+
+                    li {
+                        margin-left: 1rem;
+
+                        a {
+                            color: $primary-color;
+                            text-decoration: none;
+
+                            &:hover {
+                                color: #fff;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &-hamburger {
+                display: flex;
+                align-items: center;
+                font-size: 1.75rem;
+                font-weight: bold;
+
+                @include for-desktop {
+                    display: none;
+                }
+            }
+
+            @include for-desktop {
+                padding: 1.6rem 0;
+            }
+        }
+
+        &-right {
+           display: none;
+
+           @include for-desktop {
+               display: block;
+                div {
+                    font-size: 0.7rem;
+                    a {
+                        color: $primary-color;
+                        text-decoration: none;
+                        margin-right: 0.5rem;
+
+                        &:hover {
+                            color: #fff;
+                        }
+                    }
+
+                    span {
+                        position: relative;
+                        margin-left: 0.25rem;
+
+                        span{
+                            &:hover {
+                                color: #fff;
+                                cursor: pointer;
+                            }
+                        }
+
+                        ul {
+                            display: none;
+                            position: absolute;
+                            background-color: $language-box-bg;
+                            right: 0;
+                            box-shadow: 0 0 12px black;
+                            padding: 0.3rem 1rem;
+                            width: 17.5rem;
+                            margin-top: 0.3rem;
+                            transition: all 1s;
+
+                            li {
+                                list-style: none;
+                                margin-bottom: 0.5rem;
+
+                                &:hover {
+                                    color: #fff;
+                                    cursor: pointer;
+                                }
+                            }
+                        }
+                    }
+                }
+           }
+        }
+
+        @include for-desktop {
+            display: flex;
+            justify-content: space-between;
+            width: 60%;
+        }
+    }
+}

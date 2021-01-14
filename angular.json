@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "staem-frontend"
+  "defaultProject": "staem-frontend",
+  "cli": {
+    "analytics": false
+  }
 }

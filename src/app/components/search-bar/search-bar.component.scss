@@ -1,0 +1,48 @@
+@import "../../../styles/mixins";
+$main-search-bar-color : rgba( 62, 126, 167, 0.8);
+
+div {
+    width: 100%;
+    background-color: $main-search-bar-color;    
+    display: flex;
+    justify-content: flex-end;
+
+    div {
+        input {
+            padding: 0.4rem 1rem;
+            width: 100%;
+            background-color: darken($main-search-bar-color, 10);
+            outline: none;
+            color: #fff;
+            border: none;
+
+            &::placeholder {
+                color: #333;
+            }
+
+            @include for-desktop {
+                width: 20%;
+            }
+        }
+
+        button {
+            color: #333;
+            padding: 0 0.3rem;
+            cursor: pointer;
+            background-color: darken($main-search-bar-color, 8);
+            border: none;
+            
+            i {
+                font-size: 1.2rem;
+            }
+
+            &:hover {
+                background-color: lighten($main-search-bar-color, 10);
+            }
+        }
+    }
+
+    @include for-desktop {
+        padding: 0.2rem;
+    }
+}

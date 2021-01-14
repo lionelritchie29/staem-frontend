@@ -1,0 +1,19 @@
+@import "../../../styles/mixins";
+
+#home { 
+    display: grid;
+    grid-template-columns: 100%;
+    padding-top: 1.5rem;
+
+    app-sidebar{
+        display: none;
+    
+        @include for-desktop {
+            display: block;
+        }
+    }
+
+    @include for-desktop{
+        grid-template-columns: 20% 80%;
+    }
+}

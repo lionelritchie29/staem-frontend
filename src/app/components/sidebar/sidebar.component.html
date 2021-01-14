@@ -1,0 +1,16 @@
+<div class="sidebar">
+    <div class="sidebar-top-img">
+        <img src="../../../assets/images/sidebar-top.png" alt="sidebar-top">
+    </div>
+    <ul class="sidebar-content">
+        <li *ngFor="let link of links" class="sidebar-content-item">
+            <div class="sidebar-content-item-title"> {{ link.name | uppercase }} </div>
+            <ul class="sidebar-content-item-ulink">
+                <li *ngFor="let c of link.contents">
+                    <span>★</span>
+                    <a href="#"> {{ c.title }} </a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
