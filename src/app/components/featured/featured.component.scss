@@ -1,0 +1,19 @@
+section {
+    margin-top: 2rem;
+
+    h1 {
+        color: #fff;
+        font-weight: normal;
+        font-size: 1.2rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .slider-container {
+        // width: 100%;
+        overflow: auto;
+
+        &-images {
+            // display: flex;
+        }
+    }
+}

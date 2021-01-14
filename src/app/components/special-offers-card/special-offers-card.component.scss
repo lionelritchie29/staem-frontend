@@ -1,0 +1,52 @@
+@import "../../../styles/variables";
+
+$info-bg-color : #1D6E93;
+$price-tag-bg-color : #173041;
+
+.card {
+    width: 95%;
+    padding: 0;
+    margin-bottom: 1rem;
+
+    &-img {
+        padding: 0;
+    }
+
+    &-info {
+        background-color: $info-bg-color;
+        display: flex;
+        justify-content: flex-end;
+
+        &-price-tag {
+            display: flex;
+            margin: 0.5rem;
+
+            div:first-child {
+                background-color: $primary-green;
+                color: $text-green;
+                font-size: 1.5rem;
+                padding: 0 0.5rem;
+                display: flex;
+                align-items: center;
+            }
+            
+            div:nth-child(2) {
+                background-color: $price-tag-bg-color;
+                height: inherit;
+                color: #666;
+                text-decoration: line-through;
+                display: flex;
+                flex-direction: column;
+                padding: 0.2rem 0.5rem;
+                font-size: 0.8rem;
+                
+                
+                span {
+                    margin-left: 0.2rem;
+                    font-size: 0.9rem;
+                    color: $secondary-color;
+                }
+            }
+        }
+    }
+}

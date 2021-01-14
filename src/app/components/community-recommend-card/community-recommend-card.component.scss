@@ -1,0 +1,68 @@
+@import "../../../styles/mixins";
+@import "../../../styles/variables";
+
+$community-info-bg-color: #506C86;
+
+.card {
+    display: grid;
+    grid-template-columns: 100%;
+    margin-bottom: 200px;
+    height: 100%;
+    overflow: hidden;
+
+    &-img {
+        min-width: 100%;
+        img {
+            height: auto;
+        }
+    }
+
+    &-desc {
+        display: none;
+        position: relative;
+        height: 100%;
+        background-color: $community-info-bg-color;
+        color: #fff;
+        padding: 1rem;
+
+        p {
+            padding: 0.7rem;
+            font-size: 1rem;
+        }
+
+        div {
+            display: flex;
+            flex-direction: column;
+
+            a {
+                margin-top: 1rem;
+                width: 100%;
+                text-align: center;
+                color: $primary-color;
+                text-decoration: none;
+
+                &:hover {
+                    color: #fff;
+                }
+            }
+
+            div {
+                display: flex;
+
+                img {
+                    width: 50px;
+                }
+
+                
+            }
+        }
+
+        @include for-desktop {
+            display: block;
+        }
+    }
+
+    @include for-desktop {
+        grid-template-columns: 70% 30%;
+    }
+}

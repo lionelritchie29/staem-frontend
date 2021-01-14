@@ -1,0 +1,54 @@
+@import "../../../styles/mixins";
+
+.featured-card {
+    display: grid;
+    grid-template-columns: 100%;
+
+    &-img {
+        min-width: 100%;
+        img {
+            height: auto;
+        }
+    }
+
+    &-desc {
+        display: none;
+        position: relative;
+        height: 100%;
+        background-color: #101A23;
+        color: #fff;
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: normal;
+            padding: 0.7rem;
+            padding-top: 1.2rem;
+        }
+
+        p {
+            padding: 0.7rem;
+        }
+
+        div {
+            padding: 0.7rem;
+
+            span:first-child { /* Now Available Text */
+                font-size: 1.4rem;
+                display: block;
+            }
+
+            span:nth-child(2) { /*Price */
+                position: absolute;
+                bottom: 0;
+            }
+        }
+
+        @include for-desktop {
+            display: block;
+        }
+    }
+
+    @include for-desktop {
+        grid-template-columns: 70% 30%;
+    }
+}
