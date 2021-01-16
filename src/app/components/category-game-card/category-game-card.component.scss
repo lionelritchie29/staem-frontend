@@ -1,0 +1,68 @@
+@import "../../../styles/variables";
+
+.category-game-card {
+    display: flex;
+    margin-bottom: 0.35rem;
+
+    &-img {
+        width: 30%;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    &-desc {
+        background: $primary-background;
+        width: 70%;
+        display: flex;
+        padding: 0.5rem;
+        
+        &-header {
+            color: #f4f4f4;
+            width: 70%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            h5 {
+                font-weight: normal;
+                font-size: 1.1rem;
+            }
+
+            div {
+                color: #777;
+            }
+        }
+
+        &-detail {
+            color: $secondary-color;
+            width: 30%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}
+
+.active {
+    background-color: $secondary-color-light;
+    color: #333;
+    cursor: pointer;
+
+    .category-game-card-desc-header {
+        h5 {
+            color: #333;
+        }
+
+        div {
+            span {
+                color: #333;
+            }
+        }
+    }
+
+    .category-game-card-desc-detail {
+        color: #333;
+    }
+}

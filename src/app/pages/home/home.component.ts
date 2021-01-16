@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  gameCategories: string[] = ["New and Trending", "Top Sellers", "Specials"];
+
   constructor() { }
 
   ngOnInit(): void {

@@ -15,7 +15,11 @@ import { CommunityRecommendComponent } from './components/community-recommend/co
 import { CommunityRecommendCardComponent } from './components/community-recommend-card/community-recommend-card.component';
 import { GraphQLModule } from './graphql.module';
 import { HttpClientModule } from '@angular/common/http';
-
+import { CategoryTabsComponent } from './components/category-tabs/category-tabs.component';
+import { CategoryTabComponent } from './components/category-tab/category-tab.component';
+import { CategoryTabBodyComponent } from './components/category-tab-body/category-tab-body.component';
+import { CategoryGameCardComponent } from './components/category-game-card/category-game-card.component';
+import { SearchGameComponent } from './pages/search-game/search-game.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +32,12 @@ import { HttpClientModule } from '@angular/common/http';
     SpecialOffersComponent,
     SpecialOffersCardComponent,
     CommunityRecommendComponent,
-    CommunityRecommendCardComponent
+    CommunityRecommendCardComponent,
+    CategoryTabsComponent,
+    CategoryTabComponent,
+    CategoryTabBodyComponent,
+    CategoryGameCardComponent,
+    SearchGameComponent,
   ],
   imports: [
     BrowserModule,

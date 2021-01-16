@@ -1,0 +1,34 @@
+<div [hidden]="!active">
+    <div class="category-tab-body">
+        <div class="category-tab-body-games">
+            <div class="category-tab-body-games-header">
+                <div>
+                    See More: 
+                    <button>New Releases</button>
+                </div>
+            </div>
+
+            <div class="category-tab-body-games-cards">
+                <app-category-game-card (openSummary)="onOpenSummary($event)" *ngFor="let game of games" [game]="game"></app-category-game-card>
+            </div>
+        </div>
+    
+        <div class="category-tab-body-summary" *ngIf="currentActiveGame">
+            <h3>{{currentActiveGame.title}}</h3>
+            <div class="category-tab-body-summary-review"></div>
+            
+            <div class="category-tab-body-summary-tags">
+                <span *ngFor="let tag of currentActiveGame.tags">{{tag.name}}</span>
+            </div>
+            
+            <div class="category-tab-body-summary-images">
+                <img 
+                    style="width: 100%;"
+                    *ngFor="let img of filteredGameImages" 
+                    src="{{imageBaseUrl + '/' + currentActiveGame.id + '/' + img.url}}" 
+                    alt="{{currentActiveGame.title}}"
+                >
+            </div>
+        </div>
+    </div>
+</div>

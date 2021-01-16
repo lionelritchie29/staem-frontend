@@ -1,0 +1,23 @@
+@import "../../../styles/variables";
+
+ul{
+    display: flex;
+
+    li {
+        list-style: none;
+        color: $secondary-color;
+        cursor: pointer;
+        padding: 0.25rem 0.5rem;
+        border-radius: 0.25rem;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        &:hover {
+            color: #fff;
+        }
+    }
+}
+
+.active {
+    background: $secondary-background-light;
+    // background: red;
+}

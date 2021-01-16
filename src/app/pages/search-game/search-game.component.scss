@@ -1,0 +1,15 @@
+@import "../../../styles/mixins";
+
+#search-game { 
+    display: grid;
+    grid-template-columns: 100%;
+    padding-top: 1.5rem;
+
+    app-sidebar{
+        display: none;
+    
+        @include for-desktop {
+            display: block;
+        }
+    }
+}

@@ -4,6 +4,9 @@
         <app-search-bar></app-search-bar>
         <app-featured></app-featured>
         <app-special-offers></app-special-offers>
-        <app-community-recommend></app-community-recommend>
-    </section>
+        <!-- <app-community-recommend></app-community-recommend> -->
+        <app-category-tabs>
+          <app-category-tab *ngFor="let title of gameCategories" tabTitle="{{ title }}"></app-category-tab>
+        </app-category-tabs>
+      </section>
 </section>
