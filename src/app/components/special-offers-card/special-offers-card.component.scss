@@ -34,17 +34,20 @@ $price-tag-bg-color : #173041;
                 background-color: $price-tag-bg-color;
                 height: inherit;
                 color: #666;
-                text-decoration: line-through;
                 display: flex;
                 flex-direction: column;
                 padding: 0.2rem 0.5rem;
                 font-size: 0.8rem;
                 
+                span:first-child{ // real price
+                    text-decoration: line-through;
+                }
                 
-                span {
+                span:nth-child(2) { //discount price
                     margin-left: 0.2rem;
                     font-size: 0.9rem;
                     color: $secondary-color;
+                    text-decoration: none !important;
                 }
             }
         }

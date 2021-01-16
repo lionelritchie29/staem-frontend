@@ -1,17 +1,17 @@
 <div>
     <section class="featured-card">
         <div class="featured-card-img">
-            <img src="https://via.placeholder.com/600x300" style="width: 100%;" alt="">
+            <img src="{{imageUrl}}" style="width: 100%;" alt="">
         </div>
     
         <div class="featured-card-desc">
-            <h2>Rust</h2>
+            <h2>{{ game.title }}</h2>
             <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur sapiente hic natus expedita laudantium consequatur totam. Consectetur voluptates praesentium nobis numquam hic velit nemo, mollitia nisi fuga ipsum maiores, iste, repellat inventore repudiandae omnis sapiente architecto eligendi? Unde, consectetur eaque.
+                {{ game.description }}
             </p>
             <div>
                 <span>Now Available</span>
-                <span>Rp 115 999</span>
+                <span>Rp {{ game.price }}</span>
             </div>
         </div>
     </section>

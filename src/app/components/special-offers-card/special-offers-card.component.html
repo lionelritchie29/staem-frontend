@@ -1,16 +1,16 @@
 <div class="card">
-    <div class="card-img">
-        <img src="https://via.placeholder.com/600x300" width="100%" alt="">
-    </div>
+    <a href="#" class="card-img" title="{{ game.title }}">
+        <img src="{{ imageUrl }}" width="100%" alt="">
+    </a>
 
     <div class="card-info">
         <div class="card-info-price-tag">
             <div>
-                -80%
+                -{{sale.discount}}%
             </div>
             <div>
-                Rp 678 800
-                <span>Rp 123 800</span>
+                <span>Rp {{game.price}}</span>
+                <span>Rp {{ (game.price * (100 - sale.discount)) / 100 }}</span>
             </div>
         </div>
     </div>

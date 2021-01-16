@@ -1,3 +1,5 @@
+@import "../../../styles/mixins";
+
 section {
     margin-top: 2rem;
 
@@ -7,13 +9,25 @@ section {
         font-size: 1.2rem;
         margin-bottom: 0.75rem;
     }
+    
+    .main-slider {
+        position: relative;
+        
+        @include slider-arrow-style;
 
-    .slider-container {
-        // width: 100%;
-        overflow: auto;
-
-        &-images {
-            // display: flex;
+        &-container {
+            width: 100%;
+            overflow: hidden;
+    
+            &-images {
+                width: 100%;
+                display: flex;
+                transition: all 0.5s;
+                
+                app-featured-card {
+                    min-width: calc(100%);
+                }
+            }
         }
-    }
+    }    
 }

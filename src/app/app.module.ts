@@ -13,6 +13,8 @@ import { SpecialOffersComponent } from './components/special-offers/special-offe
 import { SpecialOffersCardComponent } from './components/special-offers-card/special-offers-card.component';
 import { CommunityRecommendComponent } from './components/community-recommend/community-recommend.component';
 import { CommunityRecommendCardComponent } from './components/community-recommend-card/community-recommend-card.component';
+import { GraphQLModule } from './graphql.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { CommunityRecommendCardComponent } from './components/community-recommen
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    GraphQLModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

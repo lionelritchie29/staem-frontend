@@ -1,20 +1,20 @@
 @import "../../../styles/mixins";
 
 .featured-card {
-    display: grid;
-    grid-template-columns: 100%;
+    display: flex;
 
     &-img {
-        min-width: 100%;
+        width: 70%;
         img {
             height: auto;
         }
     }
 
     &-desc {
+        width: 30%;
         display: none;
         position: relative;
-        height: 100%;
+        height: inherit;
         background-color: #101A23;
         color: #fff;
 
@@ -39,16 +39,12 @@
 
             span:nth-child(2) { /*Price */
                 position: absolute;
-                bottom: 0;
+                bottom: 1rem;
             }
         }
 
         @include for-desktop {
             display: block;
         }
-    }
-
-    @include for-desktop {
-        grid-template-columns: 70% 30%;
     }
 }

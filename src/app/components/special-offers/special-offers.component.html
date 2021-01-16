@@ -1,20 +1,19 @@
 <section>
     <h1>Special Offers</h1>
     
-    <div>
-        <div>
-            <app-special-offers-card></app-special-offers-card>
-            <app-special-offers-card></app-special-offers-card>
+    <div class="card-container">
+        <div class="arrow-left">
+            <div (click)="OnArrowLeftClick()"><i class="fas fa-arrow-left"></i></div>
+        </div>
+        
+        <div class="card-container-outer">
+            <div class="card-container-outer-inner">
+                <app-special-offers-card *ngFor="let game of gamesOnSale; let i = index" [game]="game" [sale]="gameSales[i]"></app-special-offers-card>
+            </div>
         </div>
 
-        <div>
-            <app-special-offers-card></app-special-offers-card>
-            <app-special-offers-card></app-special-offers-card>
-        </div>
-
-        <div>
-            <app-special-offers-card></app-special-offers-card>
-            <app-special-offers-card></app-special-offers-card>
+        <div class="arrow-right">
+            <div (click)="OnArrowRightClick()"><i class="fas fa-arrow-right"></i></div>
         </div>
     </div>
 </section>

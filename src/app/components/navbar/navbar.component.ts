@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { unlink } from 'fs';
 
 @Component({
   selector: 'app-navbar',

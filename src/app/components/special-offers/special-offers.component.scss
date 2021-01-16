@@ -1,5 +1,9 @@
+@use '../../../styles/variables';
+@import '../../../styles/mixins';
+
 section {
     margin-top: 2rem;
+    margin-bottom: 5rem;
 
     h1 {
         color: #fff;
@@ -8,14 +12,40 @@ section {
         margin-bottom: 0.75rem; 
     }
 
-    div {
+    .card-container {
         display: flex;
-        overflow: auto;
+        position: relative;
 
-        div {
-            display: grid;
-            grid-template-columns: 1fr;
-            grid-template-rows: repeat(2, 1fr);
+        @include slider-arrow-style;
+
+        &-outer {
+            overflow: auto;
+
+            &-inner {
+                display: flex;
+                width: 100%;
+                transition: all 0.5s;
+    
+                app-special-offers-card{
+                    min-width: calc(100%);
+    
+                    @include for-tablet {
+                        min-width: calc(50%);
+                    }
+    
+                    @include for-desktop {
+                        min-width: calc(33.3% + 2px);
+                    }
+                }
+            }
+
+            @include for-desktop{
+                overflow: hidden;
+            }
         }
+    }
+
+    @include for-desktop {
+        margin-bottom: 0;
     }
 }
