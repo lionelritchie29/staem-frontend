@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { GLOBALS } from 'src/app/globals';
 import { Game } from 'src/app/models/game';
+import { CategoryTabComponent } from '../category-tab/category-tab.component';
 
 @Component({
   selector: 'app-category-game-card',
@@ -15,7 +16,7 @@ export class CategoryGameCardComponent implements OnInit {
   isActive:boolean = false;
   imageUrl: string;
 
-  constructor() { }
+  constructor(public tabParent: CategoryTabComponent) { }
 
   ngOnInit(): void {
     this.imageUrl = `${GLOBALS.IMAGE_ENDPOINT}/games/${this.game.id}/header.jpg`;

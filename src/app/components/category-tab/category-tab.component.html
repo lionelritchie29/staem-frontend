@@ -9,7 +9,11 @@
             </div>
 
             <div class="category-tab-body-games-cards">
-                <app-category-game-card (openSummary)="onOpenSummary($event)" *ngFor="let game of games" [game]="game"></app-category-game-card>
+                <app-category-game-card 
+                    (openSummary)="onOpenSummary($event)" 
+                    *ngFor="let game of games" 
+                    [game]="game"
+                ></app-category-game-card>
             </div>
         </div>
     

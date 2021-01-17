@@ -1,0 +1,164 @@
+@import "../../../styles/variables";
+@import "../../../styles/mixins";
+
+.search-game-card {
+    display: flex;
+    margin-bottom: 0.35rem;
+    background: $primary-background;
+    min-height: 3rem;
+    position: relative;
+    cursor: pointer;
+
+    &-img {
+        width: 30%;
+
+        img {
+            width: 100%;
+        }
+
+        @include for-tablet{
+            width: 17.5%;
+        }
+    }
+
+    &-desc {
+        background: $primary-background;
+        width: 82.5%;
+        display: flex;
+        padding: 0.5rem;
+        position: relative;
+        
+        &-header {
+            color: #f4f4f4;
+            width: 70%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            h5 {
+                font-weight: normal;
+                font-size: 0.8rem;
+
+                @include for-tablet {
+                    font-size: 1.1rem;
+                }
+            }
+
+            div {
+                color: #777;
+            }
+
+            @include for-tablet{
+                flex-direction: row;
+                width: 45%;
+            }
+        }
+
+        &-release-date {
+            width: 100%;
+            bottom: 0.25rem;
+            display: flex;
+            align-items: center;
+            color: #666;
+            position: absolute;
+
+            span:nth-child(2) {
+                margin-left: 2rem;
+                color: $secondary-color;
+            }
+
+            @include for-tablet {
+                position: static;
+                width: 25%;
+            }
+        }
+
+        &-detail {
+            text-align: right;
+            color: #f4f4f4;
+            width: 30%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 1rem;
+        }
+    }
+
+    .overview-card {
+        background: lighten($secondary-color-light, 10);
+        padding: 0.8rem;
+        position: absolute;
+        width: 20rem;
+        right: -20.5rem;
+
+        h5 {
+            font-weight: normal;
+            font-size: 1.1rem;
+        }
+
+        &-date {
+            font-size: 0.8rem;
+        }
+
+        &-review {
+            height: 2.2rem;
+            background: lighten($primary-background, 10);
+        }
+
+        &-tag-heading {
+            margin-top: 0.75rem;
+        }
+
+        &-tags {
+            margin-top: 0.25rem;
+
+            span {
+                background: #999;
+                color: #f4f4f4;
+                padding: 0.2rem;
+                margin-right: 0.2rem;
+                font-size: 0.8rem;
+                border-radius: 0.2rem;
+            }
+        }
+
+        &-img {
+            margin-top: 0.5rem;
+            img {
+                width: 100%;
+            }
+        }
+
+        .left-arrow{
+            position: absolute;
+            top: 1rem;
+            font-size: 1.3rem;
+            left: -1rem;
+            color: lighten($secondary-color-light, 10);
+        }
+    }
+}
+
+.active {
+    background-color: $secondary-color-light;
+    color: #333;
+
+    .category-game-card-desc-header {
+        h5 {
+            color: #333;
+        }
+
+        div {
+            span {
+                color: #333;
+            }
+        }
+    }
+
+    .category-game-card-desc-detail {
+        color: #333;
+    }
+
+}
+
+

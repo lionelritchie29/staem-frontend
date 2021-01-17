@@ -1,15 +1,117 @@
+@import "../../../styles/variables";
 @import "../../../styles/mixins";
 
 #search-game { 
-    display: grid;
-    grid-template-columns: 100%;
     padding-top: 1.5rem;
+    width: 100%;
+    margin: 0 auto;
+    min-height: 100vh;
+    padding-bottom: 25rem;
 
-    app-sidebar{
-        display: none;
+    @include sidebarGlobalStyling;
     
-        @include for-desktop {
-            display: block;
+    .search-feature-banner {
+        width: 100%;
+        margin-top: 1.75rem;
+
+        img {
+            width: 100%;
         }
     }
+    
+    .search-result-container {
+        margin-top: 1.5rem;
+        display: flex;
+        
+        &-left {
+            width: 100%;
+
+            &-search-container {
+                background: $primary-background;
+                padding: 0.5rem;
+                margin-bottom: 0.3rem;
+                display: flex;
+                justify-content: space-between;
+
+                div {
+                    width: 70%;
+                    input {
+                        width: 50%;
+                        padding: 0.4rem 0.25rem;
+                        border: none;
+                        border-radius: 0.2rem;
+                    }
+
+                    button {
+                        padding: 0.4rem 0.75rem;
+                        margin-left: 0.5rem;
+                        background-color: $secondary-background-light;
+                        color: $secondary-color;
+                        border: none;
+                        cursor: pointer;
+                        border-radius: 0.2rem;
+
+                        &:hover{ 
+                            background-color: lighten($secondary-background-light, 15);
+                        }
+                    }
+                }
+
+                span {
+                    color: #F4F4F4;
+                    margin-top: 0.3rem;
+                    margin-right: 1rem;
+                }
+            }
+
+            @include for-desktop {
+                width: 75%;
+            }
+        }
+
+        &-right {
+            display: none;
+            width: 0;
+            margin-left: 0.75rem;
+            color: lighten($secondary-color, 20);
+
+            &-price-filter{
+                input {
+                    width: 100%;
+                }
+
+                p {
+                    margin: 0.5rem 0;
+                    text-align: center;
+                }
+            }
+
+            &-tag-filter, &-category-filter {
+                width: 100%;
+
+                div{
+                    margin-bottom: 0.5rem;
+                    input {
+                        margin-right: 0.5rem;
+                    }
+                }
+            }
+
+            @include for-desktop {
+                width: 25%;
+                display: block;
+            }
+        }
+    }
+
+    @include for-desktop {
+        width: 70%;
+    }
+}
+
+.result-not-found {
+    color: #F4F4F4;
+    text-align: center;
+    background-color: $primary-background;
+    padding: 2rem 0;
 }

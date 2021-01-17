@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,6 +21,8 @@ import { CategoryTabComponent } from './components/category-tab/category-tab.com
 import { CategoryTabBodyComponent } from './components/category-tab-body/category-tab-body.component';
 import { CategoryGameCardComponent } from './components/category-game-card/category-game-card.component';
 import { SearchGameComponent } from './pages/search-game/search-game.component';
+import { SearchGameCardComponent } from './components/search-game-card/search-game-card.component';
+import { SearchGameFilterCardComponent } from './components/search-game-filter-card/search-game-filter-card.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,12 +41,15 @@ import { SearchGameComponent } from './pages/search-game/search-game.component';
     CategoryTabBodyComponent,
     CategoryGameCardComponent,
     SearchGameComponent,
+    SearchGameCardComponent,
+    SearchGameFilterCardComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     GraphQLModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

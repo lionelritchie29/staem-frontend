@@ -3,6 +3,7 @@
 .category-game-card {
     display: flex;
     margin-bottom: 0.35rem;
+    cursor: pointer;
 
     &-img {
         width: 30%;
@@ -48,7 +49,6 @@
 .active {
     background-color: $secondary-color-light;
     color: #333;
-    cursor: pointer;
 
     .category-game-card-desc-header {
         h5 {

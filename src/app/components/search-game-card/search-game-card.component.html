@@ -1,0 +1,44 @@
+<div class="search-game-card" (mouseenter)="isActive = true" (mouseleave)="isActive = false">
+    <div class="search-game-card-img">
+        <img src="{{headerImageUrl}}" alt="Rust">
+    </div>
+
+    <div class="search-game-card-desc" [class.active]="isActive">
+        <div class="search-game-card-desc-header">
+            <h5>{{game.title}}</h5>
+        </div>
+
+        <div class="search-game-card-desc-release-date">
+            <span>{{game.releasedate}}</span>
+            <span><i class="fas fa-thumbs-up"></i></span>
+        </div>
+
+        <div class="search-game-card-desc-detail">
+            Rp {{game.price}}
+        </div>
+    </div>
+
+
+    <!-- game's overview -->
+    <div 
+        class="overview-card"
+        (mouseenter)="isActive = true" 
+        (mouseleave)="isActive = false" 
+        [hidden]="!isActive"
+    >
+        <h5>{{game.title}}</h5>
+        <p class="overview-card-date">Released: {{game.releasedate}}</p>
+        <div class="overview-card-img">
+            <img src="{{overviewImageUrl}}" alt="{{game.title}}">
+        </div>
+
+        <div class="overview-card-review"></div>
+
+        <p class="overview-card-tag-heading">User tags: </p>
+        <div class="overview-card-tags">
+            <span *ngFor="let tag of game.tags">{{tag.name}}</span>
+        </div>
+
+        <span class="left-arrow">&#9664;</span>
+    </div>
+</div>

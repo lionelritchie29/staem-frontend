@@ -1,5 +1,54 @@
 <section id="search-game">
-    <div>
+    <section>
         <app-search-bar></app-search-bar>
-    </div>
+
+        <div class="search-feature-banner">
+            <img src="../../../assets/images/new_search_feature_banner.png" alt="new search feature banner">
+        </div>
+
+        <section class="search-result-container">
+            <section class="search-result-container-left">
+                <div class="search-result-container-left-search-container">
+                    <div>
+                        <input [(ngModel)]="searchTerm" type="text" placeholder="enter search term or tag">
+                        <button (click)="onSearchBtnClicked()">Search</button>
+                    </div>
+                    <span>{{searchedGameResults.length}} game(s) match</span>
+                </div>
+
+                <div class="search-result-container-left-result">
+                    <div *ngIf="searchedGameResults.length > 0; else elseBlock">
+                        <app-search-game-card *ngFor="let game of searchedGameResults" [game]="game"></app-search-game-card>
+                    </div>
+                    
+                    <ng-template #elseBlock>
+                        <div class="result-not-found">
+                            No games found
+                        </div>
+                    </ng-template>
+                </div>
+            </section>
+
+            <section class="search-result-container-right">
+                <app-search-game-filter-card headerTitle="Narrow by Price" class="search-result-container-right-price-filter">
+                    <input type="range" min="1" max="100" value="50">
+                    <p>Any Price</p>
+                </app-search-game-filter-card>
+
+                <app-search-game-filter-card headerTitle="Narrow by Tag" class="search-result-container-right-tag-filter">
+                    <div *ngFor="let tag of tags">
+                        <input type="checkbox">
+                        <label>{{tag}}</label>
+                    </div>
+                </app-search-game-filter-card>
+
+                <app-search-game-filter-card headerTitle="Narrow by Category" class="search-result-container-right-category-filter">
+                    <div *ngFor="let category of categories">
+                        <input type="checkbox">
+                        <label>{{category}}</label>
+                    </div>
+                </app-search-game-filter-card>
+            </section>
+        </section>
+    </section>
 </section>

@@ -56,3 +56,13 @@
         }
     }
 }
+
+@mixin sidebarGlobalStyling {
+    app-sidebar{
+        display: none;
+    
+        @include for-desktop {
+            display: block;
+        }
+    }
+}

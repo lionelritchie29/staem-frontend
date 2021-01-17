@@ -1,9 +1,16 @@
-<div class="category-game-card">
+<div 
+    class="category-game-card" 
+    (mouseenter)="showGameSummary()" 
+    (mouseleave)="unshowGameSummary()"
+>
     <div class="category-game-card-img">
         <img src="{{imageUrl}}" alt="{{game.title}}">
     </div>
 
-    <div class="category-game-card-desc" [class.active]="isActive" (mouseenter)="showGameSummary()" (mouseleave)="unshowGameSummary()">
+    <div 
+        class="category-game-card-desc" 
+        [class.active]="isActive || this.tabParent.currentActiveGame == this.game" 
+    >
         <div class="category-game-card-desc-header">
             <h5>{{game.title}}</h5>
 

@@ -1,0 +1,19 @@
+$filter-card-primary-color:  #323E4C;; 
+
+.filter-card {
+    width: 100%;
+    margin-bottom: 1rem;
+    
+    &-header {
+        background-color: $filter-card-primary-color;
+        color: #F4F4F4;
+        width: 100%;
+        padding: 0.5rem 0.5rem;
+    }
+
+    &-body {
+        padding: 0.75rem;
+        border: 1px solid $filter-card-primary-color;
+        border-top: none;
+    }
+}
