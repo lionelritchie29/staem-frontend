@@ -86,10 +86,26 @@
                 }
             }
 
-            &-reviews {
+            &-system-req {
                 margin-top: 2rem;
-                background: $primary-background;
-                height: 50rem;
+
+                h2 {
+                    font-weight: normal;
+                    font-size: 1.2rem;
+                    color: #F4F4F4;
+                    border-bottom: 1px solid $secondary-color;
+                    padding-bottom: 0.25rem;
+                    margin-bottom: 1rem;
+                }
+               
+                &-container {
+                    display: flex;
+                    justify-content: space-between;
+                
+                    app-system-req {
+                        width: 47.5%;
+                    }
+                }
             }
         }
 
@@ -111,6 +127,10 @@
             div:nth-child(7) { height: 25rem; }
 
         }
+    }
+
+    .detail-reviews {
+        margin-top: 2rem;
     }
 
     @include sidebarGlobalStyling;

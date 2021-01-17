@@ -1,0 +1,43 @@
+@import "../../../styles/variables";
+
+.game-reviews {
+
+    h2 {
+        font-weight: normal;
+        font-size: 1.2rem;
+        color: #F4F4F4;
+        border-bottom: 1px solid $secondary-color;
+        padding-bottom: 0.25rem;
+        margin-bottom: 1rem;
+    }
+
+    &-container {
+        display: flex;
+
+        &-left {
+            width: 65%;
+            margin-bottom: 0.5rem;
+            h3 {
+                color: #f4f4f4;
+                font-weight: normal;
+                font-size: 1.1rem;
+                
+                span {
+                    font-size: 1.1rem;
+                    color: #888;
+                    margin-left: 1rem;
+                }
+            }
+        }
+
+        &-right {
+            width: 35%;
+
+            h3 {
+                color: #f4f4f4;
+                font-weight: normal;
+                font-size: 1.1rem;
+            }
+        }
+    }
+}

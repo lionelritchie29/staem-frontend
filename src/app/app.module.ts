@@ -25,6 +25,8 @@ import { SearchGameCardComponent } from './components/search-game-card/search-ga
 import { SearchGameFilterCardComponent } from './components/search-game-filter-card/search-game-filter-card.component';
 import { GameDetailComponent } from './pages/game-detail/game-detail.component';
 import { GameDetailCardComponent } from './components/game-detail-card/game-detail-card.component';
+import { SystemReqComponent } from './components/system-req/system-req.component';
+import { GameReviewsComponent } from './components/game-reviews/game-reviews.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,6 +49,8 @@ import { GameDetailCardComponent } from './components/game-detail-card/game-deta
     SearchGameFilterCardComponent,
     GameDetailComponent,
     GameDetailCardComponent,
+    SystemReqComponent,
+    GameReviewsComponent,
   ],
   imports: [
     BrowserModule,

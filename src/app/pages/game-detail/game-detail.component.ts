@@ -28,7 +28,10 @@ export class GameDetailComponent implements OnInit {
       .watch({id: gameId})
       .valueChanges
       .pipe(map(res => res.data))
-      .subscribe(res => this.game = res.game);
+      .subscribe(res => {
+        this.game = res.game
+        // console.log(this.game)
+      });
   }
 
 }

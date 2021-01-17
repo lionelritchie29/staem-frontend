@@ -6,10 +6,8 @@
           <app-game-detail-card [game]="game"></app-game-detail-card>
           
             <div class="wishlist-box">
-                  <button>
-                        Add to your wishlist
-                  </button>
-
+                  <button> Add to your wishlist </button>
+                  
                   <button>
                         View your Queue 
                         <i class="fas fa-arrow-right" style="margin-left: 0.5rem"></i>
@@ -20,7 +18,6 @@
                   <div class="detail-info-left">
                         <div class="detail-info-left-price-box">
                               <p>Buy {{game.title}}</p>
-
                               <div class="price-info">
                                     <div class="price-info-disc">
                                           -30%
@@ -34,19 +31,23 @@
                               </div>
                         </div>
 
-                        <div class="detail-info-left-reviews"></div>
+                        <div class="detail-info-left-system-req">
+                              <h2>SYSTEM REQUIREMENTS</h2>
+
+                              <div class="detail-info-left-system-req-container">
+                                    <app-system-req [req]="game.systemReq[1]" ></app-system-req>
+                                    <app-system-req [req]="game.systemReq[0]"></app-system-req>
+                              </div>
+                        </div>
                   </div>
 
                   <div class="detail-info-right">
                         <div></div>
                         <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
                   </div>
             </section>
+
+            <app-game-reviews class="detail-reviews"></app-game-reviews>
 
         </section>
   </section>

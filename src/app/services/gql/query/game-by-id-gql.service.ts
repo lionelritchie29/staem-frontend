@@ -27,6 +27,17 @@ export class GameByIdGqlService extends Query<any>{
         tags{
           id,
           name
+        },
+        systemReq{
+          note,
+          isRecommended,
+          note,
+          operatingSystem,
+          processor,
+          memory,
+          graphics,
+          directX,
+          storage
         }
       }
     }

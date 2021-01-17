@@ -1,4 +1,4 @@
-<div class="search-game-card" (mouseenter)="isActive = true" (mouseleave)="isActive = false">
+<a routerLink="/game/{{game.id}}" class="search-game-card" (mouseenter)="isActive = true" (mouseleave)="isActive = false">
     <div class="search-game-card-img">
         <img src="{{headerImageUrl}}" alt="Rust">
     </div>
@@ -41,4 +41,4 @@
 
         <span class="left-arrow">&#9664;</span>
     </div>
-</div>
+</a>

@@ -1,20 +1,23 @@
 <div class="detail-card">
     <div class="detail-card-left">
         <div class="detail-card-left-main-img">
-            <img src="{{ gameImagesUrl[0] }}" alt="{{ game.title }}">
+            <img src="{{ currentShowingImgUrl }}" alt="{{ game.title }}">
         </div>
 
         <div class="detail-card-left-container">
             <div class="detail-card-left-container-images">
-                <img *ngFor="let imgUrl of gameImagesUrl" src="{{ imgUrl }}" alt="{{ game.title }}">
+                <div *ngFor="let img of gameImagesUrl" (click)="onPreviewImageClicked(img)">
+                    <img [class.slideshow-active]="img.active" src="{{ img.url }}" alt="{{ game.title }}">
+                    <span>	&#9650;</span>
+                </div>
             </div>
         </div> 
 
         <div class="detail-card-left-nav">
-            <button class="prev-btn">
+            <button class="prev-btn" (click)="goToPrevImage()">
                 <i class="fas fa-angle-left"></i>
             </button>
-            <button class="next-btn">
+            <button class="next-btn" (click)="goToNextImage()">
                 <i class="fas fa-angle-right"></i>
             </button>
         </div>
