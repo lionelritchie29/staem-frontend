@@ -23,6 +23,8 @@ import { CategoryGameCardComponent } from './components/category-game-card/categ
 import { SearchGameComponent } from './pages/search-game/search-game.component';
 import { SearchGameCardComponent } from './components/search-game-card/search-game-card.component';
 import { SearchGameFilterCardComponent } from './components/search-game-filter-card/search-game-filter-card.component';
+import { GameDetailComponent } from './pages/game-detail/game-detail.component';
+import { GameDetailCardComponent } from './components/game-detail-card/game-detail-card.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,6 +45,8 @@ import { SearchGameFilterCardComponent } from './components/search-game-filter-c
     SearchGameComponent,
     SearchGameCardComponent,
     SearchGameFilterCardComponent,
+    GameDetailComponent,
+    GameDetailCardComponent,
   ],
   imports: [
     BrowserModule,

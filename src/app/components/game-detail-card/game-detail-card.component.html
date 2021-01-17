@@ -1,0 +1,53 @@
+<div class="detail-card">
+    <div class="detail-card-left">
+        <div class="detail-card-left-main-img">
+            <img src="{{ gameImagesUrl[0] }}" alt="{{ game.title }}">
+        </div>
+
+        <div class="detail-card-left-container">
+            <div class="detail-card-left-container-images">
+                <img *ngFor="let imgUrl of gameImagesUrl" src="{{ imgUrl }}" alt="{{ game.title }}">
+            </div>
+        </div> 
+
+        <div class="detail-card-left-nav">
+            <button class="prev-btn">
+                <i class="fas fa-angle-left"></i>
+            </button>
+            <button class="next-btn">
+                <i class="fas fa-angle-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="detail-card-right">
+        <div class="detail-card-right-header">
+            <img src="{{gameHeaderImageUrl}}" alt="{{game.title}}">
+        </div>
+
+        <div class="detail-card-right-desc">
+            {{game.description}}
+        </div>
+
+        <div class="detail-card-right-detail">
+            <div class="detail-card-right-detail-title">
+                <span>ALL REVIEWS</span>
+                <span>RELEASE DATE</span>
+                <span>DEVELOPER</span>
+                <span>PUBLISHER</span>
+            </div>
+
+            <div class="detail-card-right-detail-content">
+                <span><a href="">Overwhelmingly Possitive</a></span>
+                <span>{{game.releasedate}}</span>
+                <span><a href="#">{{game.developer.name}}</a></span>
+                <span><a href="#">{{game.publisher.name}}</a></span>
+            </div>
+        </div> 
+
+        <div class="detail-card-right-tags">
+            <p>Popular user-defined tags for this product</p>
+            <span *ngFor="let tag of game.tags">{{tag.name}}</span>
+        </div>
+    </div>
+</div>

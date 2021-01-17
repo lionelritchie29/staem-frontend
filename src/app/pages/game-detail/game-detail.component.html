@@ -1,0 +1,52 @@
+<section id="detail">
+      <section *ngIf="game">
+          <app-search-bar></app-search-bar>
+          
+          <h1>{{game.title}}</h1>
+          <app-game-detail-card [game]="game"></app-game-detail-card>
+          
+            <div class="wishlist-box">
+                  <button>
+                        Add to your wishlist
+                  </button>
+
+                  <button>
+                        View your Queue 
+                        <i class="fas fa-arrow-right" style="margin-left: 0.5rem"></i>
+                  </button>
+            </div>
+
+            <section class="detail-info">
+                  <div class="detail-info-left">
+                        <div class="detail-info-left-price-box">
+                              <p>Buy {{game.title}}</p>
+
+                              <div class="price-info">
+                                    <div class="price-info-disc">
+                                          -30%
+                                    </div>
+                                    <div class="price-info-price">
+                                          Rp {{game.price}}
+                                    </div>
+                                    <button class="price-info-add-cart">
+                                          Add to Cart
+                                    </button>
+                              </div>
+                        </div>
+
+                        <div class="detail-info-left-reviews"></div>
+                  </div>
+
+                  <div class="detail-info-right">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                  </div>
+            </section>
+
+        </section>
+  </section>
