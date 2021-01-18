@@ -34,4 +34,8 @@ export class GameDetailComponent implements OnInit {
       });
   }
 
+  addToCart() {
+    console.log(this.game)
+  }
+
 }

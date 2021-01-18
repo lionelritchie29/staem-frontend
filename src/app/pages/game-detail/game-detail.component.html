@@ -25,7 +25,7 @@
                                     <div class="price-info-price">
                                           Rp {{game.price}}
                                     </div>
-                                    <button class="price-info-add-cart">
+                                    <button (click)="addToCart()" class="price-info-add-cart">
                                           Add to Cart
                                     </button>
                               </div>
@@ -47,7 +47,7 @@
                   </div>
             </section>
 
-            <app-game-reviews class="detail-reviews"></app-game-reviews>
+            <app-game-reviews [currentGameId]="game.id" class="detail-reviews"></app-game-reviews>
 
         </section>
   </section>

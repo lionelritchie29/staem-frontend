@@ -16,11 +16,11 @@
 
         &-left {
             width: 65%;
-            margin-bottom: 0.5rem;
             h3 {
                 color: #f4f4f4;
                 font-weight: normal;
                 font-size: 1.1rem;
+                margin-bottom: 0.5rem;
                 
                 span {
                     font-size: 1.1rem;
@@ -32,11 +32,13 @@
 
         &-right {
             width: 35%;
+            margin-left: 1rem;
 
             h3 {
                 color: #f4f4f4;
                 font-weight: normal;
                 font-size: 1.1rem;
+                margin-bottom: 0.5rem;
             }
         }
     }

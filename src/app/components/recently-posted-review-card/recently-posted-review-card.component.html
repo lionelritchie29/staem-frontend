@@ -1,0 +1,28 @@
+<div class="recently-review-card">
+    <div class="recently-review-card-header">
+        <div class="recently-review-card-header-thumb-up" *ngIf="review.isRecommended">
+            <i class="fas fa-thumbs-up"></i>
+        </div>
+        <div class="recently-review-card-header-thumb-down" *ngIf="!review.isRecommended">
+            <i class="fas fa-thumbs-down"></i>
+        </div>
+        <div class="recently-review-card-header-user">
+            {{ review.user.accountName }}
+        </div>
+    </div>
+
+    <div class="recently-review-card-content">
+        <p class="recently-review-card-content-date">POSTED {{convertedDate}}</p>
+            <p class="recently-review-card-content-body">{{ review.content }}</p>
+            <p>Was this review helpful?</p>
+            <div>
+                <button>
+                    <i class="fas fa-thumbs-up"></i> Upvote
+                </button>
+
+                <button>
+                    <i class="fas fa-thumbs-down"></i> Downvote
+                </button>
+            </div>
+    </div>
+</div>

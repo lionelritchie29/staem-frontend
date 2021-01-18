@@ -5,6 +5,6 @@ export interface GameSystemRequirement {
     processor: string
     memory: string
     graphics: string
-    dirextX: string
+    directX: string
     storage: string
 }
