@@ -6,6 +6,7 @@ import { GameImage } from 'src/app/models/game-image';
 import { AllRecentlyPublishedGameGqlService } from 'src/app/services/gql/query/all-recently-published-game-gql.service';
 import { AllSpecialCategoryGameGqlService } from 'src/app/services/gql/query/all-special-category-game-gql.service';
 import { AllSpecialOffersGqlService } from 'src/app/services/gql/query/all-special-offers-gql.service';
+import { AllTopSellerGamesGqlService } from 'src/app/services/gql/query/all-top-seller-games-gql.service';
 import { CategoryTabsComponent } from '../category-tabs/category-tabs.component';
 
 @Component({
@@ -26,7 +27,7 @@ export class CategoryTabComponent implements OnInit, AfterContentInit {
   constructor(
     private tabs: CategoryTabsComponent,
     private allRecentlyPublishedGameGqlService: AllRecentlyPublishedGameGqlService,
-    private allTopSeller: AllSpecialOffersGqlService,
+    private allTopSellerGamesGqlService: AllTopSellerGamesGqlService,
     private allSpecialCategoryGameGqlService: AllSpecialCategoryGameGqlService,
   ) { }
 
@@ -61,10 +62,10 @@ export class CategoryTabComponent implements OnInit, AfterContentInit {
   }
 
   getTopSellerGames(): void {
-    this.allTopSeller
+    this.allTopSellerGamesGqlService
     .watch()
     .valueChanges
-    .pipe(map(res => res.data.gamesOnSale))
+    .pipe(map(res => res.data.topSellerGames))
     .subscribe((res) => {
       this.games = res;
       if(this.currentActiveGame === null) {

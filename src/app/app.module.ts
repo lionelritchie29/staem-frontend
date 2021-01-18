@@ -31,6 +31,7 @@ import { HelpfulReviewCardComponent } from './components/helpful-review-card/hel
 import { RecentlyPostedReviewCardComponent } from './components/recently-posted-review-card/recently-posted-review-card.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { CartCardComponent } from './components/cart-card/cart-card.component';
+import { ConfirmModalComponent } from './components/confirm-modal/confirm-modal.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -59,6 +60,7 @@ import { CartCardComponent } from './components/cart-card/cart-card.component';
     RecentlyPostedReviewCardComponent,
     CartComponent,
     CartCardComponent,
+    ConfirmModalComponent,
   ],
   imports: [
     BrowserModule,

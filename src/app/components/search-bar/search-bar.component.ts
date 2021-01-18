@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-search-bar',
@@ -9,10 +10,15 @@ import { Router } from '@angular/router';
 export class SearchBarComponent implements OnInit {
   
   searchTerm: string = '';
+  cartLength: number = 0;
 
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router,
+    private cartService: CartService
+  ) { }
 
   ngOnInit(): void {
+    this.cartLength = this.cartService.get().length;
   }
 
   onSearchButtonClicked(): void {

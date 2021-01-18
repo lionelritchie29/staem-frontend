@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { getGameImageUrl } from 'src/app/globals';
 import { Game } from 'src/app/models/game';
 import { CartService } from 'src/app/services/cart.service';
+import { RemoveCartModalService } from 'src/app/services/remove-cart-modal.service';
 
 @Component({
   selector: 'app-cart-card',
@@ -14,8 +15,10 @@ export class CartCardComponent implements OnInit {
   imageUrl: string = '';
 
   constructor(
-    private cartService: CartService
-  ) { }
+    private cartService: CartService,
+    private removeCartModalService: RemoveCartModalService
+  ) { 
+  }
 
   ngOnInit(): void {
     this.getHeaderImgUrl();
@@ -31,8 +34,8 @@ export class CartCardComponent implements OnInit {
   }
 
   onRemoveBtnClicked(gameId: number): void {
-    console.log(gameId);
-    this.cartService.remove(gameId);
+    this.removeCartModalService.setIsOpen(true);
+    this.removeCartModalService.setGameId(gameId);
   }
 
 }

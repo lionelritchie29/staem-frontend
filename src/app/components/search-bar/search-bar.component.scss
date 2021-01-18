@@ -1,7 +1,26 @@
 @import "../../../styles/mixins";
+@import "../../../styles/variables";
 $main-search-bar-color : rgba( 62, 126, 167, 0.8);
 
-div {
+div:nth-child(1) {
+    text-align: right;
+
+    a {
+        background: lighten($primary-green, 10);
+        text-decoration: none;
+        color: #a4d007;
+        border: none;
+        padding: 0.25rem 1.5rem;
+        cursor: pointer;
+        
+        &:hover {
+            background: lighten($primary-green, 15);
+        }
+    }
+}
+
+div:nth-child(2) {
+    margin-top: 0.75rem;
     width: 100%;
     background-color: $main-search-bar-color;    
     display: flex;
@@ -19,9 +38,9 @@ div {
             &::placeholder {
                 color: #333;
             }
-
+            
             @include for-desktop {
-                width: 20%;
+                width: 80%;
             }
         }
 
@@ -31,6 +50,7 @@ div {
             cursor: pointer;
             background-color: darken($main-search-bar-color, 8);
             border: none;
+            height: 100%;
             
             i {
                 font-size: 1.2rem;

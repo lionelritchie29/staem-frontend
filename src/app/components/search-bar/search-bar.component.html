@@ -1,8 +1,13 @@
-<div>
-    <div class="search-bar">
-        <input [(ngModel)]="searchTerm" type="text" placeholder="search the store" />
-        <button (click)="onSearchButtonClicked()">
-            <i class="fas fa-search"></i>
-        </button>
+<section>
+    <div >
+        <a routerLink="/cart">Cart ({{cartLength}})</a>
     </div>
-</div>
+    <div class="search-bar-container">
+        <div class="search-bar">
+            <input [(ngModel)]="searchTerm" type="text" placeholder="search the store" />
+            <button (click)="onSearchButtonClicked()">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+    </div>
+</section>

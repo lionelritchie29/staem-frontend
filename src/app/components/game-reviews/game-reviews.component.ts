@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { GameReview } from 'src/app/models/game-review';
 import { HelpfulGameReviewsGqlService } from 'src/app/services/gql/query/helpful-game-reviews-gql.service';
-import { RecentlyPostedGameReviewsGqlService } from 'src/app/services/recently-posted-game-reviews-gql.service';
+import { RecentlyPostedGameReviewsGqlService } from 'src/app/services/gql/query/recently-posted-game-reviews-gql.service';
 
 @Component({
   selector: 'app-game-reviews',
