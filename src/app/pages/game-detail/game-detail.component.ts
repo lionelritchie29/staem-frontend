@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { Game } from 'src/app/models/game';
+import { CartService } from 'src/app/services/cart.service';
 import { GameByIdGqlService } from 'src/app/services/gql/query/game-by-id-gql.service';
 
 @Component({
@@ -15,7 +16,8 @@ export class GameDetailComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private gameByIdGqlService: GameByIdGqlService
+    private gameByIdGqlService: GameByIdGqlService,
+    private cartService: CartService
   ) { }
 
   ngOnInit(): void {
@@ -30,12 +32,12 @@ export class GameDetailComponent implements OnInit {
       .pipe(map(res => res.data))
       .subscribe(res => {
         this.game = res.game
-        // console.log(this.game)
       });
   }
 
   addToCart() {
-    console.log(this.game)
+    this.cartService.add(this.game);
+    this.cartService.get();
   }
 
 }

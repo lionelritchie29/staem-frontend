@@ -29,6 +29,8 @@ import { SystemReqComponent } from './components/system-req/system-req.component
 import { GameReviewsComponent } from './components/game-reviews/game-reviews.component';
 import { HelpfulReviewCardComponent } from './components/helpful-review-card/helpful-review-card.component';
 import { RecentlyPostedReviewCardComponent } from './components/recently-posted-review-card/recently-posted-review-card.component';
+import { CartComponent } from './pages/cart/cart.component';
+import { CartCardComponent } from './components/cart-card/cart-card.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,6 +57,8 @@ import { RecentlyPostedReviewCardComponent } from './components/recently-posted-
     GameReviewsComponent,
     HelpfulReviewCardComponent,
     RecentlyPostedReviewCardComponent,
+    CartComponent,
+    CartCardComponent,
   ],
   imports: [
     BrowserModule,

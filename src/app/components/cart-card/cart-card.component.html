@@ -1,0 +1,16 @@
+<div class="cart-card">
+    <div class="cart-card-left">
+        <div class="cart-card-left-img">
+            <img src="{{imageUrl}}" alt="{{cart.title}}">
+        </div>
+
+        <a routerLink="/game/{{cart.id}}" class="cart-card-left-title">
+            {{cart.title}}
+        </a>
+    </div>
+
+    <div class="cart-card-right">
+        <span>Rp {{cart.price}}</span>
+        <a href="/cart" (click)="onRemoveBtnClicked(cart.id)">Remove</a>
+    </div>
+</div>

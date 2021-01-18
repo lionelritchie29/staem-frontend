@@ -42,7 +42,6 @@ export class GameReviewsComponent implements OnInit {
     .pipe(map(res => res.data.recentlyPostedReviewByGameId))
     .subscribe(reviews => {
       this.recentlyPostedReviews = reviews;
-      console.log(this.recentlyPostedReviews);
     })
   }
 

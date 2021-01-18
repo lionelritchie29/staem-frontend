@@ -1,0 +1,49 @@
+<section id="cart">
+    <section>
+        <app-search-bar></app-search-bar>
+
+        <h1>YOUR SHOPPING CART</h1>
+
+        <section class="cart-container">
+            <div class="cart-container-left">
+                <app-cart-card *ngFor="let cart of cartItems" [cart]="cart"></app-cart-card>
+
+                <div class="cart-container-left-summary">
+                    <div class="cart-container-left-summary-price">
+                        <span>Estimated Total</span>
+                        <span>Rp {{totalPrice}}</span>
+                    </div>
+                    <p>Is this a purchase for yourself or is it a gift? Select one to continue to checkout.</p>
+                    <div class="cart-container-left-summary-btns">
+                        <button [class.disabled]="cartItems.length == 0">Purchase for myself</button>
+                        <button [class.disabled]="cartItems.length == 0">Purchase as a gift</button>
+                    </div>
+                </div>
+
+                <p> All prices include VAT where applicable </p>
+    
+                <div class="cart-container-left-other">
+                    <a routerLink="/">Continue Shopping</a>
+                    <a href="#">Remove all items</a>
+                </div>
+
+                <h2>DELIVERY</h2>
+                <div class="cart-container-left-delivery">
+                    <div>
+                        <img src="../../../assets/images/ico_steam_cart.png" alt="steam-cart">
+                    </div>
+                    <div>
+                        <span>All digital goods are delivered via the Steam desktop application.</span>
+                        <span>Steam and your games will be available for download at the end of the purchase.</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cart-container-right">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </section>
+    </section>
+</section>

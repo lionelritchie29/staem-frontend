@@ -12,7 +12,6 @@ export class SystemReqComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.req)
   }
 
 }

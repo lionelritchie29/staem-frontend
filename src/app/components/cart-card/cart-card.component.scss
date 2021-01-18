@@ -1,0 +1,52 @@
+.cart-card {
+    display: flex;
+    background: rgba(0,0,0,0.2);
+    padding: 1rem;
+    margin-bottom: 0.4rem;
+    text-decoration: none;
+
+    &-left {
+        width: 75%;
+        display: flex;
+
+        &-img {
+            width: 20%;
+            img {
+                width: 100%;
+            }
+        }
+
+        &-title {
+            color: #c7d5e0;
+            margin-left: 1rem;
+            margin-top: 0.25rem;
+            font-size: 1rem;
+            text-decoration: none;
+        }
+    }
+
+    &-right {
+        width: 25%;
+        display: flex;
+        flex-direction: column;
+        text-align: right;
+        
+        span {
+            color: #F4F4F4;
+            font-size: 1.1rem;
+            margin-top: 0.25rem;
+        }
+
+        a {
+            color: #56707f;
+            font-size: 0.8rem;
+            margin-top: 0.25rem;
+            text-decoration: underline;
+            cursor: pointer;
+
+            &:hover {
+                color: lighten(#56707f, 20)
+            }
+        }
+    }
+}

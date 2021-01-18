@@ -16,7 +16,6 @@ export class RecentlyPostedReviewCardComponent implements OnInit {
 
   ngOnInit(): void {
     const reviewDate = convertDateTimeToDate(this.review.reviewDateTime);
-    console.log(reviewDate.getMonth())
     this.convertedDate = `${reviewDate.getDate()} ${getMonthName(reviewDate.getMonth()+1)}, ${reviewDate.getFullYear()}`
   }
 
