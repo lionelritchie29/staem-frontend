@@ -1,5 +1,8 @@
+@import "../../../styles/mixins";
+@import "../../../styles/variables";
+
 section{
-    margin-top: 2rem;
+    margin: 2rem 0;
 
     h1 {
         color: #fff;
@@ -13,4 +16,25 @@ section{
         font-size: 1.2rem;
         margin-bottom: 0.75rem;
     }
+
+    .community-slider {
+        position: relative;
+        
+        @include slider-arrow-style;
+
+        &-container {
+            width: 100%;
+            overflow: hidden;
+    
+            &-images {
+                width: 100%;
+                display: flex;
+                transition: all 0.5s;
+                
+                app-featured-card {
+                    min-width: calc(100%);
+                }
+            }
+        }
+    }    
 }

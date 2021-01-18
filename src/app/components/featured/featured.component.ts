@@ -22,13 +22,11 @@ export class FeaturedComponent implements OnInit {
       .pipe(map(res => res.data.featuredGames))
       .subscribe(games => {
         this.games = games;
-        // console.log(games);
       })
   }
 
   OnArrowRightClick(): void {
     if(this.rightArrowClickCount != this.games.length) {
-      console.log("red");
       const itemContainer: HTMLElement = document.querySelector(".main-slider-container-images");
       const itemWidth: number = document.querySelector('app-featured-card').clientWidth;
       itemContainer.style.marginLeft = `-${this.rightArrowClickCount * itemWidth}px`;
@@ -39,7 +37,6 @@ export class FeaturedComponent implements OnInit {
 
   OnArrowLeftClick(): void {
     if(this.leftArrowClickCount != 1) {
-      console.log("red");
       const itemContainer: HTMLElement = document.querySelector(".main-slider-container-images");
       const itemWidth: number = document.querySelector('app-featured-card').clientWidth;
       itemContainer.style.marginLeft = `${this.leftArrowClickCount * itemWidth}px`;

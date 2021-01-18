@@ -2,8 +2,20 @@
     <h1>THE COMMUNITY RECOMMENDS</h1>
     <h2>THESE GAMES TODAY</h2>
 
-    <div>
-        <app-community-recommend-card></app-community-recommend-card>
+    <div class="community-slider">
+        <div class="arrow-left">
+            <div (click)="OnArrowLeftClick()"><i class="fas fa-arrow-left"></i></div>
+        </div>
+    
+        <div class="community-slider-container">
+            <div class="community-slider-container-images">
+                <app-featured-card *ngFor="let game of games" [game]="game"></app-featured-card>
+            </div>
+        </div>
+    
+        <div class="arrow-right">
+            <div (click)="OnArrowRightClick()"><i class="fas fa-arrow-right"></i></div>
+        </div>
     </div>
     
 </section>
