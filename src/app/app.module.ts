@@ -32,6 +32,7 @@ import { RecentlyPostedReviewCardComponent } from './components/recently-posted-
 import { CartComponent } from './pages/cart/cart.component';
 import { CartCardComponent } from './components/cart-card/cart-card.component';
 import { ConfirmModalComponent } from './components/confirm-modal/confirm-modal.component';
+import { LoginComponent } from './pages/login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,6 +62,7 @@ import { ConfirmModalComponent } from './components/confirm-modal/confirm-modal.
     CartComponent,
     CartCardComponent,
     ConfirmModalComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

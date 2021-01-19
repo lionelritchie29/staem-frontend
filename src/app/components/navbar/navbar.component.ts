@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { map } from 'rxjs/operators';
+import { UserAccount } from 'src/app/models/user-account';
+import { AuthService } from 'src/app/services/auth.service';
+import { GetUserByIdGqlService } from 'src/app/services/gql/get-user-by-id-gql.service';
 
 @Component({
   selector: 'app-navbar',
@@ -6,6 +10,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
+
+  loggedUser: UserAccount;
 
   languageList: String[] = [
     '简体中文 (Simplified Chinese)',
@@ -24,9 +30,23 @@ export class NavbarComponent implements OnInit {
     'Русский (Russian)',
   ]
 
-  constructor() { }
+  constructor(
+    private getUserByIdGqlService: GetUserByIdGqlService,
+    private authService: AuthService
+  ) { }
 
   ngOnInit(): void {
+    const loggedUserId = this.authService.getLoggedInUserId();
+
+    if (loggedUserId === null) {
+      this.loggedUser = null;
+    } else {
+      this.getUserByIdGqlService
+        .watch({id: loggedUserId})
+        .valueChanges
+        .pipe(map(res => res.data.user))
+        .subscribe(user => this.loggedUser = user);
+    }
   }
 
   showLanguageList(): void {
@@ -37,6 +57,21 @@ export class NavbarComponent implements OnInit {
     } else {
       languageListElm.style.display = 'block';
     }
+  }
+
+  showUserMenuList(): void {
+    const userMenuElm: HTMLElement = document.getElementById('user-menu');
+    
+    if (userMenuElm.style.display === 'block') {
+      userMenuElm.style.display = 'none';
+    } else {
+      userMenuElm.style.display = 'block';
+    }
+  }
+
+  logout(): void {
+    this.authService.logout();
+    window.location.reload();
   }
 
 }

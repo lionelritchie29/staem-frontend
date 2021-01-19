@@ -4,7 +4,7 @@
             <div class="nav-container-left-hamburger">
                 ☰
             </div>
-            <a href="/" class="nav-container-left-logo">
+            <a routerLink="/" class="nav-container-left-logo">
                 <img src="../../../assets/images/logo.svg" height="45" alt="logo">
             </a>
             <ul class="nav-container-left-links">
@@ -24,13 +24,33 @@
             <div></div>
         </div>
         <div class="nav-container-right">
-            <div>
-                <a href="">login</a> |
+            <div *ngIf="!loggedUser" class="guest">
+                <a routerLink="/login">login</a> |
                 <span>
                     <span (click)="showLanguageList()">language ▼</span>
                     <ul id="language-list">
                         <li *ngFor="let lang of languageList">{{ lang }}</li>
                     </ul>
+                </span>
+            </div>
+
+            <div *ngIf="loggedUser" class="logged-in">
+                <div class="logged-in-left">
+                    <span>
+                        <span class="logged-in-left-envelope">2 <i class="fas fa-envelope"></i></span>
+                        <span (click)="showUserMenuList()" class="logged-in-left-name">
+                            <span> {{ loggedUser.accountName }} ▼</span>
+                            <ul id="user-menu">
+                                <li (click)="logout()">logout</li>
+                            </ul>
+                        </span>
+                    </span>
+
+                    <div>{{ loggedUser.walletAmount | currency:"Rp. " }}</div>
+                </div>
+
+                <span class="logged-in-right">
+                    <img src="https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/77/773139ea12123402532e1f8355af2b90e5ef554e_full.jpg" alt="">
                 </span>
             </div>
         </div>

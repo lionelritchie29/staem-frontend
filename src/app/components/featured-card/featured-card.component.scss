@@ -4,14 +4,18 @@
     display: flex;
 
     &-img {
-        width: 70%;
+        width: 100%;
         img {
             height: auto;
+        }
+
+        @include for-desktop {
+            width: 70%;
         }
     }
 
     &-desc {
-        width: 30%;
+        width: 0;
         display: none;
         position: relative;
         height: inherit;
@@ -45,6 +49,7 @@
 
         @include for-desktop {
             display: block;
+            width: 30%;
         }
     }
 }

@@ -3,7 +3,7 @@
 
 #cart { 
     padding-top: 1.5rem;
-    width: 100%;
+    width: 90%;
     margin: 0 auto;
     min-height: 100vh;
 
@@ -158,7 +158,7 @@
     }
 
     @include for-desktop {
-        width: 70%;
+        width: 65%;
     }
 }
 

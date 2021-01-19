@@ -60,7 +60,7 @@ nav {
 
            @include for-desktop {
                display: block;
-                div {
+                .guest {
                     font-size: 0.7rem;
                     a {
                         color: $primary-color;
@@ -114,6 +114,73 @@ nav {
             display: flex;
             justify-content: space-between;
             width: 65%;
+        }
+    }
+}
+
+.logged-in {
+    display: flex;
+    justify-content: flex-end;
+
+    &-left {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+
+        &-envelope {
+            background: $primary-green;
+            padding: 0.25rem;
+        }
+
+        &-name {
+            position: relative;
+            margin-left: 0.25rem;
+    
+            span{
+                &:hover {
+                    color: #fff;
+                    cursor: pointer;
+                }
+            }
+    
+            ul {
+                z-index: 10;
+                display: none;
+                position: absolute;
+                background-color: $language-box-bg;
+                right: 0;
+                box-shadow: 0 0 12px black;
+                padding: 0.3rem 1rem;
+                width: 17.5rem;
+                margin-top: 0.7rem;
+                transition: all 1s;
+                text-align: right;
+    
+                li {
+                    list-style: none;
+                    margin-bottom: 0.5rem;
+    
+                    &:hover {
+                        color: #fff;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+
+        div {
+            position: absolute;
+            right: 0.5rem;
+            top: 1.5rem;
+        }
+    }
+
+    &-right {
+        margin-left: 0.5rem;
+        width: 15%;
+        
+        img{
+            width: 100%;
         }
     }
 }

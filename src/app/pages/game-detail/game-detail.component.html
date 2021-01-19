@@ -23,7 +23,7 @@
                                           -30%
                                     </div>
                                     <div class="price-info-price">
-                                          Rp {{game.price}}
+                                          {{game.price | currency:"Rp. " }}
                                     </div>
                                     <a routerLink="/cart" (click)="addToCart()" class="price-info-add-cart">
                                           Add to Cart
