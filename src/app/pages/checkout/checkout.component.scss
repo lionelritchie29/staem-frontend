@@ -1,0 +1,14 @@
+@import "../../../styles/mixins";
+
+#checkout { 
+    width: 90%;
+    padding-top: 1.5rem;
+    margin: 0 auto;
+    min-height: 100vh;
+    padding-bottom: 10rem;
+
+    @include for-desktop{
+        // grid-template-columns: 20% 65%;
+        width: 65%;
+    }
+}

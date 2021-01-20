@@ -18,8 +18,7 @@ export class CartComponent implements OnInit {
 
   ngOnInit(): void {
     this.cartItems = this.cartService.get();
-    this.totalPrice = 
-      this.cartItems.reduce((x:number, cart:Game) => x + cart.price, 0)
+    this.totalPrice = this.cartService.getSubTotal();
   }
 
 }

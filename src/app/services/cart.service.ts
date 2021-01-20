@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Game } from '../models/game';
 
 @Injectable({
   providedIn: 'root'
@@ -40,6 +41,10 @@ export class CartService {
       const filteredGame = storedGame.filter((game) => game.id != gameId);
       localStorage.setItem(this.KEY, JSON.stringify(filteredGame));
     }
+  }
+
+  getSubTotal(): number {
+    return this.get().reduce((x:number, cart:Game) => x + cart.price, 0)
   }
 
 }

@@ -1,0 +1,95 @@
+@import "../../../../styles/variables";
+@import "../../../../styles/mixins";
+
+section {
+    h2 {
+        color: #FFF;
+        font-weight: normal;
+        font-size: 1.75rem;
+        letter-spacing: 1px;
+        margin-bottom: 1rem;
+    }
+
+    .confirm-checkout {
+        display: flex;
+    
+        &-left {
+            width: 70%;
+
+            &-info {
+                background: rgba(0,0,0,0.2);
+                margin-top: 0.3rem;
+                padding: 1rem;
+                color: #F4F4F4;
+                font-size: 1rem;
+
+                &-subtotal, &-total {
+                    span:nth-child(1) {
+                        color: $secondary-color;
+                    }
+
+                    display: flex;
+                    justify-content: space-between;
+                    margin-bottom: 1rem;
+                }
+
+                &-subtotal {
+                    padding-bottom: 1rem;
+                    border-bottom: 1px solid $secondary-color;
+                }
+
+                &-detail {
+                    display: flex;
+                    margin-bottom: 1rem;
+                    border-bottom: 1px solid $secondary-color;
+
+                    &-header {
+                        margin-right: 1.75rem;
+                        
+                        div {
+                            margin-bottom: 0.75rem;
+                        }
+                    }
+
+                    &-content {                        
+                        div {
+                            margin-bottom: 0.75rem;
+                        }
+
+                        div:nth-child(1) {
+                            color: lighten($text-green, 5);
+                        }
+                    }
+                }
+
+                .blue-placeholder {
+                    margin: 0.5rem 0;
+                    height: 3rem;
+                    background: $secondary-color;
+                }
+
+                &-agree {
+                    div:nth-child(2) {
+                        text-align: right;
+                        button {
+                            margin-top: 2rem;
+                            margin-bottom: 3rem;
+                            @include green-button-style
+                        }
+                    }
+                }
+            }
+        
+            .subtotal {
+                color: #FFF;
+                font-size: 1.25rem;
+                text-align: right;
+                margin-top: 1rem;
+            }
+        }
+    
+        &-right {
+            width: 30%;
+        }
+    }
+}

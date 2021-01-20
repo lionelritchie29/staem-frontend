@@ -10,7 +10,7 @@
     </div>
 
     <div class="cart-card-right">
-        <span>Rp {{cart.price}}</span>
+        <span>{{cart.price | currency:"Rp. " }}</span>
         <a (click)="onRemoveBtnClicked(cart.id)">Remove</a>
     </div>
 </div>

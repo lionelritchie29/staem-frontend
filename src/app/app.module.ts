@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -33,6 +33,11 @@ import { CartComponent } from './pages/cart/cart.component';
 import { CartCardComponent } from './components/cart-card/cart-card.component';
 import { ConfirmModalComponent } from './components/confirm-modal/confirm-modal.component';
 import { LoginComponent } from './pages/login/login.component';
+import { CheckoutComponent } from './pages/checkout/checkout.component';
+import { SelfComponent } from './pages/checkout/self/self.component';
+import { GiftComponent } from './pages/checkout/gift/gift.component';
+import { ConfirmCheckoutComponent } from './pages/checkout/confirm-checkout/confirm-checkout.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,13 +68,18 @@ import { LoginComponent } from './pages/login/login.component';
     CartCardComponent,
     ConfirmModalComponent,
     LoginComponent,
+    CheckoutComponent,
+    SelfComponent,
+    GiftComponent,
+    ConfirmCheckoutComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     GraphQLModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
