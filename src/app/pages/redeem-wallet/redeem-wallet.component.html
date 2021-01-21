@@ -1,0 +1,44 @@
+<section id="redeem-wallet">
+      <section>
+          <app-search-bar></app-search-bar>
+          
+          <h1>REDEEM A STEAM GIFT CARD OR WALLET CODE</h1>
+
+          <div class="redeem-wallet-container">
+              <div class="redeem-wallet-container-left">
+                <h2>ENTER YOUR STEAM WALLET CODE TO ADD FUNDS TO YOUR STEAM WALLET</h2>
+                
+                <form [formGroup]="redeemWalletForm">
+                    <label>Steam Wallet Code</label>
+                    <div>
+                        <input type="text" formControlName="code">
+                        <button (click)="onRedeem()">Redeem</button>
+                    </div>
+                </form>
+
+                <p *ngIf="isError" style="color: red;">{{errorMsg}}</p>
+
+                <p>Note: If the gift card you attempt to redeem is not in your currency, it will be automatically converted if redeemable in your region. Not all gift card currencies can be redeemed in all regions.</p>
+              </div>
+
+              <div class="redeem-wallet-container-right">  
+                <div class="redeem-wallet-container-right-card">
+                    <div class="redeem-wallet-container-right-card-header">
+                        Your Steam Account
+                    </div>
+                    <div *ngIf="currentUser" class="redeem-wallet-container-right-card-body">
+                        <div>
+                            <span>Wallet Balance</span>
+                            <span>{{currentUser.walletAmount | currency:"Rp. "}}</span>
+                        </div>
+                        <button>See my account details</button>
+                    </div>
+
+                    <div *ngIf="!currentUser" class="redeem-wallet-container-right-card-body">
+                        You must login first to redeem your wallet code.
+                    </div>
+                </div>
+              </div>
+          </div>
+        </section>
+  </section>

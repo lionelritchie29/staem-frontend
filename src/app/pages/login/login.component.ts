@@ -23,6 +23,9 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    if(this.authService.getLoggedInUserId() !== null) {
+      this.router.navigate(['/']);
+    }
   }
 
   login(e: Event) {

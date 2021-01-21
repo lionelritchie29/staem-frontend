@@ -21,7 +21,6 @@ export class AuthService {
     const token = localStorage.getItem(this.KEY)
 
     if (token === undefined || token === null) {
-      console.log("No user");
       return null;
     }else {
       const encodedPayload = token.split('.')[1];

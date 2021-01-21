@@ -39,6 +39,7 @@ import { SelfComponent } from './pages/checkout/self/self.component';
 import { GiftComponent } from './pages/checkout/gift/gift.component';
 import { ConfirmCheckoutComponent } from './pages/checkout/confirm-checkout/confirm-checkout.component';
 import { RegisterComponent } from './pages/register/register.component';
+import { RedeemWalletComponent } from './pages/redeem-wallet/redeem-wallet.component';
 
 @NgModule({
   declarations: [
@@ -75,6 +76,7 @@ import { RegisterComponent } from './pages/register/register.component';
     GiftComponent,
     ConfirmCheckoutComponent,
     RegisterComponent,
+    RedeemWalletComponent,
   ],
   imports: [
     BrowserModule,

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { map } from 'rxjs/operators';
+import { AuthService } from 'src/app/services/auth.service';
 import { CreateNewUserGqlService } from 'src/app/services/gql/mutation/create-new-user-gql.service';
 
 @Component({
@@ -33,10 +34,14 @@ export class RegisterComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private createNewUserGqlService: CreateNewUserGqlService,
-    private router: Router
+    private router: Router,
+    private authService: AuthService
   ) { }
 
   ngOnInit(): void {
+    if(this.authService.getLoggedInUserId() !== null) {
+      this.router.navigate(['/']);
+    }
   }
 
   onContinue() {

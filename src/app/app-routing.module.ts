@@ -7,6 +7,7 @@ import { SelfComponent } from './pages/checkout/self/self.component';
 import { GameDetailComponent } from './pages/game-detail/game-detail.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
+import { RedeemWalletComponent } from './pages/redeem-wallet/redeem-wallet.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { SearchGameComponent } from './pages/search-game/search-game.component';
 
@@ -17,6 +18,7 @@ const routes: Routes = [
   {path: 'cart', component: CartComponent},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
+  {path: 'redeem-wallet', component: RedeemWalletComponent},
   {
     path: 'checkout', 
     component: CheckoutComponent,

@@ -150,8 +150,8 @@ nav {
                 background-color: $language-box-bg;
                 right: 0;
                 box-shadow: 0 0 12px black;
-                padding: 0.3rem 1rem;
-                width: 17.5rem;
+                padding: 0.5rem 1rem;
+                width: 10rem;
                 margin-top: 0.7rem;
                 transition: all 1s;
                 text-align: right;
@@ -163,6 +163,20 @@ nav {
                     &:hover {
                         color: #fff;
                         cursor: pointer;
+                    }
+
+                    a {
+                        text-decoration: none;
+                        color: $primary-color;
+
+                        &:hover {
+                            color: #fff;
+                            cursor: pointer;
+                        }
+                    }
+
+                    .account-name {
+                        color: $secondary-color-light;
                     }
                 }
             }
