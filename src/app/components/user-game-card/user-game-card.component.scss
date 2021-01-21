@@ -1,0 +1,18 @@
+@import "../../../styles/variables";
+
+.game-card {
+    padding: 0.5rem;
+    background-color: #222431;
+    display: block;
+
+    &-img {
+        img {
+            width: 100%;
+        }
+    }
+
+    p {
+        padding-top: 0.5rem;
+        color: $secondary-color-light;
+    }
+}

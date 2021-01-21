@@ -1,0 +1,33 @@
+.user-review-card {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.25rem;
+
+    &-img {
+        width: 7.5%;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    &-content {
+        width: 90%;
+
+        h3 {
+            color: #F4F4F4;
+            font-size: 1rem;
+
+            span {
+                color: #666;
+                font-weight: normal;
+            }
+        }
+
+        p {
+            margin-top: 0.5rem;
+            color: #acb2b8;
+            font-size: 1rem;
+        }
+    }
+}

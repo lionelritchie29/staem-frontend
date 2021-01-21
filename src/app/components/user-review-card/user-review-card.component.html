@@ -1,0 +1,17 @@
+<div class="user-review-card">
+    <div class="user-review-card-img">
+        <img src="{{profilePictUrl}}" alt="{{ comment.srcUser.profile.displayName }}">
+    </div>
+
+    <div class="user-review-card-content">
+        <h3>
+            {{ comment.srcUser.profile.displayName}} 
+            <span>
+                {{convertedDate.getDate()}} {{monthStr}}, {{convertedDate.getFullYear()}} 
+                @ 
+                {{convertedDate.getHours()}}:{{convertedDate.getMinutes()}}
+            </span>
+        </h3>
+        <p>{{ comment.content }}</p>
+    </div>
+</div>

@@ -43,6 +43,8 @@ import { RedeemWalletComponent } from './pages/redeem-wallet/redeem-wallet.compo
 import { ProfileComponent } from './pages/profile/profile.component';
 import { BadgeComponent } from './components/badge/badge.component';
 import { FriendCardComponent } from './components/friend-card/friend-card.component';
+import { UserGameCardComponent } from './components/user-game-card/user-game-card.component';
+import { UserReviewCardComponent } from './components/user-review-card/user-review-card.component';
 
 @NgModule({
   declarations: [
@@ -83,6 +85,8 @@ import { FriendCardComponent } from './components/friend-card/friend-card.compon
     ProfileComponent,
     BadgeComponent,
     FriendCardComponent,
+    UserGameCardComponent,
+    UserReviewCardComponent,
   ],
   imports: [
     BrowserModule,

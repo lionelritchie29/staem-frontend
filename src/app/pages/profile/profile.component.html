@@ -16,9 +16,25 @@
         <div class="profile-top-right">
             <div class="profile-top-right-level">Level <span>{{ currentUser.profile.level }}</span></div>
             <app-badge></app-badge>
-            <div class="profile-top-right-edit-btn">
-                <a routerLink="/">Edit Profile</a>
-            </div>
+            <span class="wrap" *ngIf="loggedUser">
+                <div class="profile-top-right-edit-btn" *ngIf="loggedUser.id === currentUser.id;else elseBlock">
+                    <a routerLink="/">Edit Profile</a>
+                </div>
+
+                <div class="profile-top-right-edit-btn">
+                    <a routerLink="/">Report</a>
+                </div>
+    
+                <ng-template #elseBlock>
+                    <div class="profile-top-right-edit-btn" *ngIf="!isFriend">
+                        <a routerLink="/">Add Friend</a>
+                    </div>
+        
+                    <div class="profile-top-right-edit-btn" *ngIf="isFriend">
+                        <a routerLink="/">Message</a>
+                    </div>
+                </ng-template>
+            </span>
         </div>
     </div>
 
@@ -29,6 +45,36 @@
             </div>
 
             <div class="profile-bottom-left-recent"></div>
+
+            <div class="profile-bottom-left-games">
+                <h2>Owned Games</h2>
+                
+                <div>
+                    <app-user-game-card *ngFor="let game of games" [game]="game"></app-user-game-card>
+                </div>
+            </div>
+
+            <div class="profile-bottom-left-comments">
+                <h2>Comments</h2>
+
+                <form>
+                    <div class="profile-bottom-left-comments-input">
+                        <div>
+                            <img src="https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/e4/e47fd13b1f1ec7521ffa9f1b9367f9a0cc71c54d_full.jpg" alt="">
+                        </div>
+    
+                        <textarea></textarea>
+                    </div>
+    
+                    <div class="profile-bottom-left-comments-post-btn">
+                        <button>Post Comment</button>
+                    </div>
+                </form>
+
+                <div>
+                    <app-user-review-card *ngFor="let comment of comments" [comment]="comment"></app-user-review-card>
+                </div>
+            </div>
         </div>
 
         <div class="profile-bottom-right" >
