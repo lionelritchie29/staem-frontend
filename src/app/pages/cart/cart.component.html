@@ -15,7 +15,7 @@
                     </div>
                     <p>Is this a purchase for yourself or is it a gift? Select one to continue to checkout.</p>
                     <div class="cart-container-left-summary-btns">
-                        <button [class.disabled]="cartItems.length == 0">Purchase for myself</button>
+                        <button (click)="onPurchaseSelf()" [class.disabled]="cartItems.length == 0">Purchase for myself</button>
                         <button [class.disabled]="cartItems.length == 0">Purchase as a gift</button>
                     </div>
                 </div>

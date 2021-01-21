@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms'
+import { Router } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { Game } from 'src/app/models/game';
 import { AuthService } from 'src/app/services/auth.service';
@@ -34,6 +35,7 @@ export class SelfComponent implements OnInit {
     private createNewGameTransactionGqlService: CreateNewGameTransactionGqlService,
     private cartService: CartService,
     private authService: AuthService,
+    private router: Router,
   ) { }
 
   ngOnInit(): void {
@@ -68,7 +70,15 @@ export class SelfComponent implements OnInit {
         }
       })
       .pipe(map(res => (<any>res.data).createNewSelfTransaction))
-      .subscribe(isSuccess => console.log(isSuccess));
+      .subscribe(isSuccess => {
+        if(isSuccess) {
+          alert('Transaction success!');
+          this.router.navigate(['/']);
+          this.cartService.clear();
+        }else {
+          alert('Transaction failed :(');
+        }
+      });
   }
 
   createDetails(): any[] {
@@ -82,6 +92,10 @@ export class SelfComponent implements OnInit {
     });
 
     return details;
+  }
+
+  onTransactionAccepted() {
+    this.createTransaction();
   }
 
 }

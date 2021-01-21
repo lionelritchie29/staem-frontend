@@ -24,7 +24,9 @@ export class CartService {
 
   get():any {
     if(localStorage.getItem(this.KEY) != undefined) {
-      return JSON.parse(localStorage.getItem(this.KEY))
+      return JSON.parse(localStorage.getItem(this.KEY));
+    }else{
+      return [];
     }
   }
 
@@ -44,7 +46,12 @@ export class CartService {
   }
 
   getSubTotal(): number {
-    return this.get().reduce((x:number, cart:Game) => x + cart.price, 0)
+    if(localStorage.getItem(this.KEY))
+      return this.get().reduce((x:number, cart:Game) => x + cart.price, 0)
+  }
+
+  clear(): void {
+    localStorage.removeItem(this.KEY);
   }
 
 }

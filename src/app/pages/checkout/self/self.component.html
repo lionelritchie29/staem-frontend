@@ -87,4 +87,4 @@
     </section>
 </div>
 
-<app-confirm-checkout *ngIf="isWalletEnough"></app-confirm-checkout>
+<app-confirm-checkout (transactionAccepted)="onTransactionAccepted()" *ngIf="isWalletEnough"></app-confirm-checkout>

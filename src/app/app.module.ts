@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RecaptchaModule, RecaptchaFormsModule } from 'ng-recaptcha'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -37,6 +38,7 @@ import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { SelfComponent } from './pages/checkout/self/self.component';
 import { GiftComponent } from './pages/checkout/gift/gift.component';
 import { ConfirmCheckoutComponent } from './pages/checkout/confirm-checkout/confirm-checkout.component';
+import { RegisterComponent } from './pages/register/register.component';
 
 @NgModule({
   declarations: [
@@ -72,6 +74,7 @@ import { ConfirmCheckoutComponent } from './pages/checkout/confirm-checkout/conf
     SelfComponent,
     GiftComponent,
     ConfirmCheckoutComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
@@ -79,7 +82,9 @@ import { ConfirmCheckoutComponent } from './pages/checkout/confirm-checkout/conf
     GraphQLModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RecaptchaModule,
+    RecaptchaFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

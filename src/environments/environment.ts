@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  RECAPTCHA_SECRET_KEY: "6LdwezUaAAAAAEra2hudOmj-VhjervqOYYehDxMR",
+  RECAPTCHA_SITE_KEY: "6LdwezUaAAAAAIs0ZcEoUzRhHyTPwycSKv-Mil7C",
 };
 
 /*

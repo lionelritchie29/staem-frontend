@@ -1,4 +1,4 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Game } from 'src/app/models/game';
 import { CartService } from 'src/app/services/cart.service';
 
@@ -9,8 +9,10 @@ import { CartService } from 'src/app/services/cart.service';
 })
 export class ConfirmCheckoutComponent implements OnInit {
 
+  @Output() transactionAccepted: EventEmitter<any> = new EventEmitter();
   cartItems: Game[] = [];
   subTotal: number = 0;
+  agreeFlag: HTMLInputElement;
 
   constructor(private cartService: CartService) { }
 
@@ -20,7 +22,8 @@ export class ConfirmCheckoutComponent implements OnInit {
   }
 
   onPurchase() {
-
+    if(this.agreeFlag === undefined) alert('You must agree to the terms.')
+    else this.transactionAccepted.emit()
   }
 
 }

@@ -36,7 +36,7 @@
 
                 <div class="confirm-checkout-left-info-agree">
                     <div>
-                        <input type="checkbox">
+                        <input type="checkbox" [(ngModel)]="agreeFlag"  [ngModelOptions]="{standalone: true}">
                         I agree to the terms of the Steam Subscriber Agreement (last updated 28 Aug, 2020.)
                     </div>
 
