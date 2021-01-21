@@ -1,0 +1,26 @@
+.badge {
+    background: rgba( 0, 0, 0, 0.3 );
+    padding: 0.5rem 1rem;
+    display: flex;
+
+    &-img {
+        width: 20%;
+        img {
+            width: 100%;
+        }
+    }
+
+    &-info {
+        padding-top: 0.75rem;
+        width: 80%;
+        margin-left: 1rem;
+        
+        span {
+            display: block;
+        }
+
+        span:nth-child(1) {
+            color: #F4F4F4;
+        }
+    }
+}

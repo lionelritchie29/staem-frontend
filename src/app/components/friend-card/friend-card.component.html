@@ -1,0 +1,52 @@
+<a routerLink="/profile/{{ friend.profile.customURL }}" class="friend-card" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">
+    <div class="friend-card-left">
+        <div class="friend-card-left-avatar">
+            <img src="{{ profileImgUrl }}" alt="{{ friend.accountName }}">
+        </div>
+
+        <div class="friend-card-left-info">
+            <span>{{ friend.accountName }}</span>
+            <span>{{ friend.status }}</span>
+        </div>
+    </div>
+
+    <div class="friend-card-right">
+        <div class="friend-card-right-level">
+            {{ friend.profile.level }}
+        </div>
+    </div>
+
+    <div class="friend-card-mini" *ngIf="showMiniProfile">
+        <div class="friend-card-mini-top">
+            <div class="friend-card-mini-top-img">
+                <img src="{{profileImgUrl}}" alt="{{ friend.accountName }}">
+            </div>
+
+            <div class="friend-card-mini-top-header">
+                 <span>{{friend.profile.displayName}}</span>
+                 <span>{{friend.status}}</span>
+            </div>
+        </div>
+
+        <div class="friend-card-mini-bottom">
+            <div class="friend-card-mini-bottom-badge">
+                <div class="friend-card-mini-bottom-badge-img">
+                    <img src="{{ profileImgUrl }}" alt="{{ friend.accountName }}">
+                </div>
+                
+                <div class="friend-card-mini-bottom-badge-info">
+                    <span>Years of Service</span>
+                    <span>400 XP</span>
+                </div>
+            </div>
+
+            <div class="friend-card-mini-bottom-level">
+                <div>
+                    {{friend.profile.level}}
+                </div>
+                
+               <div>Steam Level</div>
+            </div>
+        </div>
+    </div>
+</a>

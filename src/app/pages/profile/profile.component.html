@@ -1,0 +1,42 @@
+<section id="profile" *ngIf="currentUser">
+   <div class="profile-container">
+    <div class="profile-top">
+        <div class="profile-top-left">
+            <div class="profile-top-left-image">
+                <img src="{{profileImgUrl}}" alt="">
+            </div>
+
+            <div class="profile-top-left-bio">
+               <h1>{{ currentUser.accountName }}</h1> 
+               <div>{{ currentUser.profile.displayName }}</div> 
+               <p>{{ currentUser.profile.summary }}</p>
+            </div>
+        </div>
+
+        <div class="profile-top-right">
+            <div class="profile-top-right-level">Level <span>{{ currentUser.profile.level }}</span></div>
+            <app-badge></app-badge>
+            <div class="profile-top-right-edit-btn">
+                <a routerLink="/">Edit Profile</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="profile-bottom">
+        <div class="profile-bottom-left">
+            <div class="profile-bottom-left-header">
+                Recent Activity
+            </div>
+
+            <div class="profile-bottom-left-recent"></div>
+        </div>
+
+        <div class="profile-bottom-right" >
+            <span>Friends</span>
+            <div *ngIf="friends.length > 0">
+                <app-friend-card *ngFor="let friend of friends" [friend]="friend"></app-friend-card>
+            </div>
+        </div>
+    </div>
+   </div>
+</section>

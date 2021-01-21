@@ -15,7 +15,7 @@
                     <a href="#">COMMUNITY</a>
                 </li>
                 <li>
-                    <a href="#">ABOUT</a>
+                    <a routerLink="/redeem-wallet">REDEEM WALLET</a>
                 </li>
                 <li>
                     <a href="#">SUPPORT</a>
@@ -41,7 +41,7 @@
                         <span (click)="showUserMenuList()" class="logged-in-left-name">
                             <span> {{ loggedUser.profile.displayName }} ▼</span>
                             <ul id="user-menu">
-                                <li><a routerLink="/profile/{{loggedUser.accountName}}">View Profile</a></li>
+                                <li><a routerLink="/profile/{{loggedUser.profile.customURL}}">View Profile</a></li>
                                 <li (click)="logout()">logout: <span class="account-name">{{ loggedUser.accountName }}</span></li>
                             </ul>
                         </span>

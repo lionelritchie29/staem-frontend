@@ -40,6 +40,9 @@ import { GiftComponent } from './pages/checkout/gift/gift.component';
 import { ConfirmCheckoutComponent } from './pages/checkout/confirm-checkout/confirm-checkout.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { RedeemWalletComponent } from './pages/redeem-wallet/redeem-wallet.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { BadgeComponent } from './components/badge/badge.component';
+import { FriendCardComponent } from './components/friend-card/friend-card.component';
 
 @NgModule({
   declarations: [
@@ -77,6 +80,9 @@ import { RedeemWalletComponent } from './pages/redeem-wallet/redeem-wallet.compo
     ConfirmCheckoutComponent,
     RegisterComponent,
     RedeemWalletComponent,
+    ProfileComponent,
+    BadgeComponent,
+    FriendCardComponent,
   ],
   imports: [
     BrowserModule,

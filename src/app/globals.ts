@@ -9,6 +9,11 @@ export const getGameImageUrl = (gameId: number, url: string): string => {
     return `${GLOBALS.IMAGE_ENDPOINT}/games/${gameId}/${url}`;
 }
 
+export const getUserImageUrl = (url: string): string => {
+    return `${GLOBALS.IMAGE_ENDPOINT}/avatars/${url}`;
+    // return `${GLOBALS.IMAGE_ENDPOINT}/avatars/default.jpg`;
+} 
+
 export const convertDateTimeToDate = (datetime: string) => {
     return new Date(Date.parse(datetime));
 }
