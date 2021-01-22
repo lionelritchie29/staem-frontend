@@ -94,3 +94,11 @@
         }
     }
 }
+
+@mixin input-dark {
+    background: rgba( 0, 0, 0, 0.2 );
+    color: #909090;
+    border: 1px solid #000;
+    border-radius: 0.25rem;
+    outline: none;
+}

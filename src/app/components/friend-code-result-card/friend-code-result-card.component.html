@@ -1,0 +1,16 @@
+<div class="friend-result-card">
+    <div class="friend-result-card-img">
+        <img src="{{ profileImgUrl }}" alt="">
+    </div>
+
+    <div class="friend-result-card-info">
+        <div>
+            <span>{{user.profile.displayName}}</span>
+            <span><a href="/profile/{{user.profile.customURL}}" target="_blank">Profile Link</a></span>
+            <span>{{ user.accountName }}</span>
+        </div>
+        <div *ngIf="!isFriend">
+            <button (click)="onAdd()">Send Request</button>
+        </div>
+    </div>
+</div>

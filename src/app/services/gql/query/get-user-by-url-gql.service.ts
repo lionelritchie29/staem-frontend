@@ -13,6 +13,7 @@ export class GetUserByUrlGqlService extends Query<any>{
         status,
         suspended,
         walletAmount,
+        code,
         role{
           name
         },

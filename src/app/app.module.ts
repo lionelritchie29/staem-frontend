@@ -50,6 +50,8 @@ import { FriendListComponent } from './pages/friends/friend-list/friend-list.com
 import { AddFriendComponent } from './pages/friends/add-friend/add-friend.component';
 import { PendingInviteComponent } from './pages/friends/pending-invite/pending-invite.component';
 import { FriendListCardComponent } from './components/friend-list-card/friend-list-card.component';
+import { FriendCodeResultCardComponent } from './components/friend-code-result-card/friend-code-result-card.component';
+import { FriendInviteCardComponent } from './components/friend-invite-card/friend-invite-card.component';
 
 @NgModule({
   declarations: [
@@ -97,6 +99,8 @@ import { FriendListCardComponent } from './components/friend-list-card/friend-li
     AddFriendComponent,
     PendingInviteComponent,
     FriendListCardComponent,
+    FriendCodeResultCardComponent,
+    FriendInviteCardComponent,
   ],
   imports: [
     BrowserModule,

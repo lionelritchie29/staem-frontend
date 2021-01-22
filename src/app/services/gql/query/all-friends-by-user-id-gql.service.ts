@@ -14,6 +14,7 @@ export class AllFriendsByUserIdGqlService extends Query<any>{
         status,
         suspended,
         walletAmount,
+        code,
         role{
           name
         },

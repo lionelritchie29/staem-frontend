@@ -1,1 +1,23 @@
-<p>add-friend works!</p>
+<div class="add-friend">
+    <div class="add-friend-header">
+        <h2>ADD A FRIEND</h2>
+    </div>
+
+    <div class="add-friend-content">
+        <h3>Your Friend Code</h3>
+        <div class="add-friend-content-code" *ngIf="currentUserCode">
+            {{currentUserCode}}
+        </div>
+        <p>Enter your friend's Friend Code to invite them to connect.</p>
+        <input 
+            type="text" 
+            placeholder="Enter a Friend Code"
+            [(ngModel)]="inputCode"
+            [ngModelOptions]="{standalone: true}"
+            (ngModelChange)="onChange()"
+        >
+        <div *ngIf="searchedUser">
+            <app-friend-code-result-card (addFriend)="addFriend($event)" [user]="searchedUser"></app-friend-code-result-card>
+        </div>
+    </div>
+</div>

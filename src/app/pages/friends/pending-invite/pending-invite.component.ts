@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { map } from 'rxjs/operators';
+import { FriendRequest } from 'src/app/models/friend-request';
+import { UserAccount } from 'src/app/models/user-account';
+import { AuthService } from 'src/app/services/auth.service';
+import { AllReceivedFriendRequestByIdGqlService } from 'src/app/services/gql/query/all-received-friend-request-by-id-gql.service';
+import { AllSentFriendRequestByIdGqlService } from 'src/app/services/gql/query/all-sent-friend-request-by-id-gql.service';
 
 @Component({
   selector: 'app-pending-invite',
@@ -7,9 +13,35 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PendingInviteComponent implements OnInit {
 
-  constructor() { }
+  receivedFriendRequest: FriendRequest[]  = [];
+  sentFriendRequest: FriendRequest[]  = [];
+
+  constructor(
+    private authService: AuthService,
+    private allReceivedFriendRequestByIdGqlService: AllReceivedFriendRequestByIdGqlService,
+    private allSentFriendRequestByIdGqlService: AllSentFriendRequestByIdGqlService
+  ) { }
 
   ngOnInit(): void {
+    this.getReceived();
+  }
+
+  getReceived(): void {
+    const userId = this.authService.getLoggedInUserId();
+    
+    if (userId) {
+      this.allReceivedFriendRequestByIdGqlService
+        .watch({id: userId})
+        .valueChanges
+        .pipe(map(res => res.data.friendRequestByUserId))
+        .subscribe(received => this.receivedFriendRequest = received);
+
+      this.allSentFriendRequestByIdGqlService
+        .watch({id: userId})
+        .valueChanges
+        .pipe(map(res => res.data.sentFriendRequestById))
+        .subscribe(sent => this.sentFriendRequest = sent);
+    }
   }
 
 }

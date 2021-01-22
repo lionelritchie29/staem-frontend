@@ -1,1 +1,26 @@
-<p>pending-invite works!</p>
+<div class="pending-invite">
+    <div class="pending-invite-header">
+        <h2>RECEIVED INVITES</h2>
+    </div>
+
+    <div *ngIf="receivedFriendRequest.length > 0">
+        <app-friend-invite-card 
+            *ngFor="let req of receivedFriendRequest"
+            [request]="req"
+            [isReceivedRequest]="true"
+        ></app-friend-invite-card>
+    </div>
+
+    <div class="pending-invite-header" style="margin-top: 2rem">
+        <h2>SENT INVITES</h2>
+    </div>
+
+    <div *ngIf="sentFriendRequest.length > 0">
+        <app-friend-invite-card 
+            *ngFor="let req of sentFriendRequest"
+            [request]="req"
+            [isReceivedRequest]="false"
+        ></app-friend-invite-card>
+    </div>
+
+</div>

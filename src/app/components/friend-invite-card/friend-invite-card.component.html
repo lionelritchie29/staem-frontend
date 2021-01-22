@@ -1,0 +1,23 @@
+<div class="invite-card" *ngIf="request">
+    <div class="invite-card-left">
+        <div class="invite-card-left-level">
+            <span>{{request.friend.profile.level}}</span>
+        </div>
+
+        <div class="invite-card-left-info">
+            <div>
+                <img src="{{profileImgUrl}}" alt="{{request.friend.accountName}}">
+            </div>
+            <span><a href="">{{request.friend.accountName}}</a></span>
+        </div>
+    </div>
+
+    <div class="invite-card-right">
+        <ng-template #elseBlock>
+            <button>Accept</button>
+            <button>Decline</button>
+            <button>Ignore</button>
+        </ng-template>
+        <button *ngIf="!isReceivedRequest; else elseBlock">Cancel Invite</button>
+    </div>
+</div>

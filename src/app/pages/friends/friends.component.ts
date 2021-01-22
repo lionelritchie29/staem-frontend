@@ -37,7 +37,6 @@ export class FriendsComponent implements OnInit {
       .valueChanges
       .subscribe(res => {
           this.currentUser = res.data.userByAccountName;
-          console.log(this.currentUser);
           this.profileImgUrl = getUserImageUrl(this.currentUser.profile.profilePictureUrl);
       })
   }
