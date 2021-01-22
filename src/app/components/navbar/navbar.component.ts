@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs/operators';
+import { getUserImageUrl } from 'src/app/globals';
 import { UserAccount } from 'src/app/models/user-account';
 import { AuthService } from 'src/app/services/auth.service';
 import { GetUserByIdGqlService } from 'src/app/services/gql/get-user-by-id-gql.service';
@@ -12,6 +13,7 @@ import { GetUserByIdGqlService } from 'src/app/services/gql/get-user-by-id-gql.s
 export class NavbarComponent implements OnInit {
 
   loggedUser: UserAccount;
+  loggedUserImgUrl: string;
 
   languageList: String[] = [
     '简体中文 (Simplified Chinese)',
@@ -45,7 +47,11 @@ export class NavbarComponent implements OnInit {
         .watch({id: loggedUserId})
         .valueChanges
         .pipe(map(res => res.data.user))
-        .subscribe(user => this.loggedUser = user);
+        .subscribe(user => {
+          this.loggedUser = user
+          this.loggedUserImgUrl = 
+            getUserImageUrl(this.loggedUser.profile.profilePictureUrl);
+        });
     }
   }
 

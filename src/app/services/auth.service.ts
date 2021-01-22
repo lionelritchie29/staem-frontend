@@ -1,7 +1,12 @@
 import { Injectable } from '@angular/core';
-import { map } from 'rxjs/operators';
+import { Apollo, gql } from 'apollo-angular';
 import { UserAccount } from '../models/user-account';
-import { GetUserByIdGqlService } from './gql/get-user-by-id-gql.service';
+
+const LOGOUT_MUTATION = gql`
+  mutation logout($id:Int){
+    logout(id:$id)
+  }
+`;
 
 @Injectable({
   providedIn: 'root'
@@ -11,13 +16,13 @@ export class AuthService {
   KEY: string = "token";
   _loggedUser: UserAccount;
 
-  constructor() { }
+  constructor(private apollo: Apollo) { }
 
   storeToken(token: string) {
     localStorage.setItem(this.KEY, token)
   }
 
-  getLoggedInUserId(): Observable<any> {
+  getLoggedInUserId(): number {
     const token = localStorage.getItem(this.KEY)
 
     if (token === undefined || token === null) {
@@ -32,6 +37,10 @@ export class AuthService {
   }
 
   logout() {
+    this.apollo.mutate({
+      mutation: LOGOUT_MUTATION,
+      variables: {id: this.getLoggedInUserId()}
+    }).subscribe();
     localStorage.removeItem(this.KEY)
   }
 }

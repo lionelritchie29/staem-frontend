@@ -1,0 +1,32 @@
+<section class="friend-list">
+    <div class="friend-list-header">
+        <h2>FRIENDS <span>{{offlineFriends.length + onlineFriends.length}}</span></h2>
+
+        <div>
+            <button>Manage Friend List</button>
+            <button><i class="fas fa-user-plus"></i> Add a Friends</button>
+        </div>
+    </div>
+
+    <div class="friend-list-search">
+        <input 
+            type="text" 
+            [(ngModel)]="searchInput" 
+            [ngModelOptions]="{standalone: true}"
+            (ngModelChange)="onChange()"
+            placeholder="Search freinds by name">
+    </div>
+
+    <h3 *ngIf="onlineFriends.length > 0">ONLINE</h3>
+    <div class="friend-list-online">
+        <app-friend-list-card *ngFor="let friend of onlineFriends" [friend]="friend"></app-friend-list-card>
+    </div>
+    
+    <h3 *ngIf="offlineFriends.length > 0">OFFLINE</h3>
+    <div class="friend-list-offline">
+        <app-friend-list-card 
+            *ngFor="let friend of offlineFriends"
+            [friend]="friend"
+        ></app-friend-list-card>
+    </div>
+</section>

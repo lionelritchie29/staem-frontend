@@ -1,0 +1,17 @@
+<a routerLink="/profile/{{friend.profile.customURL}}" class="friend-list-card" *ngIf="friend">
+    <div 
+        class="friend-list-card-img" 
+        [class.img-online]="friend.status === 'online'"
+        [class.img-offline]="friend.status === 'offline'"
+    >
+        <img src="{{profileImgUrl}}" alt="{{friend.accountName}}">
+    </div>
+
+    <div 
+        class="friend-list-card-name"
+        [class.name-online]="friend.status === 'online'"
+        [class.name-offline]="friend.status === 'offline'"
+    >
+        {{friend.profile.displayName}}
+    </div>
+</a>

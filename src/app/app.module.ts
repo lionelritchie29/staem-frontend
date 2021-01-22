@@ -45,6 +45,11 @@ import { BadgeComponent } from './components/badge/badge.component';
 import { FriendCardComponent } from './components/friend-card/friend-card.component';
 import { UserGameCardComponent } from './components/user-game-card/user-game-card.component';
 import { UserReviewCardComponent } from './components/user-review-card/user-review-card.component';
+import { FriendsComponent } from './pages/friends/friends.component';
+import { FriendListComponent } from './pages/friends/friend-list/friend-list.component';
+import { AddFriendComponent } from './pages/friends/add-friend/add-friend.component';
+import { PendingInviteComponent } from './pages/friends/pending-invite/pending-invite.component';
+import { FriendListCardComponent } from './components/friend-list-card/friend-list-card.component';
 
 @NgModule({
   declarations: [
@@ -87,6 +92,11 @@ import { UserReviewCardComponent } from './components/user-review-card/user-revi
     FriendCardComponent,
     UserGameCardComponent,
     UserReviewCardComponent,
+    FriendsComponent,
+    FriendListComponent,
+    AddFriendComponent,
+    PendingInviteComponent,
+    FriendListCardComponent,
   ],
   imports: [
     BrowserModule,

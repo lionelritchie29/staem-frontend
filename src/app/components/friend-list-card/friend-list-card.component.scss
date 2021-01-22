@@ -1,0 +1,42 @@
+@import "../../../styles/variables";
+
+.friend-list-card {
+    text-decoration: none;
+    display: flex;
+    
+    &-img {
+        width: 22.5%;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    &-name {
+        width: 77.5%;
+        padding-top: 0.6rem;
+        padding-left: 0.75rem;
+        background-color: rgba(29, 31, 36, .8);
+        font-size: 1rem;
+    }
+
+    &:hover {
+        box-shadow: 1px 1px 5px #111;
+    }
+}
+
+.img-online {
+    border-right: 0.25rem solid $secondary-color;
+}
+
+.img-offline {
+    border-right: 0.25rem solid #666;
+}
+
+.name-online {
+    color: $secondary-color;
+}
+
+.name-offline {
+    color: #666;
+}

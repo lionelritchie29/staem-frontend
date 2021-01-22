@@ -12,14 +12,17 @@ export class GetCommentsByUserIdGqlService extends Query<any>{
           id,
           profile{
             displayName,
-            profilePictureUrl
+            profilePictureUrl,
+            customURL
+
           }
         }
         destUser{
           id,
           profile{
             displayName,
-            profilePictureUrl
+            profilePictureUrl,
+            customURL
           }
         }
         content,

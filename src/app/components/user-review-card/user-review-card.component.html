@@ -4,14 +4,14 @@
     </div>
 
     <div class="user-review-card-content">
-        <h3>
+        <a routerLink="/profile/{{comment.srcUser.profile.customURL}}">
             {{ comment.srcUser.profile.displayName}} 
             <span>
                 {{convertedDate.getDate()}} {{monthStr}}, {{convertedDate.getFullYear()}} 
                 @ 
                 {{convertedDate.getHours()}}:{{convertedDate.getMinutes()}}
             </span>
-        </h3>
+        </a>
         <p>{{ comment.content }}</p>
     </div>
 </div>

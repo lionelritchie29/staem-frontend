@@ -57,17 +57,17 @@
             <div class="profile-bottom-left-comments">
                 <h2>Comments</h2>
 
-                <form>
+                <form [formGroup]="commentForm" *ngIf="loggedUser.id !== currentUser.id">
                     <div class="profile-bottom-left-comments-input">
                         <div>
-                            <img src="https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/e4/e47fd13b1f1ec7521ffa9f1b9367f9a0cc71c54d_full.jpg" alt="">
+                            <img src="{{loggedUserImgUrl}}" alt="{{loggedUser.accountName}}">
                         </div>
     
-                        <textarea></textarea>
+                        <textarea formControlName="content"></textarea>
                     </div>
-    
+                    
                     <div class="profile-bottom-left-comments-post-btn">
-                        <button>Post Comment</button>
+                        <button (click)="onPostComment()">Post Comment</button>
                     </div>
                 </form>
 
@@ -78,7 +78,7 @@
         </div>
 
         <div class="profile-bottom-right" >
-            <span>Friends</span>
+            <span><a href="/profile/{{currentUser.profile.customURL}}/friends">Friends</a></span>
             <div *ngIf="friends.length > 0">
                 <app-friend-card *ngFor="let friend of friends" [friend]="friend"></app-friend-card>
             </div>

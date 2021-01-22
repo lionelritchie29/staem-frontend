@@ -1,3 +1,5 @@
+@import "../../../styles/variables";
+
 .friend-card {
     display: flex;
     justify-content: space-between;
@@ -144,4 +146,12 @@
 
         }
     }
+}
+
+.online {
+    color: $secondary-color;
+}
+
+.name-online {
+    color: #F4F4F4;
 }
