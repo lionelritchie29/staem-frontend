@@ -1,0 +1,22 @@
+<section id="admin-login">
+    <section class="login-left">
+          <form class="login-left-form" [formGroup]="adminLoginForm">
+                <h1>ADMIN LOGIN</h1>
+                <div class="login-left-form-group">
+                      <label>Steam account name</label>
+                      <input formControlName="accountName" type="text">
+                </div>
+                
+                <div class="login-left-form-group">
+                      <label >Password</label>
+                      <input formControlName="password" type="password">
+                </div>
+
+                <div class="error-msg">{{errorMsg}}</div>
+
+                <div class="login-left-form-button">
+                      <button (click)="adminLogin($event)">Sign In</button>
+                </div>
+          </form>
+    </section>
+</section>

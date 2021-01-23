@@ -27,7 +27,7 @@
     
                 <ng-template #elseBlock>
                     <div class="profile-top-right-edit-btn" *ngIf="!isFriend">
-                        <a routerLink="/">Add Friend</a>
+                        <a (click)="onAddFriend()">Add Friend</a>
                     </div>
         
                     <div class="profile-top-right-edit-btn" *ngIf="isFriend">
@@ -57,7 +57,7 @@
             <div class="profile-bottom-left-comments">
                 <h2>Comments</h2>
 
-                <form [formGroup]="commentForm" *ngIf="loggedUser.id !== currentUser.id">
+                <form [formGroup]="commentForm" *ngIf="loggedUser && loggedUser.id !== currentUser.id">
                     <div class="profile-bottom-left-comments-input">
                         <div>
                             <img src="{{loggedUserImgUrl}}" alt="{{loggedUser.accountName}}">

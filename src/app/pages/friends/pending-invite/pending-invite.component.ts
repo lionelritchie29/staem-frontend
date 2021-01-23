@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { FriendRequest } from 'src/app/models/friend-request';
 import { UserAccount } from 'src/app/models/user-account';
@@ -19,10 +20,15 @@ export class PendingInviteComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private allReceivedFriendRequestByIdGqlService: AllReceivedFriendRequestByIdGqlService,
-    private allSentFriendRequestByIdGqlService: AllSentFriendRequestByIdGqlService
+    private allSentFriendRequestByIdGqlService: AllSentFriendRequestByIdGqlService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
+    if(this.authService.getLoggedInUserId() === null) {
+      this.router.navigate(['/']);
+    }
+    
     this.getReceived();
   }
 

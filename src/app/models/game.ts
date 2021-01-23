@@ -1,5 +1,6 @@
 import { Developer } from "./developer";
 import { GameImage } from "./game-image";
+import { GameSystemRequirement } from "./game-system-requirement";
 import { Genre } from "./genre";
 import { Publisher } from "./publisher";
 import { Tag } from "./tag";
@@ -15,4 +16,5 @@ export interface Game {
     tags: Tag[]
     genres: Genre[]
     images: GameImage[]
+    systemReq: GameSystemRequirement[]
 }

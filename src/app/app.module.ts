@@ -52,6 +52,13 @@ import { PendingInviteComponent } from './pages/friends/pending-invite/pending-i
 import { FriendListCardComponent } from './components/friend-list-card/friend-list-card.component';
 import { FriendCodeResultCardComponent } from './components/friend-code-result-card/friend-code-result-card.component';
 import { FriendInviteCardComponent } from './components/friend-invite-card/friend-invite-card.component';
+import { AdminLoginComponent } from './pages/admin-login/admin-login.component';
+import { ManageGameComponent } from './pages/manage-game/manage-game.component';
+import { ManagePromoComponent } from './pages/manage-promo/manage-promo.component';
+import { ManageUserComponent } from './pages/manage-user/manage-user.component';
+import { ManageGameViewComponent } from './pages/manage-game/manage-game-view/manage-game-view.component';
+import { ManageGameCardComponent } from './components/manage-game-card/manage-game-card.component';
+import { ManageGameAddComponent } from './pages/manage-game/manage-game-add/manage-game-add.component';
 
 @NgModule({
   declarations: [
@@ -101,6 +108,13 @@ import { FriendInviteCardComponent } from './components/friend-invite-card/frien
     FriendListCardComponent,
     FriendCodeResultCardComponent,
     FriendInviteCardComponent,
+    AdminLoginComponent,
+    ManageGameComponent,
+    ManagePromoComponent,
+    ManageUserComponent,
+    ManageGameViewComponent,
+    ManageGameCardComponent,
+    ManageGameAddComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,47 @@
+<div 
+    class="manage-game-card" 
+    *ngIf="game"
+>
+    <div class="manage-game-card-img">
+        <img src="{{gameHeaderUrl}}" alt="{{game.title}}">
+    </div>
+
+    <div 
+        class="manage-game-card-desc" 
+    >
+        <div class="manage-game-card-desc-left">
+            <h5>{{game.title}}</h5>
+
+            <div class="manage-game-card-desc-left-price">
+                {{game.price | currency:"Rp. "}}
+            </div>
+
+            <div class="manage-game-card-desc-left-publisher">
+                Publisher: <span>{{game.publisher.name}}</span>
+            </div>
+
+            <div class="manage-game-card-desc-left-developer">
+                Developer: <span>{{game.developer.name}}</span>
+            </div>
+
+            <div class="manage-game-card-desc-left-genre">
+                Genre: 
+                <span *ngFor="let genre of game.genres; let i = index">
+                    {{genre.name + ((i == game.genres.length - 1) ? "" : ", ") }}
+                </span>
+            </div>
+
+            <div class="manage-game-card-desc-left-tag">
+                Tags: 
+                <span *ngFor="let tag of game.tags; let i = index">
+                    {{tag.name + ((i == game.tags.length - 1) ? "" : ", ") }}
+                </span>
+            </div>
+        </div>
+
+        <div class="manage-game-card-desc-right">
+            <button>Update</button>
+            <button>Delete</button>
+        </div>
+    </div>
+</div>

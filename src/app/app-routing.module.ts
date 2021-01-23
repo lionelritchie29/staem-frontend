@@ -15,6 +15,11 @@ import { SearchGameComponent } from './pages/search-game/search-game.component';
 import { FriendListComponent } from './pages/friends/friend-list/friend-list.component';
 import { AddFriendComponent } from './pages/friends/add-friend/add-friend.component';
 import { PendingInviteComponent } from './pages/friends/pending-invite/pending-invite.component';
+import { AdminLoginComponent } from './pages/admin-login/admin-login.component';
+import { ManageGameComponent } from './pages/manage-game/manage-game.component';
+import { ManageGameViewComponent } from './pages/manage-game/manage-game-view/manage-game-view.component';
+import { ManagePromoComponent } from './pages/manage-promo/manage-promo.component';
+import { ManageUserComponent } from './pages/manage-user/manage-user.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -41,6 +46,28 @@ const routes: Routes = [
       {path: 'self', component: SelfComponent},
       {path: 'gift', component: GiftComponent},
     ],
+  },
+  {path: 'admin', component: AdminLoginComponent},
+  {
+    path: 'admin/manage-game', 
+    component: ManageGameComponent,
+    children: [
+      {path: '', component: ManageGameViewComponent}
+    ]
+  },
+  {
+    path: 'admin/manage-promo', 
+    component: ManagePromoComponent,
+    children: [
+      // {path: '', component: ManageGameViewComponent}
+    ]
+  },
+  {
+    path: 'admin/manage-user', 
+    component: ManageUserComponent,
+    children: [
+      // {path: '', component: ManageGameViewComponent}
+    ]
   },
 ];
 

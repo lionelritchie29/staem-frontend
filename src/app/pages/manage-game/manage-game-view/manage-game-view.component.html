@@ -1,0 +1,9 @@
+<div class="manage-game-list">
+    <div class="manage-game-list-header">
+        <h2>GAME LIST</h2>
+    </div>
+
+    <div class="manage-game-list-content">
+        <app-manage-game-card *ngFor="let game of gameList" [game]="game"></app-manage-game-card>
+    </div>
+</div>

@@ -93,6 +93,7 @@ $card-bg: rgba(0, 0, 0, 0.3);
 
                         &:hover {
                             background: lighten($btn-bg, 5);
+                            cursor: pointer;
                         }
                     }
                 }

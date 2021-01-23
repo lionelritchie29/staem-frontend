@@ -29,10 +29,16 @@ export class AddFriendComponent implements OnInit {
     private getUserByIdGqlService: GetUserByIdGqlService,
     private authService: AuthService,
     private apollo: Apollo,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
     const userId = this.authService.getLoggedInUserId();
+
+    if(userId === null) {
+      this.router.navigate(['/']);
+    }
+
     this.getUserByIdGqlService
       .watch({id: userId})
       .valueChanges

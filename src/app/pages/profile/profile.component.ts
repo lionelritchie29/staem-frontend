@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { Apollo, gql } from 'apollo-angular';
+import { map } from 'rxjs/operators';
 import { getUserImageUrl } from 'src/app/globals';
 import { Game } from 'src/app/models/game';
 import { UserAccount } from 'src/app/models/user-account';
@@ -12,6 +14,12 @@ import { AllFriendsByUserIdGqlService } from 'src/app/services/gql/query/all-fri
 import { GetCommentsByUserIdGqlService } from 'src/app/services/gql/query/get-comments-by-user-id-gql.service';
 import { GetGamesByUserIdGqlService } from 'src/app/services/gql/query/get-games-by-user-id-gql.service';
 import { GetUserByUrlGqlService } from 'src/app/services/gql/query/get-user-by-url-gql.service';
+
+const CREATE_FRIEND_REQUEST = gql`
+  mutation createFriendRequest($from:Int, $to:Int) {
+    createFriendRequest(fromId:$from, toId:$to)
+  }
+`;
 
 @Component({
   selector: 'app-profile',
@@ -43,7 +51,8 @@ export class ProfileComponent implements OnInit {
     private route: ActivatedRoute,
     private authService: AuthService,
     private fb: FormBuilder,
-    private createCommentGqlService: CreateCommentGqlService
+    private createCommentGqlService: CreateCommentGqlService,
+    private apollo: Apollo,
   ) { }
 
   ngOnInit(): void {
@@ -127,6 +136,25 @@ export class ProfileComponent implements OnInit {
       .subscribe(() => {
         alert('Success added comment!');
         window.location.reload();
+      })
+    }
+  }
+
+  onAddFriend() {
+    if (this.loggedUser != null) {
+      console.log(this.loggedUser.id)
+      console.log(this.currentUser.id)
+      this.apollo.mutate({
+        mutation: CREATE_FRIEND_REQUEST,
+        variables: {from: this.loggedUser.id, to: this.currentUser.id}
+      })
+      .pipe(map(res => (<any>res.data).createFriendRequest))
+      .subscribe(isSuccess => {
+        if (isSuccess) {
+          alert('Add friend success!');
+        } else {
+          alert('Oops, an error occured when adding this friend\nor you have already sent friend request for this user.');
+        }
       })
     }
   }

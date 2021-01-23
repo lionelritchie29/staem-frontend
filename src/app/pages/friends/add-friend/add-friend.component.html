@@ -17,7 +17,10 @@
             (ngModelChange)="onChange()"
         >
         <div *ngIf="searchedUser">
-            <app-friend-code-result-card (addFriend)="addFriend($event)" [user]="searchedUser"></app-friend-code-result-card>
+            <app-friend-code-result-card
+                (addFriend)="addFriend($event)" 
+                [user]="searchedUser"
+            ></app-friend-code-result-card>
         </div>
     </div>
 </div>

@@ -38,6 +38,20 @@
     }
 }
 
+@mixin red-button-style {
+    background: #8A060A;
+    color: #F4F4F4;
+    padding: 0.5rem 1.25rem;
+    border: none;
+    border-radius: 0.15rem;
+    font-size: 1rem;
+
+    &:hover {
+        background: lighten(#8A060A, 10);
+        cursor: pointer;
+    }
+}
+
 @mixin slider-arrow-style {
     .arrow-right, .arrow-left {
         top: 95%;

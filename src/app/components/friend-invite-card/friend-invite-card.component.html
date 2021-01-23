@@ -14,10 +14,13 @@
 
     <div class="invite-card-right">
         <ng-template #elseBlock>
-            <button>Accept</button>
-            <button>Decline</button>
-            <button>Ignore</button>
+            <button (click)="onAccept()">Accept</button>
+            <button (click)="onReject()">Reject</button>
+            <button (click)="onIgnore()">Ignore</button>
         </ng-template>
-        <button *ngIf="!isReceivedRequest; else elseBlock">Cancel Invite</button>
+        <button 
+            *ngIf="!isReceivedRequest; else elseBlock"
+            (click)="onReject()"
+        >Cancel Invite</button>
     </div>
 </div>
