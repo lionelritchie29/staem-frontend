@@ -1,1 +1,77 @@
-<p>manage-game-add works!</p>
+<div class="add-game">
+      <div class="add-game-header">
+          <h2>ADD NEW GAME</h2>
+      </div>
+  
+      <form class="add-game-form" [formGroup]="addGameForm">
+            <div>
+                  <label>Game Title</label>
+                  <input type="text" formControlName="title" placeholder="Input Game Title...">
+            </div>
+            
+            <div>
+                  <label>Game Description</label>
+                  <textarea formControlName="description"></textarea>
+            </div>
+            
+            <div>
+                  <label>Game Release Date</label>
+                  <input type="date" formControlName="releaseDate" placeholder="Input Game Release Date...">
+            </div>
+
+            <div>
+                  <label>Game Price</label>
+                  <input type="number" formControlName="price" placeholder="Input Game Price...">
+            </div>
+       
+            <div>
+                  <label>Game Tags</label>
+                  <div class="checkbox-group" *ngIf="addGameForm.get('tagsFg').controls">
+                        <span *ngFor="let tag of addGameForm.get('tagsFg').controls; let i = index">
+                              <input type="checkbox" [formControl]="tag" value="{{tags[i].id}}">
+                              <label>{{tags[i].name}}</label>
+                        </span>
+                  </div>
+            </div>
+            
+            <div>
+                  <label>Game Genres</label>
+                  <div class="checkbox-group" *ngIf="addGameForm.get('genresFg').controls">
+                        <span *ngFor="let genre of addGameForm.get('genresFg').controls; let i = index">
+                              <input type="checkbox" [formControl]="genre" value="{{genres[i].id}}">
+                              <label>{{genres[i].name}}</label>
+                        </span>
+                  </div>
+            </div>
+
+            <div>
+                  <label>Game Publisher</label>
+                  <select formControlName="publisher">
+                        <option *ngFor="let pub of publishers" value="{{pub.id}}">{{pub.name}}</option>
+                  </select>
+            </div>
+
+            <div>
+                  <label>Game Developer</label>
+                  <select formControlName="developer">
+                        <option *ngFor="let dev of developers" value="{{dev.id}}">{{dev.name}}</option>
+                  </select>
+            </div>
+
+            <div>
+                  <label>Game Header</label>
+                  <input type="file" (change)="setGameHeader($event)" formControlName="headerImg">
+            </div>
+
+            <div>
+                  <label>Game Images</label>
+                  <input type="file" (change)="setGameImgs($event)" multiple formControlName="gameImgs">
+            </div>
+
+            <p class="error">{{errorMsg}}</p>
+            
+            <div>
+                  <button (click)="onSubmit()">Add Game</button>
+            </div>
+      </form>
+  </div>

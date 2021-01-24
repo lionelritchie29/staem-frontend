@@ -19,11 +19,14 @@
                         <div class="detail-info-left-price-box">
                               <p>Buy {{game.title}}</p>
                               <div class="price-info">
-                                    <div class="price-info-disc">
-                                          -30%
+                                    <div class="price-info-disc" *ngIf="game.sale.discount != 0">
+                                          -{{game.sale.discount}}%
                                     </div>
-                                    <div class="price-info-price">
-                                          {{game.price | currency:"Rp. " }}
+                                    <div class="price-info-price" [class.decor]="game.sale.discount == 0">
+                                          <span [class.discount]="game.sale.discount != 0">{{game.price | currency:"Rp. " }}</span>
+                                          <span *ngIf="game.sale.discount != 0">
+                                                {{((100 - game.sale.discount) / 100) * game.price | currency:"Rp. "}}
+                                          </span>
                                     </div>
                                     <a routerLink="/cart" (click)="addToCart()" class="price-info-add-cart">
                                           Add to Cart

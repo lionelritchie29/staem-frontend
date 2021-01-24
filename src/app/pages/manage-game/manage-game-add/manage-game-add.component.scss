@@ -1,0 +1,77 @@
+@import "../../../../styles/variables";
+@import "../../../../styles/mixins";
+
+.add-game {
+    &-header {
+        background-color: #015e80;
+        color: #f4f4f4;
+        display: flex;
+        justify-content: space-between;
+        padding: 0.75rem 1rem;
+        margin-bottom: 0.5rem;
+ 
+        h2 {
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            font-weight: normal;
+            
+            span {
+                font-weight: bolder;
+                margin-left: 0.5rem;
+                font-size: 1.2rem;
+            }
+        }
+     }
+
+     &-form {
+        color: #F4F4F4;
+        background: rgba(0, 0, 0, 0.4);
+        padding: 1.5rem;
+         
+        div {
+            margin-bottom: 1rem;
+
+            label { 
+                display: block;
+                margin-bottom: 0.25rem;
+            }
+            
+            input[type=text], input[type=date], input[type=number],  input[type=file], select, textarea {
+                color: #F4F4F4 !important;
+                font-size: 1rem;
+                @include input-dark;
+                padding: 0.75rem;
+                width: 100%;
+            }
+
+            textarea {
+                height: 7rem;
+                resize: none
+            }
+
+
+            button {
+                @include blue-button-style;
+            }
+        }
+     }
+}
+
+.error {
+    color: red;
+    margin-bottom: 1rem;
+}
+
+.checkbox-group {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    span {
+        display: flex;
+        
+        label {
+            margin-left: 0.5rem;
+        }
+    }
+}

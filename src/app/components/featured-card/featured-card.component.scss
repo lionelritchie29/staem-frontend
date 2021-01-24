@@ -1,55 +1,72 @@
 @import "../../../styles/mixins";
 
-.featured-card {
-    display: flex;
-
-    &-img {
-        width: 100%;
-        img {
-            height: auto;
+a {
+    text-decoration: none;
+    .featured-card {
+        display: flex;
+    
+        &-img {
+            width: 100%;
+            img {
+                height: auto;
+            }
+    
+            @include for-desktop {
+                width: 70%;
+            }
         }
-
-        @include for-desktop {
-            width: 70%;
-        }
-    }
-
-    &-desc {
-        width: 0;
-        display: none;
-        position: relative;
-        height: inherit;
-        background-color: #101A23;
-        color: #fff;
-
-        h2 {
-            font-size: 1.5rem;
-            font-weight: normal;
-            padding: 0.7rem;
-            padding-top: 1.2rem;
-        }
-
-        p {
-            padding: 0.7rem;
-        }
-
-        div {
-            padding: 0.7rem;
-
-            span:first-child { /* Now Available Text */
-                font-size: 1.4rem;
+    
+        &-desc {
+            width: 0;
+            display: none;
+            position: relative;
+            height: inherit;
+            background-color: #101A23;
+            color: #fff;
+    
+            h2 {
+                font-size: 1.5rem;
+                font-weight: normal;
+                padding: 0.7rem;
+                padding-top: 1.2rem;
+            }
+    
+            p {
+                padding: 0.7rem;
+            }
+    
+            div {
+                padding: 0.7rem;
+    
+                .now-available { /* Now Available Text */
+                    font-size: 1.4rem;
+                    display: block;
+                }
+    
+                .price { /*Price */
+                    display: flex;
+                    position: absolute;
+                    bottom: 1rem;
+    
+                    span {
+                        display: block;
+                    }
+    
+                    span:nth-child(2) {
+                        margin-left: 0.5rem;
+                    }
+                }
+            }
+    
+            @include for-desktop {
                 display: block;
+                width: 30%;
             }
-
-            span:nth-child(2) { /*Price */
-                position: absolute;
-                bottom: 1rem;
-            }
-        }
-
-        @include for-desktop {
-            display: block;
-            width: 30%;
         }
     }
+}
+
+.discount {
+    text-decoration: line-through;
+    color: #666;
 }

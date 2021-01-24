@@ -20,6 +20,9 @@ import { ManageGameComponent } from './pages/manage-game/manage-game.component';
 import { ManageGameViewComponent } from './pages/manage-game/manage-game-view/manage-game-view.component';
 import { ManagePromoComponent } from './pages/manage-promo/manage-promo.component';
 import { ManageUserComponent } from './pages/manage-user/manage-user.component';
+import { ManageGameAddComponent } from './pages/manage-game/manage-game-add/manage-game-add.component';
+import { ManagePromoViewComponent } from './pages/manage-promo/manage-promo-view/manage-promo-view.component';
+import { ManagePromoAddComponent } from './pages/manage-promo/manage-promo-add/manage-promo-add.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -52,14 +55,16 @@ const routes: Routes = [
     path: 'admin/manage-game', 
     component: ManageGameComponent,
     children: [
-      {path: '', component: ManageGameViewComponent}
+      {path: '', component: ManageGameViewComponent},
+      {path: 'add', component: ManageGameAddComponent},
     ]
   },
   {
     path: 'admin/manage-promo', 
     component: ManagePromoComponent,
     children: [
-      // {path: '', component: ManageGameViewComponent}
+      {path: '', component: ManagePromoViewComponent},
+      {path: 'add', component: ManagePromoAddComponent},
     ]
   },
   {

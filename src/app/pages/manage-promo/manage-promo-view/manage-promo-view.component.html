@@ -1,0 +1,16 @@
+<div class="manage-promo-list">
+    <div class="manage-promo-list-header">
+        <h2>PROMO LIST</h2>
+    </div>
+
+    <div class="manage-promo-list-content">
+        <div class="list" *ngFor="let game of gameList; let i = index">
+            <div>
+                <span>Discount {{ sales[i].discount }}%</span>
+                <span>Sale Price: {{ ((100 - sales[i].discount) / 100 ) * game.price | currency:"Rp. " }}</span>
+                <span>Valid until {{sales[i].validTo}}</span>
+            </div>
+            <app-manage-game-card  [game]="game"></app-manage-game-card>
+        </div>
+    </div>
+</div>

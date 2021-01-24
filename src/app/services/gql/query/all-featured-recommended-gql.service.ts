@@ -15,6 +15,11 @@ export class AllFeaturedRecommendedGqlService extends Query<any>{
         price
         images{
           url
+        },
+        sale{
+          gameId,
+          validTo,
+          discount
         }
       }
     }

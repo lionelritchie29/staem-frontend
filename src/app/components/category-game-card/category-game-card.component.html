@@ -22,7 +22,16 @@
         </div>
 
         <div class="category-game-card-desc-detail">
-            Rp {{game.price}}
+            <span 
+                [class.discount]="game.sale.discount != 0"
+            >{{game.price | currency:"Rp. "}}
+            </span>
+            
+            <span 
+                *ngIf="game.sale.discount != 0"
+            >
+            {{ ((100 - game.sale.discount) / 100) * game.price | currency:"Rp. "}}
+            </span>
         </div>
     </div>
 </a>

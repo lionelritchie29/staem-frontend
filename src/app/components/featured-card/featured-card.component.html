@@ -1,4 +1,4 @@
-<div>
+<a routerLink="/game/{{game.id}}">
     <section class="featured-card">
         <div class="featured-card-img">
             <img src="{{imageUrl}}" style="width: 100%;" alt="">
@@ -10,9 +10,14 @@
                 {{ game.description }}
             </p>
             <div>
-                <span>Now Available</span>
-                <span>Rp {{ game.price }}</span>
+                <span class="now-available">Now Available</span>
+                <span class="price">
+                    <span [class.discount]="game.sale.discount != 0">{{game.price | currency:"Rp. " }}</span>
+                    <span *ngIf="game.sale.discount != 0">
+                        {{((100 - game.sale.discount) / 100) * game.price | currency:"Rp. "}}
+                    </span>
+                </span>
             </div>
         </div>
     </section>
-</div>
+</a>

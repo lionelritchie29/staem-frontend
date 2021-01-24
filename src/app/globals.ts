@@ -1,3 +1,6 @@
+import { rejects } from "assert";
+import { resolve } from "dns";
+
 const BASE_URL:string = "http://localhost:2000";
 
 export const GLOBALS = {
@@ -16,6 +19,14 @@ export const getUserImageUrl = (url: string): string => {
 
 export const convertDateTimeToDate = (datetime: string) => {
     return new Date(Date.parse(datetime));
+}
+
+export const convertFileToBase64 = (file): Promise<any> => {
+    return new Promise((resolve) => {
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = () => resolve((<any>reader.result).replace(/^.*,/, ''));
+    })
 }
 
 export const getMonthName = (monthNumber: number): string => {

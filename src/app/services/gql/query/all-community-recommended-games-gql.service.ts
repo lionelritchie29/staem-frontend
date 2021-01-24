@@ -11,9 +11,14 @@ export class AllCommunityRecommendedGamesGqlService extends Query<any>{
         id,
         title,
         description,
-        price
+        price,
         images{
           url
+        },
+        sale{
+          gameId,
+          validTo,
+          discount
         }
       }
     }

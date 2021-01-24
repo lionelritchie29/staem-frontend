@@ -1,5 +1,6 @@
 import { Developer } from "./developer";
 import { GameImage } from "./game-image";
+import { GameSale } from "./game-sale";
 import { GameSystemRequirement } from "./game-system-requirement";
 import { Genre } from "./genre";
 import { Publisher } from "./publisher";
@@ -13,6 +14,7 @@ export interface Game {
     releasedate: string
     developer: Developer
     publisher: Publisher
+    sale: GameSale
     tags: Tag[]
     genres: Genre[]
     images: GameImage[]

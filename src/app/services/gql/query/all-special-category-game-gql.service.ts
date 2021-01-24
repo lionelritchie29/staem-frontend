@@ -16,6 +16,11 @@ export class AllSpecialCategoryGameGqlService extends Query<any>{
         },
         images{
           url
+        },
+        sale{
+          gameId,
+          validTo,
+          discount
         }
       }
     }

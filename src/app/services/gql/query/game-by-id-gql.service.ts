@@ -28,6 +28,11 @@ export class GameByIdGqlService extends Query<any>{
           id,
           name
         },
+        sale{
+          gameId,
+          validTo,
+          discount
+        },
         systemReq{
           note,
           isRecommended,

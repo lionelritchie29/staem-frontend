@@ -72,6 +72,7 @@
                         align-items: center;
                         font-size: 1rem;
                         color: $secondary-color;
+                        flex-direction: column;
                     }
 
                     &-add-cart {
@@ -148,4 +149,13 @@
         width: 65%;
     }
 
+}
+
+.discount {
+    text-decoration: line-through;
+    color: #666;
+}
+
+.decor {
+    padding: 0.75rem 1rem !important;
 }
