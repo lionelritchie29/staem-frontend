@@ -10,6 +10,7 @@ import { UserComment } from 'src/app/models/user-comment';
 import { AuthService } from 'src/app/services/auth.service';
 import { GetUserByIdGqlService } from 'src/app/services/gql/get-user-by-id-gql.service';
 import { CreateCommentGqlService } from 'src/app/services/gql/mutation/create-comment-gql.service';
+import { CreateUserReportGqlService } from 'src/app/services/gql/mutation/create-user-report-gql.service';
 import { AllFriendsByUserIdGqlService } from 'src/app/services/gql/query/all-friends-by-user-id-gql.service';
 import { GetCommentsByUserIdGqlService } from 'src/app/services/gql/query/get-comments-by-user-id-gql.service';
 import { GetGamesByUserIdGqlService } from 'src/app/services/gql/query/get-games-by-user-id-gql.service';
@@ -48,6 +49,7 @@ export class ProfileComponent implements OnInit {
     private getUserByIdGqlService: GetUserByIdGqlService,
     private getGamesByUserIdGqlService: GetGamesByUserIdGqlService,
     private getCommentsByUserIdGqlService: GetCommentsByUserIdGqlService,
+    private createUserReportGqlService: CreateUserReportGqlService,
     private route: ActivatedRoute,
     private authService: AuthService,
     private fb: FormBuilder,
@@ -98,7 +100,6 @@ export class ProfileComponent implements OnInit {
         if(this.loggedUser != null) {
           const filtered = this.friends
             .filter(friend => friend.id === this.loggedUser.id)
-          console.log(filtered)
 
           if (filtered.length > 0) this.isFriend = true;
           else this.isFriend = false;
@@ -157,6 +158,23 @@ export class ProfileComponent implements OnInit {
         }
       })
     }
+  }
+
+  onReport() {
+    const reason = prompt('Input your reason');
+
+    this.createUserReportGqlService.mutate({
+      "userId": this.currentUser.id,
+      "reporterId": this.loggedUser.id,
+      "reason": reason
+    }).pipe(map(res => (<any>res.data).createReport))
+    .subscribe(isSuccess => {
+      if (isSuccess) {
+        alert("Report Success!");
+      } else {
+        alert("Oops.. you already reported this user.");
+      }
+    });
   }
 
 }

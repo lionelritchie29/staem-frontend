@@ -62,6 +62,8 @@ import { ManageGameAddComponent } from './pages/manage-game/manage-game-add/mana
 import { ManagePromoViewComponent } from './pages/manage-promo/manage-promo-view/manage-promo-view.component';
 import { ManagePromoAddComponent } from './pages/manage-promo/manage-promo-add/manage-promo-add.component';
 import { ManagePromoUpdateComponent } from './pages/manage-promo/manage-promo-update/manage-promo-update.component';
+import { ManageUserViewComponent } from './pages/manage-user/manage-user-view/manage-user-view.component';
+import { ManageUserCardComponent } from './components/manage-user-card/manage-user-card.component';
 
 @NgModule({
   declarations: [
@@ -121,6 +123,8 @@ import { ManagePromoUpdateComponent } from './pages/manage-promo/manage-promo-up
     ManagePromoViewComponent,
     ManagePromoAddComponent,
     ManagePromoUpdateComponent,
+    ManageUserViewComponent,
+    ManageUserCardComponent,
   ],
   imports: [
     BrowserModule,

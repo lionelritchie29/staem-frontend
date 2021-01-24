@@ -9,5 +9,6 @@ export interface UserProfile {
     miniProfileBackgroundUrl: string
     theme: string
     featuredBadgeUrl: string
+    realName: string
     country: string
 }

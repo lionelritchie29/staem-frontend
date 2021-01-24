@@ -96,6 +96,19 @@ $card-bg: rgba(0, 0, 0, 0.3);
                             cursor: pointer;
                         }
                     }
+
+                    button {
+                        background: $btn-bg;
+                        color: #F4F4F4;
+                        padding: 0.6rem 1rem;
+                        border: none;
+                        border-radius: 0.25rem;
+
+                        &:hover {
+                            background: lighten($btn-bg, 5);
+                            cursor: pointer;
+                        }
+                    }
                 }
             }
         }

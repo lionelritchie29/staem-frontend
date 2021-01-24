@@ -26,7 +26,7 @@
        
             <div>
                   <label>Game Tags</label>
-                  <div class="checkbox-group" *ngIf="addGameForm.get('tagsFg').controls">
+                  <div class="checkbox-group" *ngIf="addGameForm.get('tagsFg')">
                         <span *ngFor="let tag of addGameForm.get('tagsFg').controls; let i = index">
                               <input type="checkbox" [formControl]="tag" value="{{tags[i].id}}">
                               <label>{{tags[i].name}}</label>
@@ -36,7 +36,7 @@
             
             <div>
                   <label>Game Genres</label>
-                  <div class="checkbox-group" *ngIf="addGameForm.get('genresFg').controls">
+                  <div class="checkbox-group" *ngIf="addGameForm.get('genresFg')">
                         <span *ngFor="let genre of addGameForm.get('genresFg').controls; let i = index">
                               <input type="checkbox" [formControl]="genre" value="{{genres[i].id}}">
                               <label>{{genres[i].name}}</label>

@@ -1,0 +1,55 @@
+<div class="user-result-card" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">
+    <div class="user-result-card-img">
+        <img src="{{profileImgUrl}}" alt="">
+    </div>
+
+    <div class="user-result-card-info">
+        <div>
+            <span>{{user.profile.displayName}}</span>
+            <span><a href="/profile" target="_blank">Profile Link</a></span>
+            <span>{{user.accountName}}</span>
+        </div>
+        <div>
+            <button>Suspend</button>
+        </div>
+    </div>
+
+    <div class="user-card-mini" *ngIf="showDetail">
+        <div class="user-card-mini-top">
+            <div class="user-card-mini-top-img">
+                <img src="{{profileImgUrl}}" alt="{{ user.accountName }}">
+            </div>
+
+            <div class="user-card-mini-top-header">
+                 <span>{{user.profile.displayName}}</span>
+                 <span>{{user.status}}</span>
+            </div>
+        </div>
+
+        <div class="user-card-mini-bottom">
+            <div class="user-card-mini-bottom-badge">
+                <div class="user-card-mini-bottom-badge-img">
+                    <img src="{{ profileImgUrl }}" alt="{{ user.accountName }}">
+                </div>
+                
+                <div class="user-card-mini-bottom-badge-info">
+                    <span>Years of Service</span>
+                    <span>400 XP</span>
+                </div>
+            </div>
+
+            <div class="user-card-mini-bottom-level">
+                <div>
+                    {{user.profile.level}}
+                </div>
+                
+               <div>Steam Level</div>
+            </div>
+
+            <div class="user-card-mini-bottom-summary">
+                <span>Summary</span>
+               <p>{{user.profile.summary}}</p>
+            </div>
+        </div>
+    </div>
+</div>
