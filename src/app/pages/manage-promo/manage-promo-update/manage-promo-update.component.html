@@ -1,0 +1,28 @@
+<div class="add-game">
+    <div class="add-game-header">
+        <h2>UPDATE PROMO</h2>
+    </div>
+
+    <form class="add-game-form" [formGroup]="updatePromoForm" *ngIf="game">            
+          <div>
+                  <label>Game Title</label>
+                  <input type="text" value="{{game.title}}" disabled>
+          </div>
+
+          <div>
+                <label>Game Discount (Percent)</label>
+                <input type="number" formControlName="discount" placeholder="Input Game Discount...">
+          </div>
+          
+          <div>
+                <label>Valid Until</label>
+                <input type="date" formControlName="validTo">
+          </div>
+
+          <p class="error">{{errorMsg}}</p>
+          
+          <div>
+                <button (click)="onSubmit()">Update Promo</button>
+          </div>
+    </form>
+</div>

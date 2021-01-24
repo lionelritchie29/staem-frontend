@@ -11,6 +11,7 @@ export class ManageGameCardComponent implements OnInit {
 
   @Input() game: Game;
   @Output() delete: EventEmitter<any> = new EventEmitter<any>();
+  @Output() update: EventEmitter<any> = new EventEmitter<any>();
   gameHeaderUrl: string = '';
 
 
@@ -23,6 +24,10 @@ export class ManageGameCardComponent implements OnInit {
 
   onDelete() {
     this.delete.emit(this.game.id);
+  }
+
+  onUpdate() {
+    this.update.emit(this.game.id);
   }
 
 }

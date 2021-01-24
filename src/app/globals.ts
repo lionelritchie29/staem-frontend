@@ -29,6 +29,7 @@ export const convertFileToBase64 = (file): Promise<any> => {
     })
 }
 
+
 export const getMonthName = (monthNumber: number): string => {
     switch(monthNumber) {
         case 1:

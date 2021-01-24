@@ -1,1 +1,31 @@
-<p>manage-promo-add works!</p>
+<div class="add-game">
+      <div class="add-game-header">
+          <h2>ADD NEW PROMO</h2>
+      </div>
+  
+      <form class="add-game-form" [formGroup]="addPromoForm">            
+            <div>
+                    <label>Game Title</label>
+                    <select formControlName="title">
+                        <option value="1">--- SELECT GAME ---</option>
+                        <option *ngFor="let game of games" value="{{game.id}}">{{game.title}}</option>
+                    </select>
+            </div>
+
+            <div>
+                  <label>Game Discount (Percent)</label>
+                  <input type="number" formControlName="discount" placeholder="Input Game Discount...">
+            </div>
+            
+            <div>
+                  <label>Valid Until</label>
+                  <input type="date" formControlName="validTo">
+            </div>
+
+            <p class="error">{{errorMsg}}</p>
+            
+            <div>
+                  <button (click)="onSubmit()">Add Promo</button>
+            </div>
+      </form>
+  </div>

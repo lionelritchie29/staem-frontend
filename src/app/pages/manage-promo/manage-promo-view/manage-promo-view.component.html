@@ -8,9 +8,9 @@
             <div>
                 <span>Discount {{ sales[i].discount }}%</span>
                 <span>Sale Price: {{ ((100 - sales[i].discount) / 100 ) * game.price | currency:"Rp. " }}</span>
-                <span>Valid until {{sales[i].validTo}}</span>
+                <span>Valid until {{sales[i].validTo | date}}</span>
             </div>
-            <app-manage-game-card  [game]="game"></app-manage-game-card>
+            <app-manage-game-card (update)="onUpdate($event)" (delete)="onDelete($event)"  [game]="game"></app-manage-game-card>
         </div>
     </div>
 </div>

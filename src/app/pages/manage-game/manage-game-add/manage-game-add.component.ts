@@ -110,7 +110,6 @@ export class ManageGameAddComponent implements OnInit {
     const headerImgFile: FileList = (<any>e.target).files[0];
     convertFileToBase64(headerImgFile).then(resolve => {
       this.gameHeaderImg = resolve;
-      console.log("masyokkkk");
     });
   }
 

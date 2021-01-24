@@ -23,6 +23,7 @@ import { ManageUserComponent } from './pages/manage-user/manage-user.component';
 import { ManageGameAddComponent } from './pages/manage-game/manage-game-add/manage-game-add.component';
 import { ManagePromoViewComponent } from './pages/manage-promo/manage-promo-view/manage-promo-view.component';
 import { ManagePromoAddComponent } from './pages/manage-promo/manage-promo-add/manage-promo-add.component';
+import { ManagePromoUpdateComponent } from './pages/manage-promo/manage-promo-update/manage-promo-update.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -65,6 +66,7 @@ const routes: Routes = [
     children: [
       {path: '', component: ManagePromoViewComponent},
       {path: 'add', component: ManagePromoAddComponent},
+      {path: 'update/:id', component: ManagePromoUpdateComponent}
     ]
   },
   {
