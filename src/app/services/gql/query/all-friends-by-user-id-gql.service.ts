@@ -12,7 +12,7 @@ export class AllFriendsByUserIdGqlService extends Query<any>{
         id,
         accountName,
         status,
-        suspended,
+        suspendedAt,
         walletAmount,
         code,
         role{

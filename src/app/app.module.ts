@@ -64,6 +64,8 @@ import { ManagePromoAddComponent } from './pages/manage-promo/manage-promo-add/m
 import { ManagePromoUpdateComponent } from './pages/manage-promo/manage-promo-update/manage-promo-update.component';
 import { ManageUserViewComponent } from './pages/manage-user/manage-user-view/manage-user-view.component';
 import { ManageUserCardComponent } from './components/manage-user-card/manage-user-card.component';
+import { ManageUserUnsuspendRequestComponent } from './pages/manage-user/manage-user-unsuspend-request/manage-user-unsuspend-request.component';
+import { UnsuspendRequestCardComponent } from './components/unsuspend-request-card/unsuspend-request-card.component';
 
 @NgModule({
   declarations: [
@@ -125,6 +127,8 @@ import { ManageUserCardComponent } from './components/manage-user-card/manage-us
     ManagePromoUpdateComponent,
     ManageUserViewComponent,
     ManageUserCardComponent,
+    ManageUserUnsuspendRequestComponent,
+    UnsuspendRequestCardComponent,
   ],
   imports: [
     BrowserModule,

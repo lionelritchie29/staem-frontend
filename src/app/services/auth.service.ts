@@ -22,6 +22,14 @@ export class AuthService {
     localStorage.setItem(this.KEY, token)
   }
 
+  parseTokenToUserId(token: string): number {
+    const encodedPayload = token.split('.')[1];
+    const decodedPayload = atob(encodedPayload);
+    const payload = JSON.parse(decodedPayload);
+
+    return payload.userId;
+  }
+
   getLoggedInUserId(): number {
     const token = localStorage.getItem(this.KEY)
 

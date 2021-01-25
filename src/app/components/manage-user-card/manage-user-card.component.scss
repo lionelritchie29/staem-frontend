@@ -44,9 +44,14 @@
             }
         }
 
-        button {
+        .suspend-btn {
             @include red-button-style;
             margin-top: 0.75rem;
+            margin-right: 1rem;
+        }
+
+        .unsuspend-btn {
+            @include blue-button-style;
         }
     }
 }
@@ -156,6 +161,29 @@
 
             p {
                 color: #666;
+            }
+        }
+
+        &-reports {
+            margin-top: 1rem;
+
+            span:nth-child(1) {
+                font-size: 1rem;
+            }
+
+            ul {
+                list-style: none;
+
+                li {
+                    background: rgba(0, 0, 0, 0.2);
+                    padding: 0.5rem;
+                    font-size: 0.8rem;
+                    margin-bottom: 0.75rem;
+
+                    span {
+                        display: block;
+                    }
+                }
             }
         }
 

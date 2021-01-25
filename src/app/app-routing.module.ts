@@ -25,6 +25,7 @@ import { ManagePromoViewComponent } from './pages/manage-promo/manage-promo-view
 import { ManagePromoAddComponent } from './pages/manage-promo/manage-promo-add/manage-promo-add.component';
 import { ManagePromoUpdateComponent } from './pages/manage-promo/manage-promo-update/manage-promo-update.component';
 import { ManageUserViewComponent } from './pages/manage-user/manage-user-view/manage-user-view.component';
+import { ManageUserUnsuspendRequestComponent } from './pages/manage-user/manage-user-unsuspend-request/manage-user-unsuspend-request.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -74,7 +75,8 @@ const routes: Routes = [
     path: 'admin/manage-user', 
     component: ManageUserComponent,
     children: [
-      {path: '', component: ManageUserViewComponent}
+      {path: '', component: ManageUserViewComponent},
+      {path: 'unsuspend-request', component: ManageUserUnsuspendRequestComponent}
     ]
   },
 ];

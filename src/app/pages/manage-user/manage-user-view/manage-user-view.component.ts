@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserAccount } from 'src/app/models/user-account';
+import { UserReport } from 'src/app/models/user-report';
 import { AllUsersGqlService } from 'src/app/services/gql/query/all-users-gql.service';
 
 @Component({
@@ -10,15 +11,18 @@ import { AllUsersGqlService } from 'src/app/services/gql/query/all-users-gql.ser
 export class ManageUserViewComponent implements OnInit {
 
   users: UserAccount[] = [];
+  reports: UserReport[] = [];
 
   constructor(
-    private allUsersGqlService: AllUsersGqlService
+    private allUsersGqlService: AllUsersGqlService,
   ) { }
 
   ngOnInit(): void {
     this.allUsersGqlService.watch()
     .valueChanges
-    .subscribe(res => this.users = res.data.users)
+    .subscribe(res => {
+      this.users = res.data.users;
+    })
   }
 
 }

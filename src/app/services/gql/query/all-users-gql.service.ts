@@ -13,7 +13,7 @@ export class AllUsersGqlService extends Query<any>{
         code,
         email,
         status,
-        suspended,
+        suspendedAt,
         walletAmount,
         role{
           id,

@@ -1,0 +1,17 @@
+<div class="unsuspend-request-card">
+    <div class="unsuspend-request-card-img">
+        <img src="{{profileImgurl}}" alt="">
+    </div>
+
+    <div class="unsuspend-request-card-info">
+        <div>
+            <span>{{request.user.profile.displayName}}</span>
+            <span>{{request.user.accountName}}</span>
+            <span class="reason">Reason: {{request.reason}}</span>
+        </div>
+        <div>
+            <button class="accept-btn" (click)="onAccept()">Accept</button>
+            <button class="deny-btn" (click)="onDeny()">Deny</button>
+        </div>
+    </div>
+</div>

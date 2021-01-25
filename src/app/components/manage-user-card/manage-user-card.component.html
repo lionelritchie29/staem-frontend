@@ -6,11 +6,12 @@
     <div class="user-result-card-info">
         <div>
             <span>{{user.profile.displayName}}</span>
-            <span><a href="/profile" target="_blank">Profile Link</a></span>
+            <span><a href="/profile/{{user.profile.customURL}}" target="_blank">Profile Link</a></span>
             <span>{{user.accountName}}</span>
         </div>
         <div>
-            <button>Suspend</button>
+            <button class="suspend-btn" *ngIf="!user.suspendedAt" (click)="onSuspend()">Suspend</button>
+            <button class="unsuspend-btn" *ngIf="user.suspendedAt" (click)="onUnsuspend()">Unsuspend</button>
         </div>
     </div>
 
@@ -21,7 +22,7 @@
             </div>
 
             <div class="user-card-mini-top-header">
-                 <span>{{user.profile.displayName}}</span>
+                 <span >{{user.profile.displayName}}</span>
                  <span>{{user.status}}</span>
             </div>
         </div>
@@ -49,6 +50,16 @@
             <div class="user-card-mini-bottom-summary">
                 <span>Summary</span>
                <p>{{user.profile.summary}}</p>
+            </div>
+
+            <div *ngIf="reports.length > 0" class="user-card-mini-bottom-reports">
+                <span>Reports</span>
+               <ul>
+                    <li *ngFor="let report of reports">
+                        <span>Reported by: {{report.reporter.accountName}}</span>
+                        <span>Reason: {{report.reason}}</span>
+                    </li>
+               </ul>
             </div>
         </div>
     </div>

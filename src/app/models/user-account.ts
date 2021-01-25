@@ -6,7 +6,7 @@ export interface UserAccount {
     accountName: string
     email: string
     walletAmount: number
-    suspended: boolean
+    suspendedAt: string
     role: UserRole
     profile: UserProfile
 }

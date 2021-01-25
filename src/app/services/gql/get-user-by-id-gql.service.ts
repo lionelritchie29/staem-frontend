@@ -12,7 +12,7 @@ export class GetUserByIdGqlService extends Query<any>{
         accountName,
         email,
         status,
-        suspended,
+        suspendedAt,
         walletAmount,
         code,
         role{

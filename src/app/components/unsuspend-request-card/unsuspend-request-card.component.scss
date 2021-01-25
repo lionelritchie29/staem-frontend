@@ -1,0 +1,61 @@
+@import "../../../styles/variables";
+@import "../../../styles/mixins";
+
+.unsuspend-request-card {
+    display: flex;
+    width: 100%;
+    padding: 1rem;
+    background-color: #2C3842;
+    border-bottom: 1px solid #000;
+    position: relative;
+
+    &-img {
+       width: 12.5%;
+
+       img {
+           width: 100%;
+       }
+    }
+
+    &-info {
+        width: 87.5%;
+        margin-left: 1rem;
+        display: flex;
+        justify-content: space-between;
+
+        span {
+            display: block;
+            font-size: 1rem;
+            color: #666;
+        }
+
+        span:nth-child(1) {
+            font-size: 1.25rem;    
+            color: #F4f4f4;
+        }
+
+        span:nth-child(2) {
+            margin-top: 0.1rem;
+            margin-bottom: 0.1rem;
+            a {
+                text-decoration: none;
+                color: #09B9FF;
+                font-size: 1rem;
+            }
+        }
+
+        .accept-btn {
+            @include blue-button-style;
+            margin-top: 0.75rem;
+            margin-right: 1rem;
+        }
+        
+        .deny-btn {
+            @include red-button-style;
+        }
+    }
+}
+
+.reason {
+    color: #F4F4F4 !important;
+}

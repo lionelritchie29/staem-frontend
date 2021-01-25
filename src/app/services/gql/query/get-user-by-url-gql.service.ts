@@ -11,7 +11,7 @@ export class GetUserByUrlGqlService extends Query<any>{
         id,
         accountName,
         status,
-        suspended,
+        suspendedAt,
         walletAmount,
         code,
         role{
