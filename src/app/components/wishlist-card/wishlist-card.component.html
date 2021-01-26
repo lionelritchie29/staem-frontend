@@ -1,0 +1,58 @@
+<div class="wishlist-card" *ngIf="wishlist">
+  <div class="wishlist-card-left">
+    <img src="{{ imgUrl }}" alt="{{ wishlist.game.title }}" />
+  </div>
+
+  <div class="wishlist-card-right">
+    <div class="wishlist-card-right-top">{{ wishlist.game.title }}</div>
+
+    <div class="wishlist-card-right-middle">
+      <div class="wishlist-card-right-middle-date">
+        RELEASE DATE: {{ wishlist.game.releasedate }}
+      </div>
+
+      <div class="wishlist-card-right-middle-price">
+        <div class="wishlist-card-right-middle-price-info">
+          <div
+            class="wishlist-card-right-middle-price-info-disc"
+            *ngIf="wishlist.game.sale.discount != 0"
+          >
+            -{{ wishlist.game.sale.discount }}%
+          </div>
+          <div
+            class="wishlist-card-right-middle-price-info-price"
+            [class.decor]="wishlist.game.sale.discount == 0"
+          >
+            <span [class.discount]="wishlist.game.sale.discount != 0">{{
+              wishlist.game.price | currency: "Rp. "
+            }}</span>
+            <span *ngIf="wishlist.game.sale.discount != 0">
+              {{
+                ((100 - wishlist.game.sale.discount) / 100) *
+                  wishlist.game.price | currency: "Rp. "
+              }}
+            </span>
+          </div>
+          <a
+            routerLink="/cart"
+            (click)="addToCart()"
+            class="wishlist-card-right-middle-price-info-add-cart"
+          >
+            Add to Cart
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="wishlist-card-right-bottom">
+      <div class="wishlist-card-right-bottom-tags">
+        <span *ngFor="let tag of wishlist.game.tags">{{ tag.name }}</span>
+      </div>
+
+      <div class="wishlist-card-right-bottom-created">
+        Added on {{ wishlist.createdAt | date }} (
+        <button (click)="onRemove()" class="remove-btn">Remove</button> )
+      </div>
+    </div>
+  </div>
+</div>

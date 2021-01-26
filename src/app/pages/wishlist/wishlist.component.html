@@ -1,0 +1,23 @@
+<section id="wishlist">
+  <section>
+    <div class="wishlist-header">
+      <div>
+        <img src="http://localhost:2000/images/avatars/1.jpg" alt="asd" />
+      </div>
+
+      <h1>Gomay's Wishlist</h1>
+    </div>
+
+    <div *ngIf="wishlists.length == 0" class="no-wishlist">
+      YOU HAVE NO ITEMS IN YOUR WISHLIST
+    </div>
+
+    <div class="wishlist-container" *ngIf="wishlists.length > 0">
+      <app-wishlist-card
+        *ngFor="let wishlist of wishlists"
+        [wishlist]="wishlist"
+      >
+      </app-wishlist-card>
+    </div>
+  </section>
+</section>

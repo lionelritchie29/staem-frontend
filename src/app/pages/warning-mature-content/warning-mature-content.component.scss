@@ -1,0 +1,89 @@
+@import "../../../styles/variables";
+@import "../../../styles/mixins";
+
+#mature-content {
+  width: 90%;
+  padding-top: 1.5rem;
+  margin: 0 auto;
+  min-height: 100vh;
+
+  app-sidebar {
+    display: none;
+    position: absolute;
+    left: 1rem;
+    transition: all 0.5s;
+
+    @include for-desktop {
+      display: block;
+    }
+  }
+
+  .mature {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    color: #f4f4f4;
+    margin-top: 5rem;
+
+    &-image {
+      margin: 0 auto;
+      width: 30%;
+      margin-bottom: -5rem;
+      z-index: 2;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    &-content {
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      padding-top: 5rem;
+      padding-bottom: 3rem;
+      border-radius: 0.25rem;
+
+      p {
+        text-align: center;
+        font-size: 1.25rem;
+        margin-bottom: 1.5rem;
+        margin-top: 2rem;
+      }
+
+      &-date {
+        width: 60%;
+        margin: 0 auto;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 1rem;
+        justify-content: center;
+        text-align: center;
+        border-radius: 0.25rem;
+
+        label {
+          display: block;
+          margin-bottom: 1rem;
+        }
+
+        input {
+          @include blue-button-style;
+          width: 50%;
+        }
+      }
+
+      &-btn {
+        margin-top: 4rem;
+        text-align: center;
+
+        button {
+          @include blue-button-style;
+          margin-right: 0.5rem;
+        }
+      }
+    }
+  }
+
+  @include for-desktop {
+    // grid-template-columns: 20% 65%;
+    width: 65%;
+  }
+}

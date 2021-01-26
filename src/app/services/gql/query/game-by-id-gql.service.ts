@@ -26,7 +26,8 @@ export class GameByIdGqlService extends Query<any>{
         },
         tags{
           id,
-          name
+          name,
+          isAdult
         },
         sale{
           gameId,

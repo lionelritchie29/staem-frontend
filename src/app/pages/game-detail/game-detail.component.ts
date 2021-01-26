@@ -8,32 +8,29 @@ import { GameByIdGqlService } from 'src/app/services/gql/query/game-by-id-gql.se
 @Component({
   selector: 'app-game-detail',
   templateUrl: './game-detail.component.html',
-  styleUrls: ['./game-detail.component.scss']
+  styleUrls: ['./game-detail.component.scss'],
 })
 export class GameDetailComponent implements OnInit {
-
   game: Game;
 
   constructor(
     private route: ActivatedRoute,
     private gameByIdGqlService: GameByIdGqlService,
     private cartService: CartService
-  ) {
-   }
+  ) {}
 
   ngOnInit(): void {
-    this.route.params.subscribe(params => {
-      this.getGameById(params["id"]);
+    this.route.params.subscribe((params) => {
+      this.getGameById(params['id']);
     });
   }
 
   getGameById(gameId: number): void {
     this.gameByIdGqlService
-      .watch({id: gameId})
-      .valueChanges
-      .pipe(map(res => res.data))
-      .subscribe(res => {
-        this.game = res.game
+      .watch({ id: gameId })
+      .valueChanges.pipe(map((res) => res.data))
+      .subscribe((res) => {
+        this.game = res.game;
       });
   }
 
@@ -41,5 +38,4 @@ export class GameDetailComponent implements OnInit {
     this.cartService.add(this.game);
     this.cartService.get();
   }
-
 }

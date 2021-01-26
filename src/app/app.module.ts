@@ -66,6 +66,9 @@ import { ManageUserViewComponent } from './pages/manage-user/manage-user-view/ma
 import { ManageUserCardComponent } from './components/manage-user-card/manage-user-card.component';
 import { ManageUserUnsuspendRequestComponent } from './pages/manage-user/manage-user-unsuspend-request/manage-user-unsuspend-request.component';
 import { UnsuspendRequestCardComponent } from './components/unsuspend-request-card/unsuspend-request-card.component';
+import { WarningMatureContentComponent } from './pages/warning-mature-content/warning-mature-content.component';
+import { WishlistComponent } from './pages/wishlist/wishlist.component';
+import { WishlistCardComponent } from './components/wishlist-card/wishlist-card.component';
 
 @NgModule({
   declarations: [
@@ -129,6 +132,9 @@ import { UnsuspendRequestCardComponent } from './components/unsuspend-request-ca
     ManageUserCardComponent,
     ManageUserUnsuspendRequestComponent,
     UnsuspendRequestCardComponent,
+    WarningMatureContentComponent,
+    WishlistComponent,
+    WishlistCardComponent,
   ],
   imports: [
     BrowserModule,

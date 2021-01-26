@@ -1,0 +1,46 @@
+@import "../../../styles/mixins";
+
+#wishlist {
+  padding-top: 1.5rem;
+  margin: 0 auto;
+  min-height: 100vh;
+
+  section {
+    .wishlist-header {
+      display: flex;
+      align-items: center;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid #111;
+
+      div {
+        width: 7.5%;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      h1 {
+        color: #f4f4f4;
+        font-weight: normal;
+        font-size: 1.75rem;
+        margin-left: 1.25rem;
+      }
+    }
+
+    .wishlist-container {
+    }
+  }
+
+  @include for-desktop {
+    // grid-template-columns: 20% 65%;
+    width: 75%;
+  }
+}
+
+.no-wishlist {
+  text-align: center;
+  color: #f4f4f4;
+  font-size: 1.5rem;
+  margin-top: 3rem;
+}

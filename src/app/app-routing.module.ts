@@ -26,63 +26,80 @@ import { ManagePromoAddComponent } from './pages/manage-promo/manage-promo-add/m
 import { ManagePromoUpdateComponent } from './pages/manage-promo/manage-promo-update/manage-promo-update.component';
 import { ManageUserViewComponent } from './pages/manage-user/manage-user-view/manage-user-view.component';
 import { ManageUserUnsuspendRequestComponent } from './pages/manage-user/manage-user-unsuspend-request/manage-user-unsuspend-request.component';
+import { MatureContentGuardService } from './services/mature-content-guard.service';
+import { WarningMatureContentComponent } from './pages/warning-mature-content/warning-mature-content.component';
+import { WishlistComponent } from './pages/wishlist/wishlist.component';
 
 const routes: Routes = [
-  {path: '', component: HomeComponent},
-  {path: 'search', component: SearchGameComponent},
-  {path: 'game/:id', component: GameDetailComponent},
-  {path: 'cart', component: CartComponent},
-  {path: 'login', component: LoginComponent},
-  {path: 'register', component: RegisterComponent},
-  {path: 'redeem-wallet', component: RedeemWalletComponent},
-  {path: 'profile/:userCustomUrl', component: ProfileComponent},
+  { path: '', component: HomeComponent },
+  { path: 'search', component: SearchGameComponent },
   {
-    path: 'profile/:userCustomUrl/friends', 
+    path: 'game/:id',
+    component: GameDetailComponent,
+    canActivate: [MatureContentGuardService],
+  },
+  { path: 'agecheck/:id', component: WarningMatureContentComponent },
+  { path: 'cart', component: CartComponent },
+  { path: 'wishlist', component: WishlistComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'redeem-wallet', component: RedeemWalletComponent },
+  { path: 'profile/:userCustomUrl', component: ProfileComponent },
+  {
+    path: 'profile/:userCustomUrl/friends',
     component: FriendsComponent,
     children: [
-      {path: '', component: FriendListComponent},
-      {path: 'add', component: AddFriendComponent},
-      {path: 'pending', component: PendingInviteComponent},
+      { path: '', component: FriendListComponent },
+      { path: 'add', component: AddFriendComponent },
+      { path: 'pending', component: PendingInviteComponent },
     ],
   },
   {
-    path: 'checkout', 
+    path: 'checkout',
     component: CheckoutComponent,
     children: [
-      {path: 'self', component: SelfComponent},
-      {path: 'gift', component: GiftComponent},
+      { path: 'self', component: SelfComponent },
+      { path: 'gift', component: GiftComponent },
     ],
   },
-  {path: 'admin', component: AdminLoginComponent},
+  { path: 'admin', component: AdminLoginComponent },
   {
-    path: 'admin/manage-game', 
+    path: 'admin/manage-game',
     component: ManageGameComponent,
     children: [
-      {path: '', component: ManageGameViewComponent},
-      {path: 'add', component: ManageGameAddComponent},
-    ]
+      { path: '', component: ManageGameViewComponent },
+      { path: 'add', component: ManageGameAddComponent },
+    ],
   },
   {
-    path: 'admin/manage-promo', 
+    path: 'admin/manage-promo',
     component: ManagePromoComponent,
     children: [
-      {path: '', component: ManagePromoViewComponent},
-      {path: 'add', component: ManagePromoAddComponent},
-      {path: 'update/:id', component: ManagePromoUpdateComponent}
-    ]
+      { path: '', component: ManagePromoViewComponent },
+      { path: 'add', component: ManagePromoAddComponent },
+      { path: 'update/:id', component: ManagePromoUpdateComponent },
+    ],
   },
   {
-    path: 'admin/manage-user', 
+    path: 'admin/manage-user',
     component: ManageUserComponent,
     children: [
-      {path: '', component: ManageUserViewComponent},
-      {path: 'unsuspend-request', component: ManageUserUnsuspendRequestComponent}
-    ]
+      { path: '', component: ManageUserViewComponent },
+      {
+        path: 'unsuspend-request',
+        component: ManageUserUnsuspendRequestComponent,
+      },
+    ],
   },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {scrollPositionRestoration: 'enabled', onSameUrlNavigation: 'reload'})],
-  exports: [RouterModule]
+  imports: [
+    RouterModule.forRoot(routes, {
+      scrollPositionRestoration: 'enabled',
+      onSameUrlNavigation: 'reload',
+    }),
+  ],
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

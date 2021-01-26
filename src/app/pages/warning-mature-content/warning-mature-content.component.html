@@ -1,0 +1,24 @@
+<section id="mature-content">
+  <section>
+    <app-search-bar></app-search-bar>
+    <div class="mature">
+      <div class="mature-image">
+        <img src="{{ headerImgUrl }}" />
+      </div>
+
+      <div class="mature-content">
+        <p>THIS GAME CONTAINS CONTENT YOU HAVE ASKED NOT TO SEE:</p>
+
+        <div class="mature-content-date">
+          <label>Please enter your birth date to continue: </label>
+          <input [(ngModel)]="date" type="date" />
+        </div>
+
+        <div class="mature-content-btn">
+          <button (click)="onViewPage()">View Page</button>
+          <button (click)="onCancel()">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>

@@ -1,0 +1,115 @@
+@import "../../../styles/variables";
+
+.wishlist-card {
+  display: flex;
+  background: rgba(64, 81, 99, 0.9);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  position: relative;
+
+  &-left {
+    width: 25%;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &-right {
+    width: 75%;
+    margin-left: 1rem;
+    color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &-top {
+      font-size: 1.4rem;
+    }
+
+    &-middle {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 1rem;
+      color: #b2b8bd;
+
+      &-price {
+        &-info {
+          display: flex;
+          background: #333;
+          width: fit-content;
+          padding: 0.15rem;
+          border-radius: 0.2rem;
+
+          &-disc {
+            background: $primary-green;
+            color: $text-green;
+            padding: 0.25rem 0.5rem;
+            font-size: 1.5rem;
+          }
+
+          &-price {
+            padding: 0 0.5rem;
+            display: flex;
+            align-items: center;
+            font-size: 1rem;
+            color: $secondary-color;
+            flex-direction: column;
+          }
+
+          &-add-cart {
+            display: flex;
+            align-items: center;
+            background: linear-gradient(to right, #75b022 5%, #588a1b 95%);
+            color: #fff;
+            border: none;
+            padding: 0 1.25rem;
+            font-size: 1.1rem;
+            border-radius: 0.25rem;
+            cursor: pointer;
+            text-decoration: none;
+
+            &:hover {
+              background: lighten(#75b022, 10);
+            }
+          }
+        }
+      }
+    }
+
+    &-bottom {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      color: #b2b8bd;
+
+      &-tags {
+        span {
+          background: transparent;
+          border: 1px solid #b2b8bd;
+          color: #b2b8bd;
+          padding: 0.1rem 0.25rem;
+          border-radius: 0.25rem;
+          margin-right: 0.5rem;
+        }
+      }
+    }
+  }
+}
+
+.discount {
+  text-decoration: line-through;
+  color: #666;
+}
+
+.decor {
+  padding: 0.75rem 1rem !important;
+}
+
+.remove-btn {
+  background: transparent;
+  border: none;
+  color: #b2b8bd;
+  text-decoration: underline;
+  cursor: pointer;
+}
