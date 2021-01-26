@@ -18,11 +18,13 @@ export class GameDetailComponent implements OnInit {
     private route: ActivatedRoute,
     private gameByIdGqlService: GameByIdGqlService,
     private cartService: CartService
-  ) { }
+  ) {
+   }
 
   ngOnInit(): void {
-    const gameId: number = this.route.snapshot.params.id;
-    this.getGameById(gameId);
+    this.route.params.subscribe(params => {
+      this.getGameById(params["id"]);
+    });
   }
 
   getGameById(gameId: number): void {

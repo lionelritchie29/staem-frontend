@@ -6,6 +6,11 @@ const BASE_URL:string = "http://localhost:2000";
 export const GLOBALS = {
     GRAPHQL_ENDPOINT : `${BASE_URL}/api`,
     IMAGE_ENDPOINT : `${BASE_URL}/images`,
+    USER_DEFAULT_ROLE: 'user-default',
+    ADMIN_GAME_ROLE: 'admin-game',
+    ADMIN_PROMO_ROLE: 'admin-promo',
+    ADMIN_USER_ROLE: 'admin-user',
+    ADMIN_MASTER_ROLE: 'admin-master',
 }
 
 export const getGameImageUrl = (gameId: number, url: string): string => {

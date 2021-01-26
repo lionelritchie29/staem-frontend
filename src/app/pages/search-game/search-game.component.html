@@ -31,14 +31,14 @@
 
             <section class="search-result-container-right">
                 <app-search-game-filter-card headerTitle="Narrow by Price" class="search-result-container-right-price-filter">
-                    <input type="range" min="1" max="100" value="50">
-                    <p>Any Price</p>
+                    <input type="range" min="{{sliderMinValue}}" max="{{sliderMaxValue}}" (change)="filterByPrice($event)" value="{{sliderCurrentValue}}">
+                    <p>{{sliderCurrentValue | currency:"Rp. "}}</p>
                 </app-search-game-filter-card>
 
                 <app-search-game-filter-card headerTitle="Narrow by Tag" class="search-result-container-right-tag-filter">
                     <div *ngFor="let tag of tags">
-                        <input type="checkbox">
-                        <label>{{tag}}</label>
+                        <input type="checkbox" (change)="onTagCheckboxChange(tag.id, $event)" value="{{tag.id}}">
+                        <label>{{tag.name}}</label>
                     </div>
                 </app-search-game-filter-card>
 

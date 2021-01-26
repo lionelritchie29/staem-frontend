@@ -4,10 +4,35 @@
     </div>
     <div class="search-bar-container">
         <div class="search-bar">
-            <input [(ngModel)]="searchTerm" type="text" placeholder="search the store" />
+            <input [(ngModel)]="searchTerm" (ngModelChange)="onInputChange($event)" type="text" placeholder="search the store" />
             <button (click)="onSearchButtonClicked()">
                 <i class="fas fa-search"></i>
             </button>
+        </div>
+
+        <div class="search-bar-result" *ngIf="searchResult.length > 0">
+            <a
+                class="search-bar-result-game" 
+                *ngFor="let game of searchResult; let i = index"
+                href="/game/{{game.id}}"
+            >
+                <div class="search-bar-result-game-img">
+                    <img src="{{gameImagesUrl[i]}}" alt="">
+                </div>
+
+                <div class="search-bar-result-game-info">
+                    <span>{{game.title}}</span>
+                    <span 
+                        style="text-decoration: line-through; font-size: 0.8rem;"
+                        *ngIf="game.sale.discount != 0" 
+                    >
+                    {{game.price | currency:"Rp. "}}
+                    </span>
+                    <span>
+                        {{game.sale.discount == 0 ? game.price : ((100 - game.sale.discount) / 100) * game.price | currency:"Rp. "}}
+                    </span>
+                </div>
+            </a>
         </div>
     </div>
 </section>
