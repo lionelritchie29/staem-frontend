@@ -29,6 +29,9 @@ import { ManageUserUnsuspendRequestComponent } from './pages/manage-user/manage-
 import { MatureContentGuardService } from './services/mature-content-guard.service';
 import { WarningMatureContentComponent } from './pages/warning-mature-content/warning-mature-content.component';
 import { WishlistComponent } from './pages/wishlist/wishlist.component';
+import { AdminUserGuardService } from './services/admin-user-guard.service';
+import { AdminPromoGuardService } from './services/admin-promo-guard.service';
+import { AdminGameGuardService } from './services/admin-game-guard.service';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -70,6 +73,7 @@ const routes: Routes = [
       { path: '', component: ManageGameViewComponent },
       { path: 'add', component: ManageGameAddComponent },
     ],
+    canActivate: [AdminGameGuardService],
   },
   {
     path: 'admin/manage-promo',
@@ -79,6 +83,7 @@ const routes: Routes = [
       { path: 'add', component: ManagePromoAddComponent },
       { path: 'update/:id', component: ManagePromoUpdateComponent },
     ],
+    canActivate: [AdminPromoGuardService],
   },
   {
     path: 'admin/manage-user',
@@ -90,6 +95,7 @@ const routes: Routes = [
         component: ManageUserUnsuspendRequestComponent,
       },
     ],
+    canActivate: [AdminUserGuardService],
   },
 ];
 

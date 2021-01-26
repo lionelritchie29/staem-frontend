@@ -1,56 +1,95 @@
 <section id="detail">
-      <section *ngIf="game">
-          <app-search-bar></app-search-bar>
-          
-          <h1>{{game.title}}</h1>
-          <app-game-detail-card [game]="game"></app-game-detail-card>
-          
-            <div class="wishlist-box">
-                  <button> Add to your wishlist </button>
-                  
-                  <button>
-                        View your Queue 
-                        <i class="fas fa-arrow-right" style="margin-left: 0.5rem"></i>
-                  </button>
+  <section *ngIf="game">
+    <app-search-bar></app-search-bar>
+
+    <h1>{{ game.title }}</h1>
+    <app-game-detail-card [game]="game"></app-game-detail-card>
+
+    <div class="wishlist-box">
+      <button (click)="addToWishlist()">Add to your wishlist</button>
+
+      <button>
+        View your Queue
+        <i class="fas fa-arrow-right" style="margin-left: 0.5rem"></i>
+      </button>
+    </div>
+
+    <section class="detail-info">
+      <div class="detail-info-left">
+        <div class="detail-info-left-price-box">
+          <p>Buy {{ game.title }}</p>
+          <div class="price-info">
+            <div class="price-info-disc" *ngIf="game.sale.discount != 0">
+              -{{ game.sale.discount }}%
             </div>
+            <div
+              class="price-info-price"
+              [class.decor]="game.sale.discount == 0"
+            >
+              <span [class.discount]="game.sale.discount != 0">{{
+                game.price | currency: "Rp. "
+              }}</span>
+              <span *ngIf="game.sale.discount != 0">
+                {{
+                  ((100 - game.sale.discount) / 100) * game.price
+                    | currency: "Rp. "
+                }}
+              </span>
+            </div>
+            <a
+              routerLink="/cart"
+              (click)="addToCart()"
+              class="price-info-add-cart"
+            >
+              Add to Cart
+            </a>
+          </div>
+        </div>
 
-            <section class="detail-info">
-                  <div class="detail-info-left">
-                        <div class="detail-info-left-price-box">
-                              <p>Buy {{game.title}}</p>
-                              <div class="price-info">
-                                    <div class="price-info-disc" *ngIf="game.sale.discount != 0">
-                                          -{{game.sale.discount}}%
-                                    </div>
-                                    <div class="price-info-price" [class.decor]="game.sale.discount == 0">
-                                          <span [class.discount]="game.sale.discount != 0">{{game.price | currency:"Rp. " }}</span>
-                                          <span *ngIf="game.sale.discount != 0">
-                                                {{((100 - game.sale.discount) / 100) * game.price | currency:"Rp. "}}
-                                          </span>
-                                    </div>
-                                    <a routerLink="/cart" (click)="addToCart()" class="price-info-add-cart">
-                                          Add to Cart
-                                    </a>
-                              </div>
-                        </div>
+        <div class="detail-info-left-system-req">
+          <h2>SYSTEM REQUIREMENTS</h2>
 
-                        <div class="detail-info-left-system-req">
-                              <h2>SYSTEM REQUIREMENTS</h2>
+          <div class="detail-info-left-system-req-container">
+            <app-system-req [req]="game.systemReq[1]"></app-system-req>
+            <app-system-req [req]="game.systemReq[0]"></app-system-req>
+          </div>
+        </div>
+      </div>
 
-                              <div class="detail-info-left-system-req-container">
-                                    <app-system-req [req]="game.systemReq[1]" ></app-system-req>
-                                    <app-system-req [req]="game.systemReq[0]"></app-system-req>
-                              </div>
-                        </div>
-                  </div>
+      <div class="detail-info-right">
+        <div></div>
+        <div></div>
+      </div>
+    </section>
 
-                  <div class="detail-info-right">
-                        <div></div>
-                        <div></div>
-                  </div>
-            </section>
+    <form class="review-form" [formGroup]="reviewForm" *ngIf="isOwned">
+      <h2>POST A REVIEW</h2>
+      <div class="review-form-input">
+        <div>
+          <img src="{{ currentUserImg }}" alt="" />
+        </div>
 
-            <app-game-reviews [currentGameId]="game.id" class="detail-reviews"></app-game-reviews>
+        <textarea formControlName="content"></textarea>
+      </div>
 
-        </section>
+      <div class="review-form-recommend">
+        <div></div>
+        <select formControlName="recommended">
+          <option value="1">Recommended</option>
+          <option value="0">Not Recommended</option>
+        </select>
+      </div>
+
+      <p style="color: red; text-align: right">{{ errorMsg }}</p>
+
+      <div class="review-form-post-btn">
+        <button (click)="onPostReview()">Post Review</button>
+      </div>
+    </form>
+
+    <app-game-reviews
+      [currentGameId]="game.id"
+      class="detail-reviews"
+    ></app-game-reviews>
   </section>
+</section>
