@@ -4,214 +4,215 @@
 $card-bg: rgba(0, 0, 0, 0.3);
 
 @mixin header-card-style {
-    background: $card-bg;
-    padding: 0.5rem 0.75rem;
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
+  background: $card-bg;
+  padding: 0.5rem 0.75rem;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
 }
 
-#profile { 
-    min-height: 100vh;
-    color: #666;
-    background-image: url(https://community.cloudflare.steamstatic.com/public/images/profile/2020/bg_dots.png);
-    background-position: center top;
-    background-repeat: no-repeat;
-    background-color: #000000;
-    padding-bottom: 12.5rem;
-    
-    .profile-container {
-        padding: 1.5rem;    
-        width: 90%;
-        margin: 0 auto;
-        background: #222431;
+#profile {
+  min-height: 100vh;
+  color: #666;
+  background-position: center top;
+  background-size: contain;
+  object-fit: cover;
+  background-repeat: repeat-y;
+  background-color: #000000;
+  padding-bottom: 12.5rem;
 
-        .profile-top {
-            display: flex;
-    
-            &-left {
-                width: 70%;
-                display: flex;
-    
-                &-image {
-                    width: 40%;
+  .profile-container {
+    padding: 1.5rem;
+    width: 90%;
+    margin: 0 auto;
+    background: #222431;
 
-                    img {
-                        width: 100%;
-                    }
-                }
-    
-                &-bio {
-                    margin-left: 1.25rem;
-                    
-                    h1 {
-                        color: #F4F4F4;
-                        font-weight: normal;
-                        font-size: 1.5rem;
-                    }
-    
-                    div {
-                        margin-top: 1rem;
-                    }
-    
-                    p {
-                        margin-top: 2rem;
-                        width: 70%;
-                    }
-                }
-            }
-    
-            &-right {
-                width: 30%;
-                
-                &-level {
-                    color: #F4F4F4;
-                    font-size: 1.5rem;
-                    margin-bottom: 1rem;
-                    
-                    span {
-                        font-size: 1.5rem;
-                        border: 1px solid #f4f4f4;
-                        padding: 0.15rem 0.7rem;
-                        border-radius: 50%;
-                    }
-                }
+    .profile-top {
+      display: flex;
 
-                .wrap {
-                    display: flex;
-                }
+      &-left {
+        width: 70%;
+        display: flex;
 
-                &-edit-btn {
-                    margin-top: 2rem;
-                    margin-right: 1rem;
-                    a {
-                        background: $btn-bg;
-                        color: #F4F4F4;
-                        padding: 0.6rem 1rem;
-                        text-decoration: none;
-                        font-size: 1rem;
-                        border-radius: 0.25rem;
+        &-image {
+          width: 40%;
 
-                        &:hover {
-                            background: lighten($btn-bg, 5);
-                            cursor: pointer;
-                        }
-                    }
-
-                    button {
-                        background: $btn-bg;
-                        color: #F4F4F4;
-                        padding: 0.6rem 1rem;
-                        border: none;
-                        border-radius: 0.25rem;
-
-                        &:hover {
-                            background: lighten($btn-bg, 5);
-                            cursor: pointer;
-                        }
-                    }
-                }
-            }
+          img {
+            width: 100%;
+          }
         }
 
-        .profile-bottom {
-            display: flex;
-            padding-top: 2rem;
+        &-bio {
+          margin-left: 1.25rem;
 
-            &-left {
-                width: 70%;
+          h1 {
+            color: #f4f4f4;
+            font-weight: normal;
+            font-size: 1.5rem;
+          }
 
-                &-header {
-                    @include header-card-style;
-                }
+          div {
+            margin-top: 1rem;
+          }
 
-                &-recent {
-                    margin-top: 1rem;
-                    height: 20rem;
-                    background: $card-bg;
-                }
-                
-                &-games {
-                    margin-top: 1rem;
-                    
-                    h2 {
-                        @include header-card-style;
-                    }
+          p {
+            margin-top: 2rem;
+            width: 70%;
+          }
+        }
+      }
 
-                    div {
-                        padding: 1rem;
-                        background: $card-bg;
-                        display: grid;
-                        grid-template-columns: repeat(3, 1fr);
-                        gap: 1rem;
-                    }
-                }
+      &-right {
+        width: 30%;
 
-                &-comments {
-                    margin-top: 1rem;
-                    
-                    h2 {
-                        @include header-card-style;
-                    }
+        &-level {
+          color: #f4f4f4;
+          font-size: 1.5rem;
+          margin-bottom: 1rem;
 
-                    &-input {
-                        display: flex;
-                        justify-content: space-between;
-
-                        div:nth-child(1) {
-                            width: 7.5%;
-
-                            img {
-                                width: 100%;
-                            }
-                        }
-
-                        textarea {
-                            width: 90%;
-                            background-color: rgba(0, 0, 0, 0.5);
-                            border: 1px solid #000;
-                            outline: none;
-                            color: #F4F4F4;
-                            padding: 0.5rem;
-                        }
-                    }
-
-                    &-post-btn {
-                        margin-top: 0.5rem;
-                        text-align: right;
-
-                        button {
-                            @include green-button-style;
-                        }
-                    }
-                }
-            }
-
-            &-right {
-                width: 30%;
-                margin-left: 1rem;
-                background: $card-bg;
-                padding: 1rem;
-                height: fit-content;
-
-                span {
-                    display: block;
-                    margin-bottom: 0.75rem;
-                    
-                    a {
-                        color: #F4F4F4;
-                        text-decoration: none;
-
-                        &:hover {
-                            text-decoration: underline;
-                        }
-                    }
-                }
-            }
+          span {
+            font-size: 1.5rem;
+            border: 1px solid #f4f4f4;
+            padding: 0.15rem 0.7rem;
+            border-radius: 50%;
+          }
         }
 
-        @include for-desktop{
-            // grid-template-columns: 20% 65%;
-            width: 65%;
+        .wrap {
+          display: flex;
         }
+
+        &-edit-btn {
+          margin-top: 2rem;
+          margin-right: 1rem;
+          a {
+            background: $btn-bg;
+            color: #f4f4f4;
+            padding: 0.6rem 1rem;
+            text-decoration: none;
+            font-size: 1rem;
+            border-radius: 0.25rem;
+
+            &:hover {
+              background: lighten($btn-bg, 5);
+              cursor: pointer;
+            }
+          }
+
+          button {
+            background: $btn-bg;
+            color: #f4f4f4;
+            padding: 0.6rem 1rem;
+            border: none;
+            border-radius: 0.25rem;
+
+            &:hover {
+              background: lighten($btn-bg, 5);
+              cursor: pointer;
+            }
+          }
+        }
+      }
     }
+
+    .profile-bottom {
+      display: flex;
+      padding-top: 2rem;
+
+      &-left {
+        width: 70%;
+
+        &-header {
+          @include header-card-style;
+        }
+
+        &-recent {
+          margin-top: 1rem;
+          height: 20rem;
+          background: $card-bg;
+        }
+
+        &-games {
+          margin-top: 1rem;
+
+          h2 {
+            @include header-card-style;
+          }
+
+          div {
+            padding: 1rem;
+            background: $card-bg;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+          }
+        }
+
+        &-comments {
+          margin-top: 1rem;
+
+          h2 {
+            @include header-card-style;
+          }
+
+          &-input {
+            display: flex;
+            justify-content: space-between;
+
+            div:nth-child(1) {
+              width: 7.5%;
+
+              img {
+                width: 100%;
+              }
+            }
+
+            textarea {
+              width: 90%;
+              background-color: rgba(0, 0, 0, 0.5);
+              border: 1px solid #000;
+              outline: none;
+              color: #f4f4f4;
+              padding: 0.5rem;
+            }
+          }
+
+          &-post-btn {
+            margin-top: 0.5rem;
+            text-align: right;
+
+            button {
+              @include green-button-style;
+            }
+          }
+        }
+      }
+
+      &-right {
+        width: 30%;
+        margin-left: 1rem;
+        background: $card-bg;
+        padding: 1rem;
+        height: fit-content;
+
+        span {
+          display: block;
+          margin-bottom: 0.75rem;
+
+          a {
+            color: #f4f4f4;
+            text-decoration: none;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+
+    @include for-desktop {
+      // grid-template-columns: 20% 65%;
+      width: 65%;
+    }
+  }
 }

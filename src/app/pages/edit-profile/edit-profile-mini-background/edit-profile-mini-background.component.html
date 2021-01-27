@@ -3,24 +3,25 @@
     <h2>MINI PROFILE BACKGROUND</h2>
   </div>
 
-  <form class="edit-mini-background-form" [formGroup]="editInfoForm">
+  <form class="edit-mini-background-form">
     <div class="current">
       <h3>Current Mini Profile Background</h3>
-      <div></div>
+      <div class="img-container">
+        <img src="{{ activeBackgroundImageUrl }}" alt="" />
+      </div>
     </div>
 
     <div class="owned">
       <h3>Choose Mini Profile Background</h3>
       <div class="owned-inner">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
+        <div
+          (click)="onChangeBg(profileBackgrounds[i])"
+          *ngFor="let bgUrl of profileBackgroundsUrl; let i = index"
+        >
+          <img src="{{ bgUrl }}" alt="" />
+        </div>
       </div>
     </div>
-
-    <p class="error">{{ errorMsg }}</p>
 
     <div style="text-align: right">
       <button (click)="onSave()">Save</button>

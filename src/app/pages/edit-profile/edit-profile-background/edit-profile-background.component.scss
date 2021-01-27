@@ -63,6 +63,12 @@
           img {
             width: 100%;
           }
+
+          &:hover {
+            transition: 0.5s;
+            transform: scale(1.25);
+            cursor: pointer;
+          }
         }
       }
     }

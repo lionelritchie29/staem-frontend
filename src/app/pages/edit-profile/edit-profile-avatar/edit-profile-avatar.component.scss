@@ -49,6 +49,13 @@
 
       div:nth-child(1) {
         width: 50%;
+
+        .avatar-current {
+          // background: url("http://localhost:2000/images/avatar-frame/1.png");
+          background-size: contain;
+          background-repeat: no-repeat;
+          padding: 1.5rem;
+        }
       }
 
       div:nth-child(2) {
@@ -72,6 +79,11 @@
 
         img {
           width: 100%;
+        }
+
+        &:hover {
+          transition: all 0.5s;
+          transform: scale(1.25);
         }
       }
     }
