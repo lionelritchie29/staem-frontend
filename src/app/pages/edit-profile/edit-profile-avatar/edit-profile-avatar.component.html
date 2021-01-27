@@ -1,0 +1,52 @@
+<div class="edit-info">
+  <div class="edit-info-header">
+    <h2>AVATAR</h2>
+  </div>
+
+  <form class="edit-info-form" [formGroup]="editInfoForm">
+    <div class="avatar">
+      <div>
+        <h3>Current Avatar</h3>
+        <div class="img-container">
+          <img src="http://localhost:2000/images/avatars/1.jpg" alt="" />
+        </div>
+      </div>
+
+      <div>
+        <label>Upload your Avatar</label>
+        <input type="file" formControlName="displayName" />
+        <p>
+          Upload a file from your device. Image should be square, at least 184px
+          x 184px.
+        </p>
+      </div>
+    </div>
+
+    <div>
+      <h3>Your Avatar Frame</h3>
+      <div class="avatar-frame">
+        <div>
+          <img src="http://localhost:2000/images/avatars/1.jpg" alt="" />
+        </div>
+        <div>
+          <img src="http://localhost:2000/images/avatars/1.jpg" alt="" />
+        </div>
+        <div>
+          <img src="http://localhost:2000/images/avatars/1.jpg" alt="" />
+        </div>
+        <div>
+          <img src="http://localhost:2000/images/avatars/1.jpg" alt="" />
+        </div>
+        <div>
+          <img src="http://localhost:2000/images/avatars/1.jpg" alt="" />
+        </div>
+      </div>
+    </div>
+
+    <p class="error">{{ errorMsg }}</p>
+
+    <div style="text-align: right">
+      <button (click)="onSave()">Save</button>
+    </div>
+  </form>
+</div>

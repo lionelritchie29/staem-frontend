@@ -1,0 +1,78 @@
+@import "../../../styles/mixins";
+
+#edit-profile {
+  padding-top: 1.5rem;
+  margin: 0 auto;
+  min-height: 100vh;
+
+  section {
+    .edit-profile-header {
+      display: flex;
+      align-items: center;
+
+      div {
+        width: 7.5%;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      h1 {
+        color: #f4f4f4;
+        font-weight: normal;
+        font-size: 1.75rem;
+        margin-left: 1.25rem;
+      }
+    }
+
+    .edit-profile-container {
+      display: flex;
+      margin-top: 2rem;
+
+      &-left {
+        width: 25%;
+        color: #7092a5;
+
+        h2 {
+          font-weight: normal;
+          padding-left: 0.6rem;
+        }
+
+        ul {
+          list-style: none;
+
+          li {
+            a {
+              padding: 0.6rem 1rem;
+              text-decoration: none;
+              color: #f4f4f4;
+              display: block;
+              font-size: 1.1rem;
+              border-radius: 0.25rem;
+
+              i {
+                margin-right: 1rem;
+                font-size: 1rem;
+              }
+
+              &:hover {
+                background: #3d4450;
+              }
+            }
+          }
+        }
+      }
+
+      &-right {
+        width: 75%;
+        margin-left: 1rem;
+      }
+    }
+  }
+
+  @include for-desktop {
+    // grid-template-columns: 20% 65%;
+    width: 65%;
+  }
+}

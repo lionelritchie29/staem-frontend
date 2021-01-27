@@ -1,88 +1,112 @@
 <section id="profile" *ngIf="currentUser">
-   <div class="profile-container">
+  <div class="profile-container">
     <div class="profile-top">
-        <div class="profile-top-left">
-            <div class="profile-top-left-image">
-                <img src="{{profileImgUrl}}" alt="">
-            </div>
-
-            <div class="profile-top-left-bio">
-               <h1>{{ currentUser.accountName }}</h1> 
-               <div>{{ currentUser.profile.displayName }}</div> 
-               <p>{{ currentUser.profile.summary }}</p>
-            </div>
+      <div class="profile-top-left">
+        <div class="profile-top-left-image">
+          <img src="{{ profileImgUrl }}" alt="" />
         </div>
 
-        <div class="profile-top-right">
-            <div class="profile-top-right-level">Level <span>{{ currentUser.profile.level }}</span></div>
-            <app-badge></app-badge>
-            <span class="wrap" *ngIf="loggedUser">
-                <div class="profile-top-right-edit-btn" *ngIf="loggedUser.id === currentUser.id;else elseBlock">
-                    <a routerLink="/">Edit Profile</a>
-                </div>
-
-                <div class="profile-top-right-edit-btn">
-                    <a (click)="onReport()">Report</a>
-                </div>
-    
-                <ng-template #elseBlock>
-                    <div class="profile-top-right-edit-btn" *ngIf="!isFriend">
-                        <a (click)="onAddFriend()">Add Friend</a>
-                    </div>
-        
-                    <div class="profile-top-right-edit-btn" *ngIf="isFriend">
-                        <a routerLink="/">Message</a>
-                    </div>
-                </ng-template>
-            </span>
+        <div class="profile-top-left-bio">
+          <h1>{{ currentUser.accountName }}</h1>
+          <div>{{ currentUser.profile.displayName }}</div>
+          <p>{{ currentUser.profile.summary }}</p>
         </div>
+      </div>
+
+      <div class="profile-top-right">
+        <div class="profile-top-right-level">
+          Level <span>{{ currentUser.profile.level }}</span>
+        </div>
+        <app-badge></app-badge>
+        <span class="wrap" *ngIf="loggedUser">
+          <div
+            class="profile-top-right-edit-btn"
+            *ngIf="loggedUser.id === currentUser.id; else elseBlock"
+          >
+            <a routerLink="/profile/{{ loggedUser.profile.customURL }}/edit"
+              >Edit Profile</a
+            >
+          </div>
+
+          <div class="profile-top-right-edit-btn">
+            <a (click)="onReport()">Report</a>
+          </div>
+
+          <ng-template #elseBlock>
+            <div class="profile-top-right-edit-btn" *ngIf="!isFriend">
+              <a (click)="onAddFriend()">Add Friend</a>
+            </div>
+
+            <div class="profile-top-right-edit-btn" *ngIf="isFriend">
+              <a routerLink="/">Message</a>
+            </div>
+          </ng-template>
+        </span>
+      </div>
     </div>
 
     <div class="profile-bottom">
-        <div class="profile-bottom-left">
-            <div class="profile-bottom-left-header">
-                Recent Activity
-            </div>
+      <div class="profile-bottom-left">
+        <div class="profile-bottom-left-header">Recent Activity</div>
 
-            <div class="profile-bottom-left-recent"></div>
+        <div class="profile-bottom-left-recent"></div>
 
-            <div class="profile-bottom-left-games">
-                <h2>Owned Games</h2>
-                
-                <div>
-                    <app-user-game-card *ngFor="let game of games" [game]="game"></app-user-game-card>
-                </div>
-            </div>
+        <div class="profile-bottom-left-games">
+          <h2>Owned Games</h2>
 
-            <div class="profile-bottom-left-comments">
-                <h2>Comments</h2>
-
-                <form [formGroup]="commentForm" *ngIf="loggedUser && loggedUser.id !== currentUser.id">
-                    <div class="profile-bottom-left-comments-input">
-                        <div>
-                            <img src="{{loggedUserImgUrl}}" alt="{{loggedUser.accountName}}">
-                        </div>
-    
-                        <textarea formControlName="content"></textarea>
-                    </div>
-                    
-                    <div class="profile-bottom-left-comments-post-btn">
-                        <button (click)="onPostComment()">Post Comment</button>
-                    </div>
-                </form>
-
-                <div>
-                    <app-user-review-card *ngFor="let comment of comments" [comment]="comment"></app-user-review-card>
-                </div>
-            </div>
+          <div>
+            <app-user-game-card
+              *ngFor="let game of games"
+              [game]="game"
+            ></app-user-game-card>
+          </div>
         </div>
 
-        <div class="profile-bottom-right" >
-            <span><a href="/profile/{{currentUser.profile.customURL}}/friends">Friends</a></span>
-            <div *ngIf="friends.length > 0">
-                <app-friend-card *ngFor="let friend of friends" [friend]="friend"></app-friend-card>
+        <div class="profile-bottom-left-comments">
+          <h2>Comments</h2>
+
+          <form
+            [formGroup]="commentForm"
+            *ngIf="loggedUser && loggedUser.id !== currentUser.id"
+          >
+            <div class="profile-bottom-left-comments-input">
+              <div>
+                <img
+                  src="{{ loggedUserImgUrl }}"
+                  alt="{{ loggedUser.accountName }}"
+                />
+              </div>
+
+              <textarea formControlName="content"></textarea>
             </div>
+
+            <div class="profile-bottom-left-comments-post-btn">
+              <button (click)="onPostComment()">Post Comment</button>
+            </div>
+          </form>
+
+          <div>
+            <app-user-review-card
+              *ngFor="let comment of comments"
+              [comment]="comment"
+            ></app-user-review-card>
+          </div>
         </div>
+      </div>
+
+      <div class="profile-bottom-right">
+        <span
+          ><a href="/profile/{{ currentUser.profile.customURL }}/friends"
+            >Friends</a
+          ></span
+        >
+        <div *ngIf="friends.length > 0">
+          <app-friend-card
+            *ngFor="let friend of friends"
+            [friend]="friend"
+          ></app-friend-card>
+        </div>
+      </div>
     </div>
-   </div>
+  </div>
 </section>

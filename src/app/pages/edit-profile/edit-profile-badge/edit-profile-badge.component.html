@@ -1,0 +1,53 @@
+<div class="edit-badge">
+  <div class="edit-badge-header">
+    <h2>THEME</h2>
+  </div>
+
+  <form class="edit-badge-form" [formGroup]="editInfoForm">
+    <div class="current">
+      <h3>Current Theme</h3>
+      <div>
+        <img
+          src="https://community.cloudflare.steamstatic.com/public/images/badges/13_gamecollector/10_54.png?v=4"
+          alt=""
+        />
+        <span>Addept Accumulator</span>
+      </div>
+    </div>
+
+    <div class="owned">
+      <h3>Choose Theme</h3>
+      <div class="owned-inner">
+        <div>
+          <img
+            src="https://community.cloudflare.steamstatic.com/public/images/badges/13_gamecollector/10_54.png?v=4"
+            alt=""
+          />
+          <span>Addept Accumulator</span>
+        </div>
+
+        <div>
+          <img
+            src="https://community.cloudflare.steamstatic.com/public/images/badges/13_gamecollector/10_54.png?v=4"
+            alt=""
+          />
+          <span>Addept Accumulator</span>
+        </div>
+
+        <div>
+          <img
+            src="https://community.cloudflare.steamstatic.com/public/images/badges/13_gamecollector/10_54.png?v=4"
+            alt=""
+          />
+          <span>Addept Accumulator</span>
+        </div>
+      </div>
+    </div>
+
+    <p class="error">{{ errorMsg }}</p>
+
+    <div style="text-align: right">
+      <button (click)="onSave()">Save</button>
+    </div>
+  </form>
+</div>

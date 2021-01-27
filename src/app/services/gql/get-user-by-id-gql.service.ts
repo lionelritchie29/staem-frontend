@@ -31,6 +31,8 @@ export class GetUserByIdGqlService extends Query<any> {
           profileBackgroundUrl
           profilePictureUrl
           theme
+          summary
+          realName
         }
       }
     }

@@ -1,0 +1,46 @@
+<div class="edit-background">
+  <div class="edit-background-header">
+    <h2>PROFILE BACKGROUND</h2>
+  </div>
+
+  <form class="edit-background-form" [formGroup]="editInfoForm">
+    <div class="current">
+      <h3>Current Background</h3>
+      <div class="img-container">
+        <img src="http://via.placeholder.com/750x300" alt="" />
+      </div>
+    </div>
+
+    <div>
+      <label>Upload Background</label>
+      <input type="file" formControlName="displayName" />
+    </div>
+
+    <div class="owned">
+      <h3>Your Background</h3>
+      <div class="owned-inner">
+        <div>
+          <img src="http://via.placeholder.com/300x150" alt="" />
+        </div>
+        <div>
+          <img src="http://via.placeholder.com/300x150" alt="" />
+        </div>
+        <div>
+          <img src="http://via.placeholder.com/300x150" alt="" />
+        </div>
+        <div>
+          <img src="http://via.placeholder.com/300x150" alt="" />
+        </div>
+        <div>
+          <img src="http://via.placeholder.com/300x150" alt="" />
+        </div>
+      </div>
+    </div>
+
+    <p class="error">{{ errorMsg }}</p>
+
+    <div style="text-align: right">
+      <button (click)="onSave()">Save</button>
+    </div>
+  </form>
+</div>

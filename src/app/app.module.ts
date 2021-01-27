@@ -69,6 +69,13 @@ import { UnsuspendRequestCardComponent } from './components/unsuspend-request-ca
 import { WarningMatureContentComponent } from './pages/warning-mature-content/warning-mature-content.component';
 import { WishlistComponent } from './pages/wishlist/wishlist.component';
 import { WishlistCardComponent } from './components/wishlist-card/wishlist-card.component';
+import { EditProfileComponent } from './pages/edit-profile/edit-profile.component';
+import { EditProfileInfoComponent } from './pages/edit-profile/edit-profile-info/edit-profile-info.component';
+import { EditProfileAvatarComponent } from './pages/edit-profile/edit-profile-avatar/edit-profile-avatar.component';
+import { EditProfileBackgroundComponent } from './pages/edit-profile/edit-profile-background/edit-profile-background.component';
+import { EditProfileMiniBackgroundComponent } from './pages/edit-profile/edit-profile-mini-background/edit-profile-mini-background.component';
+import { EditProfileThemeComponent } from './pages/edit-profile/edit-profile-theme/edit-profile-theme.component';
+import { EditProfileBadgeComponent } from './pages/edit-profile/edit-profile-badge/edit-profile-badge.component';
 
 @NgModule({
   declarations: [
@@ -135,6 +142,13 @@ import { WishlistCardComponent } from './components/wishlist-card/wishlist-card.
     WarningMatureContentComponent,
     WishlistComponent,
     WishlistCardComponent,
+    EditProfileComponent,
+    EditProfileInfoComponent,
+    EditProfileAvatarComponent,
+    EditProfileBackgroundComponent,
+    EditProfileMiniBackgroundComponent,
+    EditProfileThemeComponent,
+    EditProfileBadgeComponent,
   ],
   imports: [
     BrowserModule,

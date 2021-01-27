@@ -1,0 +1,57 @@
+<div class="edit-info">
+  <div class="edit-info-header">
+    <h2>ABOUT</h2>
+  </div>
+
+  <form class="edit-info-form" [formGroup]="editInfoForm">
+    <div>
+      <label>Display Name</label>
+      <input
+        type="text"
+        formControlName="displayName"
+        placeholder="Input Diplay Name..."
+      />
+    </div>
+
+    <div>
+      <label>Real Name</label>
+      <input
+        type="text"
+        formControlName="realName"
+        placeholder="Input Real Name..."
+      />
+    </div>
+
+    <div>
+      <label>Custom URL</label>
+      <input
+        type="text"
+        formControlName="customURL"
+        placeholder="Input Custom URL..."
+      />
+    </div>
+
+    <div>
+      <label>Country</label>
+      <select formControlName="country">
+        <option value="Indonesia">Indonesia</option>
+        <option value="United States of America">
+          United States of America
+        </option>
+        <option value="Singapore">Singapore</option>
+        <option value="Malaysia">Malaysia</option>
+      </select>
+    </div>
+
+    <div>
+      <label>Summary</label>
+      <textarea formControlName="summary"></textarea>
+    </div>
+
+    <p class="error">{{ errorMsg }}</p>
+
+    <div style="text-align: right">
+      <button (click)="onSave()">Save</button>
+    </div>
+  </form>
+</div>

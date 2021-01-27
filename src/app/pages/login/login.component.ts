@@ -68,9 +68,10 @@ export class LoginComponent implements OnInit {
       .watch({ id: userId })
       .valueChanges.pipe(map((res) => res.data.user))
       .subscribe((user) => {
-        if (user.role.id != 1 || user.role.id != 5) {
+        console.log(user);
+        if (user.role.id != 1 && user.role.id != 5) {
           alert('Admin must not login from there');
-          this.authService.logout();
+          return;
         }
 
         if (user.suspendedAt != null) {

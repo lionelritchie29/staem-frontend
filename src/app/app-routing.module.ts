@@ -32,6 +32,13 @@ import { WishlistComponent } from './pages/wishlist/wishlist.component';
 import { AdminUserGuardService } from './services/admin-user-guard.service';
 import { AdminPromoGuardService } from './services/admin-promo-guard.service';
 import { AdminGameGuardService } from './services/admin-game-guard.service';
+import { EditProfileComponent } from './pages/edit-profile/edit-profile.component';
+import { EditProfileInfoComponent } from './pages/edit-profile/edit-profile-info/edit-profile-info.component';
+import { EditProfileAvatarComponent } from './pages/edit-profile/edit-profile-avatar/edit-profile-avatar.component';
+import { EditProfileBackgroundComponent } from './pages/edit-profile/edit-profile-background/edit-profile-background.component';
+import { EditProfileMiniBackgroundComponent } from './pages/edit-profile/edit-profile-mini-background/edit-profile-mini-background.component';
+import { EditProfileThemeComponent } from './pages/edit-profile/edit-profile-theme/edit-profile-theme.component';
+import { EditProfileBadgeComponent } from './pages/edit-profile/edit-profile-badge/edit-profile-badge.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -48,6 +55,19 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'redeem-wallet', component: RedeemWalletComponent },
   { path: 'profile/:userCustomUrl', component: ProfileComponent },
+  {
+    path: 'profile/:userCustomUrl/edit',
+    component: EditProfileComponent,
+    children: [
+      { path: '', redirectTo: 'info', pathMatch: 'full' },
+      { path: 'info', component: EditProfileInfoComponent },
+      { path: 'avatar', component: EditProfileAvatarComponent },
+      { path: 'background', component: EditProfileBackgroundComponent },
+      { path: 'miniprofile', component: EditProfileMiniBackgroundComponent },
+      { path: 'theme', component: EditProfileThemeComponent },
+      { path: 'favoritebadge', component: EditProfileBadgeComponent },
+    ],
+  },
   {
     path: 'profile/:userCustomUrl/friends',
     component: FriendsComponent,

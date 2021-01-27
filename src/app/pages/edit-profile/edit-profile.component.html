@@ -1,0 +1,27 @@
+<section id="edit-profile" *ngIf="loggedUser">
+  <section>
+    <div class="edit-profile-header">
+      <div>
+        <img src="{{ imageUrl }}" alt="{{ loggedUser.accountName }}" />
+      </div>
+
+      <h1>{{ loggedUser.profile.displayName }} >> Edit Profiles</h1>
+    </div>
+
+    <div class="edit-profile-container">
+      <div class="edit-profile-container-left">
+        <ul>
+          <li *ngFor="let link of links">
+            <a routerLink="{{ link.link }}">
+              {{ link.title }}
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="edit-profile-container-right">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </section>
+</section>
