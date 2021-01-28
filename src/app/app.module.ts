@@ -79,6 +79,7 @@ import { EditProfileBadgeComponent } from './pages/edit-profile/edit-profile-bad
 import { FooterComponent } from './components/footer/footer.component';
 import { PointShopComponent } from './pages/point-shop/point-shop.component';
 import { PointItemCardComponent } from './components/point-item-card/point-item-card.component';
+import { TestTemplateComponent } from './pages/test-template/test-template.component';
 
 @NgModule({
   declarations: [
@@ -155,6 +156,7 @@ import { PointItemCardComponent } from './components/point-item-card/point-item-
     FooterComponent,
     PointShopComponent,
     PointItemCardComponent,
+    TestTemplateComponent,
   ],
   imports: [
     BrowserModule,

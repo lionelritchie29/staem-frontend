@@ -41,9 +41,11 @@ import { EditProfileThemeComponent } from './pages/edit-profile/edit-profile-the
 import { EditProfileBadgeComponent } from './pages/edit-profile/edit-profile-badge/edit-profile-badge.component';
 import { AuthGuardService } from './services/auth-guard.service';
 import { PointShopComponent } from './pages/point-shop/point-shop.component';
+import { TestTemplateComponent } from './pages/test-template/test-template.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
+  { path: 'test-template', component: TestTemplateComponent },
   { path: 'search', component: SearchGameComponent },
   {
     path: 'game/:id',

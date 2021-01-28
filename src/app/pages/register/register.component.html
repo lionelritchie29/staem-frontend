@@ -1,68 +1,83 @@
 <section id="register">
-    <section class="register-left">
-        <form class="register-left-form" [formGroup]="stepOneForm" *ngIf="!isSecondStep">
-                <h1>CREATE YOUR ACCOUNT</h1>
-                <div class="register-left-form-group">
-                      <label>Email Address</label>
-                      <input type="text" formControlName="email">
-                </div>
+  <section class="register-left">
+    <form
+      class="register-left-form"
+      [formGroup]="stepOneForm"
+      *ngIf="!isSecondStep"
+    >
+      <h1>CREATE YOUR ACCOUNT</h1>
+      <div class="register-left-form-group">
+        <label>Email Address</label>
+        <input type="text" formControlName="email" />
+      </div>
 
-                <div class="register-left-form-group">
-                    <label>Confirm your Email Address</label>
-                    <input type="text" formControlName="confirmEmail">
-                </div>
-                    
-                <div class="register-left-form-group">
-                    <label >Country of Residence</label>
-                    <select formControlName="country">
-                        <option value="Indonesia">Indonesia</option>
-                        <option value="America">America</option>
-                        <option value="Singapore">Singapore</option>
-                    </select>
-                </div>
+      <div class="register-left-form-group">
+        <label>Confirm your Email Address</label>
+        <input type="text" formControlName="confirmEmail" />
+      </div>
 
-                <div class="register-left-form-group" style="margin-bottom: 1rem;">
-                      <input type="checkbox" formControlName="agreeTerm">
-                      <label>I am 13 years of age or older and agree to the terms of the Steam Subscriber Agreement and the Valve Privacy Policy.</label>
-                </div>
+      <div class="register-left-form-group">
+        <label>Country of Residence</label>
+        <select formControlName="country">
+          <option value="Indonesia">Indonesia</option>
+          <option value="America">America</option>
+          <option value="Singapore">Singapore</option>
+        </select>
+      </div>
 
-                <re-captcha formControlName="recaptcha" (resolved)="resolved($event)" siteKey="6LdwezUaAAAAAIs0ZcEoUzRhHyTPwycSKv-Mil7C"></re-captcha>
-                
-                <div *ngIf="isError" class="error-msg">{{errorMsg}}</div>
+      <div class="register-left-form-group" style="margin-bottom: 1rem">
+        <input type="checkbox" formControlName="agreeTerm" />
+        <label
+          >I am 13 years of age or older and agree to the terms of the Steam
+          Subscriber Agreement and the Valve Privacy Policy.</label
+        >
+      </div>
 
-                <div class="register-left-form-button">
-                      <button (click)="onContinue()">Continue</button>
-                </div>
-          </form>
+      <re-captcha
+        formControlName="recaptcha"
+        (resolved)="resolved($event)"
+        siteKey="6LdwezUaAAAAAIs0ZcEoUzRhHyTPwycSKv-Mil7C"
+      ></re-captcha>
 
-          <form class="register-left-form" [formGroup]="stepTwoForm" *ngIf="isSecondStep">
-            <h1>CREATE YOUR ACCOUNT</h1>
-            <div class="register-left-form-group">
-                  <label>Account Name</label>
-                  <input type="text" formControlName="accountName">
-            </div>
+      <div *ngIf="isError" class="error-msg">{{ errorMsg }}</div>
 
-            <div class="register-left-form-group">
-                <label>Password</label>
-                <input type="password" formControlName="password">
-            </div>
-            
-            <div class="register-left-form-group">
-                <label >Confirm Password</label>
-                <input type="password" formControlName="confirmPassword">
-            </div>
-            
-            <div class="register-left-form-group">
-                <label >OTP Code</label>
-                <input type="text" formControlName="otpCode">
-            </div>
+      <div class="register-left-form-button">
+        <button (click)="onContinue()">Continue</button>
+      </div>
+    </form>
 
-            <div *ngIf="isError" class="error-msg">{{errorMsg}}</div>
+    <form
+      class="register-left-form"
+      [formGroup]="stepTwoForm"
+      *ngIf="isSecondStep"
+    >
+      <h1>CREATE YOUR ACCOUNT</h1>
+      <div class="register-left-form-group">
+        <label>Account Name</label>
+        <input type="text" formControlName="accountName" />
+      </div>
 
-            <div class="register-left-form-button">
-                  <button (click)="onBack()" class="back-btn">Back</button>
-                  <button (click)="onRegister()">Register</button>
-            </div>
-      </form>
-    </section>
+      <div class="register-left-form-group">
+        <label>Password</label>
+        <input type="password" formControlName="password" />
+      </div>
+
+      <div class="register-left-form-group">
+        <label>Confirm Password</label>
+        <input type="password" formControlName="confirmPassword" />
+      </div>
+
+      <div class="register-left-form-group">
+        <label>OTP Code</label>
+        <input type="text" formControlName="otpCode" />
+      </div>
+
+      <div *ngIf="isError" class="error-msg">{{ errorMsg }}</div>
+
+      <div class="register-left-form-button">
+        <button (click)="onBack()" class="back-btn">Back</button>
+        <button (click)="onRegister()">Register</button>
+      </div>
+    </form>
+  </section>
 </section>
