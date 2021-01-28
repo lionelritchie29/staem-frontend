@@ -1,0 +1,63 @@
+@import "../../../styles/mixins";
+
+#point-shop {
+  margin: 0 auto;
+  min-height: 100vh;
+  background: radial-gradient(#244372 0%, #161a1f 100%);
+  padding-bottom: 3rem;
+
+  .point-shop {
+    &-nav {
+      display: flex;
+      justify-content: space-between;
+      padding: 1.25rem 2rem;
+      background: #1e232e;
+
+      h1 {
+        font-size: 1.4rem;
+        color: #78a9e2;
+      }
+
+      div {
+        span {
+          display: block;
+          font-size: 1rem;
+        }
+
+        span:nth-child(1) {
+          color: #78a9e2;
+        }
+        span:nth-child(2) {
+          color: #f4f4f4;
+        }
+      }
+    }
+
+    &-body {
+      padding-top: 1.5rem;
+      width: 90%;
+      margin: 0 auto;
+
+      h2 {
+        color: #c5cbd8;
+        font-size: 1.4rem;
+        letter-spacing: 1px;
+        font-weight: normal;
+      }
+
+      &-items {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 0.75rem;
+      }
+
+      @include for-desktop {
+        width: 65%;
+      }
+    }
+  }
+}
+
+.mt {
+  margin-top: 3rem;
+}

@@ -76,6 +76,9 @@ import { EditProfileBackgroundComponent } from './pages/edit-profile/edit-profil
 import { EditProfileMiniBackgroundComponent } from './pages/edit-profile/edit-profile-mini-background/edit-profile-mini-background.component';
 import { EditProfileThemeComponent } from './pages/edit-profile/edit-profile-theme/edit-profile-theme.component';
 import { EditProfileBadgeComponent } from './pages/edit-profile/edit-profile-badge/edit-profile-badge.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { PointShopComponent } from './pages/point-shop/point-shop.component';
+import { PointItemCardComponent } from './components/point-item-card/point-item-card.component';
 
 @NgModule({
   declarations: [
@@ -149,6 +152,9 @@ import { EditProfileBadgeComponent } from './pages/edit-profile/edit-profile-bad
     EditProfileMiniBackgroundComponent,
     EditProfileThemeComponent,
     EditProfileBadgeComponent,
+    FooterComponent,
+    PointShopComponent,
+    PointItemCardComponent,
   ],
   imports: [
     BrowserModule,

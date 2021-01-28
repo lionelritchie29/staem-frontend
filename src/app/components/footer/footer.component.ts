@@ -1,0 +1,65 @@
+import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
+
+@Component({
+  selector: 'app-footer',
+  templateUrl: './footer.component.html',
+  styleUrls: ['./footer.component.scss'],
+})
+export class FooterComponent implements OnInit {
+  links = [
+    {
+      title: 'Home',
+      link: '/',
+    },
+    {
+      title: 'Redeem Wallet',
+      link: '/redeem-wallet',
+    },
+    {
+      title: 'Games',
+      link: '/search?term=',
+    },
+    {
+      title: 'Cart',
+      link: '/cart',
+    },
+    {
+      title: 'Random Game',
+      link: `/game/${Math.floor(Math.random() * (15 - 1 + 1)) + 1}`,
+    },
+    {
+      title: 'Login',
+      link: '/login',
+    },
+    {
+      title: 'Register',
+      link: '/register',
+    },
+    {
+      title: 'Wishlist',
+      link: '/wishlist',
+    },
+    {
+      title: 'My Profile',
+      link: '/',
+    },
+    {
+      title: 'My Friends',
+      link: '/',
+    },
+  ];
+
+  constructor(private authService: AuthService) {}
+
+  ngOnInit(): void {
+    const userId = this.authService.getLoggedInUserId();
+
+    if (userId !== null) {
+      this.authService.getUser().subscribe((user) => {
+        this.links[8].link = `/profile/${user.profile.customURL}`;
+        this.links[9].link = `/profile/${user.profile.customURL}/friends`;
+      });
+    }
+  }
+}

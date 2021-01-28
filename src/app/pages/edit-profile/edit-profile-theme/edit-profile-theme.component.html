@@ -6,24 +6,53 @@
   <form class="edit-theme-form">
     <div class="current">
       <h3>Current Theme</h3>
-      <div></div>
+      <div [style.background-color]="CURRENT_THEMES"></div>
     </div>
 
     <div class="owned">
       <h3>Choose Theme</h3>
       <div class="owned-inner">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
+        <div
+          (click)="onChangeTheme(THEMES.DEFAULT)"
+          [style.background-color]="THEMES.DEFAULT"
+        >
+          DEFAULT
+        </div>
+        <div
+          (click)="onChangeTheme(THEMES.SUMMER)"
+          [style.background-color]="THEMES.SUMMER"
+        >
+          SUMMER
+        </div>
+        <div
+          (click)="onChangeTheme(THEMES.MIDNIGHT)"
+          [style.background-color]="THEMES.MIDNIGHT"
+        >
+          MIDNIGHT
+        </div>
+        <div
+          (click)="onChangeTheme(THEMES.STEEL)"
+          [style.background-color]="THEMES.STEEL"
+        >
+          STEEL
+        </div>
+        <div
+          (click)="onChangeTheme(THEMES.COSMIC)"
+          [style.background-color]="THEMES.COSMIC"
+        >
+          COSMIC
+        </div>
+        <div
+          (click)="onChangeTheme(THEMES.DARKMODE)"
+          [style.background-color]="THEMES.DARKMODE"
+        >
+          DARKMODE
+        </div>
       </div>
     </div>
 
-    <!-- <p class="error">{{ errorMsg }}</p> -->
-
     <div style="text-align: right">
-      <!-- <button (click)="onSave()">Save</button> -->
+      <button (click)="onSave()">Save</button>
     </div>
   </form>
 </div>

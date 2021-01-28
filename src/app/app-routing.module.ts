@@ -39,6 +39,8 @@ import { EditProfileBackgroundComponent } from './pages/edit-profile/edit-profil
 import { EditProfileMiniBackgroundComponent } from './pages/edit-profile/edit-profile-mini-background/edit-profile-mini-background.component';
 import { EditProfileThemeComponent } from './pages/edit-profile/edit-profile-theme/edit-profile-theme.component';
 import { EditProfileBadgeComponent } from './pages/edit-profile/edit-profile-badge/edit-profile-badge.component';
+import { AuthGuardService } from './services/auth-guard.service';
+import { PointShopComponent } from './pages/point-shop/point-shop.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -55,6 +57,8 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'redeem-wallet', component: RedeemWalletComponent },
   { path: 'profile/:userCustomUrl', component: ProfileComponent },
+  { path: 'points', redirectTo: 'points/shop', pathMatch: 'full' },
+  { path: 'points/shop', component: PointShopComponent },
   {
     path: 'profile/:userCustomUrl/edit',
     component: EditProfileComponent,
@@ -84,6 +88,7 @@ const routes: Routes = [
       { path: 'self', component: SelfComponent },
       { path: 'gift', component: GiftComponent },
     ],
+    canActivate: [AuthGuardService],
   },
   { path: 'admin', component: AdminLoginComponent },
   {

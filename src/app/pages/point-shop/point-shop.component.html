@@ -1,0 +1,47 @@
+<section id="point-shop">
+  <section class="point-shop">
+    <div class="point-shop-nav">
+      <h1>THE POINTS SHOP</h1>
+
+      <div>
+        <span>Your Balance</span>
+        <span>{{ point }}</span>
+      </div>
+    </div>
+
+    <div class="point-shop-body">
+      <h2>ALL AVATAR FRAMES</h2>
+
+      <div class="point-shop-body-items">
+        <app-point-item-card
+          *ngFor="let frame of avatarFrames"
+          [item]="frame"
+          type="Avatar Frame"
+          [isOwned]="ownedAvatarFrames.includes(frame.id)"
+        ></app-point-item-card>
+      </div>
+
+      <h2 class="mt">ALL AVATAR FRAMES</h2>
+
+      <div class="point-shop-body-items">
+        <app-point-item-card
+          *ngFor="let bg of profileBackgrounds"
+          [item]="bg"
+          [isOwned]="ownedProfileBackgrounds.includes(bg.id)"
+          type="Profile Background"
+        ></app-point-item-card>
+      </div>
+
+      <h2 class="mt">ALL MINI PROFILE BACKGROUND</h2>
+
+      <div class="point-shop-body-items">
+        <app-point-item-card
+          *ngFor="let bg of miniProfileBackgrounds"
+          [item]="bg"
+          [isOwned]="ownedMiniProfileBackgrounds.includes(bg.id)"
+          type="Mini Profile Background"
+        ></app-point-item-card>
+      </div>
+    </div>
+  </section>
+</section>

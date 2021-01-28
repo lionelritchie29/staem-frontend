@@ -39,8 +39,8 @@
       div {
         width: 22.5%;
         height: 10rem;
-        background-color: #f4f4f4;
         border-radius: 100%;
+        border: 3px solid #666;
       }
     }
 
@@ -59,8 +59,17 @@
         div {
           width: 100%;
           height: 11rem;
-          background: #4f4f44;
           border-radius: 100%;
+          border: 3px solid #666;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          &:hover {
+            transform: scale(1.1);
+            cursor: pointer;
+            transition: 0.5s all;
+          }
         }
       }
     }

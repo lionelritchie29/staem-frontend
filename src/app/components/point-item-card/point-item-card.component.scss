@@ -1,0 +1,66 @@
+@import "../../../styles/variables";
+
+.point-card {
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14),
+    0 2px 1px -1px rgba(0, 0, 0, 0.12), 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+  min-height: 13rem;
+  position: relative;
+
+  &-top {
+    background: linear-gradient(
+      144.37deg,
+      rgba(130, 156, 219, 0) 68.22%,
+      rgba(82, 125, 235, 0.32) 113.95%
+    );
+    padding: 0.5rem;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+
+      &:hover {
+        object-fit: contain;
+        transition: 0.5s all;
+      }
+    }
+  }
+
+  &-bottom {
+    background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.11) 100%
+    );
+    color: #c5cbd8;
+    padding: 0.75rem;
+
+    h3 {
+    }
+
+    span {
+      display: block;
+    }
+
+    div {
+      text-align: right;
+      font-weight: bolder;
+    }
+  }
+
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.25);
+    transition: 0.5s all;
+  }
+}
+
+.owned {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: $primary-green;
+  color: $text-green;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+}

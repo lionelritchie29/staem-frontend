@@ -1,0 +1,13 @@
+<div class="point-card" (click)="onBuy()">
+  <div class="point-card-top">
+    <img src="{{ imgUrl }}" height="140" alt="{{ item.name }}" />
+  </div>
+
+  <div class="point-card-bottom">
+    <h3>{{ item.name }}</h3>
+    <span>Avatar Frame</span>
+    <div>{{ item.price }}</div>
+  </div>
+
+  <span *ngIf="isOwned" class="owned"> Owned </span>
+</div>

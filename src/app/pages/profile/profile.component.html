@@ -3,7 +3,10 @@
   *ngIf="currentUser"
   [ngStyle]="{ 'background-image': 'url(' + backgroundImageUrl + ')' }"
 >
-  <div class="profile-container">
+  <div
+    class="profile-container"
+    [style.background-color]="currentUser.profile.theme"
+  >
     <div class="profile-top">
       <div class="profile-top-left">
         <div class="profile-top-left-image">

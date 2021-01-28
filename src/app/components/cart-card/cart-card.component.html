@@ -1,16 +1,23 @@
 <div class="cart-card">
-    <div class="cart-card-left">
-        <div class="cart-card-left-img">
-            <img src="{{imageUrl}}" alt="{{cart.title}}">
-        </div>
-
-        <a routerLink="/game/{{cart.id}}" class="cart-card-left-title">
-            {{cart.title}}
-        </a>
+  <div class="cart-card-left">
+    <div class="cart-card-left-img">
+      <img src="{{ imageUrl }}" alt="{{ cart.title }}" />
     </div>
 
-    <div class="cart-card-right">
-        <span>{{cart.price | currency:"Rp. " }}</span>
-        <a (click)="onRemoveBtnClicked(cart.id)">Remove</a>
-    </div>
+    <a routerLink="/game/{{ cart.id }}" class="cart-card-left-title">
+      {{ cart.title }}
+    </a>
+  </div>
+
+  <div class="cart-card-right">
+    <span
+      style="text-decoration: line-through; font-size: 0.8rem"
+      *ngIf="cart.sale.discount != 0"
+      >{{ cart.price | currency: "Rp. " }}</span
+    >
+    <span>{{
+      ((100 - cart.sale.discount) / 100) * cart.price | currency: "Rp. "
+    }}</span>
+    <a (click)="onRemoveBtnClicked(cart.id)">Remove</a>
+  </div>
 </div>

@@ -1,0 +1,27 @@
+<footer>
+  <div class="footer">
+    <div class="footer-top">
+      <div>
+        <img
+          src="https://store.cloudflare.steamstatic.com/public/images/footerLogo_valve_new.png"
+        />
+      </div>
+
+      <p>
+        © 2021 Valve Corporation. All rights reserved. All trademarks are
+        property of their respective owners in the US and other countries. VAT
+        included in all prices where applicable.
+      </p>
+
+      <div>
+        <img
+          src="https://store.cloudflare.steamstatic.com/public/images/v6/logo_steam_footer.png"
+        />
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <a *ngFor="let link of links" href="{{ link.link }}">{{ link.title }}</a>
+    </div>
+  </div>
+</footer>
