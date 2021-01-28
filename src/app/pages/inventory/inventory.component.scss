@@ -1,0 +1,35 @@
+@import "../../../styles/mixins";
+
+#inventory {
+  width: 90%;
+  padding-top: 1.5rem;
+  margin: 0 auto;
+  min-height: 100vh;
+
+  section {
+    .edit-profile-header {
+      display: flex;
+      align-items: center;
+
+      div {
+        width: 7.5%;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      h1 {
+        color: #f4f4f4;
+        font-weight: normal;
+        font-size: 1.75rem;
+        margin-left: 1.25rem;
+      }
+    }
+  }
+
+  @include for-desktop {
+    // grid-template-columns: 20% 65%;
+    width: 65%;
+  }
+}

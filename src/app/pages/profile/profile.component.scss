@@ -11,7 +11,6 @@ $card-bg: rgba(0, 0, 0, 0.3);
 }
 
 #profile {
-  min-height: 100vh;
   color: #666;
   background-position: center top;
   background-size: contain;
@@ -19,6 +18,7 @@ $card-bg: rgba(0, 0, 0, 0.3);
   background-repeat: repeat-y;
   background-color: #000000;
   padding-bottom: 12.5rem;
+  min-height: 100vh;
 
   .profile-container {
     padding: 1.5rem;

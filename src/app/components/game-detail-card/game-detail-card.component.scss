@@ -1,147 +1,150 @@
 @import "../../../styles/variables";
 
 .detail-card {
-    display: flex;
-    margin-top: 1.2rem;
-    background: linear-gradient(to right, rgba(0,0,0,0) 50%,rgba(0,0,0,0.4) 100%);
-    padding-bottom: 1rem;
+  display: flex;
+  margin-top: 1.2rem;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0) 50%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
+  padding-bottom: 1rem;
 
-    &-left {
-        width: 65%;
+  &-left {
+    width: 65%;
 
-        &-main-img {
-            img {
-                width: 100%;
-            }
-            transition: all 0.5s;
-        }
+    &-main-img {
+      img {
+        width: 100%;
+      }
+      transition: all 0.5s;
+    }
 
-        &-container {
+    &-container {
+      width: 100%;
+      overflow: auto;
+      padding-top: 0.5rem;
+
+      &-images {
+        display: flex;
+        width: 100%;
+        overflow: auto;
+
+        div {
+          min-width: 20%;
+          margin-right: 0.35rem;
+          cursor: pointer;
+
+          img {
             width: 100%;
-            overflow: auto;
-            padding-top: 0.5rem;
+          }
 
-            &-images {
-                display: flex;
-                width: 100%;
-                overflow: auto;
-
-                div{
-                    min-width: 20%;
-                    margin-right: 0.35rem;
-                    cursor: pointer;
-
-                    img {
-                        width: 100%;
-                    }
-
-                    span {
-                        display: none;
-                    }
-
-                }
-
-                .slideshow-active {
-                    border: 2px solid #F4F4F4;
-                    position: relative;
-                    & ~ span {
-                        display: block;
-                        position: absolute;
-                        font-size: 1.2rem;
-                        color: #f4f4f4;
-                        top: -1.3rem;
-                        right: 2.5rem
-                    }
-                }
-            }
+          span {
+            display: none;
+          }
         }
 
-        &-nav {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 0.5rem;
-
-            button {
-                background: $secondary-background-light;
-                color: $secondary-color;
-                padding: 0.25rem 1.5rem;
-                border: none;
-                cursor: pointer;
-
-                &:hover {
-                    background: lighten($secondary-background-light, 10);
-                }
-            }
+        .slideshow-active {
+          border: 2px solid #f4f4f4;
+          position: relative;
+          & ~ span {
+            display: block;
+            position: absolute;
+            font-size: 1.2rem;
+            color: #f4f4f4;
+            top: -1.3rem;
+            right: 2.5rem;
+          }
         }
+      }
     }
 
-    &-right {
-        width: 35%;
-        margin-left: 1rem;
+    &-nav {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 0.5rem;
 
-        &-header {
-            img {
-                width: 100%;
-            }
+      button {
+        background: $secondary-background-light;
+        color: $secondary-color;
+        padding: 0.25rem 1.5rem;
+        border: none;
+        cursor: pointer;
+
+        &:hover {
+          background: lighten($secondary-background-light, 10);
         }
-
-        &-desc {
-            color: #F4F4F4;
-            margin-top: 1rem;
-            padding-right: 1rem;
-            line-height: 1.6;
-        }
-
-        &-detail {
-            display: flex;
-            margin-top: 1rem;
-
-            &-title {
-                width: 40%;
-                display: flex;
-                flex-direction: column;
-                color: #666;
-                
-                span {
-                    margin-top: 0.5rem;
-                }
-            }
-
-            &-content {
-                width: 60%;
-                display: flex;
-                flex-direction: column;
-
-                span {
-                    margin-top: 0.5rem;
-
-                    a {
-                        text-decoration: none;
-                        color: $secondary-color;
-                    }
-                }
-
-                span:nth-child(2) {
-                    color: #999;
-                }
-            }
-        }
-
-        &-tags {
-            margin-top: 1rem;
-
-            p {
-                color: #666;
-                margin-bottom: 0.35rem;
-            }
-
-            span {
-                background: $secondary-background-light;
-                color: $secondary-color;
-                padding: 0.2rem;
-                margin-right: 0.2rem;
-                border-radius: 0.2rem;
-            }
-        }
+      }
     }
+  }
+
+  &-right {
+    width: 35%;
+    margin-left: 1rem;
+
+    &-header {
+      img {
+        width: 100%;
+      }
+    }
+
+    &-desc {
+      color: #f4f4f4;
+      margin-top: 1rem;
+      padding-right: 1rem;
+      line-height: 1.6;
+    }
+
+    &-detail {
+      display: flex;
+      margin-top: 1rem;
+
+      &-title {
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        color: #666;
+
+        span {
+          margin-top: 0.5rem;
+        }
+      }
+
+      &-content {
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+
+        span {
+          margin-top: 0.5rem;
+
+          a {
+            text-decoration: none;
+            color: $secondary-color;
+          }
+        }
+
+        span:nth-child(2) {
+          color: #999;
+        }
+      }
+    }
+
+    &-tags {
+      margin-top: 1rem;
+
+      p {
+        color: #666;
+        margin-bottom: 0.35rem;
+      }
+
+      span {
+        background: $secondary-background-light;
+        color: $secondary-color;
+        padding: 0.2rem;
+        margin-right: 0.2rem;
+        border-radius: 0.2rem;
+      }
+    }
+  }
 }

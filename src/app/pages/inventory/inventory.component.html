@@ -1,0 +1,18 @@
+<section id="inventory">
+  <section>
+    <div class="edit-profile-header">
+      <div>
+        <img src="http://localhost:2000/images/avatars/1.jpg" alt="" />
+      </div>
+
+      <h1>Gomay >> Inventory</h1>
+    </div>
+
+    <app-inventory-tabs>
+      <app-inventory-tab
+        *ngFor="let tabHeader of tabHeaders"
+        [tabTitle]="tabHeader.title"
+      ></app-inventory-tab>
+    </app-inventory-tabs>
+  </section>
+</section>

@@ -1,83 +1,97 @@
 @import "../../../styles/mixins";
 
-#register { 
-    width: 100%;
-    margin: 0 auto;
-    min-height: 100vh;
-    background: radial-gradient(30% 40% at 40% 30%, rgba(33, 36, 41, .5) 0%, rgba(33, 36, 41, 0) 100%) no-repeat, url(https://store.cloudflare.steamstatic.com/public/shared/images/joinsteam/acct_creation_bg.jpg) -45vw 0 no-repeat, #212429;
-    background-size: cover;
-    background-repeat: no-repeat;
+#register {
+  width: 100%;
+  margin: 0 auto;
+  background: radial-gradient(
+        30% 40% at 40% 30%,
+        rgba(33, 36, 41, 0.5) 0%,
+        rgba(33, 36, 41, 0) 100%
+      )
+      no-repeat,
+    url(https://store.cloudflare.steamstatic.com/public/shared/images/joinsteam/acct_creation_bg.jpg) -45vw
+      0 no-repeat,
+    #212429;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
 
-   .register-left {
-    background: radial-gradient(60.12% 60.12% at 104.83% -0.03%, rgb(74, 81, 92, 0.3) 0%, rgba(74, 81, 92, 0) 100%);
+  .register-left {
+    background: radial-gradient(
+      60.12% 60.12% at 104.83% -0.03%,
+      rgb(74, 81, 92, 0.3) 0%,
+      rgba(74, 81, 92, 0) 100%
+    );
 
     &-form {
-        margin-right: 5rem;
-        padding: 3rem 30rem 3rem 20rem; 
+      margin-right: 5rem;
+      padding: 3rem 30rem 3rem 20rem;
+      width: 100%;
+      color: #b8b6b4;
+
+      h1 {
+        font-weight: normal;
+        font-size: 2.2rem;
+        margin-bottom: 2rem;
+        color: #f4f4f4;
+      }
+
+      label {
+        font-size: 1.1rem;
+      }
+
+      input[type="text"],
+      input[type="password"],
+      select {
+        margin-top: 0.35rem;
+        margin-bottom: 1.25rem;
+        display: block;
         width: 100%;
-        color: #b8b6b4;
-        
-        h1 {
-            font-weight: normal;
-            font-size: 2.2rem;
-            margin-bottom: 2rem;
-            color: #F4F4F4;
+        background: #32353c;
+        border: none;
+        border-radius: 0.25rem;
+        padding: 0.5rem;
+        font-size: 1.1rem;
+        color: #f4f4f4;
+        outline: none;
+        width: 50%;
+      }
+
+      input[type="checkbox"] {
+        margin-right: 0.3rem;
+      }
+
+      &-button {
+        button {
+          margin-right: 1rem;
+          width: 20%;
+          background: linear-gradient(to right, #47bfff 5%, #1a44c2 60%);
+          font-size: 1.1rem;
+          border: none;
+          padding: 0.6rem;
+          color: #f4f4f4;
+          border-radius: 0.25rem;
+          margin-top: 2rem;
+          cursor: pointer;
+
+          &:hover {
+            background: lighten(#47bfff, 2);
+          }
         }
-        
-        label {
-            font-size: 1.1rem;
+
+        .back-btn {
+          background: linear-gradient(to right, red 5%, darken(red, 10) 60%);
+
+          &:hover {
+            background: lighten(red, 10);
+          }
         }
-
-        input[type=text], input[type=password], select{
-            margin-top: 0.35rem;
-            margin-bottom: 1.25rem;
-            display: block;
-            width: 100%;
-            background: #32353C;
-            border: none;
-            border-radius: 0.25rem;
-            padding: 0.5rem;
-            font-size: 1.1rem;
-            color: #F4F4F4;
-            outline: none;
-            width: 50%;
-        }
-
-        input[type=checkbox] {
-            margin-right: 0.3rem;
-        }
-
-        &-button {
-            button {
-                margin-right: 1rem;
-                width: 20%;
-                background: linear-gradient( to right, #47bfff 5%, #1a44c2 60%);
-                font-size: 1.1rem;
-                border: none;
-                padding: 0.6rem;
-                color: #F4F4F4;
-                border-radius: 0.25rem;
-                margin-top: 2rem;
-                cursor : pointer;
-
-                &:hover {
-                    background: lighten(#47bfff, 2) ;
-                }
-            }
-
-            .back-btn {
-                background: linear-gradient( to right, red 5%, darken(red, 10) 60%);
-
-                &:hover {
-                    background: lighten(red, 10);
-                }
-            }
-        }
+      }
     }
-   }
+  }
 }
 
 .error-msg {
-    color: red;
-    margin-top: 0.3rem;
+  color: red;
+  margin-top: 0.3rem;
 }

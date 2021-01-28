@@ -1,54 +1,85 @@
 <section id="search-game">
-    <section>
-        <app-search-bar></app-search-bar>
+  <section>
+    <app-search-bar></app-search-bar>
 
-        <div class="search-feature-banner">
-            <img src="../../../assets/images/new_search_feature_banner.png" alt="new search feature banner">
+    <div class="search-feature-banner">
+      <img
+        src="../../../assets/images/new_search_feature_banner.png"
+        alt="new search feature banner"
+      />
+    </div>
+
+    <section class="search-result-container">
+      <section class="search-result-container-left">
+        <div class="search-result-container-left-search-container">
+          <div>
+            <input
+              [(ngModel)]="searchTerm"
+              type="text"
+              placeholder="enter search term or tag"
+            />
+            <button (click)="onSearchBtnClicked()">Search</button>
+          </div>
+          <span>{{ searchedGameResults.length }} game(s) match</span>
         </div>
 
-        <section class="search-result-container">
-            <section class="search-result-container-left">
-                <div class="search-result-container-left-search-container">
-                    <div>
-                        <input [(ngModel)]="searchTerm" type="text" placeholder="enter search term or tag">
-                        <button (click)="onSearchBtnClicked()">Search</button>
-                    </div>
-                    <span>{{searchedGameResults.length}} game(s) match</span>
-                </div>
+        <div class="search-result-container-left-result">
+          <div *ngIf="searchedGameResults.length > 0; else elseBlock">
+            <app-search-game-card
+              *ngFor="let game of searchedGameResults"
+              [game]="game"
+            ></app-search-game-card>
+          </div>
 
-                <div class="search-result-container-left-result">
-                    <div *ngIf="searchedGameResults.length > 0; else elseBlock">
-                        <app-search-game-card *ngFor="let game of searchedGameResults" [game]="game"></app-search-game-card>
-                    </div>
-                    
-                    <ng-template #elseBlock>
-                        <div class="result-not-found">
-                            No games found
-                        </div>
-                    </ng-template>
-                </div>
-            </section>
+          <p style="text-align: center; color: #f4f4f4; margin-top: 1rem">
+            {{ endMessage }}
+          </p>
 
-            <section class="search-result-container-right">
-                <app-search-game-filter-card headerTitle="Narrow by Price" class="search-result-container-right-price-filter">
-                    <input type="range" min="{{sliderMinValue}}" max="{{sliderMaxValue}}" (change)="filterByPrice($event)" value="{{sliderCurrentValue}}">
-                    <p>{{sliderCurrentValue | currency:"Rp. "}}</p>
-                </app-search-game-filter-card>
+          <ng-template #elseBlock>
+            <div class="result-not-found">No games found</div>
+          </ng-template>
+        </div>
+      </section>
 
-                <app-search-game-filter-card headerTitle="Narrow by Tag" class="search-result-container-right-tag-filter">
-                    <div *ngFor="let tag of tags">
-                        <input type="checkbox" (change)="onTagCheckboxChange(tag.id, $event)" value="{{tag.id}}">
-                        <label>{{tag.name}}</label>
-                    </div>
-                </app-search-game-filter-card>
+      <section class="search-result-container-right">
+        <app-search-game-filter-card
+          headerTitle="Narrow by Price"
+          class="search-result-container-right-price-filter"
+        >
+          <input
+            type="range"
+            min="{{ sliderMinValue }}"
+            max="{{ sliderMaxValue }}"
+            (change)="filterByPrice($event)"
+            value="{{ sliderCurrentValue }}"
+          />
+          <p>{{ sliderCurrentValue | currency: "Rp. " }}</p>
+        </app-search-game-filter-card>
 
-                <app-search-game-filter-card headerTitle="Narrow by Category" class="search-result-container-right-category-filter">
-                    <div *ngFor="let category of categories">
-                        <input type="checkbox">
-                        <label>{{category}}</label>
-                    </div>
-                </app-search-game-filter-card>
-            </section>
-        </section>
+        <app-search-game-filter-card
+          headerTitle="Narrow by Tag"
+          class="search-result-container-right-tag-filter"
+        >
+          <div *ngFor="let tag of tags">
+            <input
+              type="checkbox"
+              (change)="onTagCheckboxChange(tag.id, $event)"
+              value="{{ tag.id }}"
+            />
+            <label>{{ tag.name }}</label>
+          </div>
+        </app-search-game-filter-card>
+
+        <app-search-game-filter-card
+          headerTitle="Narrow by Category"
+          class="search-result-container-right-category-filter"
+        >
+          <div *ngFor="let category of categories">
+            <input type="checkbox" />
+            <label>{{ category }}</label>
+          </div>
+        </app-search-game-filter-card>
+      </section>
     </section>
+  </section>
 </section>

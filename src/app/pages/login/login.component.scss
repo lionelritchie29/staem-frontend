@@ -1,137 +1,149 @@
 @import "../../../styles/mixins";
 
-#login { 
-    width: 100%;
-    margin: 0 auto;
-    min-height: 100vh;
-    display: flex;
-    background: radial-gradient(30% 40% at 40% 30%, rgba(33, 36, 41, .5) 0%, rgba(33, 36, 41, 0) 100%) no-repeat, url(https://store.cloudflare.steamstatic.com/public/shared/images/joinsteam/acct_creation_bg.jpg) -45vw 0 no-repeat, #212429;
-    background-size: cover;
-    background-repeat: no-repeat;
+#login {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  background: radial-gradient(
+        30% 40% at 40% 30%,
+        rgba(33, 36, 41, 0.5) 0%,
+        rgba(33, 36, 41, 0) 100%
+      )
+      no-repeat,
+    url(https://store.cloudflare.steamstatic.com/public/shared/images/joinsteam/acct_creation_bg.jpg) -45vw
+      0 no-repeat,
+    #212429;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
 
-   .login-left {
+  .login-left {
     width: 55%;
     display: flex;
     justify-content: flex-end;
-    background: radial-gradient(60.12% 60.12% at 104.83% -0.03%, rgb(74, 81, 92, 0.3) 0%, rgba(74, 81, 92, 0) 100%);
+    background: radial-gradient(
+      60.12% 60.12% at 104.83% -0.03%,
+      rgb(74, 81, 92, 0.3) 0%,
+      rgba(74, 81, 92, 0) 100%
+    );
 
     &-form {
-        margin-right: 5rem;
-        padding: 3rem; 
-        width: 45%;
-        color: #b8b6b4;
-        
-        h1 {
-            font-weight: normal;
-            font-size: 2.2rem;
-            margin-bottom: 2rem;
-            color: #F4F4F4;
-            text-align: center;
+      margin-right: 5rem;
+      padding: 3rem;
+      width: 45%;
+      color: #b8b6b4;
 
+      h1 {
+        font-weight: normal;
+        font-size: 2.2rem;
+        margin-bottom: 2rem;
+        color: #f4f4f4;
+        text-align: center;
+      }
+
+      label {
+        font-size: 1.1rem;
+      }
+
+      input[type="text"],
+      input[type="password"] {
+        margin-top: 0.35rem;
+        margin-bottom: 1.25rem;
+        display: block;
+        width: 100%;
+        background: #32353c;
+        border: none;
+        border-radius: 0.25rem;
+        padding: 0.5rem;
+        font-size: 1.1rem;
+        color: #f4f4f4;
+        outline: none;
+      }
+
+      input[type="checkbox"] {
+        margin-right: 0.3rem;
+      }
+
+      &-button {
+        text-align: center;
+
+        button {
+          width: 80%;
+          background: linear-gradient(to right, #47bfff 5%, #1a44c2 60%);
+          font-size: 1.1rem;
+          border: none;
+          padding: 0.6rem;
+          color: #f4f4f4;
+          border-radius: 0.25rem;
+          margin-top: 2rem;
+          cursor: pointer;
+
+          &:hover {
+            background: lighten(#47bfff, 2);
+          }
         }
-        
-        label {
-            font-size: 1.1rem;
-        }
-
-        input[type=text], input[type=password]{
-            margin-top: 0.35rem;
-            margin-bottom: 1.25rem;
-            display: block;
-            width: 100%;
-            background: #32353C;
-            border: none;
-            border-radius: 0.25rem;
-            padding: 0.5rem;
-            font-size: 1.1rem;
-            color: #F4F4F4;
-            outline: none;
-        }
-
-        input[type=checkbox] {
-            margin-right: 0.3rem;
-        }
-
-        &-button {
-            text-align: center;
-
-            button {
-                width: 80%;
-                background: linear-gradient( to right, #47bfff 5%, #1a44c2 60%);
-                font-size: 1.1rem;
-                border: none;
-                padding: 0.6rem;
-                color: #F4F4F4;
-                border-radius: 0.25rem;
-                margin-top: 2rem;
-                cursor : pointer;
-
-                &:hover {
-                    background: lighten(#47bfff, 2) ;
-                }
-            }
-        }
+      }
     }
-   }
+  }
 
-   .login-right {
-        width: 45%;
-        display: flex;
-        justify-content: flex-start;
+  .login-right {
+    width: 45%;
+    display: flex;
+    justify-content: flex-start;
 
-        &-container {
-            width: 60%;
-            padding: 0 3rem;
-            padding-top: 7rem;
-            text-align: center;
+    &-container {
+      width: 60%;
+      padding: 0 3rem;
+      padding-top: 7rem;
+      text-align: center;
 
-            p  {
-                color: #b8b6b4;
-                font-size: 1rem;
-            }
+      p {
+        color: #b8b6b4;
+        font-size: 1rem;
+      }
 
-            p:nth-child(1) {
-                text-align: center;
-                width: 60%;
-                margin: 0 auto;
-                margin-bottom: 0.75rem;
-            }
+      p:nth-child(1) {
+        text-align: center;
+        width: 60%;
+        margin: 0 auto;
+        margin-bottom: 0.75rem;
+      }
 
-            a {
-                color: #f4f4f4;
-                text-decoration: none;
-                font-size: 1rem;
+      a {
+        color: #f4f4f4;
+        text-decoration: none;
+        font-size: 1rem;
 
-                &:hover {
-                    color: lighten( #47bfff, 10);
-                }
-            }
-
-            div {
-                img {
-                    width: 100%;
-                }
-            }
-
-            button {
-                border: 1px solid #999;
-                color: #F4F4F4;
-                background: transparent;
-                padding: 0.5rem 1rem;
-                font-size: 1rem;
-                border-radius: 0.3rem;
-                margin-top: 1.25rem;
-                cursor: pointer;
-
-                &:hover {
-                    border: 1px solid #F4F4F4;
-                }
-            }
+        &:hover {
+          color: lighten(#47bfff, 10);
         }
-    }    
+      }
+
+      div {
+        img {
+          width: 100%;
+        }
+      }
+
+      button {
+        border: 1px solid #999;
+        color: #f4f4f4;
+        background: transparent;
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        border-radius: 0.3rem;
+        margin-top: 1.25rem;
+        cursor: pointer;
+
+        &:hover {
+          border: 1px solid #f4f4f4;
+        }
+      }
+    }
+  }
 }
 
 .error-msg {
-    color: red;
-    margin-top: 0.3rem;
+  color: red;
+  margin-top: 0.3rem;
 }

@@ -1,24 +1,24 @@
 @import "../../../styles/mixins";
 
-#home { 
-    width: 90%;
-    padding-top: 1.5rem;
-    margin: 0 auto;
-    min-height: 100vh;
+#home {
+  width: 90%;
+  padding-top: 1.5rem;
+  margin: 0 auto;
+  min-height: 100vh;
 
-    app-sidebar{
-        display: none;
-        position: absolute;
-        left: 1rem;
-        transition: all 0.5s;
+  app-sidebar {
+    display: none;
+    position: absolute;
+    left: 1rem;
+    transition: all 0.5s;
 
-        @include for-desktop {
-            display: block;
-        }
+    @include for-desktop {
+      display: block;
     }
+  }
 
-    @include for-desktop{
-        // grid-template-columns: 20% 65%;
-        width: 65%;
-    }
+  @include for-desktop {
+    // grid-template-columns: 20% 65%;
+    width: 65%;
+  }
 }

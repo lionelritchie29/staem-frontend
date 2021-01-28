@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { RecaptchaModule, RecaptchaFormsModule } from 'ng-recaptcha'
+import { RecaptchaModule, RecaptchaFormsModule } from 'ng-recaptcha';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -80,6 +80,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import { PointShopComponent } from './pages/point-shop/point-shop.component';
 import { PointItemCardComponent } from './components/point-item-card/point-item-card.component';
 import { TestTemplateComponent } from './pages/test-template/test-template.component';
+import { InventoryComponent } from './pages/inventory/inventory.component';
+import { InventoryTabsComponent } from './components/inventory-tabs/inventory-tabs.component';
+import { InventoryTabComponent } from './components/inventory-tab/inventory-tab.component';
 
 @NgModule({
   declarations: [
@@ -157,6 +160,9 @@ import { TestTemplateComponent } from './pages/test-template/test-template.compo
     PointShopComponent,
     PointItemCardComponent,
     TestTemplateComponent,
+    InventoryComponent,
+    InventoryTabsComponent,
+    InventoryTabComponent,
   ],
   imports: [
     BrowserModule,
@@ -166,9 +172,9 @@ import { TestTemplateComponent } from './pages/test-template/test-template.compo
     FormsModule,
     ReactiveFormsModule,
     RecaptchaModule,
-    RecaptchaFormsModule
+    RecaptchaFormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

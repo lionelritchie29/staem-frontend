@@ -1,169 +1,176 @@
 @import "../../../styles/mixins";
 @import "../../../styles/variables";
 
-#cart { 
-    padding-top: 1.5rem;
-    width: 90%;
-    margin: 0 auto;
-    min-height: 100vh;
+#cart {
+  padding-top: 1.5rem;
+  width: 90%;
+  margin: 0 auto;
+  min-height: 100vh;
 
-    @include sidebarGlobalStyling;
+  @include sidebarGlobalStyling;
 
-    h1 {
-        font-weight: normal;
-        font-size: 2.5rem;
-        color: #F4F4F4;
-        letter-spacing: 4px;
-        margin-top: 2rem;
-    }
+  h1 {
+    font-weight: normal;
+    font-size: 2.5rem;
+    color: #f4f4f4;
+    letter-spacing: 4px;
+    margin-top: 2rem;
+  }
 
-    .cart-container {
+  .cart-container {
+    display: flex;
+    margin-top: 2rem;
+
+    &-left {
+      width: 70%;
+
+      &-summary {
+        color: $text-gray;
+        background: rgba(0, 0, 0, 0.2);
+        padding: 1rem;
+
+        &-price {
+          display: flex;
+          justify-content: space-between;
+          font-weight: bold;
+          font-size: 1.1rem;
+          margin-top: 1rem;
+
+          span {
+            letter-spacing: 1px;
+          }
+
+          span:nth-child(2) {
+            font-size: 1rem;
+          }
+        }
+
+        p {
+          font-size: 1rem;
+          margin-top: 1rem;
+        }
+
+        &-btns {
+          margin-top: 1.5rem;
+          text-align: right;
+
+          button {
+            background: linear-gradient(
+              to bottom,
+              rgba(121, 153, 5, 1) 5%,
+              rgba(83, 105, 4, 1) 95%
+            );
+            color: #d2e885 !important;
+            padding: 0.5rem 1rem;
+            border: none;
+            font-size: 1rem;
+            margin-right: 1rem;
+            border-radius: 0.2rem;
+            cursor: pointer;
+
+            &:hover {
+              background: lighten(rgba(121, 153, 5, 1), 5);
+            }
+          }
+        }
+      }
+
+      p {
+        color: #cccccc;
+        margin-top: 1rem;
+        margin-left: 1rem;
+      }
+
+      &-other {
         display: flex;
+        justify-content: space-between;
         margin-top: 2rem;
 
-        &-left {
-            width: 70%;
+        a:nth-child(1) {
+          font-size: 1rem;
+          background-color: $secondary-background-light;
+          color: $secondary-color;
+          padding: 0.5rem 1rem;
+          border: none;
+          border-radius: 0.25rem;
+          cursor: pointer;
+          text-decoration: none;
 
-            &-summary {
-                color: $text-gray;
-                background: rgba(0, 0, 0, 0.2);
-                padding: 1rem;
-
-                &-price {
-                    display: flex;
-                    justify-content: space-between;
-                    font-weight: bold;
-                    font-size: 1.1rem;
-                    margin-top: 1rem;
-
-                    span {
-                        letter-spacing: 1px;
-                    }
-
-                    span:nth-child(2) {
-                        font-size: 1rem;
-                    }
-                }
-
-                p {
-                    font-size: 1rem;
-                    margin-top: 1rem;
-                }
-
-                &-btns {
-                    margin-top: 1.5rem;
-                    text-align: right;
-
-                    button {
-                        background: linear-gradient( to bottom, rgba(121,153,5,1) 5%, rgba(83,105,4,1) 95%);
-                        color: #D2E885 !important;
-                        padding: 0.5rem 1rem;
-                        border: none;
-                        font-size: 1rem;
-                        margin-right: 1rem;
-                        border-radius: 0.2rem;
-                        cursor: pointer;
-
-                        &:hover {
-                            background: lighten(rgba(121,153,5,1), 5);
-                        }
-                    }
-                }
-            }
-
-            p {
-                color: #CCCCCC;
-                margin-top: 1rem;
-                margin-left: 1rem;
-            }
-
-            &-other {
-                display: flex;
-                justify-content: space-between;
-                margin-top: 2rem;
-
-                a:nth-child(1) {
-                    font-size: 1rem;
-                    background-color: $secondary-background-light;
-                    color: $secondary-color;
-                    padding: 0.5rem 1rem;
-                    border: none;
-                    border-radius: 0.25rem;
-                    cursor: pointer;
-                    text-decoration: none;
-
-                    &:hover {
-                        background: lighten($color: $secondary-background-light, $amount: 15);
-                    }
-                }
-
-                a:nth-child(2) {
-                    color: #56707f;
-
-                    &:hover {
-                        color: lighten(#56707f, 20)
-                    }
-                }
-            }
-
-            h2 {
-                color: #F4F4F4;
-                font-weight: normal;
-                font-size: 1.2rem;
-                margin-top: 2rem;
-                letter-spacing: 1.25px;
-            }
-
-            &-delivery {
-                background: rgba(0, 0, 0, 0.2);
-                padding: 1rem;
-                display: flex;
-                margin-top: 1rem;
-
-                div:nth-child(1) {
-                    width: 10%;
-                    
-                    img {
-                        width: 100%;
-                    }
-                }
-
-                div:nth-child(2) {
-                    margin-top: 0.5rem;
-                    margin-left: 1rem;
-
-                    span {
-                        display: block;
-                        color: #CCCCCC;;
-                    }
-
-                    span:nth-child(1) {
-                        font-size: 1.1rem;
-                    }
-                }
-            }
+          &:hover {
+            background: lighten(
+              $color: $secondary-background-light,
+              $amount: 15
+            );
+          }
         }
 
-        &-right {
-            width: 30%;
-            margin-left: 1rem;
+        a:nth-child(2) {
+          color: #56707f;
 
-            div {
-                background: $primary-background;
-                height: 15rem;
-                width: 100%;
-                margin-bottom: 1rem;
-            }
+          &:hover {
+            color: lighten(#56707f, 20);
+          }
         }
+      }
+
+      h2 {
+        color: #f4f4f4;
+        font-weight: normal;
+        font-size: 1.2rem;
+        margin-top: 2rem;
+        letter-spacing: 1.25px;
+      }
+
+      &-delivery {
+        background: rgba(0, 0, 0, 0.2);
+        padding: 1rem;
+        display: flex;
+        margin-top: 1rem;
+
+        div:nth-child(1) {
+          width: 10%;
+
+          img {
+            width: 100%;
+          }
+        }
+
+        div:nth-child(2) {
+          margin-top: 0.5rem;
+          margin-left: 1rem;
+
+          span {
+            display: block;
+            color: #cccccc;
+          }
+
+          span:nth-child(1) {
+            font-size: 1.1rem;
+          }
+        }
+      }
     }
 
-    @include for-desktop {
-        width: 65%;
+    &-right {
+      width: 30%;
+      margin-left: 1rem;
+
+      div {
+        background: $primary-background;
+        height: 15rem;
+        width: 100%;
+        margin-bottom: 1rem;
+      }
     }
+  }
+
+  @include for-desktop {
+    width: 65%;
+  }
 }
 
 .disabled {
-    background: darken($color: rgba(121,153,5,1), $amount: 10) !important;
-    color: darken($color: #D2E885, $amount: 10) !important;
-    cursor: auto !important;
+  background: darken($color: rgba(121, 153, 5, 1), $amount: 10) !important;
+  color: darken($color: #d2e885, $amount: 10) !important;
+  cursor: auto !important;
 }

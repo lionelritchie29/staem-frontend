@@ -1,44 +1,44 @@
 @import "../../../styles/mixins";
 @import "../../../styles/variables";
 
-section{
-    margin: 2rem 0;
+section {
+  margin: 2rem 0;
 
-    h1 {
-        color: #fff;
-        font-weight: normal;
-        font-size: 1.5rem;
-    }
-    
-    h2 {
-        color: #999;
-        font-weight: normal;
-        font-size: 1.2rem;
-        margin-bottom: 0.75rem;
-    }
+  h1 {
+    color: #fff;
+    font-weight: normal;
+    font-size: 1.5rem;
+  }
 
-    .community-slider {
-        position: relative;
-        
-        @include slider-arrow-style;
+  h2 {
+    color: #999;
+    font-weight: normal;
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+  }
 
-        &-container {
-            width: 100%;
-            overflow: auto;
-    
-            &-images {
-                width: 100%;
-                display: flex;
-                transition: all 0.5s;
-                
-                app-featured-card {
-                    min-width: calc(100%);
-                }
-            }
+  .community-slider {
+    position: relative;
 
-            @include for-desktop{
-                overflow: hidden;
-            }
+    @include slider-arrow-style;
+
+    &-container {
+      width: 100%;
+      overflow: auto;
+
+      &-images {
+        width: 100%;
+        display: flex;
+        transition: all 0.5s;
+
+        app-featured-card {
+          min-width: calc(100%);
         }
-    }    
+      }
+
+      @include for-desktop {
+        overflow: hidden;
+      }
+    }
+  }
 }

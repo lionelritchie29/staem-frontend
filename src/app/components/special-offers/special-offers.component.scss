@@ -1,51 +1,51 @@
 @use '../../../styles/variables';
-@import '../../../styles/mixins';
+@import "../../../styles/mixins";
 
 section {
-    margin-top: 2rem;
-    margin-bottom: 5rem;
+  margin-top: 2rem;
+  margin-bottom: 5rem;
 
-    h1 {
-        color: #fff;
-        font-weight: normal;
-        font-size: 1.2rem;
-        margin-bottom: 0.75rem; 
-    }
+  h1 {
+    color: #fff;
+    font-weight: normal;
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+  }
 
-    .card-container {
+  .card-container {
+    display: flex;
+    position: relative;
+
+    @include slider-arrow-style;
+
+    &-outer {
+      overflow: auto;
+
+      &-inner {
         display: flex;
-        position: relative;
+        width: 100%;
+        transition: all 0.5s;
 
-        @include slider-arrow-style;
+        app-special-offers-card {
+          min-width: calc(100%);
 
-        &-outer {
-            overflow: auto;
+          @include for-tablet {
+            min-width: calc(50%);
+          }
 
-            &-inner {
-                display: flex;
-                width: 100%;
-                transition: all 0.5s;
-    
-                app-special-offers-card{
-                    min-width: calc(100%);
-    
-                    @include for-tablet {
-                        min-width: calc(50%);
-                    }
-    
-                    @include for-desktop {
-                        min-width: calc(33.3% + 2px);
-                    }
-                }
-            }
-
-            @include for-desktop{
-                overflow: hidden;
-            }
+          @include for-desktop {
+            min-width: calc(33.3% + 2px);
+          }
         }
-    }
+      }
 
-    @include for-desktop {
-        margin-bottom: 0;
+      @include for-desktop {
+        overflow: hidden;
+      }
     }
+  }
+
+  @include for-desktop {
+    margin-bottom: 0;
+  }
 }

@@ -1,61 +1,59 @@
 @import "../../../styles/mixins";
 
-#manage-promo { 
-    padding-top: 1.5rem;
-    margin: 0 auto;
-    min-height: 100vh;
+#manage-promo {
+  padding-top: 1.5rem;
+  margin: 0 auto;
+  min-height: 100vh;
 
-    section {
-        .manage-promo-container {
-            display: flex;
-            margin-top: 2rem;
+  section {
+    .manage-promo-container {
+      display: flex;
+      margin-top: 2rem;
 
-            &-left {
-                width: 25%;
-                color: #7092a5;
-                
-                h2 {
-                    font-weight: normal;
-                    padding-left: 0.6rem;
-                    margin-bottom: 0.5rem;
-                }
+      &-left {
+        width: 25%;
+        color: #7092a5;
 
-                ul {
-                    list-style: none;
-
-                    li {
-                        
-                        a{
-                            padding: 0.6rem 1rem;
-                            text-decoration: none;
-                            color: #F4F4F4;
-                            display: block;
-                            font-size: 1.1rem;
-                            border-radius: 0.25rem;
-
-                            i {
-                                margin-right: 1rem;
-                                font-size: 1rem;
-                            }
-
-                            &:hover {
-                                background: rgba( 103, 193, 245, 0.2 );
-                            }
-                        }
-                    }
-                }
-            }
-
-            &-right {
-                width: 75%;
-                margin-left: 1rem;
-            }
+        h2 {
+          font-weight: normal;
+          padding-left: 0.6rem;
+          margin-bottom: 0.5rem;
         }
-    }
 
-    
-    @include for-desktop{
-        // grid-template-columns: 20% 65%;
+        ul {
+          list-style: none;
+
+          li {
+            a {
+              padding: 0.6rem 1rem;
+              text-decoration: none;
+              color: #f4f4f4;
+              display: block;
+              font-size: 1.1rem;
+              border-radius: 0.25rem;
+
+              i {
+                margin-right: 1rem;
+                font-size: 1rem;
+              }
+
+              &:hover {
+                background: rgba(103, 193, 245, 0.2);
+              }
+            }
+          }
+        }
+      }
+
+      &-right {
         width: 75%;
+        margin-left: 1rem;
+      }
     }
+  }
+
+  @include for-desktop {
+    // grid-template-columns: 20% 65%;
+    width: 75%;
+  }
 }

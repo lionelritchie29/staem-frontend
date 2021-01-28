@@ -1,37 +1,37 @@
 @import "../../../styles/mixins";
 
 section {
-    margin-top: 2rem;
+  margin-top: 2rem;
 
-    h1 {
-        color: #fff;
-        font-weight: normal;
-        font-size: 1.2rem;
-        margin-bottom: 0.75rem;
-    }
-    
-    .main-slider {
-        position: relative;
-        
-        @include slider-arrow-style;
+  h1 {
+    color: #fff;
+    font-weight: normal;
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+  }
 
-        &-container {
-            width: 100%;
-            overflow: auto;
-    
-            &-images {
-                width: 100%;
-                display: flex;
-                transition: all 0.5s;
-                
-                app-featured-card {
-                    min-width: calc(100%);
-                }
-            }
+  .main-slider {
+    position: relative;
 
-            @include for-desktop{
-                overflow: hidden;
-            }
+    @include slider-arrow-style;
+
+    &-container {
+      width: 100%;
+      overflow: auto;
+
+      &-images {
+        width: 100%;
+        display: flex;
+        transition: all 0.5s;
+
+        app-featured-card {
+          min-width: calc(100%);
         }
-    }    
+      }
+
+      @include for-desktop {
+        overflow: hidden;
+      }
+    }
+  }
 }
