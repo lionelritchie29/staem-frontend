@@ -50,7 +50,7 @@ export class InventoryComponent implements OnInit {
       r[a.game] = [...(r[a.game] || []), a];
       return r;
     }, {});
-    console.log('group', this.groupedInventory);
+    // console.log('group', this.groupedInventory);
     this.groupKeys = Object.keys(this.groupedInventory);
 
     this.groupKeys.forEach((gameId) => {

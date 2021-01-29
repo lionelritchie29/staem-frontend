@@ -10,8 +10,9 @@
 
     <app-inventory-tabs>
       <app-inventory-tab
-        *ngFor="let tabHeader of tabHeaders"
+        *ngFor="let tabHeader of tabHeaders; let i = index"
         [tabTitle]="tabHeader.title"
+        [items]="groupedInventory[tabHeader.id]"
       ></app-inventory-tab>
     </app-inventory-tabs>
   </section>

@@ -1,3 +1,57 @@
-<div [hidden]="!active">
-  {{ body }}
+<div class="inventory-tab" [hidden]="!active">
+  <h1>{{ tabTitle | uppercase }}</h1>
+
+  <div class="inventory-tab-search">
+    <span>Looking for a specific item?</span>
+    <input
+      type="text"
+      [(ngModel)]="searchTerm"
+      (ngModelChange)="onSearch()"
+      placeholder="start typing an item name here"
+    />
+  </div>
+
+  <div class="inventory-tab-container">
+    <div class="inventory-tab-container-items">
+      <div class="inventory-tab-container-items-t">
+        <div
+          *ngFor="let n of showItems; let i = index"
+          (click)="showItemDetail((this.page - 1) * this.limit + i)"
+          class="inventory-tab-container-items-t-item"
+        >
+          <img
+            src="{{ itemImageUrls[(this.page - 1) * this.limit + i] }}"
+            alt=""
+          />
+        </div>
+      </div>
+
+      <div class="pagination-container">
+        <div class="pagination">
+          <button (click)="onPrev()"><</button>
+          <div>{{ page }} / {{ totalPage }}</div>
+          <button (click)="onNext()">></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="inventory-tab-container-detail" *ngIf="items[currentItemIdx]">
+      <div class="inventory-tab-container-detail-header">
+        <div class="inventory-tab-container-detail-header-img">
+          <img
+            src="{{ itemImageUrls[currentItemIdx] }}"
+            alt="{{ items[currentItemIdx].name }}"
+          />
+        </div>
+
+        <h2>{{ items[currentItemIdx].name }}</h2>
+        <span>{{ tabTitle }}</span>
+        <p>{{ items[currentItemIdx].description }}</p>
+      </div>
+      <div class="inventory-tab-container-detail-sell">
+        <a href="">View in Community Market</a>
+        <button>Sell</button>
+      </div>
+    </div>
+  </div>
 </div>

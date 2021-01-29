@@ -1,0 +1,145 @@
+@import "../../../styles/variables";
+@import "../../../styles/mixins";
+
+.inventory-tab {
+  border: 1px solid #303030;
+  background-color: #1f1f1f;
+  padding: 3rem 1rem;
+  color: #f4f4f4;
+
+  h1 {
+    font-weight: normal;
+    font-size: 1.75rem;
+  }
+
+  &-search {
+    display: flex;
+    align-items: center;
+    margin-top: 1.5rem;
+
+    span {
+      display: block;
+      margin-right: 1rem;
+    }
+
+    input {
+      width: 55%;
+      @include input-dark;
+      padding: 0.5rem 0.25rem;
+    }
+  }
+
+  &-container {
+    display: flex;
+    margin-top: 1.25rem;
+
+    &-items {
+      width: 65%;
+      margin-right: 1rem;
+
+      &-t {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.5rem;
+        background-color: #000;
+        padding: 0.5rem;
+        grid-auto-rows: 1fr;
+        height: fit-content;
+
+        &-item {
+          width: 100%;
+          background-color: #333;
+          cursor: pointer;
+
+          img {
+            width: 100%;
+            object-fit: contain;
+          }
+        }
+      }
+    }
+
+    &-detail {
+      width: 35%;
+      border: 2px solid #f4f4f4;
+      position: relative;
+
+      &-header {
+        padding: 0.5rem;
+        width: 100% !important;
+        &-img {
+          padding-bottom: 1rem;
+          margin-bottom: 1.5rem;
+          border-bottom: 1px solid #ccc;
+          width: 100%;
+          img {
+            width: 100%;
+          }
+        }
+
+        h2 {
+          font-weight: normal;
+          font-size: 1.4rem;
+          color: rgb(210, 210, 210);
+        }
+
+        span {
+          display: block;
+          color: #666;
+        }
+
+        p {
+          font-size: 0.85rem;
+          margin-top: 1rem;
+          color: #cccccc;
+        }
+      }
+
+      &-sell {
+        bottom: 1rem;
+        margin-top: 2rem;
+        height: fit-content;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 0.75rem;
+
+        a {
+          text-decoration: none;
+          color: #f4f4f4;
+          display: block;
+        }
+
+        button {
+          @include green-button-style;
+          margin-top: 2rem;
+          padding-top: 0.25rem;
+          padding-bottom: 0.25rem;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+.pagination-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
+
+  .pagination {
+    display: flex;
+    button {
+      @include blue-button-style;
+    }
+
+    div {
+      color: $secondary-color;
+      background: #333;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      padding: 0 0.75rem;
+    }
+  }
+}

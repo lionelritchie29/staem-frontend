@@ -34,6 +34,10 @@ export const getMiniProfileBgUrl = (url: string): string => {
   return `${GLOBALS.IMAGE_ENDPOINT}/mini-background/${url}`;
 };
 
+export const getGameItemImageUrl = (gameId: number, url: string): string => {
+  return `${GLOBALS.IMAGE_ENDPOINT}/game-items/1/${url}`;
+};
+
 export const convertDateTimeToDate = (datetime: string) => {
   return new Date(Date.parse(datetime));
 };
