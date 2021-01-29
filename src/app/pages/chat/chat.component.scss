@@ -1,0 +1,94 @@
+@import "../../../styles/mixins";
+@import "../../../styles/variables";
+
+#chats {
+  width: 90%;
+  margin: 0 auto;
+  min-height: calc(100vh - 10rem);
+  position: relative;
+
+  .chats {
+    overflow: auto;
+    height: calc(100vh - 10rem);
+    padding-bottom: 3rem;
+
+    .chat {
+      margin-top: 1.5rem;
+      height: 100%;
+      padding-top: 1rem;
+      width: 60%;
+      background-color: lighten(#222, 5);
+      padding: 0.75rem 1rem;
+      border-radius: 0.25rem;
+      color: #888;
+
+      &-name {
+        a {
+          text-decoration: none;
+          color: #f4f4f4;
+        }
+      }
+
+      &-msg {
+        margin-top: 0.75rem;
+      }
+    }
+  }
+
+  .chat-sender {
+    position: absolute;
+    bottom: 0;
+    background-color: #222;
+    width: 100%;
+    padding: 0.25rem;
+    display: flex;
+    width: 100%;
+
+    form {
+      width: 90%;
+      input {
+        width: 90%;
+        background: #333;
+        border: 1px solid #000;
+        padding: 0.5rem;
+        color: #f4f4f4;
+        outline: none;
+      }
+
+      button {
+        width: 8%;
+      }
+    }
+  }
+
+  @include for-desktop {
+    // grid-template-columns: 20% 65%;
+    width: 65%;
+  }
+}
+
+button {
+  width: 5%;
+  padding: 0.5rem;
+  background-color: #777;
+  color: #ccc;
+  border: none;
+  cursor: pointer;
+  margin-left: 0.25rem;
+
+  &:hover {
+    background-color: darken(#777, 5);
+  }
+}
+
+.left {
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 1.2rem;
+}
+
+.right {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 1.2rem;
+}

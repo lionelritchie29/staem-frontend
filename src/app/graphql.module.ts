@@ -4,13 +4,34 @@ import {
   ApolloClientOptions,
   ApolloLink,
   InMemoryCache,
+  split,
 } from '@apollo/client/core';
 import { HttpLink } from 'apollo-angular/http';
 import { GLOBALS } from './globals';
 import { setContext } from '@apollo/client/link/context';
+import { WebSocketLink } from '@apollo/client/link/ws';
+import { getMainDefinition } from '@apollo/client/utilities';
+
+interface Definintion {
+  kind: string;
+  operation?: string;
+}
 
 const uri = GLOBALS.GRAPHQL_ENDPOINT; // <-- add the URL of the GraphQL server here
 export function createApollo(httpLink: HttpLink): ApolloClientOptions<any> {
+  // http link
+  const http = httpLink.create({
+    uri,
+  });
+
+  //websocket link
+  const ws = new WebSocketLink({
+    uri: 'ws://localhost:8080/subscriptions',
+    options: {
+      reconnect: true,
+    },
+  });
+
   const basic = setContext((operation, context) => ({
     headers: {
       Accept: 'charset=utf-8',
@@ -31,7 +52,15 @@ export function createApollo(httpLink: HttpLink): ApolloClientOptions<any> {
     }
   });
 
-  const link = ApolloLink.from([basic, auth, httpLink.create({ uri })]);
+  const link = split(
+    // split based on operation type
+    ({ query }) => {
+      const { kind, operation }: Definintion = getMainDefinition(query);
+      return kind === 'OperationDefinition' && operation === 'subscription';
+    },
+    ws,
+    http
+  );
 
   return {
     link,

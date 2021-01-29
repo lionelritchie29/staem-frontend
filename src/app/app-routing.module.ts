@@ -43,12 +43,18 @@ import { AuthGuardService } from './services/auth-guard.service';
 import { PointShopComponent } from './pages/point-shop/point-shop.component';
 import { TestTemplateComponent } from './pages/test-template/test-template.component';
 import { InventoryComponent } from './pages/inventory/inventory.component';
+import { ChatComponent } from './pages/chat/chat.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'test-template', component: TestTemplateComponent },
   { path: 'search', component: SearchGameComponent },
   { path: 'inventory', component: InventoryComponent },
+  {
+    path: 'chat/:recipientId',
+    component: ChatComponent,
+    canActivate: [AuthGuardService],
+  },
   {
     path: 'game/:id',
     component: GameDetailComponent,

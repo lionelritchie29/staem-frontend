@@ -83,6 +83,7 @@ import { TestTemplateComponent } from './pages/test-template/test-template.compo
 import { InventoryComponent } from './pages/inventory/inventory.component';
 import { InventoryTabsComponent } from './components/inventory-tabs/inventory-tabs.component';
 import { InventoryTabComponent } from './components/inventory-tab/inventory-tab.component';
+import { ChatComponent } from './pages/chat/chat.component';
 
 @NgModule({
   declarations: [
@@ -163,6 +164,7 @@ import { InventoryTabComponent } from './components/inventory-tab/inventory-tab.
     InventoryComponent,
     InventoryTabsComponent,
     InventoryTabComponent,
+    ChatComponent,
   ],
   imports: [
     BrowserModule,

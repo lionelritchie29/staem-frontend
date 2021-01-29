@@ -1,0 +1,39 @@
+<section id="chats">
+  <section class="chats" *ngIf="currentUser && loggedUser">
+    <p style="text-align: center; color: #f4f4f4; margin-top: 0.5rem">
+      Chat with {{ currentUser.profile.realName }}
+    </p>
+
+    <div
+      [class.left]="chat.recipientId == loggedUser.id"
+      [class.right]="chat.senderId == loggedUser.id"
+      *ngFor="let chat of messages"
+    >
+      <div class="chat">
+        <div class="chat-name">
+          <a href="" *ngIf="chat.recipientId == loggedUser.id">{{
+            currentUser.accountName
+          }}</a>
+          <a href="" *ngIf="chat.senderId == loggedUser.id">{{
+            loggedUser.accountName
+          }}</a>
+          at <span>{{ chat.createdAt | date }}</span>
+        </div>
+        <div class="chat-msg">{{ chat.message }}</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="chat-sender">
+    <form [formGroup]="chatForm" (submit)="sendChat()">
+      <input
+        formControlName="input"
+        type="text"
+        placeholder="Input your message..."
+      />
+      <button><i class="fas fa-paper-plane"></i></button>
+    </form>
+    <button><i class="fas fa-paper-plane"></i></button>
+    <button><i class="fas fa-paper-plane"></i></button>
+  </div>
+</section>

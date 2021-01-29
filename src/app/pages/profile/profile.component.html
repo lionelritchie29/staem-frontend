@@ -35,7 +35,10 @@
             >
           </div>
 
-          <div class="profile-top-right-edit-btn">
+          <div
+            class="profile-top-right-edit-btn"
+            *ngIf="currentUser.id != loggedUser.id"
+          >
             <a (click)="onReport()">Report</a>
           </div>
 
@@ -45,7 +48,7 @@
             </div>
 
             <div class="profile-top-right-edit-btn" *ngIf="isFriend">
-              <a routerLink="/">Message</a>
+              <a routerLink="/chat/{{ currentUser.id }}">Message</a>
             </div>
           </ng-template>
         </span>

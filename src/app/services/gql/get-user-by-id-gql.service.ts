@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Query, gql } from 'apollo-angular';
+import { map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -37,4 +39,8 @@ export class GetUserByIdGqlService extends Query<any> {
       }
     }
   `;
+
+  get(userId: number): Observable<any> {
+    return this.fetch({ id: userId }).pipe(map((res) => (<any>res.data).user));
+  }
 }
