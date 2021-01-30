@@ -16,6 +16,7 @@ export class MarketItemCardComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
+    console.log(this.item);
     this.imgUrl = getGameItemImageUrl(
       this.item.gameItem.game,
       this.item.gameItem.image

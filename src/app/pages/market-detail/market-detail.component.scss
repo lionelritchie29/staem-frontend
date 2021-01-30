@@ -1,0 +1,153 @@
+@import "../../../styles/mixins";
+@import "../../../styles/variables";
+
+.market-header {
+  background-color: #46602a;
+  margin-bottom: 2rem;
+
+  div {
+    width: 65%;
+    margin: 0 auto;
+    color: #f4f4f4;
+    padding: 2.5rem 0;
+
+    h1 {
+      color: #f4f4f4;
+      font-size: 2rem;
+      font-weight: normal;
+    }
+
+    p {
+      color: #9dc473;
+      font-size: 1rem;
+      margin-top: 0.5rem;
+    }
+  }
+}
+
+.market-detail {
+  width: 90%;
+  padding: 1rem;
+  margin: 0 auto;
+  min-height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+
+  &-item {
+    display: flex;
+
+    &-img {
+      min-width: 45%;
+      img {
+        width: 100%;
+      }
+    }
+
+    &-desc {
+      width: 35%;
+      margin-left: 1.25rem;
+
+      h2 {
+        color: #f4f4f4;
+        font-size: 1.5rem;
+        font-weight: normal;
+      }
+
+      span {
+        display: block;
+        color: #777;
+      }
+
+      p {
+        margin-top: 1rem;
+        color: #888;
+      }
+    }
+  }
+
+  &-listings {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+
+    &-buy,
+    &-sell {
+      width: 47.5%;
+      background-color: #12202d;
+      box-shadow: 0px 0px 14px #0d1b27 inset;
+    }
+
+    .market-detail-listings-top {
+      text-align: center;
+      padding: 1rem 0.75rem;
+      border-bottom: 1px solid #333;
+
+      h3 {
+        color: #777;
+        font-weight: normal;
+        font-size: 1.2rem;
+      }
+
+      button {
+        @include green-button-style;
+        margin-top: 1.75rem;
+        font-size: 2rem;
+        padding-left: 2.5rem !important;
+        padding-right: 2.5rem !important;
+        border-radius: 0.25rem;
+      }
+    }
+
+    .market-detail-listings-bottom {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      color: #8f98a0;
+      padding: 1rem 0;
+
+      table {
+        tr {
+          td {
+            width: 50%;
+            font-size: 1.1rem;
+            padding: 0.1rem 1rem;
+            text-align: center;
+          }
+        }
+
+        tr:nth-child(even) {
+          background: rgba(255, 255, 255, 0.2);
+        }
+      }
+    }
+  }
+
+  &-my-listing {
+    h2 {
+      color: #f4f4f4;
+      font-size: 1.3rem;
+      font-weight: normal;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+    }
+  }
+
+  @include for-desktop {
+    // grid-template-columns: 20% 65%;
+    width: 65%;
+  }
+}
+
+.my-list-card {
+  background: rgba(0, 0, 0, 0.2);
+  color: #f4f4f4;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1rem;
+
+  span {
+    font-size: 1rem;
+  }
+}

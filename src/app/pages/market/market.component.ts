@@ -11,6 +11,7 @@ const GET_SELL_LISTINGS_PAGINATED = gql`
       totalItems
       listings {
         gameItem {
+          id
           name
           image
           game

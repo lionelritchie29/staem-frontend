@@ -1,0 +1,120 @@
+@import "../../../styles/variables";
+@import "../../../styles/mixins";
+
+.listing-modal {
+  position: fixed;
+  //   display: none !important;
+  width: 100%;
+  min-height: 100%;
+  height: auto;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #f4f4f4;
+
+  &-content {
+    width: 50%;
+    height: 50%;
+    background: radial-gradient(
+        circle at top left,
+        rgba(74, 81, 92, 0.4) 0%,
+        rgba(75, 81, 92, 0) 60%
+      ),
+      #25282e;
+    padding: 0.75rem;
+
+    &-top {
+      position: relative;
+      padding: 1.5rem 0;
+
+      h1 {
+        font-size: 1.8rem;
+        font-weight: normal;
+      }
+
+      span {
+        position: absolute;
+        top: 0;
+        right: 0.5rem;
+        font-size: 2rem;
+      }
+    }
+
+    &-bottom {
+      &-game {
+        display: flex;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid #777;
+
+        &-img {
+          width: 20%;
+          img {
+            width: 100%;
+          }
+        }
+
+        &-desc {
+          margin-left: 1rem;
+
+          h2 {
+            font-size: 1.5rem;
+            font-weight: normal;
+          }
+
+          span {
+            color: #777;
+          }
+        }
+      }
+
+      &-graph {
+        height: 10rem;
+        background: #333;
+        margin-top: 1rem;
+      }
+
+      &-form {
+        margin-top: 1rem;
+        font-size: 1rem;
+        border-top: 1px solid #777;
+        padding-top: 1rem;
+
+        &-top {
+          display: flex;
+          justify-content: center;
+
+          div {
+            input {
+              margin-left: 0.5rem;
+              @include input-dark;
+              padding: 0.25rem;
+            }
+          }
+
+          div:nth-child(1) {
+            margin-right: 1.5rem;
+          }
+        }
+
+        &-bottom {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-top: 1.5rem;
+          padding-bottom: 1.5rem;
+
+          div {
+            margin-right: 1rem;
+          }
+
+          button {
+            @include green-button-style;
+            padding: 0.25rem 0.5rem !important;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,4 +1,8 @@
-<a routerLink="/" class="market-card" *ngIf="game && item">
+<a
+  routerLink="/market/{{ item.gameItem.id }}"
+  class="market-card"
+  *ngIf="game && item"
+>
   <div class="market-card-info">
     <div class="market-card-info-img">
       <img src="{{ imgUrl }}" alt="{{ item.gameItem.name }}" />

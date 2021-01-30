@@ -1,63 +1,68 @@
 @import "../../../styles/variables";
 
 #confirm-modal {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: rgba(0,0,0,0.7);
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.7);
 
-    .confirm-modal {
-        width: 30%;
-        background: radial-gradient(circle at top left, rgba(74, 81, 92, 0.4) 0%, rgba(75, 81, 92, 0) 60%), #25282e;
-        border-top: 1px solid $secondary-color;
-        color: #F4F4F4;
-        padding: 1.5rem;
-        // position: absolute;
+  .confirm-modal {
+    width: 30%;
+    background: radial-gradient(
+        circle at top left,
+        rgba(74, 81, 92, 0.4) 0%,
+        rgba(75, 81, 92, 0) 60%
+      ),
+      #25282e;
+    border-top: 1px solid $secondary-color;
+    color: #f4f4f4;
+    padding: 1.5rem;
+    // position: absolute;
 
-        &-body {
-            h1 {
-                font-weight: normal;
-                font-size: 2.25rem;
-                margin-bottom: 1.5rem;
-            }
-    
-            p {
-                font-size: 1.1rem;
-                margin-bottom: 1rem;
-            }
-    
-            div {
-                text-align: right;
+    &-body {
+      h1 {
+        font-weight: normal;
+        font-size: 2.25rem;
+        margin-bottom: 1.5rem;
+      }
 
-                button {
-                    border: none;
-                    padding: 0.25rem 1rem;
-                    font-size: 1.1rem;
-                    margin-left: 0.5rem;
-                    cursor: pointer;
-                }
-                
-                button:nth-child(1) {
-                    background: lighten($color: $primary-green, $amount: 10);
-                    color: lighten($text-green, 10);
+      p {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+      }
 
-                    &:hover {
-                        background: lighten($color: $primary-green, $amount: 20);
-                    }
-                }
-                
-                button:nth-child(2) {
-                    background: darken($color: red, $amount: 10);
-                    color: #FFF;
+      div {
+        text-align: right;
 
-                    &:hover {
-                        background: lighten($color: red, $amount: 10);
-                    }
-                }
-            }
+        button {
+          border: none;
+          padding: 0.25rem 1rem;
+          font-size: 1.1rem;
+          margin-left: 0.5rem;
+          cursor: pointer;
         }
+
+        button:nth-child(1) {
+          background: lighten($color: $primary-green, $amount: 10);
+          color: lighten($text-green, 10);
+
+          &:hover {
+            background: lighten($color: $primary-green, $amount: 20);
+          }
+        }
+
+        button:nth-child(2) {
+          background: darken($color: red, $amount: 10);
+          color: #fff;
+
+          &:hover {
+            background: lighten($color: red, $amount: 10);
+          }
+        }
+      }
     }
+  }
 }

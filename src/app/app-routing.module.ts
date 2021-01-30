@@ -45,6 +45,7 @@ import { TestTemplateComponent } from './pages/test-template/test-template.compo
 import { InventoryComponent } from './pages/inventory/inventory.component';
 import { ChatComponent } from './pages/chat/chat.component';
 import { MarketComponent } from './pages/market/market.component';
+import { MarketDetailComponent } from './pages/market-detail/market-detail.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -52,6 +53,7 @@ const routes: Routes = [
   { path: 'search', component: SearchGameComponent },
   { path: 'inventory', component: InventoryComponent },
   { path: 'market', component: MarketComponent },
+  { path: 'market/:gameItemId', component: MarketDetailComponent },
   {
     path: 'chat/:recipientId',
     component: ChatComponent,

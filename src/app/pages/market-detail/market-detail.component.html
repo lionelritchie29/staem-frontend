@@ -1,1 +1,121 @@
-<p>market-detail works!</p>
+<section style="padding-bottom: 2rem">
+  <div class="market-header">
+    <div>
+      <h1>Community Market</h1>
+      <p>Buy and sell items with community member for Steam Wallet funds.</p>
+    </div>
+  </div>
+
+  <section class="market-detail" *ngIf="gameItem">
+    <div class="market-detail-item">
+      <div class="market-detail-item-img">
+        <img src="{{ gameItemImgUrl }}" alt="{{ gameItem.name }}" />
+      </div>
+
+      <div class="market-detail-item-desc">
+        <h2>{{ gameItem.name }}</h2>
+        <span>{{ gameTitle }}</span>
+        <p>
+          {{ gameItem.description }}
+        </p>
+      </div>
+    </div>
+
+    <div class="market-detail-listings">
+      <div class="market-detail-listings-buy">
+        <div class="market-detail-listings-top">
+          <h3>Sell Listing</h3>
+          <button (click)="onBuy()">Buy...</button>
+        </div>
+        <div class="market-detail-listings-bottom">
+          <table>
+            <tr>
+              <td>Price</td>
+              <td>Quantity</td>
+            </tr>
+            <tr *ngFor="let list of sellListings">
+              <td>{{ list.price * 1.1 | currency: "Rp. " }}</td>
+              <td>{{ list.quantity }}</td>
+            </tr>
+          </table>
+          <span
+            *ngIf="sellListings.length > 6"
+            style="display: flex; justify-content: center"
+          >
+            And
+            {{ buyListings.length - 6 }}
+            more...
+          </span>
+        </div>
+      </div>
+
+      <div class="market-detail-listings-sell">
+        <div class="market-detail-listings-top">
+          <h3>Buy Listing</h3>
+          <button>Sell...</button>
+        </div>
+        <div class="market-detail-listings-bottom">
+          <table>
+            <tr>
+              <td>Price</td>
+              <td>Quantity</td>
+            </tr>
+            <tr *ngFor="let list of buyListings; let i = index">
+              <td *ngIf="i < 6">{{ list.price }}</td>
+              <td *ngIf="i < 6">{{ list.quantity }}</td>
+            </tr>
+          </table>
+          <span
+            *ngIf="buyListings.length > 6"
+            style="display: flex; justify-content: center"
+          >
+            And
+            {{ buyListings.length - 6 }}
+            more...
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="market-detail-recent"></div>
+
+    <div class="market-detail-my-listing">
+      <h2>Your Sell Listing</h2>
+      <div class="market-detail-my-listing-buy">
+        <div class="my-list-card" *ngFor="let list of userSellListings">
+          <span>
+            You have a sell listing for this item for
+            {{ list.price * 1.1 | currency: "Rp. " }} (Quantity:
+            {{ list.quantity }})
+          </span>
+
+          <span>Created at {{ list.createdAt | date }}</span>
+        </div>
+
+        <div class="my-list-card" *ngIf="userSellListings.length == 0">
+          You are not selling any of this item on the Community Market. Sell
+          items from your inventory, or click the "Sell" button above.
+        </div>
+      </div>
+
+      <h2>Your Buy Listing</h2>
+      <div class="market-detail-my-listing-buy">
+        <div class="my-list-card" *ngFor="let list of userBuyListings">
+          <span>
+            You have a buy order for this item for
+            {{ list.price * 1.1 | currency: "Rp. " }} (Quantity:
+            {{ list.quantity }})
+          </span>
+
+          <span>Created at {{ list.createdAt | date }}</span>
+        </div>
+      </div>
+
+      <div class="my-list-card" *ngIf="userBuyListings.length == 0">
+        You do not have any buy orders.
+      </div>
+    </div>
+
+    <div class="market-detail-graph"></div>
+  </section>
+</section>

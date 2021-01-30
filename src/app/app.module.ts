@@ -87,6 +87,8 @@ import { ChatComponent } from './pages/chat/chat.component';
 import { MarketComponent } from './pages/market/market.component';
 import { MarketItemCardComponent } from './components/market-item-card/market-item-card.component';
 import { MarketDetailComponent } from './pages/market-detail/market-detail.component';
+import { ListingModalComponent } from './components/listing-modal/listing-modal.component';
+import { BuyListingModalComponent } from './components/buy-listing-modal/buy-listing-modal.component';
 
 @NgModule({
   declarations: [
@@ -171,6 +173,8 @@ import { MarketDetailComponent } from './pages/market-detail/market-detail.compo
     MarketComponent,
     MarketItemCardComponent,
     MarketDetailComponent,
+    ListingModalComponent,
+    BuyListingModalComponent,
   ],
   imports: [
     BrowserModule,

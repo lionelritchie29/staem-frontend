@@ -25,8 +25,12 @@ export class FooterComponent implements OnInit {
       link: '/cart',
     },
     {
-      title: 'Random Game',
-      link: `/game/${Math.floor(Math.random() * (15 - 1 + 1)) + 1}`,
+      title: 'Market',
+      link: '/market',
+    },
+    {
+      title: 'Inventory',
+      link: '/inventory',
     },
     {
       title: 'Login',
@@ -35,6 +39,10 @@ export class FooterComponent implements OnInit {
     {
       title: 'Register',
       link: '/register',
+    },
+    {
+      title: 'Point Shop',
+      link: '/points/shop',
     },
     {
       title: 'Wishlist',

@@ -1,0 +1,56 @@
+<div class="listing-modal">
+  <div class="listing-modal-content">
+    <div class="listing-modal-content-top">
+      <h1>PUT AN ITEM UP FOR SALE</h1>
+      <span (click)="onClose()" style="cursor: pointer">&times;</span>
+    </div>
+
+    <div class="listing-modal-content-bottom">
+      <div class="listing-modal-content-bottom-game">
+        <div class="listing-modal-content-bottom-game-img">
+          <img src="{{ imageUrl }}" alt="{{ gameTitle }}" />
+        </div>
+
+        <div class="listing-modal-content-bottom-game-desc">
+          <h2>{{ gameItem.name }}</h2>
+          <span>{{ gameTitle }}</span>
+        </div>
+      </div>
+
+      <div class="listing-modal-content-bottom-graph"></div>
+
+      <form [formGroup]="modalForm" class="listing-modal-content-bottom-form">
+        <div class="listing-modal-content-bottom-form-top">
+          <div>
+            <label>You Receive</label>
+            <input
+              formControlName="userReceive"
+              [(ngModel)]="userReceiveModel"
+              (ngModelChange)="calculateBuyerPay()"
+              type="text"
+            />
+          </div>
+
+          <div>
+            <label>Buyer Pays</label>
+            <input
+              formControlName="buyerPay"
+              [(ngModel)]="buyerPayModel"
+              type="text"
+            />
+          </div>
+        </div>
+
+        <div class="listing-modal-content-bottom-form-bottom">
+          <div>
+            <input formControlName="agree" type="checkbox" />
+            I agree to the terms of the Steam Subscriber Agreement (last updated
+            28 Aug, 2020.)
+          </div>
+
+          <button (click)="onSubmit()">Ok, put it up for sale</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

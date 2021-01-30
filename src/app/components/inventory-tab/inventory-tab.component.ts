@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { GameItem } from 'src/app/models/game-item';
 import { InventoryTabsComponent } from '../inventory-tabs/inventory-tabs.component';
 import { getGameItemImageUrl } from 'src/app/globals';
+import { ListingModalService } from 'src/app/services/listing-modal.service';
 
 @Component({
   selector: 'app-inventory-tab',
@@ -27,7 +28,10 @@ export class InventoryTabComponent implements OnInit {
 
   searchTerm: string = '';
 
-  constructor(private tabs: InventoryTabsComponent) {}
+  constructor(
+    private tabs: InventoryTabsComponent,
+    private listingModalService: ListingModalService
+  ) {}
 
   ngOnInit(): void {
     this.tabs.addTab(this);
@@ -79,5 +83,14 @@ export class InventoryTabComponent implements OnInit {
       });
       console.log(this.showItems);
     }
+  }
+
+  onSell() {
+    // console.log(this.currentItemIdx);
+    this.listingModalService.setIsOpen(true);
+    this.listingModalService.setGameItem(
+      this.items[this.currentItemIdx],
+      this.tabTitle
+    );
   }
 }
