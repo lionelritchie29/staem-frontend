@@ -84,6 +84,9 @@ import { InventoryComponent } from './pages/inventory/inventory.component';
 import { InventoryTabsComponent } from './components/inventory-tabs/inventory-tabs.component';
 import { InventoryTabComponent } from './components/inventory-tab/inventory-tab.component';
 import { ChatComponent } from './pages/chat/chat.component';
+import { MarketComponent } from './pages/market/market.component';
+import { MarketItemCardComponent } from './components/market-item-card/market-item-card.component';
+import { MarketDetailComponent } from './pages/market-detail/market-detail.component';
 
 @NgModule({
   declarations: [
@@ -165,6 +168,9 @@ import { ChatComponent } from './pages/chat/chat.component';
     InventoryTabsComponent,
     InventoryTabComponent,
     ChatComponent,
+    MarketComponent,
+    MarketItemCardComponent,
+    MarketDetailComponent,
   ],
   imports: [
     BrowserModule,

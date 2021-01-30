@@ -1,0 +1,19 @@
+<a routerLink="/" class="market-card" *ngIf="game && item">
+  <div class="market-card-info">
+    <div class="market-card-info-img">
+      <img src="{{ imgUrl }}" alt="{{ item.gameItem.name }}" />
+    </div>
+
+    <div class="market-card-info-desc">
+      <h3>{{ item.gameItem.name }}</h3>
+      <span>{{ game.title }}</span>
+    </div>
+  </div>
+
+  <div class="market-card-qty">{{ item.quantity }}</div>
+
+  <div class="market-card-price">
+    <span>Starting at:</span>
+    <span>{{ item.lowestPrice | currency: "Rp. " }}</span>
+  </div>
+</a>

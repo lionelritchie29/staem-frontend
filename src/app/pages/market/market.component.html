@@ -1,0 +1,38 @@
+<section id="market-container">
+  <div class="market-header">
+    <div>
+      <h1>Community Market</h1>
+      <p>Buy and sell items with community member for Steam Wallet funds.</p>
+    </div>
+  </div>
+
+  <section id="market">
+    <h2>Showing All Listing</h2>
+
+    <div class="market-content">
+      <div class="market-items">
+        <div class="market-items-header">
+          <div class="market-items-header-name">Name</div>
+          <div class="market-items-header-qty">Quantity</div>
+          <div class="market-items-header-price">Price</div>
+        </div>
+
+        <app-market-item-card
+          *ngFor="let list of sellListings; let i = index"
+          [item]="list"
+          [game]="games[i]"
+        ></app-market-item-card>
+
+        <div class="pagination-container">
+          <div class="pagination">
+            <button (click)="onPrev()"><</button>
+            <div>{{ page }} / {{ totalPage }}</div>
+            <button (click)="onNext()">></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="market-right"></div>
+    </div>
+  </section>
+</section>

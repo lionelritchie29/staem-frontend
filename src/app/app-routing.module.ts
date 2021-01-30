@@ -44,12 +44,14 @@ import { PointShopComponent } from './pages/point-shop/point-shop.component';
 import { TestTemplateComponent } from './pages/test-template/test-template.component';
 import { InventoryComponent } from './pages/inventory/inventory.component';
 import { ChatComponent } from './pages/chat/chat.component';
+import { MarketComponent } from './pages/market/market.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'test-template', component: TestTemplateComponent },
   { path: 'search', component: SearchGameComponent },
   { path: 'inventory', component: InventoryComponent },
+  { path: 'market', component: MarketComponent },
   {
     path: 'chat/:recipientId',
     component: ChatComponent,

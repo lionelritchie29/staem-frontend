@@ -1,0 +1,111 @@
+@import "../../../styles/mixins";
+@import "../../../styles/variables";
+
+#market-container {
+  min-height: 100vh;
+
+  .market-header {
+    background-color: #46602a;
+
+    div {
+      width: 65%;
+      margin: 0 auto;
+      color: #f4f4f4;
+      padding: 2.5rem 0;
+
+      h1 {
+        color: #f4f4f4;
+        font-size: 2rem;
+        font-weight: normal;
+      }
+
+      p {
+        color: #9dc473;
+        font-size: 1rem;
+        margin-top: 0.5rem;
+      }
+    }
+  }
+
+  h2 {
+    color: #f4f4f4;
+    font-size: 1.5rem;
+    font-weight: normal;
+  }
+
+  #market {
+    width: 90%;
+    padding-top: 1.5rem;
+    margin: 0 auto;
+
+    .market-content {
+      display: flex;
+
+      .market-items {
+        width: 70%;
+
+        &-header {
+          display: flex;
+          background-color: rgba(0, 0, 0, 0.2);
+          margin: 1rem 0;
+          padding: 0.5rem;
+          color: #afafaf;
+
+          &-name {
+            width: 70%;
+          }
+
+          &-qty {
+            display: flex;
+            justify-content: center;
+            width: 15%;
+            border-left: 2px solid #404040;
+            border-right: 2px solid #404040;
+          }
+
+          &-price {
+            width: 15%;
+            display: flex;
+            justify-content: center;
+          }
+        }
+      }
+
+      .market-right {
+        margin-left: 1rem;
+        width: 30%;
+        height: 40rem;
+        background: $primary-background;
+      }
+    }
+
+    @include for-desktop {
+      // grid-template-columns: 20% 65%;
+      width: 65%;
+    }
+  }
+}
+
+.pagination-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+
+  .pagination {
+    display: flex;
+    button {
+      @include blue-button-style;
+    }
+
+    div {
+      color: $secondary-color;
+      background: #333;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      padding: 0 0.75rem;
+    }
+  }
+}
