@@ -10,7 +10,18 @@
     </div>
 
     <div class="point-shop-body">
-      <h2>ALL AVATAR FRAMES</h2>
+      <h2 class="mt">ALL ANIMATED AVATARS</h2>
+
+      <div class="point-shop-body-items">
+        <app-point-item-card
+          *ngFor="let avatar of animatedAvatars"
+          [item]="avatar"
+          [isOwned]="ownedAnimatedAvatars.includes(avatar.id)"
+          type="Animated Avatar"
+        ></app-point-item-card>
+      </div>
+
+      <h2 class="mt">ALL AVATAR FRAMES</h2>
 
       <div class="point-shop-body-items">
         <app-point-item-card
@@ -40,6 +51,17 @@
           [item]="bg"
           [isOwned]="ownedMiniProfileBackgrounds.includes(bg.id)"
           type="Mini Profile Background"
+        ></app-point-item-card>
+      </div>
+
+      <h2 class="mt">ALL CHAT STICKERS</h2>
+
+      <div class="point-shop-body-items">
+        <app-point-item-card
+          *ngFor="let sticker of chatStickers"
+          [item]="sticker"
+          [isOwned]="ownedChatStickers.includes(sticker.id)"
+          type="Chat Sticker"
         ></app-point-item-card>
       </div>
     </div>

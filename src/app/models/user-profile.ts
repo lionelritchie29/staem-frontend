@@ -1,4 +1,6 @@
+import { AnimatedAvatar } from './animated-avatar';
 import { AvatarFrame } from './avatar-frame';
+import { ChatSticker } from './chat-sticker';
 import { MiniProfileBackground } from './mini-profile-background';
 import { ProfileBackground } from './profile-background';
 
@@ -19,4 +21,6 @@ export interface UserProfile {
   avatarFrames: AvatarFrame[];
   profileBackgrounds: ProfileBackground[];
   miniProfileBackgrounds: MiniProfileBackground[];
+  chatStickers: ChatSticker[];
+  animatedAvatars: AnimatedAvatar[];
 }

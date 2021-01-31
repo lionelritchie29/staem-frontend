@@ -89,6 +89,7 @@ import { MarketItemCardComponent } from './components/market-item-card/market-it
 import { MarketDetailComponent } from './pages/market-detail/market-detail.component';
 import { ListingModalComponent } from './components/listing-modal/listing-modal.component';
 import { BuyListingModalComponent } from './components/buy-listing-modal/buy-listing-modal.component';
+import { SellListingModalComponent } from './components/sell-listing-modal/sell-listing-modal.component';
 
 @NgModule({
   declarations: [
@@ -175,6 +176,7 @@ import { BuyListingModalComponent } from './components/buy-listing-modal/buy-lis
     MarketDetailComponent,
     ListingModalComponent,
     BuyListingModalComponent,
+    SellListingModalComponent,
   ],
   imports: [
     BrowserModule,

@@ -122,6 +122,7 @@
     }
   }
 
+  &-recent,
   &-my-listing {
     h2 {
       color: #f4f4f4;
@@ -149,5 +150,25 @@
 
   span {
     font-size: 1rem;
+  }
+}
+
+.recent-avatar {
+  width: 3rem;
+  margin-right: 1rem;
+}
+
+.recent {
+  justify-content: flex-start;
+  align-items: center;
+
+  img {
+    width: 2.5rem;
+    margin-right: 1rem;
+  }
+
+  span {
+    font-weight: bold;
+    margin-right: 0.5rem;
   }
 }

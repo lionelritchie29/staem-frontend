@@ -1,0 +1,13 @@
+<div class="listing-modal">
+  <div class="listing-modal-content">
+    <app-inventory-tabs>
+      <app-inventory-tab
+        *ngFor="let tabHeader of tabHeaders; let i = index"
+        [tabTitle]="tabHeader.title"
+        [items]="groupedInventory[tabHeader.id]"
+      ></app-inventory-tab>
+    </app-inventory-tabs>
+
+    <span (click)="onClose()">&times;</span>
+  </div>
+</div>

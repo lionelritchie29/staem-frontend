@@ -1,7 +1,7 @@
 <div class="listing-modal">
   <div class="listing-modal-content">
     <div class="listing-modal-content-top">
-      <h1>BUY - 2020 RMR LEGEND</h1>
+      <h1>BUY - {{ gameItem.name }}</h1>
       <span (click)="onClose()" style="cursor: pointer">&times;</span>
     </div>
 
@@ -12,32 +12,50 @@
         </div>
 
         <div class="listing-modal-content-bottom-game-desc">
-          <h2>2020 RMR LEGEND</h2>
-          <span>Counter Strike: Global Offensive</span>
+          <h2>{{ gameItem.name }}</h2>
+          <span>{{ gameName }}</span>
         </div>
       </div>
 
       <form class="listing-modal-content-bottom-form">
         <div>
           <label>What price do you want to pay: </label>
-          <input type="text" />
+          <input
+            [(ngModel)]="price"
+            [ngModelOptions]="{ standalone: true }"
+            type="number"
+          />
         </div>
 
         <div>
           <label>How many do you want to buy: </label>
-          <input type="text" />
+          <input
+            [(ngModel)]="quantity"
+            [ngModelOptions]="{ standalone: true }"
+            type="number"
+          />
         </div>
 
-        <label>Maximum price: <span class="a-name">Rp 20132</span></label>
+        <label
+          >Maximum price:
+          <span class="a-name">{{
+            highestPrice * 1.1 | currency: "Rp. "
+          }}</span></label
+        >
       </form>
     </div>
 
-    <div class="listing-modal-content-summary">
+    <div class="listing-modal-content-summary" *ngIf="currentUser">
       <p>
         Payment Method:
-        <span class="p-type">My Steam Wallet <span>(Rp 29111)</span></span>
+        <span class="p-type"
+          >My Steam Wallet
+          <span>({{ currentUser.walletAmount | currency: "Rp. " }})</span></span
+        >
       </p>
-      <p>Steam account: <span class="a-name">lionelritchie</span></p>
+      <p>
+        Steam account: <span class="a-name">{{ currentUser.accountName }}</span>
+      </p>
 
       <div class="listing-modal-content-summary-confirm">
         <div>
@@ -50,7 +68,7 @@
           </p>
         </div>
 
-        <button>PLACE ORDER</button>
+        <button (click)="onPlaceOrder()">PLACE ORDER</button>
       </div>
     </div>
   </div>

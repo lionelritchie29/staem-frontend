@@ -1,21 +1,14 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { GameItem } from '../models/game-item';
-import { UserAccount } from '../models/user-account';
 
 @Injectable({
   providedIn: 'root',
 })
-export class BuyListingModalService {
+export class SellListingModalService {
   private _isOpen: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(
     false
   );
   readonly isOpen$ = this._isOpen.asObservable();
-  gameItem: GameItem;
-  gameName: string;
-  lowestPrice: number;
-  highestPrice: number;
-
   constructor() {}
 
   getIsOpen(): boolean {
@@ -24,10 +17,5 @@ export class BuyListingModalService {
 
   setIsOpen(status: boolean) {
     this._isOpen.next(status);
-  }
-
-  setGameItem(gameItem: GameItem, gameName: string) {
-    this.gameItem = gameItem;
-    this.gameName = gameName;
   }
 }

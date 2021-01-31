@@ -1,59 +1,69 @@
 <nav class="nav">
-    <div class="nav-container">
-        <div class="nav-container-left">
-            <div class="nav-container-left-hamburger">
-                ☰
-            </div>
-            <a routerLink="/" class="nav-container-left-logo">
-                <img src="../../../assets/images/logo.svg" height="45" alt="logo">
-            </a>
-            <ul class="nav-container-left-links">
-                <li>
-                    <a href="#">STORE</a>
-                </li>
-                <li>
-                    <a href="#">COMMUNITY</a>
-                </li>
-                <li>
-                    <a routerLink="/redeem-wallet">REDEEM WALLET</a>
-                </li>
-                <li>
-                    <a href="#">SUPPORT</a>
-                </li>
-            </ul>
-            <div></div>
-        </div>
-        <div class="nav-container-right">
-            <div *ngIf="!loggedUser" class="guest">
-                <a routerLink="/login">login</a> |
-                <span>
-                    <span (click)="showLanguageList()">language ▼</span>
-                    <ul id="language-list">
-                        <li *ngFor="let lang of languageList">{{ lang }}</li>
-                    </ul>
-                </span>
-            </div>
-
-            <div *ngIf="loggedUser" class="logged-in">
-                <div class="logged-in-left">
-                    <span>
-                        <span class="logged-in-left-envelope">2 <i class="fas fa-envelope"></i></span>
-                        <span (click)="showUserMenuList()" class="logged-in-left-name">
-                            <span> {{ loggedUser.profile.displayName }} ▼</span>
-                            <ul id="user-menu">
-                                <li><a routerLink="/profile/{{loggedUser.profile.customURL}}">View Profile</a></li>
-                                <li (click)="logout()">logout: <span class="account-name">{{ loggedUser.accountName }}</span></li>
-                            </ul>
-                        </span>
-                    </span>
-
-                    <div>{{ loggedUser.walletAmount | currency:"Rp. " }}</div>
-                </div>
-
-                <span class="logged-in-right">
-                    <img src="{{loggedUserImgUrl}}" alt="{{loggedUser.accountName}}">
-                </span>
-            </div>
-        </div>
+  <div class="nav-container">
+    <div class="nav-container-left">
+      <div class="nav-container-left-hamburger">☰</div>
+      <a routerLink="/" class="nav-container-left-logo">
+        <img src="../../../assets/images/logo.svg" height="45" alt="logo" />
+      </a>
+      <ul class="nav-container-left-links">
+        <li>
+          <a routerLink="/market">MARKET</a>
+        </li>
+        <li>
+          <a href="#">COMMUNITY</a>
+        </li>
+        <li>
+          <a routerLink="/redeem-wallet">REDEEM WALLET</a>
+        </li>
+        <li>
+          <a href="#">SUPPORT</a>
+        </li>
+      </ul>
+      <div></div>
     </div>
+    <div class="nav-container-right">
+      <div *ngIf="!loggedUser" class="guest">
+        <a routerLink="/login">login</a> |
+        <span>
+          <span (click)="showLanguageList()">language ▼</span>
+          <ul id="language-list">
+            <li *ngFor="let lang of languageList">{{ lang }}</li>
+          </ul>
+        </span>
+      </div>
+
+      <div *ngIf="loggedUser" class="logged-in">
+        <div class="logged-in-left">
+          <span>
+            <span class="logged-in-left-envelope"
+              >2 <i class="fas fa-envelope"></i
+            ></span>
+            <span (click)="showUserMenuList()" class="logged-in-left-name">
+              <span> {{ loggedUser.profile.displayName }} ▼</span>
+              <ul id="user-menu">
+                <li>
+                  <a routerLink="/profile/{{ loggedUser.profile.customURL }}"
+                    >View Profile</a
+                  >
+                </li>
+                <li (click)="logout()">
+                  logout:
+                  <span class="account-name">{{ loggedUser.accountName }}</span>
+                </li>
+              </ul>
+            </span>
+          </span>
+
+          <div>{{ loggedUser.walletAmount | currency: "Rp. " }}</div>
+        </div>
+
+        <span class="logged-in-right">
+          <img
+            src="{{ loggedUserImgUrl }}"
+            alt="{{ loggedUser.accountName }}"
+          />
+        </span>
+      </div>
+    </div>
+  </div>
 </nav>

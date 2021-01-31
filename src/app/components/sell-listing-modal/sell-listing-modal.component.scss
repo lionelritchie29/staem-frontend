@@ -1,0 +1,39 @@
+@import "../../../styles/variables";
+@import "../../../styles/mixins";
+
+.listing-modal {
+  position: fixed;
+  //   display: none !important;
+  z-index: 888;
+  width: 100%;
+  min-height: 100%;
+  height: auto;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #f4f4f4;
+
+  &-content {
+    width: 60%;
+    height: 50%;
+    background: radial-gradient(
+        circle at top left,
+        rgba(74, 81, 92, 0.4) 0%,
+        rgba(75, 81, 92, 0) 60%
+      ),
+      #25282e;
+    padding: 0.75rem 1.25rem;
+    border-top: 1px solid blue;
+    position: relative;
+
+    span {
+      position: absolute;
+      top: 0;
+      right: 1rem;
+      font-size: 2rem;
+      cursor: pointer;
+    }
+  }
+}
