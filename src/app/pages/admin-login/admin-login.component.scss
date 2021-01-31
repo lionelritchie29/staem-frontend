@@ -19,7 +19,7 @@
   justify-content: center;
 
   .login-left {
-    width: 40%;
+    width: 100%;
     height: fit-content;
 
     &-form {
@@ -74,6 +74,10 @@
           }
         }
       }
+    }
+
+    @include for-desktop {
+      width: 40%;
     }
   }
 }

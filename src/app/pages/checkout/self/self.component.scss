@@ -2,100 +2,118 @@
 @import "../../../../styles/mixins";
 
 div {
-    h1 {
-        color: #FFF;
+  h1 {
+    color: #fff;
+    font-weight: normal;
+    font-size: 1.75rem;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+  }
+
+  section {
+    display: flex;
+
+    form {
+      width: 100%;
+      background: rgba(0, 0, 0, 0.2);
+      padding: 1rem 2rem 1rem 1rem;
+      color: #f4f4f4;
+
+      h2 {
+        font-size: 1.5rem;
         font-weight: normal;
-        font-size: 1.75rem;
-        letter-spacing: 1px;
-        margin-bottom: 1rem;
-    }
+        margin-top: 1.75rem;
+      }
 
-    section {
+      .form-flex {
         display: flex;
+        flex-direction: column;
 
-        form {
-            width: 70%;
-            background: rgba( 0, 0, 0, 0.2 );
-            padding: 1rem 2rem 1rem 1rem;
-            color: #F4F4F4;
-
-            h2 {
-                font-size: 1.5rem;
-                font-weight: normal;
-                margin-top: 1.75rem;
-            }
-
-            .form-flex {
-                display: flex;
-
-                &-group {
-                    width: 50%;
-                }
-            }
-
-            .form-group {
-                margin-top: 1rem;
-
-                label {
-                    display: block;
-                    margin-bottom: 0.4rem;
-                }
-                
-                input[type=text], input[type=date] {
-                    font-size: 1.1rem;
-                    width: 80%;
-                    background: rgba( 0, 0, 0, 0.4);
-                    box-shadow: 1px 1px 0px #45556c;
-                    border: 1px solid #000;
-                    border-radius: 3px;
-                    color: #F4F4F4;
-                    padding: 0.5rem 0.5rem;
-                }
-
-                select {
-                    background: rgba( 0, 0, 0, 0.4);
-                    box-shadow: 1px 1px 0px #45556c;
-                    border: 1px solid #000;
-                    border-radius: 3px;
-                    color: #F4F4F4;
-                    padding: 0.5rem 0.5rem;
-                    font-size: 1.1rem;
-                    width: 80%;
-                }
-            }
-
-            .form-checkbox {
-                margin-top: 3rem;
-            }
-
-            p {
-                margin-top: 2rem;
-            }
-
-            .form-button {
-                display: flex;
-                justify-content: space-between;
-                margin: 2rem 0;
-                padding-right: 2rem;
-
-                button:nth-child(1) {
-                    @include blue-button-style;
-                }
-
-                button:nth-child(2) {
-                    @include green-button-style;
-                }
-            }
+        &-group {
+          width: 100%;
+          @include for-desktop {
+            width: 50%;
+          }
         }
 
-        .payment-info {
-            width: 30%;
-            margin-left: 1rem;
-            background: rgba( 0, 0, 0, 0.2 );;
+        @include for-desktop {
+          flex-direction: row;
         }
+      }
+
+      .form-group {
+        margin-top: 1rem;
+
+        label {
+          display: block;
+          margin-bottom: 0.4rem;
+        }
+
+        input[type="text"],
+        input[type="date"] {
+          font-size: 1.1rem;
+          width: 80%;
+          background: rgba(0, 0, 0, 0.4);
+          box-shadow: 1px 1px 0px #45556c;
+          border: 1px solid #000;
+          border-radius: 3px;
+          color: #f4f4f4;
+          padding: 0.5rem 0.5rem;
+        }
+
+        select {
+          background: rgba(0, 0, 0, 0.4);
+          box-shadow: 1px 1px 0px #45556c;
+          border: 1px solid #000;
+          border-radius: 3px;
+          color: #f4f4f4;
+          padding: 0.5rem 0.5rem;
+          font-size: 1.1rem;
+          width: 80%;
+        }
+      }
+
+      .form-checkbox {
+        margin-top: 3rem;
+      }
+
+      p {
+        margin-top: 2rem;
+      }
+
+      .form-button {
+        display: flex;
+        justify-content: space-between;
+        margin: 2rem 0;
+        padding-right: 2rem;
+
+        button:nth-child(1) {
+          @include blue-button-style;
+        }
+
+        button:nth-child(2) {
+          @include green-button-style;
+        }
+      }
+
+      @include for-desktop {
+        width: 70%;
+      }
     }
+
+    .payment-info {
+      width: 0;
+      background: rgba(0, 0, 0, 0.2);
+      height: 20rem;
+
+      @include for-desktop {
+        margin-left: 1rem;
+        width: 30%;
+      }
+    }
+  }
 }
 
 .error-msg {
-    color: red;
+  color: red;
 }

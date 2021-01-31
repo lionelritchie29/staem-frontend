@@ -9,6 +9,7 @@
     .edit-profile-header {
       display: flex;
       align-items: center;
+      justify-content: center;
 
       div {
         width: 7.5%;
@@ -24,15 +25,21 @@
         font-size: 1.75rem;
         margin-left: 1.25rem;
       }
+
+      @include for-desktop {
+        justify-content: flex-start;
+      }
     }
 
     .edit-profile-container {
       display: flex;
       margin-top: 2rem;
+      flex-direction: column;
 
       &-left {
-        width: 25%;
+        width: 100%;
         color: #7092a5;
+        margin-bottom: 2rem;
 
         h2 {
           font-weight: normal;
@@ -43,6 +50,7 @@
           list-style: none;
 
           li {
+            text-align: center;
             a {
               padding: 0.6rem 1rem;
               text-decoration: none;
@@ -60,13 +68,30 @@
                 background: #3d4450;
               }
             }
+
+            @include for-desktop {
+              text-align: left;
+            }
           }
+        }
+
+        @include for-desktop {
+          width: 25%;
+          margin-bottom: 0;
         }
       }
 
       &-right {
-        width: 75%;
-        margin-left: 1rem;
+        width: 100%;
+
+        @include for-desktop {
+          margin-left: 1rem;
+          width: 75%;
+        }
+      }
+
+      @include for-desktop {
+        flex-direction: row;
       }
     }
   }

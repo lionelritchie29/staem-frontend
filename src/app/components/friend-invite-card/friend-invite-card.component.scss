@@ -1,65 +1,78 @@
+@import "../../../styles/mixins";
+@import "../../../styles/variables";
+
 .invite-card {
-    background: rgba(29, 31, 36, .8);
-    padding: 1rem 1.25rem;
+  background: rgba(29, 31, 36, 0.8);
+  padding: 1rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.4rem;
+  flex-direction: column;
+
+  &-left {
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 0.4rem;
-    
-    &-left {
-        display: flex;
-        align-items: center;
+    align-items: center;
 
-        &-level {
-            border-radius: 50%;
-            padding: 0.6rem;
-            color: #F4F4F4;
-            border: 2px solid #F4F4F4;
-            height: fit-content;
-            font-size: 1.1rem;
-        }
-
-        &-info {
-            display: flex;
-            margin-left: 1.8rem;
-
-            div {
-                width: 17.5%;
-
-                img {
-                    width: 100%;
-                }
-            }
-
-            span {
-                display: block;
-                margin-left: 1rem;
-
-                a {
-                    text-decoration: none;
-                    color: #F4F4F4;
-                    font-weight: bolder;
-                    font-size: 1.1rem;
-                }
-            }
-        }
+    &-level {
+      border-radius: 50%;
+      padding: 0.6rem;
+      color: #f4f4f4;
+      border: 2px solid #f4f4f4;
+      height: fit-content;
+      font-size: 1.1rem;
     }
 
-    &-right {
-        display: flex;
-        align-items: center;
+    &-info {
+      display: flex;
+      margin-left: 1.8rem;
 
-        button {
-            background: transparent;
-            border: 1px solid #666;
-            color: #F4F4F4;
-            padding: 0.25rem 1.75rem;
-            margin-left: 0.5rem;
+      div {
+        width: 17.5%;
 
-            &:hover {
-                border: 1x solid #FFF;
-                color: lighten(#F4F4F4, $amount: 10);
-                cursor: pointer;
-            }
+        img {
+          width: 100%;
         }
+      }
+
+      span {
+        display: block;
+        margin-left: 1rem;
+
+        a {
+          text-decoration: none;
+          color: #f4f4f4;
+          font-weight: bolder;
+          font-size: 1.1rem;
+        }
+      }
     }
+  }
+
+  &-right {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+
+    button {
+      background: transparent;
+      border: 1px solid #666;
+      color: #f4f4f4;
+      padding: 0.25rem 1.75rem;
+      margin-left: 0.5rem;
+
+      &:hover {
+        border: 1x solid #fff;
+        color: lighten(#f4f4f4, $amount: 10);
+        cursor: pointer;
+      }
+    }
+
+    @include for-desktop {
+      margin-top: 0;
+    }
+  }
+
+  @include for-desktop {
+    flex-direction: row;
+  }
 }

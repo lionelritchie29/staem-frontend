@@ -1,45 +1,58 @@
 @import "../../../styles/variables";
+@import "../../../styles/mixins";
 
 .game-reviews {
+  h2 {
+    font-weight: normal;
+    font-size: 1.2rem;
+    color: #f4f4f4;
+    border-bottom: 1px solid $secondary-color;
+    padding-bottom: 0.25rem;
+    margin-bottom: 1rem;
+  }
 
-    h2 {
+  &-container {
+    display: flex;
+    flex-direction: column;
+
+    &-left {
+      width: 100%;
+      h3 {
+        color: #f4f4f4;
         font-weight: normal;
-        font-size: 1.2rem;
-        color: #F4F4F4;
-        border-bottom: 1px solid $secondary-color;
-        padding-bottom: 0.25rem;
-        margin-bottom: 1rem;
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+
+        span {
+          font-size: 1.1rem;
+          color: #888;
+          margin-left: 1rem;
+        }
+      }
+
+      @include for-desktop {
+        width: 65%;
+      }
     }
 
-    &-container {
-        display: flex;
+    &-right {
+      width: 100%;
 
-        &-left {
-            width: 65%;
-            h3 {
-                color: #f4f4f4;
-                font-weight: normal;
-                font-size: 1.1rem;
-                margin-bottom: 0.5rem;
-                
-                span {
-                    font-size: 1.1rem;
-                    color: #888;
-                    margin-left: 1rem;
-                }
-            }
-        }
+      h3 {
+        color: #f4f4f4;
+        font-weight: normal;
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+      }
 
-        &-right {
-            width: 35%;
-            margin-left: 1rem;
-
-            h3 {
-                color: #f4f4f4;
-                font-weight: normal;
-                font-size: 1.1rem;
-                margin-bottom: 0.5rem;
-            }
-        }
+      @include for-desktop {
+        margin-left: 1rem;
+        width: 35%;
+      }
     }
+
+    @include for-desktop {
+      flex-direction: row;
+    }
+  }
 }

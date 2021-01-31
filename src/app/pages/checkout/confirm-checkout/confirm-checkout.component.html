@@ -1,54 +1,60 @@
 <section>
-    <h2>Review + Purchase</h2>
-    
-    <section class="confirm-checkout">
-        <div class="confirm-checkout-left">
-            <app-cart-card *ngFor="let cart of cartItems" [cart]="cart"></app-cart-card>
-            
-            <div class="confirm-checkout-left-info">
-                <div class="confirm-checkout-left-info-subtotal">
-                    <span>Subtotal: </span>
-                    <span>{{ subTotal | currency:"Rp. " }}</span>
-                </div>
+  <h2>Review + Purchase</h2>
 
-                <div class="confirm-checkout-left-info-total">
-                    <span>Total: </span>
-                    <span>{{ subTotal | currency:"Rp. " }}</span>
-                </div>
+  <section class="confirm-checkout">
+    <div class="confirm-checkout-left">
+      <app-cart-card
+        *ngFor="let cart of cartItems"
+        [cart]="cart"
+      ></app-cart-card>
 
-                <p>All prices include VAT where applicable</p>
-
-                <div class="blue-placeholder"></div>
-
-                <div class="confirm-checkout-left-info-detail">
-                    <div class="confirm-checkout-left-info-detail-header">
-                        <div>Payment method: </div>
-                        <div>Gift options: </div>
-                        <div>Steam account: </div>
-                    </div>
-
-                    <div class="confirm-checkout-left-info-detail-content">
-                        <div>My Steam Wallet </div>
-                        <div>None </div>
-                        <div>lionelritchiee </div>
-                    </div>
-                </div>
-
-                <div class="confirm-checkout-left-info-agree">
-                    <div>
-                        <input type="checkbox" [(ngModel)]="agreeFlag"  [ngModelOptions]="{standalone: true}">
-                        I agree to the terms of the Steam Subscriber Agreement (last updated 28 Aug, 2020.)
-                    </div>
-
-                    <div>
-                        <button (click)="onPurchase()">Purchase</button>
-                    </div>
-                </div>
-            </div>
+      <div class="confirm-checkout-left-info">
+        <div class="confirm-checkout-left-info-subtotal">
+          <span>Subtotal: </span>
+          <span>{{ subTotal | currency: "Rp. " }}</span>
         </div>
-        
-        <div class="confirm-checkout-right">
-            test
+
+        <div class="confirm-checkout-left-info-total">
+          <span>Total: </span>
+          <span>{{ subTotal | currency: "Rp. " }}</span>
         </div>
-    </section>
+
+        <p>All prices include VAT where applicable</p>
+
+        <div class="blue-placeholder"></div>
+
+        <div class="confirm-checkout-left-info-detail">
+          <div class="confirm-checkout-left-info-detail-header">
+            <div>Payment method:</div>
+            <div>Gift options:</div>
+            <div>Steam account:</div>
+          </div>
+
+          <div class="confirm-checkout-left-info-detail-content">
+            <div>My Steam Wallet</div>
+            <div>None</div>
+            <div>lionelritchiee</div>
+          </div>
+        </div>
+
+        <div class="confirm-checkout-left-info-agree">
+          <div>
+            <input
+              type="checkbox"
+              [(ngModel)]="agreeFlag"
+              [ngModelOptions]="{ standalone: true }"
+            />
+            I agree to the terms of the Steam Subscriber Agreement (last updated
+            28 Aug, 2020.)
+          </div>
+
+          <div>
+            <button (click)="onPurchase()">Purchase</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="confirm-checkout-right"></div>
+  </section>
 </section>

@@ -24,10 +24,9 @@
     );
 
     &-form {
-      margin-right: 5rem;
-      padding: 3rem 30rem 3rem 20rem;
       width: 100%;
       color: #b8b6b4;
+      padding: 1rem;
 
       h1 {
         font-weight: normal;
@@ -46,7 +45,6 @@
         margin-top: 0.35rem;
         margin-bottom: 1.25rem;
         display: block;
-        width: 100%;
         background: #32353c;
         border: none;
         border-radius: 0.25rem;
@@ -54,7 +52,11 @@
         font-size: 1.1rem;
         color: #f4f4f4;
         outline: none;
-        width: 50%;
+        width: 100%;
+
+        @include for-desktop {
+          width: 50%;
+        }
       }
 
       input[type="checkbox"] {
@@ -64,7 +66,7 @@
       &-button {
         button {
           margin-right: 1rem;
-          width: 20%;
+          width: 50%;
           background: linear-gradient(to right, #47bfff 5%, #1a44c2 60%);
           font-size: 1.1rem;
           border: none;
@@ -77,6 +79,10 @@
           &:hover {
             background: lighten(#47bfff, 2);
           }
+
+          @include for-desktop {
+            width: 20%;
+          }
         }
 
         .back-btn {
@@ -86,6 +92,11 @@
             background: lighten(red, 10);
           }
         }
+      }
+
+      @include for-desktop {
+        padding: 3rem 30rem 3rem 20rem;
+        margin-right: 5rem;
       }
     }
   }

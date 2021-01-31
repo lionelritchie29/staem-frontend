@@ -35,7 +35,7 @@
     margin-top: 2rem;
 
     &-left {
-      width: 70%;
+      width: 100%;
 
       &-price-box {
         background: linear-gradient(
@@ -119,10 +119,14 @@
           }
         }
       }
+
+      @include for-desktop {
+        width: 70%;
+      }
     }
 
     &-right {
-      width: 30%;
+      width: 0;
       margin-left: 1rem;
 
       div {
@@ -150,6 +154,10 @@
       }
       div:nth-child(7) {
         height: 25rem;
+      }
+
+      @include for-desktop {
+        width: 30%;
       }
     }
   }

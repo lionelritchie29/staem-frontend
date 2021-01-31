@@ -40,9 +40,10 @@
 
     .market-content {
       display: flex;
+      flex-direction: column;
 
       .market-items {
-        width: 70%;
+        width: 100%;
 
         &-header {
           display: flex;
@@ -52,30 +53,51 @@
           color: #afafaf;
 
           &-name {
-            width: 70%;
+            width: 50%;
+
+            @include for-desktop {
+              width: 70%;
+            }
           }
 
           &-qty {
             display: flex;
             justify-content: center;
-            width: 15%;
+            width: 25%;
             border-left: 2px solid #404040;
             border-right: 2px solid #404040;
+
+            @include for-desktop {
+              width: 15%;
+            }
           }
 
           &-price {
-            width: 15%;
+            width: 25%;
             display: flex;
             justify-content: center;
+
+            @include for-desktop {
+              width: 15%;
+            }
           }
+        }
+
+        @include for-desktop {
+          // grid-template-columns: 20% 65%;
+          width: 70%;
         }
       }
 
       .market-right {
         margin-left: 1rem;
-        width: 30%;
+        width: 0;
         height: 40rem;
         background: $primary-background;
+
+        @include for-desktop {
+          width: 30%;
+        }
       }
     }
 

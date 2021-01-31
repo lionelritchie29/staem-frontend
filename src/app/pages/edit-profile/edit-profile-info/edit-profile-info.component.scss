@@ -2,6 +2,9 @@
 @import "../../../../styles/mixins";
 
 .edit-info {
+  width: 100%;
+  margin-bottom: 2rem;
+
   &-header {
     background-color: #015e80;
     color: #f4f4f4;
@@ -9,6 +12,7 @@
     justify-content: space-between;
     padding: 0.75rem 1rem;
     margin-bottom: 0.5rem;
+    width: 100%;
 
     h2 {
       font-size: 1.1rem;
@@ -28,6 +32,7 @@
     color: #f4f4f4;
     background: rgba(0, 0, 0, 0.4);
     padding: 1.5rem;
+    max-width: 100%;
 
     div {
       margin-bottom: 1rem;

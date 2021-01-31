@@ -2,69 +2,86 @@
 @import "../../../../styles/mixins";
 
 .friend-list {
-    h3 {
-        font-weight: normal;
-        color: darken(#FFF, 10);
-        letter-spacing: 1px;
-        margin-top: 2.5rem;
-        margin-bottom: 0.5rem;
+  padding-bottom: 2rem;
+  margin: 0 1rem;
+  h3 {
+    font-weight: normal;
+    color: darken(#fff, 10);
+    letter-spacing: 1px;
+    margin-top: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  &-header {
+    background-color: #015e80;
+    color: #f4f4f4;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.25rem 1rem;
+
+    h2 {
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      font-weight: normal;
+
+      span {
+        font-weight: bolder;
+        margin-left: 0.5rem;
+        font-size: 1.2rem;
+      }
     }
 
-    &-header {
-       background-color: #015e80;
-       color: #f4f4f4;
-       display: flex;
-       justify-content: space-between;
-       padding: 0.25rem 1rem;
+    div {
+      display: flex;
 
-       h2 {
-           font-size: 1.1rem;
-           display: flex;
-           align-items: center;
-           font-weight: normal;
-           
-           span {
-               font-weight: bolder;
-               margin-left: 0.5rem;
-               font-size: 1.2rem;
-           }
-       }
-       
-       div {
-           display: flex;
+      button {
+        margin-left: 0.75rem;
+      }
 
-           button {
-               margin-left: 0.75rem;
-           }
+      button:nth-child(1) {
+        @include blue-button-style;
+      }
 
-           button:nth-child(1) {
-               @include blue-button-style;
-           }
+      button:nth-child(2) {
+        @include green-button-style;
+      }
+    }
+  }
 
-           button:nth-child(2) {
-            @include green-button-style;
-        }
-       }
+  &-search {
+    margin-top: 0.5rem;
+    input {
+      background: #274e68
+        url(https://community.cloudflare.steamstatic.com/public/images/sharedfiles/searchbox_workshop_submit.gif)
+        no-repeat 1px;
+      border-radius: 0.3rem;
+      border: 1px solid rgba(0, 0, 0, 0.3);
+      color: #fff;
+      padding: 0.5rem;
+      padding-left: 1.75rem;
+      font-size: 1rem;
+      width: 100%;
+      outline: none;
+
+      @include for-desktop {
+        width: 50%;
+      }
+    }
+  }
+
+  &-online,
+  &-offline {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+
+    @include for-tablet {
+      grid-template-columns: repeat(2, 1fr);
     }
 
-    &-search {
-        margin-top: 0.5rem;
-        input {
-            background: #274e68 url(https://community.cloudflare.steamstatic.com/public/images/sharedfiles/searchbox_workshop_submit.gif) no-repeat 1px;
-            border-radius: 0.3rem;
-            border: 1px solid rgba(0, 0, 0, 0.3);
-            color: #FFF;
-            padding: 0.5rem;
-            padding-left: 1.75rem;
-            font-size: 1rem;
-            width: 50%;
-            outline: none;
-        }
+    @include for-desktop {
+      grid-template-columns: repeat(3, 1fr);
     }
-
-    &-online, &-offline {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1rem;
-    }
+  }
 }

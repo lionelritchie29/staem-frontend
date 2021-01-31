@@ -16,7 +16,7 @@
       margin-top: 1.5rem;
       height: 100%;
       padding-top: 1rem;
-      width: 60%;
+      width: 70%;
       background-color: lighten(#222, 5);
       padding: 0.75rem 1rem;
       border-radius: 0.25rem;
@@ -31,6 +31,10 @@
 
       &-msg {
         margin-top: 0.75rem;
+      }
+
+      @include for-desktop {
+        width: 60%;
       }
     }
   }
@@ -47,16 +51,24 @@
     form {
       width: 90%;
       input {
-        width: 90%;
+        width: 80%;
         background: #333;
         border: 1px solid #000;
         padding: 0.5rem;
         color: #f4f4f4;
         outline: none;
+
+        @include for-desktop {
+          width: 90%;
+        }
       }
 
       button {
-        width: 8%;
+        width: 17.5%;
+
+        @include for-desktop {
+          width: 8%;
+        }
       }
     }
   }
@@ -68,7 +80,7 @@
 }
 
 button {
-  width: 5%;
+  width: 10%;
   padding: 0.5rem;
   background-color: #777;
   color: #ccc;
@@ -78,6 +90,10 @@ button {
 
   &:hover {
     background-color: darken(#777, 5);
+  }
+
+  @include for-desktop {
+    width: 5%;
   }
 }
 

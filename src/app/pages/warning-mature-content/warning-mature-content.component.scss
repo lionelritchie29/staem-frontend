@@ -28,12 +28,16 @@
 
     &-image {
       margin: 0 auto;
-      width: 30%;
+      width: 70%;
       margin-bottom: -5rem;
       z-index: 2;
 
       img {
         width: 100%;
+      }
+
+      @include for-desktop {
+        width: 30%;
       }
     }
 
@@ -51,7 +55,7 @@
       }
 
       &-date {
-        width: 60%;
+        width: 90%;
         margin: 0 auto;
         background: rgba(255, 255, 255, 0.1);
         padding: 1rem;
@@ -66,7 +70,15 @@
 
         input {
           @include blue-button-style;
-          width: 50%;
+          width: 70%;
+
+          @include for-desktop {
+            width: 50%;
+          }
+        }
+
+        @include for-desktop {
+          width: 60%;
         }
       }
 

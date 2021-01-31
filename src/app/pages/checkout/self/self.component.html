@@ -1,90 +1,91 @@
 <div *ngIf="!isWalletEnough">
-    <h1>PAYMENT METHOD, STEP 2</h1>
+  <h1>PAYMENT METHOD, STEP 2</h1>
 
-    <section>
-        <form [formGroup]="selfCheckoutForm" (ngSubmit)="onSubmit()">
-            <div class="form-group">
-                <label>Please select a payment method</label>
-                <select formControlName="paymentMethod">
-                    <option value="1">Visa</option>
-                    <option value="2">Mastercard</option>
-                    <option value="3">eClub Points</option>
-                </select>
-            </div>
-            
-            <div class="form-flex">
-                <div class="form-group form-flex-group">
-                    <label>Card Number</label>
-                    <input type="text" formControlName="cardNumber">
-                </div>
-        
-                <div class="form-group form-flex-group">
-                    <label>Expiration date and security code</label>
-                    <input type="date" formControlName="expDate">
-                </div>
-            </div>
-    
-            <h2>BILLING INFORMATION</h2>
-            
-            <div class="form-flex">
-                <div class="form-group form-flex-group">
-                    <label>Recipient Name</label>
-                    <input type="text" formControlName="recipientName">
-                </div>
-        
-                <div class="form-group form-flex-group">
-                    <label>City</label>
-                    <input type="text" formControlName="city">
-                </div>
-            </div>
-    
-            <div class="form-flex">
-                <div class="form-group form-flex-group">
-                    <label>Billing address</label>
-                    <input type="text" formControlName="address">
-                </div>
-        
-                <div class="form-group form-flex-group">
-                    <label>zip or postal code</label>
-                    <input type="text" formControlName="postalCode">
-                </div>
-            </div>
-    
-            <div class="form-flex">
-                <div class="form-group form-flex-group">
-                    <label>Country</label>
-                    <select formControlName="country">
-                        <option value="Indonesia">Indonesia</option>
-                        <option value="America">America</option>
-                        <option value="Philiphina">Philiphina</option>
-                    </select>
-                </div>
-        
-                <div class="form-group form-flex-group">
-                    <label>Phone number</label>
-                    <input type="text" formControlName="phoneNumber">
-                </div>
-            </div>
+  <section>
+    <form [formGroup]="selfCheckoutForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label>Please select a payment method</label>
+        <select formControlName="paymentMethod">
+          <option value="1">Visa</option>
+          <option value="2">Mastercard</option>
+          <option value="3">eClub Points</option>
+        </select>
+      </div>
 
-            <p class="error-msg" *ngIf="!isFormOk">All field must be filled</p>
-    
-            <div class="form-checkbox">
-                <input type="checkbox">
-                Save my payment information so checkout is easy next time
-            </div>
-    
-            <p>You'll have a chance to review your order before it's placed.</p>
-    
-            <div class="form-button">
-                <button>Back</button>
-                <button>Continue</button>
-            </div>
-        </form>
-
-        <div class="payment-info">
-            asdasd
+      <div class="form-flex">
+        <div class="form-group form-flex-group">
+          <label>Card Number</label>
+          <input type="text" formControlName="cardNumber" />
         </div>
-    </section>
+
+        <div class="form-group form-flex-group">
+          <label>Expiration date and security code</label>
+          <input type="date" formControlName="expDate" />
+        </div>
+      </div>
+
+      <h2>BILLING INFORMATION</h2>
+
+      <div class="form-flex">
+        <div class="form-group form-flex-group">
+          <label>Recipient Name</label>
+          <input type="text" formControlName="recipientName" />
+        </div>
+
+        <div class="form-group form-flex-group">
+          <label>City</label>
+          <input type="text" formControlName="city" />
+        </div>
+      </div>
+
+      <div class="form-flex">
+        <div class="form-group form-flex-group">
+          <label>Billing address</label>
+          <input type="text" formControlName="address" />
+        </div>
+
+        <div class="form-group form-flex-group">
+          <label>zip or postal code</label>
+          <input type="text" formControlName="postalCode" />
+        </div>
+      </div>
+
+      <div class="form-flex">
+        <div class="form-group form-flex-group">
+          <label>Country</label>
+          <select formControlName="country">
+            <option value="Indonesia">Indonesia</option>
+            <option value="America">America</option>
+            <option value="Philiphina">Philiphina</option>
+          </select>
+        </div>
+
+        <div class="form-group form-flex-group">
+          <label>Phone number</label>
+          <input type="text" formControlName="phoneNumber" />
+        </div>
+      </div>
+
+      <p class="error-msg" *ngIf="!isFormOk">All field must be filled</p>
+
+      <div class="form-checkbox">
+        <input type="checkbox" />
+        Save my payment information so checkout is easy next time
+      </div>
+
+      <p>You'll have a chance to review your order before it's placed.</p>
+
+      <div class="form-button">
+        <button>Back</button>
+        <button>Continue</button>
+      </div>
+    </form>
+
+    <div class="payment-info"></div>
+  </section>
 </div>
 
-<app-confirm-checkout (transactionAccepted)="onTransactionAccepted()" *ngIf="isWalletEnough"></app-confirm-checkout>
+<app-confirm-checkout
+  (transactionAccepted)="onTransactionAccepted()"
+  *ngIf="isWalletEnough"
+></app-confirm-checkout>

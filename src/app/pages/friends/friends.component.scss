@@ -29,10 +29,13 @@
     .friends-container {
       display: flex;
       margin-top: 2rem;
+      flex-direction: column;
 
       &-left {
-        width: 25%;
+        width: 100%;
         color: #7092a5;
+        text-align: center;
+        margin-bottom: 2rem;
 
         h2 {
           font-weight: normal;
@@ -62,11 +65,25 @@
             }
           }
         }
+
+        @include for-desktop {
+          width: 25%;
+          text-align: left;
+          margin-bottom: 2rem;
+        }
       }
 
       &-right {
-        width: 75%;
-        margin-left: 1rem;
+        width: 100%;
+
+        @include for-desktop {
+          margin-left: 1rem;
+          width: 75%;
+        }
+      }
+
+      @include for-desktop {
+        flex-direction: row;
       }
     }
   }

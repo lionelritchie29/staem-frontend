@@ -11,10 +11,14 @@
 
   h1 {
     font-weight: normal;
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     color: #f4f4f4;
     letter-spacing: 4px;
     margin-top: 2rem;
+
+    @include for-desktop {
+      width: 2.5rem;
+    }
   }
 
   .cart-container {
@@ -22,7 +26,7 @@
     margin-top: 2rem;
 
     &-left {
-      width: 70%;
+      width: 100%;
 
       &-summary {
         color: $text-gray;
@@ -149,10 +153,14 @@
           }
         }
       }
+
+      @include for-desktop {
+        width: 70%;
+      }
     }
 
     &-right {
-      width: 30%;
+      width: 0;
       margin-left: 1rem;
 
       div {
@@ -160,6 +168,10 @@
         height: 15rem;
         width: 100%;
         margin-bottom: 1rem;
+      }
+
+      @include for-desktop {
+        width: 30%;
       }
     }
   }

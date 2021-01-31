@@ -2,6 +2,7 @@
 @import "../../../../styles/mixins";
 
 .edit-info {
+  padding-bottom: 2rem;
   &-header {
     background-color: #015e80;
     color: #f4f4f4;
@@ -69,7 +70,7 @@
 
     .avatar-frame {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 0.75rem;
       width: 100%;
 
@@ -85,6 +86,14 @@
           transition: all 0.5s;
           transform: scale(1.25);
         }
+      }
+
+      @include for-tablet {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      @include for-desktop {
+        grid-template-columns: repeat(5, 1fr);
       }
     }
 

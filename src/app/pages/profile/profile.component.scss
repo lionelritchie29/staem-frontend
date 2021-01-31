@@ -27,16 +27,21 @@ $card-bg: rgba(0, 0, 0, 0.3);
 
     .profile-top {
       display: flex;
+      flex-direction: column;
 
       &-left {
-        width: 70%;
+        width: 100%;
         display: flex;
 
         &-image {
-          width: 40%;
+          width: 70%;
 
           img {
             width: 100%;
+          }
+
+          @include for-desktop {
+            width: 40%;
           }
         }
 
@@ -50,18 +55,32 @@ $card-bg: rgba(0, 0, 0, 0.3);
           }
 
           div {
-            margin-top: 1rem;
+            margin-top: 0.5rem;
+
+            @include for-desktop {
+              margin-top: 1rem;
+            }
           }
 
           p {
-            margin-top: 2rem;
-            width: 70%;
+            margin-top: 1rem;
+            width: 100%;
+
+            @include for-desktop {
+              margin-top: 2rem;
+              width: 70%;
+            }
           }
+        }
+
+        @include for-desktop {
+          width: 70%;
         }
       }
 
       &-right {
-        width: 30%;
+        width: 100%;
+        margin-top: 2rem;
 
         &-level {
           color: #f4f4f4;
@@ -110,15 +129,26 @@ $card-bg: rgba(0, 0, 0, 0.3);
             }
           }
         }
+
+        @include for-desktop {
+          width: 30%;
+          margin-top: 0;
+        }
+      }
+
+      @include for-desktop {
+        flex-direction: row;
       }
     }
 
     .profile-bottom {
       display: flex;
       padding-top: 2rem;
+      flex-direction: column-reverse;
 
       &-left {
-        width: 70%;
+        width: 100%;
+        margin-top: 1rem;
 
         &-header {
           @include header-card-style;
@@ -141,8 +171,16 @@ $card-bg: rgba(0, 0, 0, 0.3);
             padding: 1rem;
             background: $card-bg;
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(1, 1fr);
             gap: 1rem;
+
+            @include for-tablet {
+              grid-template-columns: repeat(2, 1fr);
+            }
+
+            @include for-desktop {
+              grid-template-columns: repeat(3, 1fr);
+            }
           }
         }
 
@@ -184,11 +222,15 @@ $card-bg: rgba(0, 0, 0, 0.3);
             }
           }
         }
+
+        @include for-desktop {
+          width: 70%;
+          margin-top: 0;
+        }
       }
 
       &-right {
-        width: 30%;
-        margin-left: 1rem;
+        width: 100%;
         background: $card-bg;
         padding: 1rem;
         height: fit-content;
@@ -206,6 +248,15 @@ $card-bg: rgba(0, 0, 0, 0.3);
             }
           }
         }
+
+        @include for-desktop {
+          margin-left: 1rem;
+          width: 30%;
+        }
+      }
+
+      @include for-desktop {
+        flex-direction: row;
       }
     }
 

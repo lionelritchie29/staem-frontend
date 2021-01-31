@@ -1,3 +1,6 @@
+@import "../../../styles/mixins";
+@import "../../../styles/variables";
+
 .market-card {
   display: flex;
   background-color: rgba(0, 0, 0, 0.2);
@@ -7,7 +10,7 @@
   text-decoration: none;
 
   &-info {
-    width: 70%;
+    width: 50%;
     display: flex;
     align-items: center;
 
@@ -25,22 +28,35 @@
         display: block;
       }
     }
+
+    @include for-desktop {
+      width: 70%;
+    }
   }
 
   &-qty {
-    width: 15%;
+    width: 25%;
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @include for-desktop {
+      width: 15%;
+    }
   }
 
   &-price {
-    width: 15%;
-    padding-top: 1.25rem;
+    width: 25%;
+    padding-top: 0.5rem;
     text-align: center;
 
     span {
       display: block;
+    }
+
+    @include for-desktop {
+      padding-top: 1.25rem;
+      width: 15%;
     }
   }
 

@@ -2,6 +2,7 @@
 @import "../../../../styles/mixins";
 
 .edit-background {
+  padding-bottom: 2rem;
   &-header {
     background-color: #015e80;
     color: #f4f4f4;
@@ -54,7 +55,7 @@
 
       .owned-inner {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         gap: 0.75rem;
 
         div {
@@ -69,6 +70,14 @@
             transform: scale(1.25);
             cursor: pointer;
           }
+        }
+
+        @include for-tablet {
+          grid-template-columns: repeat(3, 1fr);
+        }
+
+        @include for-desktop {
+          grid-template-columns: repeat(4, 1fr);
         }
       }
     }

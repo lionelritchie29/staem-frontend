@@ -1,7 +1,9 @@
 @import "../../../styles/variables";
+@import "../../../styles/mixins";
 
 .detail-card {
   display: flex;
+  flex-direction: column-reverse;
   margin-top: 1.2rem;
   background: linear-gradient(
     to right,
@@ -11,7 +13,7 @@
   padding-bottom: 1rem;
 
   &-left {
-    width: 65%;
+    width: 100%;
 
     &-main-img {
       img {
@@ -76,11 +78,16 @@
         }
       }
     }
+
+    @include for-desktop {
+      width: 65%;
+    }
   }
 
   &-right {
-    width: 35%;
+    width: 100%;
     margin-left: 1rem;
+    margin-bottom: 2.5rem;
 
     &-header {
       img {
@@ -146,5 +153,14 @@
         border-radius: 0.2rem;
       }
     }
+
+    @include for-desktop {
+      width: 35%;
+      margin-bottom: 0;
+    }
+  }
+
+  @include for-desktop {
+    flex-direction: row;
   }
 }

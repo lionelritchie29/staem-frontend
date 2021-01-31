@@ -47,8 +47,16 @@
 
       &-items {
         display: grid;
-        grid-template-columns: repeat(6, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         gap: 0.75rem;
+
+        @include for-tablet {
+          grid-template-columns: repeat(4, 1fr);
+        }
+
+        @include for-desktop {
+          grid-template-columns: repeat(6, 1fr);
+        }
       }
 
       @include for-desktop {
