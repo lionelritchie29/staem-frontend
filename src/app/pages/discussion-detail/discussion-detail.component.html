@@ -51,17 +51,17 @@
   <section class="form">
     <div class="form-header">Reply</div>
 
-    <form>
+    <form [formGroup]="commentForm">
       <div class="form-body">
         <div class="form-body-img">
           <img src="http://localhost:8080/images/avatars/1.jpg" alt="" />
         </div>
 
-        <textarea></textarea>
+        <textarea formControlName="content"></textarea>
       </div>
 
       <div class="form-button">
-        <button>Post Comment</button>
+        <button (click)="onComment()">Post Comment</button>
       </div>
     </form>
   </section>

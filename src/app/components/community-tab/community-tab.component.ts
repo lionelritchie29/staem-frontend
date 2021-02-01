@@ -27,11 +27,13 @@ export class CommunityTabComponent implements OnInit {
   active: boolean = false;
   @Input() tabTitle: string;
   body: string = Math.random().toString();
+  searchTerm: string = '';
 
   imageVideoPosts: ImageVideoPost[] = [];
   reviews: GameReview[] = [];
 
   games: Game[] = [];
+  showGames: Game[] = [];
 
   ngOnInit(): void {
     this.tabs.addTab(this);
@@ -61,6 +63,7 @@ export class CommunityTabComponent implements OnInit {
   fetchDiscussions(): void {
     this.getGameTopThreeDiscussionGqlService.get().subscribe((games) => {
       this.games = games;
+      this.showGames = this.games;
     });
   }
 
@@ -71,5 +74,12 @@ export class CommunityTabComponent implements OnInit {
 
   redirectDetail(review: GameReview) {
     this.router.navigate([`review/${review.id}`]);
+  }
+
+  filterGame() {
+    this.showGames = this.games.filter((game) =>
+      game.title.toLowerCase().includes(this.searchTerm.toLowerCase())
+    );
+    console.log(this.searchTerm);
   }
 }

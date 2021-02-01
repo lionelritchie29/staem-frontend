@@ -17,11 +17,24 @@
       ></app-community-review-card>
     </div>
 
-    <div *ngIf="tabTitle == 'Discussions'">
-      <app-game-discussion-card
-        *ngFor="let game of games"
-        [game]="game"
-      ></app-game-discussion-card>
+    <div class="discussion" *ngIf="tabTitle == 'Discussions'">
+      <div>
+        <app-game-discussion-card
+          *ngFor="let game of showGames"
+          [game]="game"
+        ></app-game-discussion-card>
+      </div>
+
+      <div>
+        <input
+          [(ngModel)]="searchTerm"
+          [ngModelOptions]="{ standalone: true }"
+          type="text"
+          (ngModelChange)="filterGame()"
+          placeholder="Search by game title..."
+        />
+        <button>Add new discussion</button>
+      </div>
     </div>
   </div>
 </div>
