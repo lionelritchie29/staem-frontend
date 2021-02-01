@@ -2,58 +2,82 @@
 @import "../../../../styles/mixins";
 
 .manage-promo-list {
-    &-header {
-        background-color: #015e80;
-        color: #f4f4f4;
+  padding-bottom: 2rem;
+  &-header {
+    background-color: #015e80;
+    color: #f4f4f4;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.5rem;
+
+    h2 {
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      font-weight: normal;
+
+      span {
+        font-weight: bolder;
+        margin-left: 0.5rem;
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  &-content {
+    color: #f4f4f4;
+
+    .list {
+      margin-bottom: 1rem;
+
+      div {
         display: flex;
-        justify-content: space-between;
-        padding: 0.75rem 1rem;
-        margin-bottom: 0.5rem;
- 
-        h2 {
-            font-size: 1.1rem;
-            display: flex;
-            align-items: center;
-            font-weight: normal;
-            
-            span {
-                font-weight: bolder;
-                margin-left: 0.5rem;
-                font-size: 1.2rem;
-            }
+        padding: 0.5rem;
+        background: rgba(0, 0, 0, 0.4);
+
+        span {
+          display: block;
+          margin-right: 0.5rem;
+          padding: 0.25rem 0.5rem;
+          border-radius: 0.25rem;
         }
-     }
 
-     &-content {
-         color: #F4F4F4;
+        span:nth-child(1) {
+          background: $primary-green;
+        }
 
-         .list {
-             margin-bottom: 1rem;
+        span:nth-child(2) {
+          background: rgb(35, 61, 106);
+        }
 
-             div {
-                 display: flex;
-                 padding: 0.5rem;
-                 background: rgba(0, 0, 0, 0.4);
+        span:nth-child(3) {
+          background: $secondary-background;
+        }
+      }
+    }
+  }
+}
 
-                 span {
-                     display: block;
-                     margin-right: 0.5rem;
-                     padding: 0.25rem 0.5rem;
-                     border-radius: 0.25rem;
-                 }
+.pagination-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
 
-                 span:nth-child(1) {
-                     background: $primary-green;
-                 }
+  .pagination {
+    display: flex;
+    button {
+      @include blue-button-style;
+    }
 
-                 span:nth-child(2) {
-                     background: rgb(35, 61, 106);
-                 }
-
-                 span:nth-child(3) {
-                     background: $secondary-background;
-                 }
-             }
-         }
-     }
+    div {
+      color: $secondary-color;
+      background: #333;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      padding: 0 0.75rem;
+    }
+  }
 }

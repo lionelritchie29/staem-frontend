@@ -1,16 +1,33 @@
 <div class="manage-promo-list">
-    <div class="manage-promo-list-header">
-        <h2>PROMO LIST</h2>
-    </div>
+  <div class="manage-promo-list-header">
+    <h2>PROMO LIST</h2>
+  </div>
 
-    <div class="manage-promo-list-content">
-        <div class="list" *ngFor="let game of gameList; let i = index">
-            <div>
-                <span>Discount {{ sales[i].discount }}%</span>
-                <span>Sale Price: {{ ((100 - sales[i].discount) / 100 ) * game.price | currency:"Rp. " }}</span>
-                <span>Valid until {{sales[i].validTo | date}}</span>
-            </div>
-            <app-manage-game-card (update)="onUpdate($event)" (delete)="onDelete($event)"  [game]="game"></app-manage-game-card>
-        </div>
+  <div class="manage-promo-list-content">
+    <div class="list" *ngFor="let game of gameList; let i = index">
+      <div>
+        <span>Discount {{ sales[i].discount }}%</span>
+        <span
+          >Sale Price:
+          {{
+            ((100 - sales[i].discount) / 100) * game.price | currency: "Rp. "
+          }}</span
+        >
+        <span>Valid until {{ sales[i].validTo | date }}</span>
+      </div>
+      <app-manage-game-card
+        (update)="onUpdate($event)"
+        (delete)="onDelete($event)"
+        [game]="game"
+      ></app-manage-game-card>
     </div>
+  </div>
+
+  <div class="pagination-container">
+    <div class="pagination">
+      <button (click)="onPrev()"><</button>
+      <div>{{ page }} / {{ totalPage }}</div>
+      <button (click)="onNext()">></button>
+    </div>
+  </div>
 </div>

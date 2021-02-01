@@ -1,9 +1,20 @@
 <div class="manage-user-list">
-    <div class="manage-user-list-header">
-        <h2>USER LIST</h2>
-    </div>
+  <div class="manage-user-list-header">
+    <h2>USER LIST</h2>
+  </div>
 
-    <div class="manage-user-list-content">
-        <app-manage-user-card *ngFor="let user of users" [user]="user"></app-manage-user-card>
+  <div class="manage-user-list-content">
+    <app-manage-user-card
+      *ngFor="let user of users"
+      [user]="user"
+    ></app-manage-user-card>
+  </div>
+
+  <div class="pagination-container">
+    <div class="pagination">
+      <button (click)="onPrev()"><</button>
+      <div>{{ page }} / {{ totalPage }}</div>
+      <button (click)="onNext()">></button>
     </div>
+  </div>
 </div>
