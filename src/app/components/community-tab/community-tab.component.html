@@ -17,6 +17,11 @@
       ></app-community-review-card>
     </div>
 
-    <div *ngIf="tabTitle == 'Discussions'">DISCUSSIONS</div>
+    <div *ngIf="tabTitle == 'Discussions'">
+      <app-game-discussion-card
+        *ngFor="let game of games"
+        [game]="game"
+      ></app-game-discussion-card>
+    </div>
   </div>
 </div>

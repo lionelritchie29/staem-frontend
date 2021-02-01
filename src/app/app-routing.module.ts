@@ -48,6 +48,7 @@ import { MarketComponent } from './pages/market/market.component';
 import { MarketDetailComponent } from './pages/market-detail/market-detail.component';
 import { CommunityComponent } from './pages/community/community.component';
 import { ReviewDetailsComponent } from './pages/review-details/review-details.component';
+import { DiscussionDetailComponent } from './pages/discussion-detail/discussion-detail.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -77,6 +78,7 @@ const routes: Routes = [
   { path: 'points/shop', component: PointShopComponent },
   { path: 'community', component: CommunityComponent },
   { path: 'review/:id', component: ReviewDetailsComponent },
+  { path: 'discussion/:id', component: DiscussionDetailComponent },
   {
     path: 'profile/:userCustomUrl/edit',
     component: EditProfileComponent,

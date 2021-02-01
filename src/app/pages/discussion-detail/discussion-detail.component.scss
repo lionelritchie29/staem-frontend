@@ -1,0 +1,178 @@
+@import "../../../styles/mixins";
+@import "../../../styles/variables";
+
+#discussion-detail {
+  width: 90%;
+  padding-top: 1.5rem;
+  margin: 0 auto;
+  min-height: 100vh;
+  padding-bottom: 3rem;
+
+  section:nth-child(1) {
+    width: 100%;
+    .discussion-post {
+      border: 1px solid #26384f;
+      box-shadow: 0 0 5px #000;
+      background-color: #212f43;
+      padding: 1rem;
+
+      &-header {
+        display: flex;
+        align-items: center;
+
+        &-img {
+          width: 5%;
+          margin-right: 1rem;
+          img {
+            width: 100%;
+          }
+        }
+
+        &-info {
+          color: $text-green;
+          font-size: 1.1rem;
+          font-weight: bolder;
+
+          span {
+            color: #666;
+          }
+        }
+      }
+
+      &-body {
+        margin-top: 1rem;
+        margin-left: 3.5rem;
+        width: 75%;
+        h1 {
+          color: #f4f4f4;
+          font-size: 1.75rem;
+        }
+
+        p {
+          margin-top: 1rem;
+          color: #d8d8d8;
+          margin-bottom: 1.5rem;
+        }
+      }
+    }
+
+    @include for-desktop {
+      width: 70%;
+    }
+  }
+
+  .comments {
+    width: 100%;
+    margin-top: 1.5rem;
+
+    .discussion-comment {
+      border: 1px solid #26384f;
+      box-shadow: 0 0 5px #000;
+      background-color: rgba(32, 47, 67, 0.8);
+      padding: 1rem;
+
+      &-header {
+        display: flex;
+        align-items: center;
+
+        &-img {
+          width: 5%;
+          margin-right: 1rem;
+          img {
+            width: 100%;
+          }
+        }
+
+        &-info {
+          color: $text-green;
+          font-size: 1.1rem;
+          font-weight: bolder;
+
+          span {
+            color: #666;
+          }
+        }
+      }
+
+      &-body {
+        margin-top: 1rem;
+        margin-left: 3.5rem;
+        width: 75%;
+
+        p {
+          margin-top: 1rem;
+          color: #d8d8d8;
+          margin-bottom: 1.5rem;
+        }
+      }
+    }
+
+    @include for-desktop {
+      width: 70%;
+    }
+  }
+
+  .form {
+    margin-top: 1.5rem;
+    width: 100%;
+
+    .form-header {
+      background: rgba(0, 0, 0, 0.2);
+      color: #f4f4f4;
+      padding: 0.75rem;
+      font-size: 1.1rem;
+      margin-bottom: 0.15rem;
+    }
+
+    form {
+      background: rgba(0, 0, 0, 0.2);
+      padding: 1rem;
+      .form-body {
+        display: flex;
+        justify-content: space-between;
+
+        margin-top: 0.25rem;
+
+        &-img {
+          width: 8.5%;
+
+          img {
+            width: 100%;
+          }
+
+          @include for-desktop {
+            width: 5%;
+          }
+        }
+
+        textarea {
+          @include input-dark;
+          width: 90%;
+          height: 5rem;
+
+          @include for-desktop {
+            width: 92.5%;
+          }
+        }
+      }
+
+      .form-button {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 0.75rem;
+        button {
+          @include green-button-style;
+        }
+      }
+    }
+
+    @include for-desktop {
+      width: 70%;
+    }
+  }
+
+  @include for-desktop {
+    // grid-template-columns: 20% 65%;
+    width: 65%;
+  }
+}

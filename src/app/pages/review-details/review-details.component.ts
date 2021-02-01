@@ -42,6 +42,23 @@ const GET_REVIEW_DETAIL = gql`
   }
 `;
 
+const CREATE_COMMENT = gql`
+  mutation addReviewComment($userId: Int, $postId: Int, $comment: String) {
+    addReviewComment(userId: $userId, postId: $postId, comment: $comment) {
+      user {
+        id
+        accountName
+        profile {
+          profilePictureUrl
+        }
+      }
+      postId
+      comments
+      createdAt
+    }
+  }
+`;
+
 @Component({
   selector: 'app-review-details',
   templateUrl: './review-details.component.html',
@@ -75,8 +92,6 @@ export class ReviewDetailsComponent implements OnInit {
       .pipe(map((res) => (<any>res.data).gameReviewById))
       .subscribe((review) => {
         this.review.push(review);
-        console.log(review.comments);
-        console.log(this.review);
       });
 
     const userId = this.authService.getLoggedInUserId();
@@ -90,5 +105,31 @@ export class ReviewDetailsComponent implements OnInit {
           );
         });
     }
+  }
+
+  onPostComment(): void {
+    if (this.commentForm.status === 'INVALID') {
+      alert('You must fill all field');
+      return;
+    }
+
+    this.apollo
+      .mutate({
+        mutation: CREATE_COMMENT,
+        variables: {
+          userId: this.loggedUser.id,
+          postId: this.review[0].id,
+          comment: this.commentForm.value.content,
+        },
+      })
+      .pipe(map((res) => (<any>res.data).addReviewComment))
+      .subscribe((comment) => {
+        if (comment.postId != 0) {
+          alert('Add comment success!');
+          window.location.reload();
+        } else {
+          alert('Add comment failed!');
+        }
+      });
   }
 }

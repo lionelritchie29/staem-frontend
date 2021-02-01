@@ -1,9 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Game } from 'src/app/models/game';
 import { GameReview } from 'src/app/models/game-review';
 import { ImageVideoPost } from 'src/app/models/image-video-post';
 import { AllGameReviewsGqlService } from 'src/app/services/gql/query/all-game-reviews-gql.service';
 import { AllImageVideoPostsGqlService } from 'src/app/services/gql/query/all-image-video-posts-gql.service';
+import { GetGameTopThreeDiscussionGqlService } from 'src/app/services/gql/query/get-game-top-three-discussion-gql.service';
 import { ImageVideoModalService } from 'src/app/services/image-video-modal.service';
 import { CommunityTabsComponent } from '../community-tabs/community-tabs.component';
 
@@ -18,6 +20,7 @@ export class CommunityTabComponent implements OnInit {
     private allImageVideoPostsGqlService: AllImageVideoPostsGqlService,
     private imageVideoModalService: ImageVideoModalService,
     private allGameReviewsGqlService: AllGameReviewsGqlService,
+    private getGameTopThreeDiscussionGqlService: GetGameTopThreeDiscussionGqlService,
     private router: Router
   ) {}
 
@@ -28,6 +31,8 @@ export class CommunityTabComponent implements OnInit {
   imageVideoPosts: ImageVideoPost[] = [];
   reviews: GameReview[] = [];
 
+  games: Game[] = [];
+
   ngOnInit(): void {
     this.tabs.addTab(this);
 
@@ -35,6 +40,8 @@ export class CommunityTabComponent implements OnInit {
       this.fetchImagesAndVideos();
     } else if (this.tabTitle == 'Reviews') {
       this.fetchReviews();
+    } else if (this.tabTitle == 'Discussions') {
+      this.fetchDiscussions();
     }
   }
 
@@ -48,6 +55,12 @@ export class CommunityTabComponent implements OnInit {
     this.allGameReviewsGqlService.get().subscribe((reviews) => {
       this.reviews = reviews;
       console.log(reviews);
+    });
+  }
+
+  fetchDiscussions(): void {
+    this.getGameTopThreeDiscussionGqlService.get().subscribe((games) => {
+      this.games = games;
     });
   }
 

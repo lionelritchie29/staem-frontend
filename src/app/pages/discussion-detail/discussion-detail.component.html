@@ -1,0 +1,68 @@
+<section id="discussion-detail" *ngIf="discussion">
+  <section>
+    <div class="discussion-post">
+      <div class="discussion-post-header">
+        <div class="discussion-post-header-img">
+          <img src="{{ userImgUrl }}" alt="{{ discussion.user.accountName }}" />
+        </div>
+
+        <div class="discussion-post-header-info">
+          {{ discussion.user.accountName }}
+          <span>at {{ discussion.createdAt | date }}</span>
+        </div>
+      </div>
+
+      <div class="discussion-post-body">
+        <h1>{{ discussion.title }}</h1>
+        <p>
+          {{ discussion.content }}
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="comments">
+    <div
+      class="discussion-comment"
+      *ngFor="let comment of discussion.comments; let i = index"
+    >
+      <div class="discussion-comment-header">
+        <div class="discussion-comment-header-img">
+          <img
+            src="{{ commentImgUrl[i] }}"
+            alt="{{ comment.user.accountName }}"
+          />
+        </div>
+
+        <div class="discussion-comment-header-info">
+          {{ comment.user.accountName }}
+          <span>at {{ comment.createdAt | date }}</span>
+        </div>
+      </div>
+
+      <div class="discussion-comment-body">
+        <p>
+          {{ comment.comments }}
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="form">
+    <div class="form-header">Reply</div>
+
+    <form>
+      <div class="form-body">
+        <div class="form-body-img">
+          <img src="http://localhost:8080/images/avatars/1.jpg" alt="" />
+        </div>
+
+        <textarea></textarea>
+      </div>
+
+      <div class="form-button">
+        <button>Post Comment</button>
+      </div>
+    </form>
+  </section>
+</section>

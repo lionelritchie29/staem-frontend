@@ -1,0 +1,75 @@
+@import "../../../styles/variables";
+@import "../../../styles/mixins";
+
+.discussion-card {
+  margin-bottom: 1rem;
+  width: 100%;
+  color: #f4f4f4;
+
+  &-top {
+    display: flex;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+
+    &-img {
+      width: 17.5%;
+      margin-right: 1rem;
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  &-middle {
+    &-post {
+      color: #f4f4f4;
+      text-decoration: none;
+      display: flex;
+      justify-content: space-between;
+      background: rgba(84, 133, 183, 0.4);
+      padding: 0.75rem;
+      align-items: center;
+      border-bottom: 2px solid #222;
+
+      &-left {
+        div {
+          display: flex;
+
+          i {
+            font-size: 1.1rem;
+          }
+
+          h2 {
+            font-size: 1.1rem;
+            margin-left: 1rem;
+          }
+        }
+
+        span {
+          display: block;
+          margin-left: 2rem;
+          color: #8ed1f9;
+        }
+      }
+
+      &-right {
+        color: #8ed1f9;
+      }
+
+      &:hover {
+        background: lighten(rgba(84, 133, 183, 0.4), 10);
+      }
+    }
+  }
+
+  &-bottom {
+    height: 1.5rem;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  @include for-desktop {
+    width: 70%;
+  }
+}

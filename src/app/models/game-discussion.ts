@@ -1,14 +1,12 @@
 import { PostComment } from './post-comment';
 import { UserAccount } from './user-account';
 
-export interface GameReview {
+export interface GameDiscussion {
   id: number;
-  gameId: number;
+  title: string;
   content: string;
-  upvoteCount: number;
-  downvoteCount: number;
-  isRecommended: boolean;
-  reviewDateTime: string;
   user: UserAccount;
+  gameId: number;
+  createdAt: string;
   comments: PostComment[];
 }

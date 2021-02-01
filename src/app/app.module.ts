@@ -98,6 +98,8 @@ import { ImageVideoModalComponent } from './components/image-video-modal/image-v
 import { CommunityReviewCardComponent } from './components/community-review-card/community-review-card.component';
 import { ReviewDetailsComponent } from './pages/review-details/review-details.component';
 import { ReviewCommentCardComponent } from './components/review-comment-card/review-comment-card.component';
+import { GameDiscussionCardComponent } from './components/game-discussion-card/game-discussion-card.component';
+import { DiscussionDetailComponent } from './pages/discussion-detail/discussion-detail.component';
 
 @NgModule({
   declarations: [
@@ -193,6 +195,8 @@ import { ReviewCommentCardComponent } from './components/review-comment-card/rev
     CommunityReviewCardComponent,
     ReviewDetailsComponent,
     ReviewCommentCardComponent,
+    GameDiscussionCardComponent,
+    DiscussionDetailComponent,
   ],
   imports: [
     BrowserModule,
