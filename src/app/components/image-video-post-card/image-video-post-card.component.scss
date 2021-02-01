@@ -1,0 +1,78 @@
+@import "../../../styles/mixins";
+@import "../../../styles/variables";
+
+.img-video-card {
+  padding: 0.5rem;
+  background: #0d131b;
+  margin-bottom: 1rem;
+  &-top {
+    width: 100%;
+    img {
+      width: 100%;
+    }
+  }
+
+  &-bottom {
+    &-utils {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 1rem;
+
+      &-left {
+        button {
+          border: none;
+          background: rgba(0, 0, 0, 0.6);
+          color: #f4f4f4;
+          padding: 0.25rem 0.5rem;
+          margin-right: 0.25rem;
+          border-radius: 0.25rem;
+
+          i {
+            font-size: 1.1rem;
+          }
+
+          &:hover {
+            background: $secondary-color;
+            cursor: pointer;
+            i {
+              color: #333;
+            }
+          }
+        }
+      }
+
+      &-right {
+        display: flex;
+        div {
+          i {
+            font-size: 1.1rem;
+          }
+
+          span {
+            margin-left: 0.5rem;
+          }
+
+          margin-right: 1rem;
+        }
+        .blue {
+          color: $secondary-color;
+        }
+        .red {
+          color: red;
+        }
+      }
+    }
+
+    &-desc {
+      color: #636363;
+      border-top: 1px solid #636363;
+      margin-top: 1rem;
+      padding: 1rem 0;
+    }
+  }
+
+  &:hover {
+    border: 1px solid $secondary-color;
+    cursor: pointer;
+  }
+}

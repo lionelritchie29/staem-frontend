@@ -46,6 +46,7 @@ import { InventoryComponent } from './pages/inventory/inventory.component';
 import { ChatComponent } from './pages/chat/chat.component';
 import { MarketComponent } from './pages/market/market.component';
 import { MarketDetailComponent } from './pages/market-detail/market-detail.component';
+import { CommunityComponent } from './pages/community/community.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -73,6 +74,7 @@ const routes: Routes = [
   { path: 'profile/:userCustomUrl', component: ProfileComponent },
   { path: 'points', redirectTo: 'points/shop', pathMatch: 'full' },
   { path: 'points/shop', component: PointShopComponent },
+  { path: 'community', component: CommunityComponent },
   {
     path: 'profile/:userCustomUrl/edit',
     component: EditProfileComponent,

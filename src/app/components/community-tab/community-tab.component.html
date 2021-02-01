@@ -1,0 +1,13 @@
+<div [hidden]="!active" class="tab">
+  <div class="category-tab-body">
+    <div *ngIf="tabTitle == 'Image and Videos'">
+      <app-image-video-post-card
+        *ngFor="let post of imageVideoPosts"
+        [post]="post"
+      ></app-image-video-post-card>
+    </div>
+    <div *ngIf="tabTitle == 'Reviews'">REVIEWS</div>
+
+    <div *ngIf="tabTitle == 'Discussions'">DISCUSSIONS</div>
+  </div>
+</div>

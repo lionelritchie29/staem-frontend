@@ -90,6 +90,10 @@ import { MarketDetailComponent } from './pages/market-detail/market-detail.compo
 import { ListingModalComponent } from './components/listing-modal/listing-modal.component';
 import { BuyListingModalComponent } from './components/buy-listing-modal/buy-listing-modal.component';
 import { SellListingModalComponent } from './components/sell-listing-modal/sell-listing-modal.component';
+import { CommunityComponent } from './pages/community/community.component';
+import { CommunityTabsComponent } from './components/community-tabs/community-tabs.component';
+import { CommunityTabComponent } from './components/community-tab/community-tab.component';
+import { ImageVideoPostCardComponent } from './components/image-video-post-card/image-video-post-card.component';
 
 @NgModule({
   declarations: [
@@ -177,6 +181,10 @@ import { SellListingModalComponent } from './components/sell-listing-modal/sell-
     ListingModalComponent,
     BuyListingModalComponent,
     SellListingModalComponent,
+    CommunityComponent,
+    CommunityTabsComponent,
+    CommunityTabComponent,
+    ImageVideoPostCardComponent,
   ],
   imports: [
     BrowserModule,

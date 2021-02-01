@@ -1,0 +1,26 @@
+<div class="img-video-card">
+  <div class="img-video-card-top">
+    <img src="{{ imgUrl }}" alt="" />
+  </div>
+  <div class="img-video-card-bottom">
+    <div class="img-video-card-bottom-utils">
+      <div class="img-video-card-bottom-utils-left">
+        <button><i class="fas fa-thumbs-up"></i></button>
+        <button><i class="fas fa-thumbs-down"></i></button>
+      </div>
+
+      <div class="img-video-card-bottom-utils-right">
+        <div>
+          <i class="fas fa-thumbs-up blue"></i>
+          <span class="blue">{{ post.likeCount }}</span>
+        </div>
+        <div>
+          <i class="fas fa-thumbs-down red"></i>
+          <span class="red">{{ post.dislikeCount }}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="img-video-card-bottom-desc">{{ post.description }}</div>
+  </div>
+</div>

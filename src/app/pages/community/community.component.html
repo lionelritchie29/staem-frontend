@@ -1,0 +1,13 @@
+<section id="community">
+  <section>
+    <h1>Community Activity</h1>
+    <p>Community and official content for all games and software on Steam.</p>
+
+    <app-community-tabs>
+      <app-community-tab
+        *ngFor="let title of titles"
+        [tabTitle]="title"
+      ></app-community-tab>
+    </app-community-tabs>
+  </section>
+</section>

@@ -46,6 +46,10 @@ export const getGameItemImageUrl = (gameId: number, url: string): string => {
   return `${GLOBALS.IMAGE_ENDPOINT}/game-items/1/${url}`;
 };
 
+export const getImageVideoPostImageUrl = (url: string): string => {
+  return `${GLOBALS.IMAGE_ENDPOINT}/image-video-posts/${url}`;
+};
+
 export const convertDateTimeToDate = (datetime: string) => {
   return new Date(Date.parse(datetime));
 };
