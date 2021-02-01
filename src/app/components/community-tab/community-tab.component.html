@@ -2,11 +2,20 @@
   <div class="category-tab-body">
     <div *ngIf="tabTitle == 'Image and Videos'">
       <app-image-video-post-card
-        *ngFor="let post of imageVideoPosts"
+        *ngFor="let post of imageVideoPosts; let idx = index"
         [post]="post"
+        (click)="onShowImageVideoDetail(idx)"
       ></app-image-video-post-card>
     </div>
-    <div *ngIf="tabTitle == 'Reviews'">REVIEWS</div>
+
+    <div *ngIf="tabTitle == 'Reviews'" class="reviews">
+      <app-community-review-card
+        *ngFor="let review of reviews"
+        [review]="[review]"
+        [trim]="true"
+        (click)="redirectDetail(review)"
+      ></app-community-review-card>
+    </div>
 
     <div *ngIf="tabTitle == 'Discussions'">DISCUSSIONS</div>
   </div>

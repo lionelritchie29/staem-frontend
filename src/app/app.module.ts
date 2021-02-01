@@ -94,6 +94,10 @@ import { CommunityComponent } from './pages/community/community.component';
 import { CommunityTabsComponent } from './components/community-tabs/community-tabs.component';
 import { CommunityTabComponent } from './components/community-tab/community-tab.component';
 import { ImageVideoPostCardComponent } from './components/image-video-post-card/image-video-post-card.component';
+import { ImageVideoModalComponent } from './components/image-video-modal/image-video-modal.component';
+import { CommunityReviewCardComponent } from './components/community-review-card/community-review-card.component';
+import { ReviewDetailsComponent } from './pages/review-details/review-details.component';
+import { ReviewCommentCardComponent } from './components/review-comment-card/review-comment-card.component';
 
 @NgModule({
   declarations: [
@@ -185,6 +189,10 @@ import { ImageVideoPostCardComponent } from './components/image-video-post-card/
     CommunityTabsComponent,
     CommunityTabComponent,
     ImageVideoPostCardComponent,
+    ImageVideoModalComponent,
+    CommunityReviewCardComponent,
+    ReviewDetailsComponent,
+    ReviewCommentCardComponent,
   ],
   imports: [
     BrowserModule,

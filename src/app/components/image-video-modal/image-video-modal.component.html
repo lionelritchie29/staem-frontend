@@ -1,0 +1,71 @@
+<div class="image-video-modal" *ngIf="post">
+  <div class="image-video-modal-content">
+    <div class="image-video-modal-content-left">
+      <img src="{{ imgUrl }}" />
+    </div>
+
+    <div class="image-video-modal-content-right">
+      <div class="image-video-modal-content-right-profile">
+        <div class="image-video-modal-content-right-profile-img">
+          <img src="{{ ownerImgUrl }}" alt="{{ post.user.accountName }}" />
+        </div>
+
+        <div class="image-video-modal-content-right-profile-img-name">
+          {{ post.user.accountName }}
+        </div>
+      </div>
+
+      <div class="image-video-modal-content-right-like">
+        <div class="image-video-modal-content-right-like-count">
+          <i class="fas fa-thumbs-up"></i> {{ post.likeCount }}
+        </div>
+
+        <div class="image-video-modal-content-right-like-btn">
+          <button (click)="onLike()"><i class="fas fa-thumbs-up"></i></button>
+          <button (click)="onDislike()">
+            <i class="fas fa-thumbs-down"></i>
+          </button>
+        </div>
+      </div>
+
+      <form
+        [formGroup]="commentForm"
+        class="image-video-modal-content-right-form"
+      >
+        <div class="image-video-modal-content-right-form-img">
+          <img src="{{ ownerImgUrl }}" alt="" />
+        </div>
+        <textarea formControlName="comment"></textarea>
+      </form>
+
+      <div class="add-comment-btn">
+        <button (click)="addComment()">Add Comment</button>
+      </div>
+
+      <div
+        class="image-video-modal-content-right-reviews"
+        *ngIf="comments.length > 0"
+      >
+        <div
+          *ngFor="let comment of comments; let i = index"
+          class="image-video-modal-content-right-reviews-review"
+        >
+          <div class="image-video-modal-content-right-reviews-review-img">
+            <img src="{{ commenterImgUrl[i] }}" alt="" />
+          </div>
+          <div class="image-video-modal-content-right-reviews-review-content">
+            <div
+              class="image-video-modal-content-right-reviews-review-content-name"
+            >
+              {{ comment.user.accountName }}
+              <span>at {{ comment.createdAt | date }}</span>
+            </div>
+            <div>{{ comment.comments }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <span (click)="onClose()" class="close">&times;</span>
+  </div>
+</div>

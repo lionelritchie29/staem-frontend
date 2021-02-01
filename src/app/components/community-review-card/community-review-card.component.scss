@@ -1,0 +1,145 @@
+@import "../../../styles/variables";
+@import "../../../styles/mixins";
+
+.helpful-review-card {
+  background-color: rgba(0, 0, 0, 0.2);
+  margin-bottom: 1.5rem;
+
+  &:hover {
+    cursor: pointer;
+    border: 1px solid $secondary-color;
+  }
+
+  &-top {
+    display: flex;
+    padding: 0.5rem 0;
+
+    &-user {
+      width: 50%;
+      display: flex;
+      padding-left: 0.5rem;
+
+      &-img {
+        width: 20%;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      &-profile {
+        color: #c1dbf4;
+        margin-left: 0.5rem;
+        font-size: 1.1rem;
+        font-weight: bold;
+      }
+
+      @include for-desktop {
+        width: 35%;
+      }
+    }
+
+    &-is-recommended {
+      width: 50%;
+      display: flex;
+
+      &-thumb-up {
+        width: fit-content;
+        padding: 0.25rem;
+        color: $secondary-color;
+        background-color: $secondary-background-light;
+
+        i {
+          font-size: 2.5rem;
+        }
+      }
+
+      &-thumb-down {
+        width: fit-content;
+        padding: 0.25rem;
+        color: #e06262;
+        background-color: #501a1a;
+
+        i {
+          font-size: 2.5rem;
+        }
+      }
+
+      &-text {
+        font-size: 1.4rem;
+        color: #f4f4f4;
+        padding-left: 0.5rem;
+        padding-top: 0.5rem;
+        background: $primary-background;
+        width: 100%;
+      }
+
+      @include for-desktop {
+        width: 65%;
+      }
+    }
+  }
+
+  &-bottom {
+    display: flex;
+    justify-content: flex-end;
+
+    &-content {
+      width: 100%;
+      padding: 0.5rem;
+
+      &-date {
+        margin-top: 0.5rem;
+        color: #666;
+        font-size: 0.8rem;
+      }
+
+      &-body {
+        margin-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        color: #acb2b8;
+        line-height: 1.4;
+        font-size: 1rem;
+        border-bottom: 1px solid #666;
+      }
+
+      p:nth-child(3) {
+        margin-top: 0.5rem;
+        color: #666;
+      }
+
+      .upvote-count,
+      .downvote-count {
+        color: #666;
+        font-size: 0.8rem;
+      }
+
+      .downvote-count {
+        margin-bottom: 1rem;
+      }
+
+      div {
+        margin-top: 0.5rem;
+        margin-bottom: 1rem;
+
+        button {
+          color: $secondary-color;
+          background: $secondary-background-light;
+          border: none;
+          padding: 0.3rem;
+          border-radius: 0.25rem;
+          margin-right: 0.25rem;
+
+          &:hover {
+            cursor: pointer;
+            background-color: lighten($secondary-background-light, 20);
+          }
+        }
+      }
+
+      @include for-desktop {
+        width: 65%;
+      }
+    }
+  }
+}

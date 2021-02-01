@@ -3,14 +3,18 @@
 ul {
   display: flex;
   margin-top: 2rem;
+  border-bottom: 5px solid #0d131b;
+  margin-bottom: 1.5rem;
+
   li {
     list-style: none;
-    color: $secondary-color;
+    color: #f4f4f4;
     cursor: pointer;
-    padding: 0.25rem 0.5rem;
-    border-radius: 0.25rem;
+    padding: 0.75rem 1rem;
+    border-radius: 0.2rem;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
+
     &:hover {
       color: #fff;
     }
@@ -18,6 +22,7 @@ ul {
 }
 
 .active {
-  background: $secondary-background-light;
-  // background: red;
+  border: 1px solid $secondary-color;
+  border-bottom: none;
+  background: #0d131b;
 }

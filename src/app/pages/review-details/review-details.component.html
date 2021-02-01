@@ -1,0 +1,32 @@
+<section id="review">
+  <section *ngIf="review.length > 0">
+    <app-community-review-card
+      [review]="review"
+      [trim]="false"
+    ></app-community-review-card>
+
+    <h2>Comments</h2>
+
+    <form [formGroup]="commentForm" *ngIf="loggedUser">
+      <div class="comment-input">
+        <div>
+          <img
+            src="{{ loggedUserImgUrl }}"
+            alt="{{ loggedUser.accountName }}"
+          />
+        </div>
+
+        <textarea formControlName="content"></textarea>
+      </div>
+
+      <div class="comment-post-btn">
+        <button (click)="onPostComment()">Post Comment</button>
+      </div>
+    </form>
+
+    <app-review-comment-card
+      *ngFor="let comment of review[0].comments"
+      [comment]="comment"
+    ></app-review-comment-card>
+  </section>
+</section>

@@ -1,3 +1,5 @@
+import { UserAccount } from './user-account';
+
 export interface ImageVideoPost {
   id: number;
   fileUrl: string;
@@ -5,6 +7,6 @@ export interface ImageVideoPost {
   description: string;
   likeCount: number;
   dislikeCount: number;
-  userId: number;
+  user: UserAccount;
   createdAt: string;
 }

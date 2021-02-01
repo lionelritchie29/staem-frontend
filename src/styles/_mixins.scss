@@ -1,118 +1,148 @@
 @mixin for-phone {
-    @media (min-width: 480px) { @content; }
+  @media (min-width: 480px) {
+    @content;
+  }
 }
 
 @mixin for-tablet {
-    @media (min-width: 768px) { @content; }
+  @media (min-width: 768px) {
+    @content;
+  }
 }
 
 @mixin for-desktop {
-    @media (min-width: 1024px) { @content; }
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin header-card-style {
+  background: $card-bg;
+  padding: 0.5rem 0.75rem;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
 }
 
 @mixin blue-button-style {
-    background: $secondary-background-light;
-    color: $secondary-color;
-    padding: 0.5rem 1.25rem;
-    border: none;
-    border-radius: 0.15rem;
-    font-size: 1rem;
+  background: $secondary-background-light;
+  color: $secondary-color;
+  padding: 0.5rem 1.25rem;
+  border: none;
+  border-radius: 0.15rem;
+  font-size: 1rem;
 
-    &:hover {
-        background: lighten($secondary-background-light, 10);
-        cursor: pointer;
-    }
+  &:hover {
+    background: lighten($secondary-background-light, 10);
+    cursor: pointer;
+  }
 }
 
 @mixin green-button-style {
-    background: $primary-green;
-    color: lighten($text-green, 5);
-    padding: 0.5rem 1.25rem;
-    border: none;
-    border-radius: 0.15rem;
-    font-size: 1rem;
+  background: $primary-green;
+  color: lighten($text-green, 5);
+  padding: 0.5rem 1.25rem;
+  border: none;
+  border-radius: 0.15rem;
+  font-size: 1rem;
 
-    &:hover {
-        background: lighten($primary-green, 10);
-        cursor: pointer;
-    }
+  &:hover {
+    background: lighten($primary-green, 10);
+    cursor: pointer;
+  }
 }
 
 @mixin red-button-style {
-    background: #8A060A;
-    color: #F4F4F4;
-    padding: 0.5rem 1.25rem;
-    border: none;
-    border-radius: 0.15rem;
-    font-size: 1rem;
+  background: #8a060a;
+  color: #f4f4f4;
+  padding: 0.5rem 1.25rem;
+  border: none;
+  border-radius: 0.15rem;
+  font-size: 1rem;
 
-    &:hover {
-        background: lighten(#8A060A, 10);
-        cursor: pointer;
-    }
+  &:hover {
+    background: lighten(#8a060a, 10);
+    cursor: pointer;
+  }
 }
 
 @mixin slider-arrow-style {
-    .arrow-right, .arrow-left {
-        top: 95%;
-        margin-top: 0.5rem;
-        cursor: pointer;
+  .arrow-right,
+  .arrow-left {
+    top: 95%;
+    margin-top: 0.5rem;
+    cursor: pointer;
 
-        div {
-            display: flex;
-            align-items: center;
-            height: 50%;
-            padding: 1rem;
-        }
-
-        @include for-desktop {
-            top: calc(50% - 2.25rem);
-            margin-top: 0;
-        }
+    div {
+      display: flex;
+      align-items: center;
+      height: 50%;
+      padding: 1rem;
     }
 
-    .arrow-right {
-        position: absolute;
-        background: linear-gradient( to right, rgba( 0, 0, 0, 0) 5%,rgba( 0, 0, 0, 0.3) 95%);
-        right: 1.5rem;
+    @include for-desktop {
+      top: calc(50% - 2.25rem);
+      margin-top: 0;
+    }
+  }
 
-        &:hover {
-            background: linear-gradient( to right, rgba( 0, 0, 0, 0) 5%,rgba( 255, 255, 255, 0.3) 95%);
-        }
+  .arrow-right {
+    position: absolute;
+    background: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0) 5%,
+      rgba(0, 0, 0, 0.3) 95%
+    );
+    right: 1.5rem;
 
-        @include for-desktop {
-            right: -2.75rem;
-        }
+    &:hover {
+      background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0) 5%,
+        rgba(255, 255, 255, 0.3) 95%
+      );
     }
 
-    .arrow-left {
-        position: absolute;
-        background: linear-gradient( to right, rgba( 0, 0, 0, 0.3) 5%,rgba( 0, 0, 0, 0) 95%);
-        
-        &:hover {
-            background: linear-gradient( to right, rgba( 255, 255, 255, 0.3) 5%,rgba(0, 0, 0, 0) 95%);
-        }
-        
-        @include for-desktop {
-            left: -2.75rem;
-        }
+    @include for-desktop {
+      right: -2.75rem;
     }
+  }
+
+  .arrow-left {
+    position: absolute;
+    background: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.3) 5%,
+      rgba(0, 0, 0, 0) 95%
+    );
+
+    &:hover {
+      background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.3) 5%,
+        rgba(0, 0, 0, 0) 95%
+      );
+    }
+
+    @include for-desktop {
+      left: -2.75rem;
+    }
+  }
 }
 
 @mixin sidebarGlobalStyling {
-    app-sidebar{
-        display: none;
-    
-        @include for-desktop {
-            display: block;
-        }
+  app-sidebar {
+    display: none;
+
+    @include for-desktop {
+      display: block;
     }
+  }
 }
 
 @mixin input-dark {
-    background: rgba( 0, 0, 0, 0.2 );
-    color: #909090;
-    border: 1px solid #000;
-    border-radius: 0.25rem;
-    outline: none;
+  background: rgba(0, 0, 0, 0.2);
+  color: #909090;
+  border: 1px solid #000;
+  border-radius: 0.25rem;
+  outline: none;
 }

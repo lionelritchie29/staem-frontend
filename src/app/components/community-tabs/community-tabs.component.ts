@@ -14,7 +14,7 @@ export class CommunityTabsComponent implements OnInit {
   ngOnInit(): void {}
 
   addTab(tab: CommunityTabComponent) {
-    if (this.tabs.length === 0) {
+    if (this.tabs.length === 1) {
       tab.active = true;
     }
     this.tabs.push(tab);

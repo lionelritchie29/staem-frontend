@@ -1,0 +1,52 @@
+@import "../../../styles/mixins";
+@import "../../../styles/variables";
+
+#review {
+  width: 90%;
+  padding-top: 1.5rem;
+  margin: 0 auto;
+  min-height: 100vh;
+
+  section {
+    h2 {
+      @include header-card-style;
+      color: #f4f4f4 !important;
+    }
+
+    .comment-input {
+      display: flex;
+      justify-content: space-between;
+
+      div:nth-child(1) {
+        width: 7.5%;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      textarea {
+        width: 90%;
+        background-color: rgba(0, 0, 0, 0.5);
+        border: 1px solid #000;
+        outline: none;
+        color: #f4f4f4;
+        padding: 0.5rem;
+      }
+    }
+
+    .comment-post-btn {
+      margin-top: 0.5rem;
+      text-align: right;
+
+      button {
+        @include green-button-style;
+      }
+    }
+  }
+
+  @include for-desktop {
+    // grid-template-columns: 20% 65%;
+    width: 65%;
+  }
+}

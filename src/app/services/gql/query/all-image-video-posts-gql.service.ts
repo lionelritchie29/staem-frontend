@@ -11,7 +11,9 @@ export class AllImageVideoPostsGqlService extends Query<any> {
     query getImageVideoPosts {
       imageVideoPosts {
         id
-        userId
+        user {
+          id
+        }
         description
         likeCount
         dislikeCount

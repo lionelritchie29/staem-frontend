@@ -1,15 +1,6 @@
 @import "../../../styles/mixins";
 @import "../../../styles/variables";
 
-$card-bg: rgba(0, 0, 0, 0.3);
-
-@mixin header-card-style {
-  background: $card-bg;
-  padding: 0.5rem 0.75rem;
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-}
-
 #profile {
   color: #666;
   background-position: center top;

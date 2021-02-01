@@ -1,0 +1,13 @@
+<div class="user-review-card">
+  <div class="user-review-card-img">
+    <img src="{{ imgUrl }}" alt="{{ comment.user.accountName }}" />
+  </div>
+
+  <div class="user-review-card-content">
+    <a routerLink="/profile/">
+      {{ comment.user.accountName }}
+      <span> {{ comment.createdAt | date }} </span>
+    </a>
+    <p>{{ comment.comments }}</p>
+  </div>
+</div>
