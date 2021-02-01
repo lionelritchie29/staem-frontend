@@ -1,116 +1,120 @@
 @import "../../../styles/mixins";
 @import "../../../styles/variables";
-$main-search-bar-color : rgba( 62, 126, 167, 0.8);
+$main-search-bar-color: rgba(62, 126, 167, 0.8);
 
-div:nth-child(1) {
-    text-align: right;
+.links {
+  text-align: right;
 
-    a {
-        background: lighten($primary-green, 10);
-        text-decoration: none;
-        color: #a4d007;
-        border: none;
-        padding: 0.25rem 1.5rem;
-        cursor: pointer;
-        
-        &:hover {
-            background: lighten($primary-green, 15);
-        }
+  a {
+    background: lighten($primary-green, 10);
+    text-decoration: none;
+    color: #a4d007;
+    border: none;
+    padding: 0.25rem 1.5rem;
+    cursor: pointer;
+
+    &:hover {
+      background: lighten($primary-green, 15);
     }
+  }
 }
 
 .search-bar-container {
-    margin-top: 0.75rem;
-    width: 100%;
-    background-color: $main-search-bar-color;    
-    display: flex;
-    justify-content: flex-end;
-    position: relative;
+  margin-top: 0.75rem;
+  width: 100%;
+  background-color: $main-search-bar-color;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
 
-    .search-bar {
-        input {
-            padding: 0.4rem 1rem;
-            width: 100%;
-            background-color: darken($main-search-bar-color, 10);
-            outline: none;
-            color: #fff;
-            border: none;
+  .search-bar {
+    padding: 0.5rem;
+    input {
+      padding: 0.4rem 1rem;
+      width: 80%;
+      background-color: darken($main-search-bar-color, 10);
+      outline: none;
+      color: #fff;
+      border: none;
 
-            &::placeholder {
-                color: #333;
-            }
-            
-            @include for-desktop {
-                width: 80%;
-            }
-        }
+      &::placeholder {
+        color: #333;
+      }
 
-        button {
-            color: #333;
-            padding: 0 0.3rem;
-            cursor: pointer;
-            background-color: darken($main-search-bar-color, 8);
-            border: none;
-            height: 100%;
-            
-            i {
-                font-size: 1.2rem;
-            }
-
-            &:hover {
-                background-color: lighten($main-search-bar-color, 10);
-            }
-        }
+      @include for-desktop {
+        width: 80%;
+      }
     }
 
-    .search-bar-result {
-        position: absolute;
-        z-index: 999;
-        top: 2.25rem;
-        right: 0;
-        width: 27.5rem;
-        background: #CCC;
-        
-        &-game {
-            display: flex;
-            width: 100%;
-            background: #ccc;
-            border-top: 1px solid #333;
-            padding: 0.5rem 0;
-            text-decoration: none;
-            color: #333;
-            padding: 0.5rem;
-            cursor: pointer;
-            
-            
-            &-img {
-                width: 40%;
+    button {
+      color: #333;
+      padding: 0 0.3rem;
+      cursor: pointer;
+      background-color: darken($main-search-bar-color, 8);
+      border: none;
+      height: 100%;
 
-                img {
-                    width: 100%;
-                    height: 100%;
-                }
-            }
+      i {
+        font-size: 1.2rem;
+      }
 
-            &-info {
-                width: 60%;
-                text-align: left;
-                padding-left: 0.75rem;
-                margin-top: 1rem;
-
-                span {
-                    display: block;
-                }
-            }
-
-            &:hover {
-                background: #333;
-                color: #F4F4F4;
-            }
-        }
+      &:hover {
+        background-color: lighten($main-search-bar-color, 10);
+      }
     }
 
     @include for-desktop {
-        padding: 0.2rem;
+      padding: 0;
     }
+  }
+
+  .search-bar-result {
+    position: absolute;
+    z-index: 999;
+    top: 2.25rem;
+    right: 0;
+    width: 27.5rem;
+    background: #ccc;
+
+    &-game {
+      display: flex;
+      width: 100%;
+      background: #ccc;
+      border-top: 1px solid #333;
+      padding: 0.5rem 0;
+      text-decoration: none;
+      color: #333;
+      padding: 0.5rem;
+      cursor: pointer;
+
+      &-img {
+        width: 40%;
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      &-info {
+        width: 60%;
+        text-align: left;
+        padding-left: 0.75rem;
+        margin-top: 1rem;
+
+        span {
+          display: block;
+        }
+      }
+
+      &:hover {
+        background: #333;
+        color: #f4f4f4;
+      }
+    }
+  }
+
+  @include for-desktop {
+    padding: 0.2rem;
+  }
 }
