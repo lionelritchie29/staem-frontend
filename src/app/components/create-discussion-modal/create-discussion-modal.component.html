@@ -1,0 +1,30 @@
+<div class="listing-modal" *ngIf="games">
+  <div class="listing-modal-content">
+    <h1>CREATE NEW DISCUSSION</h1>
+
+    <form [formGroup]="form">
+      <div>
+        <label>Game Title</label>
+        <select formControlName="gameId">
+          <option *ngFor="let game of games" value="{{ game.id }}">
+            {{ game.title }}
+          </option>
+        </select>
+      </div>
+
+      <div>
+        <label>Discussion Title</label>
+        <input formControlName="title" type="text" />
+      </div>
+
+      <div>
+        <label>Discussion Content</label>
+        <textarea formControlName="content"></textarea>
+      </div>
+
+      <button (click)="onCreate()">Add Discussion</button>
+    </form>
+
+    <span class="close" (click)="onClose()">&times;</span>
+  </div>
+</div>

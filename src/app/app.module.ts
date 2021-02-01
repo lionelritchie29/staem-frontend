@@ -100,6 +100,7 @@ import { ReviewDetailsComponent } from './pages/review-details/review-details.co
 import { ReviewCommentCardComponent } from './components/review-comment-card/review-comment-card.component';
 import { GameDiscussionCardComponent } from './components/game-discussion-card/game-discussion-card.component';
 import { DiscussionDetailComponent } from './pages/discussion-detail/discussion-detail.component';
+import { CreateDiscussionModalComponent } from './components/create-discussion-modal/create-discussion-modal.component';
 
 @NgModule({
   declarations: [
@@ -197,6 +198,7 @@ import { DiscussionDetailComponent } from './pages/discussion-detail/discussion-
     ReviewCommentCardComponent,
     GameDiscussionCardComponent,
     DiscussionDetailComponent,
+    CreateDiscussionModalComponent,
   ],
   imports: [
     BrowserModule,

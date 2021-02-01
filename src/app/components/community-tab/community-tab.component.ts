@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Game } from 'src/app/models/game';
 import { GameReview } from 'src/app/models/game-review';
 import { ImageVideoPost } from 'src/app/models/image-video-post';
+import { CreateDiscussionModalService } from 'src/app/services/create-discussion-modal.service';
 import { AllGameReviewsGqlService } from 'src/app/services/gql/query/all-game-reviews-gql.service';
 import { AllImageVideoPostsGqlService } from 'src/app/services/gql/query/all-image-video-posts-gql.service';
 import { GetGameTopThreeDiscussionGqlService } from 'src/app/services/gql/query/get-game-top-three-discussion-gql.service';
@@ -21,7 +22,8 @@ export class CommunityTabComponent implements OnInit {
     private imageVideoModalService: ImageVideoModalService,
     private allGameReviewsGqlService: AllGameReviewsGqlService,
     private getGameTopThreeDiscussionGqlService: GetGameTopThreeDiscussionGqlService,
-    private router: Router
+    private router: Router,
+    private createDiscussionModalService: CreateDiscussionModalService
   ) {}
 
   active: boolean = false;
@@ -81,5 +83,9 @@ export class CommunityTabComponent implements OnInit {
       game.title.toLowerCase().includes(this.searchTerm.toLowerCase())
     );
     console.log(this.searchTerm);
+  }
+
+  onAddDiscussion() {
+    this.createDiscussionModalService.setIsOpen(true);
   }
 }
