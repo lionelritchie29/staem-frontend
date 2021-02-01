@@ -17,6 +17,7 @@
 
 .discussion {
   display: flex;
+  flex-direction: column-reverse;
   div:nth-child(1) {
     width: 100%;
     @include for-desktop {
@@ -25,8 +26,8 @@
   }
 
   div:nth-child(2) {
-    width: 0;
-    display: none;
+    width: 100%;
+    margin-bottom: 2rem;
 
     input {
       @include input-dark;
@@ -41,9 +42,14 @@
     }
 
     @include for-desktop {
-      margin-left: 1rem;
-      display: block;
       width: 30%;
+      margin-left: 1rem;
+      flex-direction: row;
+      margin-bottom: 0;
     }
+  }
+
+  @include for-desktop {
+    flex-direction: row;
   }
 }
