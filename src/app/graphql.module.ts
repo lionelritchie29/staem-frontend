@@ -11,6 +11,7 @@ import { GLOBALS } from './globals';
 import { setContext } from '@apollo/client/link/context';
 import { WebSocketLink } from '@apollo/client/link/ws';
 import { getMainDefinition } from '@apollo/client/utilities';
+import { environment } from 'src/environments/environment';
 
 interface Definintion {
   kind: string;
@@ -26,7 +27,7 @@ export function createApollo(httpLink: HttpLink): ApolloClientOptions<any> {
 
   //websocket link
   const ws = new WebSocketLink({
-    uri: 'ws://localhost:8080/subscriptions',
+    uri: environment.WEBSOCKET_URL,
     options: {
       reconnect: true,
     },

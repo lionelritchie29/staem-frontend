@@ -7,6 +7,7 @@ export const environment = {
   RECAPTCHA_SECRET_KEY: '6LdwezUaAAAAAEra2hudOmj-VhjervqOYYehDxMR',
   RECAPTCHA_SITE_KEY: '6LdwezUaAAAAAIs0ZcEoUzRhHyTPwycSKv-Mil7C',
   BASE_URL: 'http://localhost:8080',
+  WEBSOCKET_URL: 'ws://localhost:8080/subscriptions',
 };
 
 /*
