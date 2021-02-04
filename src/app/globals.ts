@@ -1,7 +1,8 @@
 import { rejects } from 'assert';
 import { resolve } from 'dns';
+import { environment } from 'src/environments/environment';
 
-const BASE_URL: string = 'http://localhost:8080';
+const BASE_URL: string = environment.BASE_URL;
 
 export const GLOBALS = {
   GRAPHQL_ENDPOINT: `${BASE_URL}/api`,

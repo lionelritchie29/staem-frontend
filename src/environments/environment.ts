@@ -4,8 +4,9 @@
 
 export const environment = {
   production: false,
-  RECAPTCHA_SECRET_KEY: "6LdwezUaAAAAAEra2hudOmj-VhjervqOYYehDxMR",
-  RECAPTCHA_SITE_KEY: "6LdwezUaAAAAAIs0ZcEoUzRhHyTPwycSKv-Mil7C",
+  RECAPTCHA_SECRET_KEY: '6LdwezUaAAAAAEra2hudOmj-VhjervqOYYehDxMR',
+  RECAPTCHA_SITE_KEY: '6LdwezUaAAAAAIs0ZcEoUzRhHyTPwycSKv-Mil7C',
+  BASE_URL: 'http://localhost:8080',
 };
 
 /*
