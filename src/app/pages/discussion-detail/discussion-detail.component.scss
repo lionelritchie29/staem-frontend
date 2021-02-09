@@ -30,8 +30,14 @@
 
         &-info {
           color: $text-green;
-          font-size: 1.1rem;
           font-weight: bolder;
+
+          a {
+            text-decoration: none;
+            font-size: 1.1rem;
+            color: #a4d007;
+            margin-right: 1rem;
+          }
 
           span {
             color: #666;
@@ -87,6 +93,13 @@
           color: $text-green;
           font-size: 1.1rem;
           font-weight: bolder;
+
+          a {
+            text-decoration: none;
+            font-size: 1.1rem;
+            color: #a4d007;
+            margin-right: 1rem;
+          }
 
           span {
             color: #666;

@@ -8,6 +8,7 @@ import {
 import { GameReview } from 'src/app/models/game-review';
 import { IncreaseReviewDownvoteGqlService } from 'src/app/services/gql/mutation/increase-review-downvote-gql.service';
 import { IncreaseReviewUpvoteGqlService } from 'src/app/services/gql/mutation/increase-review-upvote-gql.service';
+import { ValidateUserLoggedInService } from 'src/app/services/validate-user-logged-in.service';
 
 @Component({
   selector: 'app-helpful-review-card',
@@ -21,7 +22,8 @@ export class HelpfulReviewCardComponent implements OnInit {
 
   constructor(
     private increaseReviewUpvoteGqlService: IncreaseReviewUpvoteGqlService,
-    private increaseReviewDownvoteGqlService: IncreaseReviewDownvoteGqlService
+    private increaseReviewDownvoteGqlService: IncreaseReviewDownvoteGqlService,
+    private validateUserLoggedInService: ValidateUserLoggedInService
   ) {}
 
   ngOnInit(): void {
@@ -33,6 +35,8 @@ export class HelpfulReviewCardComponent implements OnInit {
   }
 
   onUpvote(): void {
+    if (!this.validateUserLoggedInService.validate()) return;
+
     this.increaseReviewUpvoteGqlService
       .mutate({ id: this.review.id })
       .pipe(map((res) => (<any>res.data).increseReviewUpvote))
@@ -48,6 +52,8 @@ export class HelpfulReviewCardComponent implements OnInit {
   }
 
   onDownvote(): void {
+    if (!this.validateUserLoggedInService.validate()) return;
+
     this.increaseReviewDownvoteGqlService
       .mutate({ id: this.review.id })
       .pipe(map((res) => (<any>res.data).increseReviewDownvote))

@@ -20,6 +20,7 @@ export class RecentlyPostedGameReviewsGqlService extends Query<any> {
           accountName
           profile {
             profilePictureUrl
+            customURL
           }
         }
       }

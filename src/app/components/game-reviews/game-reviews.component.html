@@ -1,22 +1,22 @@
 <section class="game-reviews">
-    <h2>CUSTOMER REVIEWS</h2>
+  <h2>CUSTOMER REVIEWS</h2>
 
-    <div class="game-reviews-container">
-        <div class="game-reviews-container-left">
-            <h3>MOST HELPFUL REVIEWS <span>IN THE PAST 30 DAYS</span></h3>
-            <app-helpful-review-card 
-                *ngFor="let helpfulReview of mostHelpfulReviews" 
-                [review]="helpfulReview"
-            ></app-helpful-review-card>
-        </div>
-        
-        <div class="game-reviews-container-right">
-            <h3>RECENTLY POSTED</h3>
-            <app-recently-posted-review-card 
-                *ngFor="let recentlyPostedReview of recentlyPostedReviews"
-                [review]="recentlyPostedReview"
-            >
-            </app-recently-posted-review-card>
-        </div>
+  <div class="game-reviews-container">
+    <div class="game-reviews-container-left">
+      <h3>MOST HELPFUL REVIEWS <span>IN THE PAST 30 DAYS</span></h3>
+      <app-helpful-review-card
+        *ngFor="let helpfulReview of mostHelpfulReviews"
+        [review]="helpfulReview"
+      ></app-helpful-review-card>
     </div>
+
+    <div class="game-reviews-container-right">
+      <h3>RECENTLY POSTED</h3>
+      <app-recently-posted-review-card
+        *ngFor="let recentlyPostedReview of recentlyPostedReviews"
+        [review]="recentlyPostedReview"
+      >
+      </app-recently-posted-review-card>
+    </div>
+  </div>
 </section>

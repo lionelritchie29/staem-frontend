@@ -82,14 +82,22 @@
       <div *ngFor="let activity of recentActivities; let i = index">
         <div class="my-list-card recent" *ngIf="activity.type == 'SELL'">
           <img src="{{ sellerImgUrl[i] }}" />
-          <span>{{ activity.seller.accountName }} </span>
+          <span
+            ><a routerLink="/profile/{{ activity.seller.profile.customURL }}">{{
+              activity.seller.accountName
+            }}</a>
+          </span>
           listed this item for sale for
           {{ activity.price | currency: "Rp. " }}
         </div>
         <div class="my-list-card recent" *ngIf="activity.type == 'BUY'">
           <img src="{{ sellerImgUrl[i] }}" />
-          <span>{{ activity.seller.accountName }}</span> created
-          {{ activity.quantity }} buy orders for
+          <span
+            ><a routerLink="/profile/{{ activity.seller.profile.customURL }}">{{
+              activity.seller.accountName
+            }}</a></span
+          >
+          created {{ activity.quantity }} buy orders for
           {{ activity.price | currency: "Rp. " }}
         </div>
       </div>

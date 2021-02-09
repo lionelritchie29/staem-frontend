@@ -86,7 +86,6 @@
 
   &-right {
     width: 100%;
-    margin-left: 1rem;
     margin-bottom: 2.5rem;
 
     &-header {
@@ -157,6 +156,7 @@
     @include for-desktop {
       width: 35%;
       margin-bottom: 0;
+      margin-left: 1rem;
     }
   }
 

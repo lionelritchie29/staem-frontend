@@ -102,34 +102,38 @@ export class GameDetailComponent implements OnInit {
   getAndCheckUserOwnedGames(): void {
     const userId = this.authService.getLoggedInUserId();
 
-    this.apollo
-      .watchQuery({
-        query: GET_CURRENT_USER_GAMES,
-        variables: { id: userId },
-      })
-      .valueChanges.pipe(map((res) => (<any>res.data).gamesByUserId))
-      .subscribe((games: Game[]) => {
-        if (games.some((game) => game.id === this.game.id)) {
-          this.isOwned = true;
-        }
-      });
+    if (userId) {
+      this.apollo
+        .watchQuery({
+          query: GET_CURRENT_USER_GAMES,
+          variables: { id: userId },
+        })
+        .valueChanges.pipe(map((res) => (<any>res.data).gamesByUserId))
+        .subscribe((games: Game[]) => {
+          if (games.some((game) => game.id === this.game.id)) {
+            this.isOwned = true;
+          }
+        });
+    }
   }
 
   getCurrentUserImg() {
     const userId = this.authService.getLoggedInUserId();
 
-    this.apollo
-      .query({
-        query: GET_CURRENT_USER_IMG,
-        variables: { id: userId },
-      })
-      .pipe(map((res) => (<any>res.data).user))
-      .subscribe(
-        (user) =>
-          (this.currentUserImg = getUserImageUrl(
-            user.profile.profilePictureUrl
-          ))
-      );
+    if (userId) {
+      this.apollo
+        .query({
+          query: GET_CURRENT_USER_IMG,
+          variables: { id: userId },
+        })
+        .pipe(map((res) => (<any>res.data).user))
+        .subscribe(
+          (user) =>
+            (this.currentUserImg = getUserImageUrl(
+              user.profile.profilePictureUrl
+            ))
+        );
+    }
   }
 
   addToCart() {

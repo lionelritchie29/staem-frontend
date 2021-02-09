@@ -65,8 +65,8 @@ export class FooterComponent implements OnInit {
 
     if (userId !== null) {
       this.authService.getUser().subscribe((user) => {
-        this.links[8].link = `/profile/${user.profile.customURL}`;
-        this.links[9].link = `/profile/${user.profile.customURL}/friends`;
+        this.links[10].link = `/profile/${user.profile.customURL}`;
+        this.links[11].link = `/profile/${user.profile.customURL}/friends`;
       });
     }
   }

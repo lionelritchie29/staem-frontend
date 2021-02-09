@@ -13,7 +13,9 @@
       <i class="fas fa-thumbs-down"></i>
     </div>
     <div class="recently-review-card-header-user">
-      {{ review.user.accountName }}
+      <a routerLink="/profile/{{ review.user.profile.customURL }}">{{
+        review.user.accountName
+      }}</a>
     </div>
   </div>
 

@@ -8,6 +8,7 @@ import { GameReview } from 'src/app/models/game-review';
 import { UserAccount } from 'src/app/models/user-account';
 import { AuthService } from 'src/app/services/auth.service';
 import { GetUserByIdGqlService } from 'src/app/services/gql/get-user-by-id-gql.service';
+import { ValidateUserLoggedInService } from 'src/app/services/validate-user-logged-in.service';
 
 const GET_REVIEW_DETAIL = gql`
   query getGameReviewById($gameId: Int) {
@@ -25,6 +26,7 @@ const GET_REVIEW_DETAIL = gql`
         accountName
         profile {
           profilePictureUrl
+          customURL
         }
       }
       comments {
@@ -34,6 +36,7 @@ const GET_REVIEW_DETAIL = gql`
           accountName
           profile {
             profilePictureUrl
+            customURL
           }
         }
         createdAt

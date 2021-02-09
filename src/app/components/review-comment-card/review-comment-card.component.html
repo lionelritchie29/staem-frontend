@@ -4,7 +4,7 @@
   </div>
 
   <div class="user-review-card-content">
-    <a routerLink="/profile/">
+    <a routerLink="/profile/{{ comment.user.profile.customURL }}">
       {{ comment.user.accountName }}
       <span> {{ comment.createdAt | date }} </span>
     </a>

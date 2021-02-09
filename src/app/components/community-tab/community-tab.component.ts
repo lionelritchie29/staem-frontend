@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Game } from 'src/app/models/game';
 import { GameReview } from 'src/app/models/game-review';
 import { ImageVideoPost } from 'src/app/models/image-video-post';
+import { AuthService } from 'src/app/services/auth.service';
 import { CreateDiscussionModalService } from 'src/app/services/create-discussion-modal.service';
 import { AllGameReviewsGqlService } from 'src/app/services/gql/query/all-game-reviews-gql.service';
 import { AllImageVideoPostsGqlService } from 'src/app/services/gql/query/all-image-video-posts-gql.service';
@@ -23,7 +24,8 @@ export class CommunityTabComponent implements OnInit {
     private allGameReviewsGqlService: AllGameReviewsGqlService,
     private getGameTopThreeDiscussionGqlService: GetGameTopThreeDiscussionGqlService,
     private router: Router,
-    private createDiscussionModalService: CreateDiscussionModalService
+    private createDiscussionModalService: CreateDiscussionModalService,
+    private authService: AuthService
   ) {}
 
   active: boolean = false;
@@ -37,7 +39,10 @@ export class CommunityTabComponent implements OnInit {
   games: Game[] = [];
   showGames: Game[] = [];
 
+  loggedUserId: number;
+
   ngOnInit(): void {
+    this.loggedUserId = this.authService.getLoggedInUserId();
     this.tabs.addTab(this);
 
     if (this.tabTitle == 'Image and Videos') {

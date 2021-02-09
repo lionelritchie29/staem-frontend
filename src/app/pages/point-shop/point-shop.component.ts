@@ -70,37 +70,42 @@ export class PointShopComponent implements OnInit {
 
   ngOnInit(): void {
     const userId = this.authService.getLoggedInUserId();
-    this.apollo
-      .watchQuery({
-        query: GET_USER_INFO,
-        variables: { id: userId },
-      })
-      .valueChanges.pipe(map((res) => (<any>res.data).user))
-      .subscribe((user) => {
-        user.profile.avatarFrames.forEach((frame) => {
-          this.ownedAvatarFrames.push(frame.id);
+
+    if (userId) {
+      this.apollo
+        .watchQuery({
+          query: GET_USER_INFO,
+          variables: { id: userId },
+        })
+        .valueChanges.pipe(map((res) => (<any>res.data).user))
+        .subscribe((user) => {
+          user.profile.avatarFrames.forEach((frame) => {
+            this.ownedAvatarFrames.push(frame.id);
+          });
+
+          user.profile.profileBackgrounds.forEach((bg) => {
+            this.ownedProfileBackgrounds.push(bg.id);
+          });
+
+          user.profile.miniProfileBackgrounds.forEach((bg) => {
+            this.ownedMiniProfileBackgrounds.push(bg.id);
+          });
+
+          user.profile.chatStickers.forEach((sticker) => {
+            this.ownedChatStickers.push(sticker.id);
+          });
+
+          user.profile.animatedAvatars.forEach((avatar) => {
+            this.ownedAnimatedAvatars.push(avatar.id);
+          });
+
+          this.point = user.profile.point;
+
+          this.getData();
         });
-
-        user.profile.profileBackgrounds.forEach((bg) => {
-          this.ownedProfileBackgrounds.push(bg.id);
-        });
-
-        user.profile.miniProfileBackgrounds.forEach((bg) => {
-          this.ownedMiniProfileBackgrounds.push(bg.id);
-        });
-
-        user.profile.chatStickers.forEach((sticker) => {
-          this.ownedChatStickers.push(sticker.id);
-        });
-
-        user.profile.animatedAvatars.forEach((avatar) => {
-          this.ownedAnimatedAvatars.push(avatar.id);
-        });
-
-        this.point = user.profile.point;
-
-        this.getData();
-      });
+    } else {
+      this.getData();
+    }
   }
 
   getData() {

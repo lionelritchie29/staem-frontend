@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { getUserImageUrl } from 'src/app/globals';
 import { GameReview } from 'src/app/models/game-review';
+import { AuthService } from 'src/app/services/auth.service';
 import { IncreaseReviewDownvoteGqlService } from 'src/app/services/gql/mutation/increase-review-downvote-gql.service';
 import { IncreaseReviewUpvoteGqlService } from 'src/app/services/gql/mutation/increase-review-upvote-gql.service';
 
@@ -15,10 +16,12 @@ export class CommunityReviewCardComponent implements OnInit {
   @Input() trim: boolean;
   imgUrl: string = '';
   trimmedReviewContent: string = '';
+  loggedUserId: number;
 
   constructor(
     private increaseReviewUpvoteGqlService: IncreaseReviewUpvoteGqlService,
-    private increaseReviewDownvoteGqlService: IncreaseReviewDownvoteGqlService
+    private increaseReviewDownvoteGqlService: IncreaseReviewDownvoteGqlService,
+    private authService: AuthService
   ) {}
 
   ngOnInit(): void {
@@ -30,6 +33,8 @@ export class CommunityReviewCardComponent implements OnInit {
     this.imgUrl = getUserImageUrl(
       this.review[0].user.profile.profilePictureUrl
     );
+
+    this.loggedUserId = this.authService.getLoggedInUserId();
   }
 
   doTrim() {
@@ -38,6 +43,11 @@ export class CommunityReviewCardComponent implements OnInit {
   }
 
   onUpvote(): void {
+    if (!this.loggedUserId) {
+      alert('You are not logged in yet');
+      return;
+    }
+
     this.increaseReviewUpvoteGqlService
       .mutate({ id: this.review[0].id })
       .pipe(map((res) => (<any>res.data).increseReviewUpvote))
@@ -53,6 +63,11 @@ export class CommunityReviewCardComponent implements OnInit {
   }
 
   onDownvote(): void {
+    if (!this.loggedUserId) {
+      alert('You are not logged in yet');
+      return;
+    }
+
     this.increaseReviewDownvoteGqlService
       .mutate({ id: this.review[0].id })
       .pipe(map((res) => (<any>res.data).increseReviewDownvote))

@@ -90,14 +90,19 @@
       }
 
       .market-right {
-        margin-left: 1rem;
         width: 0;
-        height: 40rem;
+        height: 0;
         background: $primary-background;
 
         @include for-desktop {
+          margin-left: 1rem;
           width: 30%;
+          height: 40rem;
         }
+      }
+
+      @include for-desktop {
+        flex-direction: row;
       }
     }
 

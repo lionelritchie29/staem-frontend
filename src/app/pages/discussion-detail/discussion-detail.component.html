@@ -7,7 +7,9 @@
         </div>
 
         <div class="discussion-post-header-info">
-          {{ discussion.user.accountName }}
+          <a routerLink="/profile/{{ discussion.user.profile.customURL }}">{{
+            discussion.user.accountName
+          }}</a>
           <span>at {{ discussion.createdAt | date }}</span>
         </div>
       </div>
@@ -35,7 +37,9 @@
         </div>
 
         <div class="discussion-comment-header-info">
-          {{ comment.user.accountName }}
+          <a routerLink="/profile/{{ comment.user.profile.customURL }}">{{
+            comment.user.accountName
+          }}</a>
           <span>at {{ comment.createdAt | date }}</span>
         </div>
       </div>
@@ -51,7 +55,7 @@
   <section class="form">
     <div class="form-header">Reply</div>
 
-    <form [formGroup]="commentForm">
+    <form [formGroup]="commentForm" *ngIf="loggedUserId">
       <div class="form-body">
         <div class="form-body-img">
           <img src="http://localhost:8080/images/avatars/1.jpg" alt="" />

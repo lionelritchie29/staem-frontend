@@ -17,6 +17,7 @@ const IMG_VIDEO_BY_ID = gql`
         accountName
         profile {
           profilePictureUrl
+          customURL
         }
       }
       description
@@ -30,6 +31,7 @@ const IMG_VIDEO_BY_ID = gql`
           accountName
           profile {
             profilePictureUrl
+            customURL
           }
         }
         comments
@@ -74,6 +76,7 @@ export class ImageVideoModalComponent implements OnInit {
   imgUrl: string = '';
   ownerImgUrl: string = '';
   loggedUserImgUrl: string = '';
+  loggedUserId: number;
 
   comments: PostComment[] = [];
   commenterImgUrl: string[] = [];
@@ -84,6 +87,8 @@ export class ImageVideoModalComponent implements OnInit {
 
   ngOnInit(): void {
     this.postId = this.imageVideoModalService.postId;
+    this.loggedUserId = this.authService.getLoggedInUserId();
+
     this.apollo
       .query({
         query: IMG_VIDEO_BY_ID,
@@ -136,6 +141,11 @@ export class ImageVideoModalComponent implements OnInit {
   }
 
   onLike() {
+    if (!this.loggedUserId) {
+      alert('You are not logged in yet');
+      return;
+    }
+
     this.apollo
       .mutate({
         mutation: ADD_LIKE,
@@ -153,6 +163,11 @@ export class ImageVideoModalComponent implements OnInit {
   }
 
   onDislike() {
+    if (!this.loggedUserId) {
+      alert('You are not logged in yet');
+      return;
+    }
+
     this.apollo
       .mutate({
         mutation: ADD_DISLIKE,

@@ -1,23 +1,29 @@
 @import "../../../styles/variables";
+@import "../../../styles/mixins";
 
-ul{
-    display: flex;
+ul {
+  display: flex;
+  padding-top: 3rem;
 
-    li {
-        list-style: none;
-        color: $secondary-color;
-        cursor: pointer;
-        padding: 0.25rem 0.5rem;
-        border-radius: 0.25rem;
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
-        &:hover {
-            color: #fff;
-        }
+  li {
+    list-style: none;
+    color: $secondary-color;
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    &:hover {
+      color: #fff;
     }
+  }
+
+  @include for-desktop {
+    padding-top: 0;
+  }
 }
 
 .active {
-    background: $secondary-background-light;
-    // background: red;
+  background: $secondary-background-light;
+  // background: red;
 }

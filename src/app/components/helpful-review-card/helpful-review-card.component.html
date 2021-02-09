@@ -6,7 +6,13 @@
       </div>
 
       <div class="helpful-review-card-top-user-profile">
-        <span>{{ review.user.accountName }}</span>
+        <span
+          ><a
+            style="text-decoration: none; color: #f4f4f4"
+            routerLink="/profile/{{ review.user.profile.customURL }}"
+            >{{ review.user.accountName }}</a
+          ></span
+        >
       </div>
     </div>
 

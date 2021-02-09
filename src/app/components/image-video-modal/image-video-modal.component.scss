@@ -53,10 +53,14 @@
             width: 100%;
           }
           margin-right: 1rem;
-        }
+          &-name {
+            width: 80%;
 
-        &-name {
-          width: 80%;
+            a {
+              color: #f4f4f4;
+              text-decoration: none;
+            }
+          }
         }
       }
 
@@ -129,6 +133,11 @@
             &-name {
               color: #f4f4f4;
               font-weight: bolder;
+
+              a {
+                color: #f4f4f4;
+                text-decoration: none;
+              }
 
               span {
                 color: #666;

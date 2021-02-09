@@ -20,6 +20,7 @@ export class GetGameDiscussionByIdGqlService extends Query<any> {
           accountName
           profile {
             profilePictureUrl
+            customURL
           }
         }
         comments {
@@ -28,6 +29,7 @@ export class GetGameDiscussionByIdGqlService extends Query<any> {
             accountName
             profile {
               profilePictureUrl
+              customURL
             }
           }
           comments

@@ -3,6 +3,7 @@ import { ImageVideoPost } from 'src/app/models/image-video-post';
 import { getImageVideoPostImageUrl } from 'src/app/globals';
 import { Apollo, gql } from 'apollo-angular';
 import { map } from 'rxjs/operators';
+import { AuthService } from 'src/app/services/auth.service';
 
 const ADD_LIKE = gql`
   mutation addImageVideoLike($postId: Int) {
@@ -24,14 +25,21 @@ const ADD_DISLIKE = gql`
 export class ImageVideoPostCardComponent implements OnInit {
   @Input() post: ImageVideoPost;
   imgUrl: string = '';
+  loggedUserId: number;
 
-  constructor(private apollo: Apollo) {}
+  constructor(private apollo: Apollo, private authService: AuthService) {}
 
   ngOnInit(): void {
     this.imgUrl = getImageVideoPostImageUrl(this.post.fileUrl);
+    this.loggedUserId = this.authService.getLoggedInUserId();
   }
 
   onLike() {
+    if (!this.loggedUserId) {
+      alert('You are not logged in yet');
+      return;
+    }
+
     this.apollo
       .mutate({
         mutation: ADD_LIKE,
@@ -49,6 +57,11 @@ export class ImageVideoPostCardComponent implements OnInit {
   }
 
   onDislike() {
+    if (!this.loggedUserId) {
+      alert('You are not logged in yet');
+      return;
+    }
+
     this.apollo
       .mutate({
         mutation: ADD_DISLIKE,

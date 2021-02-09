@@ -56,7 +56,9 @@ export class PointItemCardComponent implements OnInit {
   constructor(private apollo: Apollo, private authService: AuthService) {}
 
   ngOnInit(): void {
-    this.authService.getUser().subscribe((user) => (this.loggedUser = user));
+    if (this.loggedUser) {
+      this.authService.getUser().subscribe((user) => (this.loggedUser = user));
+    }
 
     switch (this.type) {
       case 'Avatar Frame':
@@ -78,7 +80,9 @@ export class PointItemCardComponent implements OnInit {
   }
 
   onBuy() {
-    if (this.isOwned) {
+    if (!this.loggedUser) {
+      alert('You must log in first!');
+    } else if (this.isOwned) {
       alert('You already own this item!');
     } else if (this.loggedUser.profile.point < this.item.price) {
       alert('Not enough point');

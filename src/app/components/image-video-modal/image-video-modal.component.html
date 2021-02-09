@@ -11,7 +11,9 @@
         </div>
 
         <div class="image-video-modal-content-right-profile-img-name">
-          {{ post.user.accountName }}
+          <a routerLink="profile/{{ post.user.profile.customURL }}">{{
+            post.user.accountName
+          }}</a>
         </div>
       </div>
 
@@ -29,6 +31,7 @@
       </div>
 
       <form
+        *ngIf="loggedUserId"
         [formGroup]="commentForm"
         class="image-video-modal-content-right-form"
       >
@@ -38,7 +41,7 @@
         <textarea formControlName="comment"></textarea>
       </form>
 
-      <div class="add-comment-btn">
+      <div *ngIf="loggedUserId" class="add-comment-btn">
         <button (click)="addComment()">Add Comment</button>
       </div>
 
@@ -57,7 +60,9 @@
             <div
               class="image-video-modal-content-right-reviews-review-content-name"
             >
-              {{ comment.user.accountName }}
+              <a routerLink="/profile/{{ comment.user.profile.customURL }}">{{
+                comment.user.accountName
+              }}</a>
               <span>at {{ comment.createdAt | date }}</span>
             </div>
             <div>{{ comment.comments }}</div>

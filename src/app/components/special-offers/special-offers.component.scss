@@ -2,13 +2,13 @@
 @import "../../../styles/mixins";
 
 section {
-  margin-top: 2rem;
+  margin-top: 4rem;
   margin-bottom: 5rem;
 
   h1 {
     color: #fff;
     font-weight: normal;
-    font-size: 1.2rem;
+    font-size: 1.75rem;
     margin-bottom: 0.75rem;
   }
 
@@ -47,5 +47,6 @@ section {
 
   @include for-desktop {
     margin-bottom: 0;
+    margin-top: 2rem;
   }
 }

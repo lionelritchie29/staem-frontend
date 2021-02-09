@@ -54,7 +54,11 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'test-template', component: TestTemplateComponent },
   { path: 'search', component: SearchGameComponent },
-  { path: 'inventory', component: InventoryComponent },
+  {
+    path: 'inventory',
+    component: InventoryComponent,
+    canActivate: [AuthGuardService],
+  },
   { path: 'market', component: MarketComponent },
   { path: 'market/:gameItemId', component: MarketDetailComponent },
   {

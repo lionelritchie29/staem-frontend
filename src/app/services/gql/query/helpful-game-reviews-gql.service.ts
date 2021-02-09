@@ -20,6 +20,7 @@ export class HelpfulGameReviewsGqlService extends Query<any> {
           accountName
           profile {
             profilePictureUrl
+            customURL
           }
         }
       }

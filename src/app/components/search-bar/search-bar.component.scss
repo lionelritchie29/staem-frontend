@@ -12,10 +12,16 @@ $main-search-bar-color: rgba(62, 126, 167, 0.8);
     border: none;
     padding: 0.25rem 1.5rem;
     cursor: pointer;
+    margin-left: 0.5rem;
 
     &:hover {
       background: lighten($primary-green, 15);
     }
+  }
+
+  .wishlist {
+    @include blue-button-style;
+    padding: 0.25rem 1.5rem !important;
   }
 }
 

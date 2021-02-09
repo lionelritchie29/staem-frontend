@@ -33,6 +33,7 @@ const INITIAL_RECENT_ACTIVITY = gql`
         accountName
         profile {
           profilePictureUrl
+          customURL
         }
       }
       buyer {
@@ -40,6 +41,7 @@ const INITIAL_RECENT_ACTIVITY = gql`
         accountName
         profile {
           profilePictureUrl
+          customURL
         }
       }
     }
@@ -87,6 +89,8 @@ export class MarketDetailComponent implements OnInit, OnDestroy {
     private getMarketDetailInfoGqlService: GetMarketDetailInfoGqlService
   ) {}
 
+  loggedUserId: number;
+
   gameItem: GameItem;
   gameItemImgUrl: string;
   gameTitle: string = '';
@@ -106,6 +110,7 @@ export class MarketDetailComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     const gameItemId = this.route.snapshot.params.gameItemId;
     let userId = this.authService.getLoggedInUserId();
+    this.loggedUserId = userId;
 
     if (userId === null) userId = -1;
 
@@ -184,6 +189,11 @@ export class MarketDetailComponent implements OnInit, OnDestroy {
   }
 
   onBuy() {
+    if (!this.loggedUserId) {
+      alert('You are not logged in yet');
+      return;
+    }
+
     this.buyListingModalService.gameItem = this.gameItem;
     this.buyListingModalService.gameName = this.gameTitle;
     this.buyListingModalService.lowestPrice = this.sellListings[0].price;
@@ -195,6 +205,11 @@ export class MarketDetailComponent implements OnInit, OnDestroy {
   }
 
   onSell() {
+    if (!this.loggedUserId) {
+      alert('You are not logged in yet');
+      return;
+    }
+
     this.sellListingModalService.setIsOpen(true);
   }
 

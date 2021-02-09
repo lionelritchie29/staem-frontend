@@ -51,6 +51,7 @@ export class DiscussionDetailComponent implements OnInit {
   discussion: GameDiscussion;
   userImgUrl: string = '';
   commentImgUrl: string[] = [];
+  loggedUserId: number;
 
   commentForm: FormGroup = this.fb.group({
     content: ['', Validators.required],
@@ -58,6 +59,7 @@ export class DiscussionDetailComponent implements OnInit {
 
   ngOnInit(): void {
     const postId = this.route.snapshot.params.id;
+    this.loggedUserId = this.authService.getLoggedInUserId();
 
     this.getGameDiscussionByIdGqlService.get(postId).subscribe((discussion) => {
       console.log(discussion);

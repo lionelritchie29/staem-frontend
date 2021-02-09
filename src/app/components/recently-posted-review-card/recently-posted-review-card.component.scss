@@ -1,84 +1,93 @@
 @import "../../../styles/variables";
 
 .recently-review-card {
-    margin-bottom: 1.5rem;
-    
-    &-header {
-        background-color: rgba( 0, 0, 0, 0.3 );
-        display: flex;
+  margin-bottom: 1.5rem;
 
-        &-thumb-up {
-            background-color: $secondary-background-light;
-            color: $secondary-color;
-            padding: 0.25rem;
-            width: fit-content;
+  &-header {
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
 
-            i {
-                font-size: 1.2rem;
-            }
-        }
+    &-thumb-up {
+      background-color: $secondary-background-light;
+      color: $secondary-color;
+      padding: 0.25rem;
+      width: fit-content;
 
-        &-thumb-down {
-            background-color: #501A1A;
-            color: #E06262;;
-            padding: 0.25rem;
-            width: fit-content;
-
-            i {
-                font-size: 1.2rem;
-            }
-        }
-
-        &-user {
-            color: #819db8;
-            display: flex;
-            align-items: center;
-            margin-left: 0.5rem;
-        }
+      i {
+        font-size: 1.2rem;
+      }
     }
 
-    &-content {
-        background: linear-gradient(to right, rgba(34,50,70,1) -1%,rgba(34,50,70,1) 0%,rgba(34,50,70,0) 92%,rgba(34,50,70,0) 100%);
-        padding: 0.3rem 0.75rem;
+    &-thumb-down {
+      background-color: #501a1a;
+      color: #e06262;
+      padding: 0.25rem;
+      width: fit-content;
 
-        &-date {
-            margin-top: 0.5rem;
-            color: #666;
-            font-size: 0.8rem;
-        }
-
-        &-body {
-            margin-top: 0.3rem;
-            padding-bottom: 0.5rem;
-            color: #acb2b8;
-            line-height: 1.4;
-            font-size: 0.9rem;
-            border-bottom: 1px solid #666;
-        }
-
-        p:nth-child(3) {
-            margin-top: 0.5rem;
-            color: #666;
-        }
-
-        div {
-            margin-top: 0.5rem;
-            margin-bottom: 1rem;
-
-            button{
-                color: $secondary-color;
-                background: $secondary-background-light;
-                border: none;
-                padding: 0.3rem;
-                border-radius: 0.25rem;
-                margin-right: 0.25rem;
-
-                &:hover {
-                    cursor: pointer;
-                    background-color: lighten($secondary-background-light, 20);
-                }
-            }
-        }
-        
+      i {
+        font-size: 1.2rem;
+      }
     }
+
+    &-user {
+      display: flex;
+      align-items: center;
+      margin-left: 0.5rem;
+
+      a {
+        color: #819db8;
+        text-decoration: none;
+      }
+    }
+  }
+
+  &-content {
+    background: linear-gradient(
+      to right,
+      rgba(34, 50, 70, 1) -1%,
+      rgba(34, 50, 70, 1) 0%,
+      rgba(34, 50, 70, 0) 92%,
+      rgba(34, 50, 70, 0) 100%
+    );
+    padding: 0.3rem 0.75rem;
+
+    &-date {
+      margin-top: 0.5rem;
+      color: #666;
+      font-size: 0.8rem;
+    }
+
+    &-body {
+      margin-top: 0.3rem;
+      padding-bottom: 0.5rem;
+      color: #acb2b8;
+      line-height: 1.4;
+      font-size: 0.9rem;
+      border-bottom: 1px solid #666;
+    }
+
+    p:nth-child(3) {
+      margin-top: 0.5rem;
+      color: #666;
+    }
+
+    div {
+      margin-top: 0.5rem;
+      margin-bottom: 1rem;
+
+      button {
+        color: $secondary-color;
+        background: $secondary-background-light;
+        border: none;
+        padding: 0.3rem;
+        border-radius: 0.25rem;
+        margin-right: 0.25rem;
+
+        &:hover {
+          cursor: pointer;
+          background-color: lighten($secondary-background-light, 20);
+        }
+      }
+    }
+  }
 }
