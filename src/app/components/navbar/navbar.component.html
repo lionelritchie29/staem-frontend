@@ -1,7 +1,12 @@
 <nav class="nav">
   <div class="nav-container">
     <div class="nav-container-left">
-      <div class="nav-container-left-hamburger">☰</div>
+      <div
+        (click)="navMobileActive = !navMobileActive"
+        class="nav-container-left-hamburger"
+      >
+        ☰
+      </div>
       <a routerLink="/" class="nav-container-left-logo">
         <img src="../../../assets/images/logo.svg" height="45" alt="logo" />
       </a>
@@ -65,5 +70,68 @@
         </span>
       </div>
     </div>
+  </div>
+
+  <div class="nav-mobile" [class.nav-active]="navMobileActive">
+    <div class="nav-mobile-user" *ngIf="loggedUser">
+      <div class="nav-mobile-user-profile">
+        <div class="nav-mobile-user-profile-img">
+          <img
+            src="{{ loggedUserImgUrl }}"
+            alt="{{ loggedUser.accountName }}"
+          />
+        </div>
+
+        <div class="nav-mobile-user-profile-name">
+          {{ loggedUser.accountName }}
+        </div>
+      </div>
+
+      <div class="nav-mobile-user-wallet">
+        Wallet <span>({{ loggedUser.walletAmount | currency: "Rp. " }})</span>
+      </div>
+    </div>
+
+    <ul class="nav-mobile-top">
+      <li>
+        <a href="/points/shop">GAMES</a>
+      </li>
+      <li>
+        <a href="/market">MARKET</a>
+      </li>
+      <li>
+        <a href="/community">COMMUNITY</a>
+      </li>
+      <li>
+        <a href="/redeem-wallet">REDEEM WALLET</a>
+      </li>
+      <li>
+        <a href="/points/shop">POINTS SHOP</a>
+      </li>
+    </ul>
+
+    <ul class="nav-mobile-bottom">
+      <li *ngIf="!loggedUser">
+        <a href="/login">LOGIN</a>
+      </li>
+
+      <li *ngIf="loggedUser">
+        <a href="/profile/{{ loggedUser.profile.customURL }}">MY PROFILE</a>
+      </li>
+
+      <li *ngIf="loggedUser">
+        <a href="/profile/{{ loggedUser.profile.customURL }}/friends"
+          >FRIENDS</a
+        >
+      </li>
+
+      <li *ngIf="loggedUser">
+        <a (click)="logout()">LOGOUT</a>
+      </li>
+    </ul>
+
+    <span class="close" (click)="navMobileActive = !navMobileActive"
+      >&times;</span
+    >
   </div>
 </nav>

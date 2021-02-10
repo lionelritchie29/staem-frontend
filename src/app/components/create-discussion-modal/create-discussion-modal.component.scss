@@ -16,7 +16,7 @@
   color: #f4f4f4;
 
   &-content {
-    width: 50%;
+    width: 90%;
     height: 50%;
     background: radial-gradient(
         circle at top left,
@@ -26,6 +26,10 @@
       #25282e;
     padding: 0.75rem;
     position: relative;
+
+    @include for-desktop {
+      width: 50%;
+    }
   }
 
   h1 {
