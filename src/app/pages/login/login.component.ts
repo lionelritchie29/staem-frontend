@@ -22,6 +22,7 @@ export class LoginComponent implements OnInit {
   password: string = '';
   isError: boolean = false;
   errorMsg: string = '';
+  signInBtn: HTMLElement;
 
   constructor(
     private loginGqlService: LoginGqlService,
@@ -32,6 +33,7 @@ export class LoginComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.signInBtn = document.getElementById('sign-in-btn');
     if (this.authService.getLoggedInUserId() !== null) {
       this.router.navigate(['/']);
     }
@@ -46,6 +48,8 @@ export class LoginComponent implements OnInit {
       return;
     }
 
+    this.signInBtn.innerHTML = '<i class="fas fa-cog fa-spin"></i>';
+    (this.signInBtn as HTMLButtonElement).disabled = true;
     this.loginGqlService
       .watch({ accountName: this.accountName, pass: this.password })
       .valueChanges.subscribe((res) => {
@@ -68,7 +72,6 @@ export class LoginComponent implements OnInit {
       .watch({ id: userId })
       .valueChanges.pipe(map((res) => res.data.user))
       .subscribe((user) => {
-        console.log(user);
         if (user.role.id != 1 && user.role.id != 5) {
           alert('Admin must not login from there');
           return;

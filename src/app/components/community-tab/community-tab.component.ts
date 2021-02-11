@@ -63,7 +63,6 @@ export class CommunityTabComponent implements OnInit {
   fetchReviews(): void {
     this.allGameReviewsGqlService.get().subscribe((reviews) => {
       this.reviews = reviews;
-      console.log(reviews);
     });
   }
 
@@ -87,7 +86,6 @@ export class CommunityTabComponent implements OnInit {
     this.showGames = this.games.filter((game) =>
       game.title.toLowerCase().includes(this.searchTerm.toLowerCase())
     );
-    console.log(this.searchTerm);
   }
 
   onAddDiscussion() {

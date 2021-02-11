@@ -12,10 +12,9 @@ import { CategoryTabsComponent } from '../category-tabs/category-tabs.component'
 @Component({
   selector: 'app-category-tab',
   templateUrl: './category-tab.component.html',
-  styleUrls: ['./category-tab.component.scss']
+  styleUrls: ['./category-tab.component.scss'],
 })
 export class CategoryTabComponent implements OnInit, AfterContentInit {
-
   @Input() tabTitle: string;
 
   active: boolean = false;
@@ -28,8 +27,8 @@ export class CategoryTabComponent implements OnInit, AfterContentInit {
     private tabs: CategoryTabsComponent,
     private allRecentlyPublishedGameGqlService: AllRecentlyPublishedGameGqlService,
     private allTopSellerGamesGqlService: AllTopSellerGamesGqlService,
-    private allSpecialCategoryGameGqlService: AllSpecialCategoryGameGqlService,
-  ) { }
+    private allSpecialCategoryGameGqlService: AllSpecialCategoryGameGqlService
+  ) {}
 
   ngOnInit(): void {
     this.tabs.addTab(this);
@@ -39,7 +38,7 @@ export class CategoryTabComponent implements OnInit, AfterContentInit {
   ngAfterContentInit(): void {
     if (this.tabTitle === 'New and Trending') {
       this.getAllRecentlyPublishedGames();
-    } else if (this.tabTitle === 'Top Sellers'){
+    } else if (this.tabTitle === 'Top Sellers') {
       this.getTopSellerGames();
     } else if (this.tabTitle === 'Specials') {
       this.getSpecialGames();
@@ -49,46 +48,40 @@ export class CategoryTabComponent implements OnInit, AfterContentInit {
   getAllRecentlyPublishedGames(): void {
     this.allRecentlyPublishedGameGqlService
       .watch()
-      .valueChanges
-      .pipe(map(res => res.data.recentlyPublishedGames))
+      .valueChanges.pipe(map((res) => res.data.recentlyPublishedGames))
       .subscribe((res) => {
         this.games = res;
-        if(this.currentActiveGame === null) {
+        if (this.currentActiveGame === null) {
           this.currentActiveGame = res[0];
         }
-        this.filterOnlyFourImages()
-        // console.log(this.games);
+        this.filterOnlyFourImages();
       });
   }
 
   getTopSellerGames(): void {
     this.allTopSellerGamesGqlService
-    .watch()
-    .valueChanges
-    .pipe(map(res => res.data.topSellerGames))
-    .subscribe((res) => {
-      this.games = res;
-      if(this.currentActiveGame === null) {
-        this.currentActiveGame = res[0];
-      }
-      this.filterOnlyFourImages()
-      // console.log(this.games);
-    });
+      .watch()
+      .valueChanges.pipe(map((res) => res.data.topSellerGames))
+      .subscribe((res) => {
+        this.games = res;
+        if (this.currentActiveGame === null) {
+          this.currentActiveGame = res[0];
+        }
+        this.filterOnlyFourImages();
+      });
   }
 
   getSpecialGames(): void {
     this.allSpecialCategoryGameGqlService
-    .watch()
-    .valueChanges
-    .pipe(map(res => res.data.specialGames))
-    .subscribe((res) => {
-      this.games = res;
-      if(this.currentActiveGame === null) {
-        this.currentActiveGame = res[0];
-      }
-      this.filterOnlyFourImages()
-      // console.log(this.games);
-    });
+      .watch()
+      .valueChanges.pipe(map((res) => res.data.specialGames))
+      .subscribe((res) => {
+        this.games = res;
+        if (this.currentActiveGame === null) {
+          this.currentActiveGame = res[0];
+        }
+        this.filterOnlyFourImages();
+      });
   }
 
   onOpenSummary(gameOnHover: Game): void {
@@ -96,7 +89,8 @@ export class CategoryTabComponent implements OnInit, AfterContentInit {
   }
 
   filterOnlyFourImages() {
-    this.filteredGameImages = this.currentActiveGame.images.filter((_, idx) => idx < 4)
+    this.filteredGameImages = this.currentActiveGame.images.filter(
+      (_, idx) => idx < 4
+    );
   }
-
 }

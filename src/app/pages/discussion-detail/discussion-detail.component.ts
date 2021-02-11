@@ -62,7 +62,6 @@ export class DiscussionDetailComponent implements OnInit {
     this.loggedUserId = this.authService.getLoggedInUserId();
 
     this.getGameDiscussionByIdGqlService.get(postId).subscribe((discussion) => {
-      console.log(discussion);
       this.discussion = discussion;
       this.userImgUrl = getUserImageUrl(
         discussion.user.profile.profilePictureUrl

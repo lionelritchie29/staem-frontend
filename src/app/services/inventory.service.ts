@@ -42,7 +42,6 @@ export class InventoryService {
         });
     });
 
-    console.log(gameHeaders);
     return gameHeaders;
   }
 }

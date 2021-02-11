@@ -51,38 +51,93 @@ import { ReviewDetailsComponent } from './pages/review-details/review-details.co
 import { DiscussionDetailComponent } from './pages/discussion-detail/discussion-detail.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', component: HomeComponent, data: { animationState: 'Home' } },
   { path: 'test-template', component: TestTemplateComponent },
-  { path: 'search', component: SearchGameComponent },
+  {
+    path: 'search',
+    component: SearchGameComponent,
+    data: { animationState: 'Search' },
+  },
   {
     path: 'inventory',
     component: InventoryComponent,
     canActivate: [AuthGuardService],
+    data: { animationState: 'Inventory' },
   },
-  { path: 'market', component: MarketComponent },
-  { path: 'market/:gameItemId', component: MarketDetailComponent },
+  {
+    path: 'market',
+    component: MarketComponent,
+    data: { animationState: 'Market' },
+  },
+  {
+    path: 'market/:gameItemId',
+    component: MarketDetailComponent,
+    data: { animationState: 'MarketDetail' },
+  },
   {
     path: 'chat/:recipientId',
     component: ChatComponent,
     canActivate: [AuthGuardService],
+    data: { animationState: 'Chat' },
   },
   {
     path: 'game/:id',
     component: GameDetailComponent,
     canActivate: [MatureContentGuardService],
+    data: { animationState: 'Game' },
   },
-  { path: 'agecheck/:id', component: WarningMatureContentComponent },
-  { path: 'cart', component: CartComponent },
-  { path: 'wishlist', component: WishlistComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
-  { path: 'redeem-wallet', component: RedeemWalletComponent },
-  { path: 'profile/:userCustomUrl', component: ProfileComponent },
+  {
+    path: 'agecheck/:id',
+    component: WarningMatureContentComponent,
+    data: { animationState: 'AgeCheck' },
+  },
+  { path: 'cart', component: CartComponent, data: { animationState: 'Cart' } },
+  {
+    path: 'wishlist',
+    component: WishlistComponent,
+    data: { animationState: 'Wishlist' },
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
+    data: { animationState: 'Login' },
+  },
+  {
+    path: 'register',
+    component: RegisterComponent,
+    data: { animationState: 'Register' },
+  },
+  {
+    path: 'redeem-wallet',
+    component: RedeemWalletComponent,
+    data: { animationState: 'RedeemWallet' },
+  },
+  {
+    path: 'profile/:userCustomUrl',
+    component: ProfileComponent,
+    data: { animationState: 'Profile' },
+  },
   { path: 'points', redirectTo: 'points/shop', pathMatch: 'full' },
-  { path: 'points/shop', component: PointShopComponent },
-  { path: 'community', component: CommunityComponent },
-  { path: 'review/:id', component: ReviewDetailsComponent },
-  { path: 'discussion/:id', component: DiscussionDetailComponent },
+  {
+    path: 'points/shop',
+    component: PointShopComponent,
+    data: { animationState: 'Point Shop' },
+  },
+  {
+    path: 'community',
+    component: CommunityComponent,
+    data: { animationState: 'Community' },
+  },
+  {
+    path: 'review/:id',
+    component: ReviewDetailsComponent,
+    data: { animationState: 'ReviewDetail' },
+  },
+  {
+    path: 'discussion/:id',
+    component: DiscussionDetailComponent,
+    data: { animationState: 'DiscussionDetail' },
+  },
   {
     path: 'profile/:userCustomUrl/edit',
     component: EditProfileComponent,
@@ -95,6 +150,7 @@ const routes: Routes = [
       { path: 'theme', component: EditProfileThemeComponent },
       { path: 'favoritebadge', component: EditProfileBadgeComponent },
     ],
+    data: { animationState: 'EditProfile' },
   },
   {
     path: 'profile/:userCustomUrl/friends',
@@ -104,6 +160,7 @@ const routes: Routes = [
       { path: 'add', component: AddFriendComponent },
       { path: 'pending', component: PendingInviteComponent },
     ],
+    data: { animationState: 'Friend' },
   },
   {
     path: 'checkout',
@@ -113,6 +170,7 @@ const routes: Routes = [
       { path: 'gift', component: GiftComponent },
     ],
     canActivate: [AuthGuardService],
+    data: { animationState: 'Checkout' },
   },
   { path: 'admin', component: AdminLoginComponent },
   {
@@ -123,6 +181,7 @@ const routes: Routes = [
       { path: 'add', component: ManageGameAddComponent },
     ],
     canActivate: [AdminGameGuardService],
+    data: { animationState: 'ManageGame' },
   },
   {
     path: 'admin/manage-promo',
@@ -133,6 +192,7 @@ const routes: Routes = [
       { path: 'update/:id', component: ManagePromoUpdateComponent },
     ],
     canActivate: [AdminPromoGuardService],
+    data: { animationState: 'ManagePromo' },
   },
   {
     path: 'admin/manage-user',
@@ -145,6 +205,7 @@ const routes: Routes = [
       },
     ],
     canActivate: [AdminUserGuardService],
+    data: { animationState: 'ManageUser' },
   },
 ];
 

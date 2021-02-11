@@ -101,7 +101,6 @@ export class ImageVideoModalComponent implements OnInit {
         this.ownerImgUrl = getUserImageUrl(post.user.profile.profilePictureUrl);
 
         this.comments = post.comments;
-        console.log(this.comments);
         this.comments.forEach((comment) => {
           this.commenterImgUrl.push(
             getUserImageUrl(comment.user.profile.profilePictureUrl)

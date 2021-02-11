@@ -25,7 +25,6 @@ export class WarningMatureContentComponent implements OnInit {
       return;
     }
 
-    console.log(this.date);
     const dateStr = this.date;
     const userDOB = new Date(Date.parse(dateStr));
     const currentDate = new Date();

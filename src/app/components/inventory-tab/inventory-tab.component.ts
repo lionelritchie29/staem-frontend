@@ -48,7 +48,6 @@ export class InventoryTabComponent implements OnInit {
     for (let i = 0; i < this.limit; i++) {
       this.showItems.push(this.items[(this.page - 1) * this.limit + i]);
     }
-    console.log(this.showItems);
   }
 
   onNext() {
@@ -71,22 +70,18 @@ export class InventoryTabComponent implements OnInit {
 
   onSearch() {
     if (this.searchTerm == '') {
-      console.log(true);
       this.fetchItems();
     } else {
       this.showItems = [];
       this.items.forEach((item) => {
         if (item.name.toLowerCase().includes(this.searchTerm.toLowerCase())) {
-          console.log(item.name, this.searchTerm);
           this.showItems.push(item);
         }
       });
-      console.log(this.showItems);
     }
   }
 
   onSell() {
-    // console.log(this.currentItemIdx);
     this.listingModalService.setIsOpen(true);
     this.listingModalService.setGameItem(
       this.items[this.currentItemIdx],

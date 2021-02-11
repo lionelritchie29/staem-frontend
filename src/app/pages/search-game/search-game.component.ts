@@ -43,7 +43,6 @@ export class SearchGameComponent implements OnInit {
       this.page += 1;
       this.offset = (this.page - 1) * this.limit;
       this.searchGames(this.limit, this.offset).subscribe((games) => {
-        console.log(games);
         const results = games;
 
         if (results.length > 0) {

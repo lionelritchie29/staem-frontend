@@ -1,41 +1,49 @@
 <section id="login">
-      <section class="login-left">
-            <form class="login-left-form">
-                  <h1>SIGN IN</h1>
-                  <div class="login-left-form-group">
-                        <label>Steam account name</label>
-                        <input [(ngModel)]="accountName" [ngModelOptions]="{standalone: true}" type="text">
-                  </div>
-                  
-                  <div class="login-left-form-group">
-                        <label >Password</label>
-                        <input [(ngModel)]="password" [ngModelOptions]="{standalone: true}" type="password">
-                  </div>
+  <section class="login-left">
+    <form class="login-left-form">
+      <h1>SIGN IN</h1>
+      <div class="login-left-form-group">
+        <label>Steam account name</label>
+        <input
+          [(ngModel)]="accountName"
+          [ngModelOptions]="{ standalone: true }"
+          type="text"
+        />
+      </div>
 
-                  <div class="login-left-form-group">
-                        <input type="checkbox">
-                        <label>Remember me on this computer</label>
-                  </div>
+      <div class="login-left-form-group">
+        <label>Password</label>
+        <input
+          [(ngModel)]="password"
+          [ngModelOptions]="{ standalone: true }"
+          type="password"
+        />
+      </div>
 
-                  <div *ngIf="isError" class="error-msg">{{errorMsg}}</div>
+      <div class="login-left-form-group">
+        <input type="checkbox" />
+        <label>Remember me on this computer</label>
+      </div>
 
-                  <div class="login-left-form-button">
-                        <button (click)="login($event)">Sign In</button>
-                  </div>
-            </form>
-      </section>
+      <div *ngIf="isError" class="error-msg">{{ errorMsg }}</div>
 
-      <section class="login-right">
-            <div class="login-right-container">
-                  <p>Join Steam and discover thousands of games to play.</p>
-                  <a href="/">Learn More</a>
-                 
-                  <div>
-                        <img src="../../../assets/images/join_pc.png" alt="">
-                  </div>
-                  <p>It's free and easy to use.</p>
+      <div class="login-left-form-button">
+        <button (click)="login($event)" id="sign-in-btn">Sign In</button>
+      </div>
+    </form>
+  </section>
 
-                  <button (click)="redirectToRegister()"> Join Steam </button>
-            </div>
-      </section>
+  <section class="login-right">
+    <div class="login-right-container">
+      <p>Join Steam and discover thousands of games to play.</p>
+      <a href="/">Learn More</a>
+
+      <div>
+        <img src="../../../assets/images/join_pc.png" alt="" />
+      </div>
+      <p>It's free and easy to use.</p>
+
+      <button (click)="redirectToRegister()">Join Steam</button>
+    </div>
+  </section>
 </section>

@@ -1,17 +1,27 @@
-<app-confirm-modal *ngIf="isModalOpen"></app-confirm-modal>
-<app-sell-listing-modal *ngIf="isSellListingOpen"></app-sell-listing-modal>
-<app-buy-listing-modal *ngIf="isBuyListingOpen"></app-buy-listing-modal>
-<app-listing-modal *ngIf="isListingOpen"></app-listing-modal>
-<app-image-video-modal *ngIf="isImageVideoModalOpen"></app-image-video-modal>
+<app-confirm-modal *ngIf="isModalOpen" [@inOutAnimation]></app-confirm-modal>
+<app-sell-listing-modal
+  *ngIf="isSellListingOpen"
+  [@inOutAnimation]
+></app-sell-listing-modal>
+<app-buy-listing-modal
+  *ngIf="isBuyListingOpen"
+  [@inOutAnimation]
+></app-buy-listing-modal>
+<app-listing-modal *ngIf="isListingOpen" [@inOutAnimation]></app-listing-modal>
+<app-image-video-modal
+  *ngIf="isImageVideoModalOpen"
+  [@inOutAnimation]
+></app-image-video-modal>
 <app-create-discussion-modal
   *ngIf="isCreateDiscussModalOpen"
+  [@inOutAnimation]
 ></app-create-discussion-modal>
 
 <app-navbar></app-navbar>
 
 <main>
-  <div>
-    <router-outlet></router-outlet>
+  <div [@triggerName]="prepareRoute(outlet)" style="min-height: 100vh">
+    <router-outlet #outlet="outlet"></router-outlet>
   </div>
 </main>
 

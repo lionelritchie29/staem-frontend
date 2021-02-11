@@ -81,7 +81,6 @@ export class ManagePromoViewComponent implements OnInit {
       })
       .valueChanges.pipe(map((res) => <any>res.data))
       .subscribe((res) => {
-        console.log(res);
         this.totalPage = Math.ceil(
           res.gamePromoLimitOffset.totalCount / this.limit
         );

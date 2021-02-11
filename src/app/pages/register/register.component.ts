@@ -131,10 +131,6 @@ export class RegisterComponent implements OnInit {
       });
   }
 
-  resolved(captchaResponse: string) {
-    console.log(`Resolved captcha with response: ${captchaResponse}`);
-  }
-
   createUser() {
     const accountName = this.stepTwoForm.get('accountName').value;
     const password = this.stepTwoForm.get('password').value;

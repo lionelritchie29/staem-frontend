@@ -36,7 +36,6 @@ export class MatureContentGuardService implements CanActivate {
 
     return this.gameByIdGqlService.fetch({ id }).pipe(
       map((res) => {
-        console.log(res.data.game.tags);
         const isAdult = res.data.game.tags.some((tag) => tag.isAdult);
 
         if (isAdult) {

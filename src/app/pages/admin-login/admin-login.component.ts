@@ -35,14 +35,12 @@ export class AdminLoginComponent implements OnInit {
       return;
     }
 
-    console.log(this.adminLoginForm);
     const accountName = this.adminLoginForm.get('accountName').value;
     const password = this.adminLoginForm.get('password').value;
 
     this.loginGqlService
       .watch({ accountName: accountName, pass: password })
       .valueChanges.subscribe((res) => {
-        console.log(res);
         this.afterLogin(res.data.login);
       });
   }
@@ -61,7 +59,6 @@ export class AdminLoginComponent implements OnInit {
       .watch({ id: userId })
       .valueChanges.pipe(map((res) => res.data.user))
       .subscribe((user) => {
-        console.log(user);
         if (user.role.id == 1 || user.role.id == 5) {
           alert('User must not login from there');
         } else {

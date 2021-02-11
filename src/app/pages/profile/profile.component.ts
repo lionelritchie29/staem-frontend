@@ -144,8 +144,6 @@ export class ProfileComponent implements OnInit {
 
   onAddFriend() {
     if (this.loggedUser != null) {
-      console.log(this.loggedUser.id);
-      console.log(this.currentUser.id);
       this.apollo
         .mutate({
           mutation: CREATE_FRIEND_REQUEST,

@@ -52,7 +52,6 @@ export class CommunityReviewCardComponent implements OnInit {
       .mutate({ id: this.review[0].id })
       .pipe(map((res) => (<any>res.data).increseReviewUpvote))
       .subscribe((isSuccess) => {
-        console.log(isSuccess);
         if (isSuccess) {
           alert('Success!');
           window.location.reload();

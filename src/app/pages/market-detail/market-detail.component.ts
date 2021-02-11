@@ -138,7 +138,6 @@ export class MarketDetailComponent implements OnInit, OnDestroy {
         this.userSellListings = res.sellListingByUserAndGameItemId;
         this.sellListings = res.sellListingGroupedByPrice;
         this.buyListings = res.buyListingGroupedByPrice;
-        console.log(this.sellListings, this.buyListings);
 
         if (isInitialFetch) {
           this.gameItem = res.gameItem;

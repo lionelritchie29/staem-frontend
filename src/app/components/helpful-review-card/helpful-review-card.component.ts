@@ -41,7 +41,6 @@ export class HelpfulReviewCardComponent implements OnInit {
       .mutate({ id: this.review.id })
       .pipe(map((res) => (<any>res.data).increseReviewUpvote))
       .subscribe((isSuccess) => {
-        console.log(isSuccess);
         if (isSuccess) {
           alert('Upvote success!');
           window.location.reload();

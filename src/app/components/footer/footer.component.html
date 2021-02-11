@@ -21,7 +21,9 @@
     </div>
 
     <div class="footer-bottom">
-      <a *ngFor="let link of links" href="{{ link.link }}">{{ link.title }}</a>
+      <a *ngFor="let link of links" routerLink="{{ link.link }}">{{
+        link.title
+      }}</a>
     </div>
   </div>
 </footer>

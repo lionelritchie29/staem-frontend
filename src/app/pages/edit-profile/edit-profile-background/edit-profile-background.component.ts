@@ -77,7 +77,6 @@ export class EditProfileBackgroundComponent implements OnInit {
       .valueChanges.pipe(map((res) => (<any>res.data).profileBackgroundById))
       .subscribe((bgs) => {
         this.profileBackgrounds = bgs;
-        console.log(this.profileBackgrounds);
         this.profileBackgrounds.forEach((bg) =>
           this.profileBackgroundsUrl.push(getProfileBgUrl(bg.url))
         );

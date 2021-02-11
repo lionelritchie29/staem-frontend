@@ -100,7 +100,6 @@ export class ChatComponent implements OnInit {
         },
       })
       .subscribe((res) => {
-        console.log(res);
         this.messages = [...this.messages, (<any>res.data).latestChat];
       });
   }
@@ -108,7 +107,6 @@ export class ChatComponent implements OnInit {
   sendChat(): void {
     if (this.chatForm.status === 'INVALID') {
       alert('You must fill something');
-      console.log(this.currentUser.id);
     } else {
       this.apollo
         .mutate({

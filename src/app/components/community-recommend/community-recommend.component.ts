@@ -6,46 +6,53 @@ import { AllCommunityRecommendedGamesGqlService } from 'src/app/services/gql/que
 @Component({
   selector: 'app-community-recommend',
   templateUrl: './community-recommend.component.html',
-  styleUrls: ['./community-recommend.component.scss']
+  styleUrls: ['./community-recommend.component.scss'],
 })
 export class CommunityRecommendComponent implements OnInit {
-
   games: Game[] = [];
   rightArrowClickCount: number = 1;
   leftArrowClickCount: number = 1;
 
   constructor(
     private allCommunityRecommendedGamesGqlService: AllCommunityRecommendedGamesGqlService
-  ) { }
+  ) {}
 
   ngOnInit(): void {
-    this.allCommunityRecommendedGamesGqlService.watch()
-      .valueChanges
-      .pipe(map(res => res.data.communityRecommendedGames))
-      .subscribe(games => {
+    this.allCommunityRecommendedGamesGqlService
+      .watch()
+      .valueChanges.pipe(map((res) => res.data.communityRecommendedGames))
+      .subscribe((games) => {
         this.games = games;
-        console.log(games);
-      })
+      });
   }
 
   OnArrowRightClick(): void {
-    if(this.rightArrowClickCount != this.games.length) {
-      const itemContainer: HTMLElement = document.querySelector(".community-slider-container-images");
-      const itemWidth: number = document.querySelector('app-featured-card').clientWidth;
-      itemContainer.style.marginLeft = `-${this.rightArrowClickCount * itemWidth}px`;
+    if (this.rightArrowClickCount != this.games.length) {
+      const itemContainer: HTMLElement = document.querySelector(
+        '.community-slider-container-images'
+      );
+      const itemWidth: number = document.querySelector('app-featured-card')
+        .clientWidth;
+      itemContainer.style.marginLeft = `-${
+        this.rightArrowClickCount * itemWidth
+      }px`;
       this.rightArrowClickCount++;
       this.leftArrowClickCount--;
     }
   }
 
   OnArrowLeftClick(): void {
-    if(this.leftArrowClickCount != 1) {
-      const itemContainer: HTMLElement = document.querySelector(".community-slider-container-images");
-      const itemWidth: number = document.querySelector('app-featured-card').clientWidth;
-      itemContainer.style.marginLeft = `${this.leftArrowClickCount * itemWidth}px`;
+    if (this.leftArrowClickCount != 1) {
+      const itemContainer: HTMLElement = document.querySelector(
+        '.community-slider-container-images'
+      );
+      const itemWidth: number = document.querySelector('app-featured-card')
+        .clientWidth;
+      itemContainer.style.marginLeft = `${
+        this.leftArrowClickCount * itemWidth
+      }px`;
       this.leftArrowClickCount++;
       this.rightArrowClickCount--;
     }
   }
-
 }

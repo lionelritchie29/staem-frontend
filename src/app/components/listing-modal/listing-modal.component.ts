@@ -65,7 +65,6 @@ export class ListingModalComponent implements OnInit {
       alert('All filed must be filled');
     } else {
       const userId = this.authService.getLoggedInUserId();
-      console.log(this.gameItem.id);
 
       this.apollo
         .mutate({
