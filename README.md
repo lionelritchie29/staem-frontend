@@ -8,7 +8,9 @@ credentials:
 -- password : lionel123  
   
 -- username : arthurmorgan  
--- password : arthur123  
+-- password : arthur123    
+
+NB : If the app looks awful and shows no data at all when you visit, it's because the app's backend (Heroku) crashes at times. As I have not figured a fix for it, You could try to visit it again later
 
 ## Development server
 
