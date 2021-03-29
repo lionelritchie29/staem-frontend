@@ -2,13 +2,13 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.5.
 
-Live version: https://staem.netlify.app/
-credentials:
--- username : lionelritchie
--- password : lionel123
-
--- username : arthurmorgan
--- password : arthur123
+Live version: https://staem.netlify.app/  
+credentials:  
+-- username : lionelritchie  
+-- password : lionel123  
+  
+-- username : arthurmorgan  
+-- password : arthur123  
 
 ## Development server
 
